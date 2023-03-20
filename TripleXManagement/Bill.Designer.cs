@@ -28,19 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPrintPriview = new Guna.UI2.WinForms.Guna2Button();
+            this.btnPrint = new Guna.UI2.WinForms.Guna2Button();
             this.lbTotal = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvDetail = new System.Windows.Forms.DataGridView();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
@@ -49,6 +55,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.panel1.Controls.Add(this.btnPrintPriview);
+            this.panel1.Controls.Add(this.btnPrint);
             this.panel1.Controls.Add(this.lbTotal);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -56,6 +64,48 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1000, 55);
             this.panel1.TabIndex = 0;
+            // 
+            // btnPrintPriview
+            // 
+            this.btnPrintPriview.AutoRoundedCorners = true;
+            this.btnPrintPriview.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnPrintPriview.BorderRadius = 20;
+            this.btnPrintPriview.BorderThickness = 2;
+            this.btnPrintPriview.CustomizableEdges = customizableEdges1;
+            this.btnPrintPriview.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnPrintPriview.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnPrintPriview.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPrintPriview.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnPrintPriview.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.btnPrintPriview.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnPrintPriview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnPrintPriview.Location = new System.Drawing.Point(146, 6);
+            this.btnPrintPriview.Name = "btnPrintPriview";
+            this.btnPrintPriview.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            this.btnPrintPriview.Size = new System.Drawing.Size(128, 42);
+            this.btnPrintPriview.TabIndex = 2;
+            this.btnPrintPriview.Text = "Print Priview";
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.AutoRoundedCorners = true;
+            this.btnPrint.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnPrint.BorderRadius = 20;
+            this.btnPrint.BorderThickness = 2;
+            this.btnPrint.CustomizableEdges = customizableEdges3;
+            this.btnPrint.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnPrint.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnPrint.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPrint.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnPrint.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.btnPrint.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnPrint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnPrint.Location = new System.Drawing.Point(12, 6);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            this.btnPrint.Size = new System.Drawing.Size(128, 42);
+            this.btnPrint.TabIndex = 2;
+            this.btnPrint.Text = "Print";
             // 
             // lbTotal
             // 
@@ -137,15 +187,6 @@
             this.dgvDetail.Size = new System.Drawing.Size(332, 500);
             this.dgvDetail.TabIndex = 0;
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(668, 500);
-            this.flowLayoutPanel1.TabIndex = 2;
-            // 
             // Column1
             // 
             this.Column1.HeaderText = "ID";
@@ -182,6 +223,15 @@
             this.Column3.ReadOnly = true;
             this.Column3.Width = 200;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(668, 500);
+            this.flowLayoutPanel1.TabIndex = 2;
+            // 
             // Bill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -215,5 +265,7 @@
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
+        private Guna.UI2.WinForms.Guna2Button btnPrintPriview;
+        private Guna.UI2.WinForms.Guna2Button btnPrint;
     }
 }
