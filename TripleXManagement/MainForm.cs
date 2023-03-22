@@ -146,7 +146,7 @@ namespace TripleXManagement
             }
         }
 
-        private void OpenChildForm(Form childForm, object btnSender)
+        public void OpenChildForm(Form childForm, object btnSender)
         {
             if (activateForm != null)
             {
@@ -203,5 +203,6 @@ namespace TripleXManagement
             currencyButton = null;
             btnCloseChildForm.Visible=false;
         }
+
     }
 }

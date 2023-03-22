@@ -16,8 +16,8 @@ namespace TripleXManagement
 {
     public partial class Bill : Form
     {
-        double _total;
-        double _price = 0;
+        int _total;
+        //double _price = 0;
         SqlConnection conn;
         SqlCommand cmd;
         SqlDataReader reader;
@@ -30,7 +30,7 @@ namespace TripleXManagement
             InitializeComponent();
             conn = new SqlConnection
             {
-                ConnectionString = @"Data Source=DESKTOP-J6D7SL6\SQLEXPRESS;Initial Catalog=AnhChoosen;Integrated Security=True"
+                ConnectionString = @"Data Source=DESKTOP-J6D7SL6\SQLEXPRESS;Initial Catalog=TripleX;Integrated Security=True"
             };
         }
 
@@ -61,7 +61,7 @@ namespace TripleXManagement
 
                 price = new Label
                 {
-                    Text = reader["Price"].ToString() + " VNĐ",
+                    Text = int.Parse(reader["Price"].ToString()).ToString("#,##") + " VNĐ",
                     BackColor = Color.Yellow,
                     Width = 50,
                     TextAlign = ContentAlignment.MiddleCenter,
@@ -91,13 +91,19 @@ namespace TripleXManagement
             reader.Read();
             if (reader.HasRows)
             {
-                _total += double.Parse(reader["Price"].ToString());
-                dgvDetail.Rows.Add(reader["ID"].ToString(), reader["Name"].ToString(), double.Parse(reader["Price"].ToString()).ToString("#,##0.00"));
+                _total += int.Parse(reader["Price"].ToString());
+                dgvDetail.Rows.Add(reader["ID"].ToString(), reader["Name"].ToString(), int.Parse(reader["Price"].ToString()).ToString("#,##"));
 
             }
             reader.Close();
             conn.Close();
-            lbTotal.Text = _total.ToString("#,##0.00");
+            lbTotal.Text = _total.ToString("#,##");
+        }
+
+        private void btnFoodManagement_Click(object sender, EventArgs e)
+        {
+            Form form = new FoodManagement();
+            form.ShowDialog();
         }
     }
 }

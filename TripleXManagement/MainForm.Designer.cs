@@ -47,10 +47,13 @@
             this.btnCloseChildForm = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.pnMain = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnMenu.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.pnTitle.SuspendLayout();
+            this.pnMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnMenu
@@ -324,11 +327,23 @@
             // pnMain
             // 
             this.pnMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.pnMain.Controls.Add(this.pictureBox1);
             this.pnMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnMain.Location = new System.Drawing.Point(205, 46);
             this.pnMain.Name = "pnMain";
             this.pnMain.Size = new System.Drawing.Size(700, 470);
             this.pnMain.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Image = global::TripleXManagement.Properties.Resources.LogoMid;
+            this.pictureBox1.Location = new System.Drawing.Point(161, 150);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(383, 142);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // MainForm
             // 
@@ -350,6 +365,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.pnTitle.ResumeLayout(false);
             this.pnTitle.PerformLayout();
+            this.pnMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -374,5 +391,6 @@
         private Panel pnMain;
         private Label lbTitle;
         private Button btnCloseChildForm;
+        private PictureBox pictureBox1;
     }
 }
