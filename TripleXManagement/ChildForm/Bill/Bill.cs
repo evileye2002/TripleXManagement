@@ -117,6 +117,7 @@ namespace TripleXManagement
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
+            (printPreviewDialog1 as Form).WindowState = FormWindowState.Maximized;
             Graphics graphics = e.Graphics;
             Font font = new Font("Arial", 12, FontStyle.Regular);
             Font fontDetail = new Font("Arial", 10, FontStyle.Regular);
