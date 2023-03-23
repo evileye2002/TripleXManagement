@@ -17,14 +17,14 @@ namespace TripleXManagement
     public partial class Bill : Form
     {
         int _total;
-        String dash = "--------------------------------------------------------------------------------";
+        String ?dash = "--------------------------------------------------------------------------------";
         //double _price = 0;
         SqlConnection conn;
-        SqlCommand cmd;
-        SqlDataReader reader;
+        SqlCommand ?cmd;
+        SqlDataReader ?reader;
 
-        private PictureBox image;
-        private Label price;
+        private PictureBox ?image;
+        private Label ?price;
         //private Button button;
         public Bill()
         {
@@ -84,7 +84,7 @@ namespace TripleXManagement
         }
         public void OnClick(object sender, EventArgs e)
         {
-            string tag = ((PictureBox)sender).Tag.ToString();
+            string ?tag = ((PictureBox)sender).Tag.ToString();
             //MessageBox.Show(tag);
             conn.Open();
             cmd = new SqlCommand("select * from MonAn where ID = '" + tag + "'", conn);
@@ -118,13 +118,13 @@ namespace TripleXManagement
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
             (printPreviewDialog1 as Form).WindowState = FormWindowState.Maximized;
-            Graphics graphics = e.Graphics;
-            Font font = new Font("Arial", 12, FontStyle.Regular);
-            Font fontDetail = new Font("Arial", 10, FontStyle.Regular);
+            Graphics ?graphics = e.Graphics;
+            Font font = new("Arial", 12, FontStyle.Regular);
+            Font fontDetail = new("Arial", 10, FontStyle.Regular);
             Brush brush = Brushes.Black;
-            StringFormat formatLeft = new StringFormat(StringFormatFlags.NoClip);
-            StringFormat formatCenter = new StringFormat(formatLeft);
-            StringFormat formatRight = new StringFormat(formatLeft);
+            StringFormat formatLeft = new(StringFormatFlags.NoClip);
+            StringFormat formatCenter = new(formatLeft);
+            StringFormat formatRight = new(formatLeft);
             formatCenter.Alignment = StringAlignment.Center;
             formatRight.Alignment = StringAlignment.Far;
             formatLeft.Alignment = StringAlignment.Near;
