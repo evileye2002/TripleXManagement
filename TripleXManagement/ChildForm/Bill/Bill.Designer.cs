@@ -34,13 +34,17 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bill));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnFoodManagement = new Guna.UI2.WinForms.Guna2Button();
             this.btnPrintPriview = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAddBill = new Guna.UI2.WinForms.Guna2Button();
             this.btnPrint = new Guna.UI2.WinForms.Guna2Button();
             this.lbTotal = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,6 +54,8 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
@@ -60,13 +66,14 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
             this.panel1.Controls.Add(this.btnFoodManagement);
             this.panel1.Controls.Add(this.btnPrintPriview);
+            this.panel1.Controls.Add(this.btnAddBill);
             this.panel1.Controls.Add(this.btnPrint);
             this.panel1.Controls.Add(this.lbTotal);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 500);
+            this.panel1.Location = new System.Drawing.Point(0, 504);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1000, 55);
+            this.panel1.Size = new System.Drawing.Size(1000, 51);
             this.panel1.TabIndex = 0;
             // 
             // btnFoodManagement
@@ -90,7 +97,7 @@
             this.btnFoodManagement.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.btnFoodManagement.HoverState.Image = global::TripleXManagement.Properties.Resources.print_file_32px1;
             this.btnFoodManagement.Image = global::TripleXManagement.Properties.Resources.print_file_32px;
-            this.btnFoodManagement.Location = new System.Drawing.Point(302, 6);
+            this.btnFoodManagement.Location = new System.Drawing.Point(458, 3);
             this.btnFoodManagement.Name = "btnFoodManagement";
             this.btnFoodManagement.ShadowDecoration.CustomizableEdges = customizableEdges2;
             this.btnFoodManagement.Size = new System.Drawing.Size(150, 42);
@@ -119,12 +126,42 @@
             this.btnPrintPriview.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.btnPrintPriview.HoverState.Image = global::TripleXManagement.Properties.Resources.print_file_32px1;
             this.btnPrintPriview.Image = global::TripleXManagement.Properties.Resources.print_file_32px;
-            this.btnPrintPriview.Location = new System.Drawing.Point(146, 6);
+            this.btnPrintPriview.Location = new System.Drawing.Point(300, 3);
             this.btnPrintPriview.Name = "btnPrintPriview";
             this.btnPrintPriview.ShadowDecoration.CustomizableEdges = customizableEdges4;
             this.btnPrintPriview.Size = new System.Drawing.Size(150, 42);
             this.btnPrintPriview.TabIndex = 2;
             this.btnPrintPriview.Text = "Print Priview";
+            this.btnPrintPriview.Click += new System.EventHandler(this.btnPrintPriview_Click);
+            // 
+            // btnAddBill
+            // 
+            this.btnAddBill.AutoRoundedCorners = true;
+            this.btnAddBill.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnAddBill.BorderRadius = 20;
+            this.btnAddBill.BorderThickness = 2;
+            this.btnAddBill.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddBill.CustomizableEdges = customizableEdges5;
+            this.btnAddBill.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddBill.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddBill.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddBill.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAddBill.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.btnAddBill.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAddBill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnAddBill.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.btnAddBill.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnAddBill.HoverState.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAddBill.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.btnAddBill.HoverState.Image = global::TripleXManagement.Properties.Resources.print_32px1;
+            this.btnAddBill.Image = global::TripleXManagement.Properties.Resources.print_32px;
+            this.btnAddBill.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnAddBill.Location = new System.Drawing.Point(28, 3);
+            this.btnAddBill.Name = "btnAddBill";
+            this.btnAddBill.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            this.btnAddBill.Size = new System.Drawing.Size(128, 42);
+            this.btnAddBill.TabIndex = 2;
+            this.btnAddBill.Text = "Add";
             // 
             // btnPrint
             // 
@@ -133,7 +170,7 @@
             this.btnPrint.BorderRadius = 20;
             this.btnPrint.BorderThickness = 2;
             this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPrint.CustomizableEdges = customizableEdges5;
+            this.btnPrint.CustomizableEdges = customizableEdges7;
             this.btnPrint.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnPrint.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnPrint.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -148,9 +185,9 @@
             this.btnPrint.HoverState.Image = global::TripleXManagement.Properties.Resources.print_32px1;
             this.btnPrint.Image = global::TripleXManagement.Properties.Resources.print_32px;
             this.btnPrint.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnPrint.Location = new System.Drawing.Point(12, 6);
+            this.btnPrint.Location = new System.Drawing.Point(164, 3);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            this.btnPrint.ShadowDecoration.CustomizableEdges = customizableEdges8;
             this.btnPrint.Size = new System.Drawing.Size(128, 42);
             this.btnPrint.TabIndex = 2;
             this.btnPrint.Text = "Print";
@@ -159,11 +196,11 @@
             // 
             this.lbTotal.AutoSize = true;
             this.lbTotal.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lbTotal.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbTotal.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.lbTotal.Location = new System.Drawing.Point(842, 0);
+            this.lbTotal.Location = new System.Drawing.Point(865, 0);
             this.lbTotal.Name = "lbTotal";
-            this.lbTotal.Size = new System.Drawing.Size(46, 54);
+            this.lbTotal.Size = new System.Drawing.Size(40, 46);
             this.lbTotal.TabIndex = 1;
             this.lbTotal.Text = "0";
             this.lbTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -172,11 +209,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.label1.Location = new System.Drawing.Point(888, 0);
+            this.label1.Location = new System.Drawing.Point(905, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 54);
+            this.label1.Size = new System.Drawing.Size(95, 46);
             this.label1.TabIndex = 0;
             this.label1.Text = "VNĐ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -187,7 +224,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(687, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(313, 500);
+            this.panel2.Size = new System.Drawing.Size(313, 504);
             this.panel2.TabIndex = 1;
             // 
             // dgvDetail
@@ -232,7 +269,7 @@
             this.dgvDetail.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvDetail.RowTemplate.Height = 25;
             this.dgvDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetail.Size = new System.Drawing.Size(313, 500);
+            this.dgvDetail.Size = new System.Drawing.Size(313, 504);
             this.dgvDetail.TabIndex = 0;
             // 
             // Column1
@@ -269,7 +306,6 @@
             this.Column3.MinimumWidth = 50;
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
-            this.Column3.Width = 50;
             // 
             // flowLayoutPanel1
             // 
@@ -277,8 +313,22 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(687, 500);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(687, 504);
             this.flowLayoutPanel1.TabIndex = 2;
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
             // Bill
             // 
@@ -313,8 +363,11 @@
         private Guna.UI2.WinForms.Guna2Button btnPrintPriview;
         private Guna.UI2.WinForms.Guna2Button btnPrint;
         private Guna.UI2.WinForms.Guna2Button btnFoodManagement;
+        private PrintPreviewDialog printPreviewDialog1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
+        private Guna.UI2.WinForms.Guna2Button btnAddBill;
     }
 }

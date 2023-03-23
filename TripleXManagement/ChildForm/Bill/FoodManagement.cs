@@ -129,7 +129,7 @@ namespace TripleXManagement
             DataTable table = new DataTable();
             SqlDataAdapter sda = new(sql, conn);
             sda.Fill(table);
-            dgvDetail.DataSource = table;
+            dgvFood.DataSource = table;
             conn.Close();
         }
 

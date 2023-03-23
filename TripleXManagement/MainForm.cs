@@ -167,6 +167,7 @@ namespace TripleXManagement
         private void btnBill_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Bill(), sender);
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void btnFoodDrink_Click(object sender, EventArgs e)

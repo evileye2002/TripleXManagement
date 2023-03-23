@@ -17,6 +17,7 @@ namespace TripleXManagement
     public partial class Bill : Form
     {
         int _total;
+        String dash = "--------------------------------------------------------------------------------";
         //double _price = 0;
         SqlConnection conn;
         SqlCommand cmd;
@@ -37,7 +38,7 @@ namespace TripleXManagement
         private void Bill_Load(object sender, EventArgs e)
         {
             GetData();
-            //flowLayoutPanel1.Hide();
+            sizePrintPage();
         }
 
         private void GetData()
@@ -104,6 +105,89 @@ namespace TripleXManagement
         {
             Form form = new FoodManagement();
             form.ShowDialog();
+        }
+
+        public void sizePrintPage()
+        {
+            int a;
+            if (dgvDetail.Rows.Count <= 11) { a = 0; }
+            else { a = dgvDetail.Rows.Count * 20 - 220; }
+            printDocument1.DefaultPageSettings.PaperSize = new PaperSize("size", 500, a + 700);
+        }
+
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            Graphics graphics = e.Graphics;
+            Font font = new Font("Arial", 12, FontStyle.Regular);
+            Font fontDetail = new Font("Arial", 10, FontStyle.Regular);
+            Brush brush = Brushes.Black;
+            StringFormat formatLeft = new StringFormat(StringFormatFlags.NoClip);
+            StringFormat formatCenter = new StringFormat(formatLeft);
+            StringFormat formatRight = new StringFormat(formatLeft);
+            formatCenter.Alignment = StringAlignment.Center;
+            formatRight.Alignment = StringAlignment.Far;
+            formatLeft.Alignment = StringAlignment.Near;
+
+            graphics.DrawString("Nhà hàng TripleX", new Font("Arial", 10, FontStyle.Bold), brush, new Point(250, 40), formatCenter);
+            graphics.DrawString("Z115 - Tân Thịnh - Thái Nguyên", fontDetail, brush, new Point(250, 60), formatCenter);
+            graphics.DrawString("0123456789", fontDetail, brush, new Point(250, 80), formatCenter);
+
+            graphics.DrawString("HÓA ĐƠN", new Font("Arial", 16, FontStyle.Bold), brush, new Point(250, 100), formatCenter);
+
+            graphics.DrawString("Số Hóa đơn:", fontDetail, brush, new Point(25, 120));
+            graphics.DrawString("Ngày:", fontDetail, brush, new Point(25, 140));
+            graphics.DrawString("Thu ngân:", fontDetail, brush, new Point(25, 160));
+            graphics.DrawString("Quầy:", fontDetail, brush, new Point(25, 180));
+            graphics.DrawString("Khách hàng:", fontDetail, brush, new Point(25, 200));
+
+            graphics.DrawString(dash, font, brush, new Point(25, 220));
+
+            graphics.DrawString("Tên món", font,brush, new Point(25, 240));
+            graphics.DrawString("Giá", font,brush, new Point(420, 240), formatRight);
+
+            graphics.DrawString(dash, font,brush, new Point(25, 260));
+
+            for (int i = 0; i < dgvDetail.Rows.Count; i++)
+            {
+                graphics.DrawString(dgvDetail.Rows[i].Cells[1].Value.ToString(),
+                    font, brush, new Point(25, i * 20 + 280));
+                graphics.DrawString(dgvDetail.Rows[i].Cells[2].Value.ToString(),
+                    font, brush, new Point(420, i * 20 + 280), formatRight);
+                graphics.DrawString("VNĐ", font,brush,new Point(425, i * 20 + 280), formatLeft);
+
+            }
+            graphics.DrawString(dash, font,brush, new Point(25, dgvDetail.Rows.Count * 20 + 280));
+
+            graphics.DrawString("Bằng chữ: ", font,brush, new Point(25, dgvDetail.Rows.Count * 20 + 300));
+            graphics.DrawString("Tổng: ", font,brush, new Point(25, dgvDetail.Rows.Count * 20 + 320));
+            graphics.DrawString("Tiền mặt: ", font,brush, new Point(25, dgvDetail.Rows.Count * 20 + 340));
+            graphics.DrawString("Thẻ ngân hàng: ", font,brush, new Point(25, dgvDetail.Rows.Count * 20 + 360));
+
+            graphics.DrawString(lbTotal.Text, font,brush, new Point(420, dgvDetail.Rows.Count * 20 + 320), formatRight);
+            graphics.DrawString("1000", font,brush, new Point(420, dgvDetail.Rows.Count * 20 + 340), formatRight);
+            graphics.DrawString("1000", font,brush, new Point(420, dgvDetail.Rows.Count * 20 + 360), formatRight);
+
+            graphics.DrawString("VNĐ", font,brush, new Point(425, dgvDetail.Rows.Count * 20 + 320), formatLeft);
+            graphics.DrawString("VNĐ", font,brush, new Point(425, dgvDetail.Rows.Count * 20 + 340), formatLeft);
+            graphics.DrawString("VNĐ", font,brush, new Point(425, dgvDetail.Rows.Count * 20 + 360), formatLeft);
+
+            graphics.DrawString(dash, font,brush, new Point(25, dgvDetail.Rows.Count * 20 + 380));
+
+            graphics.DrawString("QUÝ KHÁCH VUI LÒNG KIỂM TRA HÓA ĐƠN",
+                new Font("Arial", 10, FontStyle.Regular), brush, new Point(250, dgvDetail.Rows.Count * 20 + 400), formatCenter);
+            graphics.DrawString("TRƯỚC KHI RA KHỎI QUẦY",
+                new Font("Arial", 10, FontStyle.Regular), brush, new Point(250, dgvDetail.Rows.Count * 20 + 420), formatCenter);
+            graphics.DrawString("Xin chân thành cảm ơn quý khách và hẹn gặp lại",
+                new Font("Arial", 10, FontStyle.Bold), brush, new Point(250, dgvDetail.Rows.Count * 20 + 440), formatCenter);
+
+            e.HasMorePages = false;
+        }
+
+        private void btnPrintPriview_Click(object sender, EventArgs e)
+        {
+            sizePrintPage();
+            printPreviewDialog1.Document = printDocument1;
+            printPreviewDialog1.ShowDialog();
         }
     }
 }
