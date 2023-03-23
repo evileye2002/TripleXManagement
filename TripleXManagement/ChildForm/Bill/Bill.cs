@@ -16,9 +16,9 @@ namespace TripleXManagement
 {
     public partial class Bill : Form
     {
-        int _total;
+        double _total;
+        double _price = 0;
         String ?dash = "--------------------------------------------------------------------------------";
-        //double _price = 0;
         SqlConnection conn;
         SqlCommand ?cmd;
         SqlDataReader ?reader;
@@ -92,8 +92,8 @@ namespace TripleXManagement
             reader.Read();
             if (reader.HasRows)
             {
-                _total += int.Parse(reader["Price"].ToString());
-                dgvDetail.Rows.Add(reader["ID"].ToString(), reader["Name"].ToString(), int.Parse(reader["Price"].ToString()).ToString("#,##"));
+                _total += double.Parse(reader["Price"].ToString());
+                dgvDetail.Rows.Add(reader["ID"].ToString(), reader["Name"].ToString(), double.Parse(reader["Price"].ToString()).ToString("#,##"));
 
             }
             reader.Close();
@@ -189,6 +189,61 @@ namespace TripleXManagement
             sizePrintPage();
             printPreviewDialog1.Document = printDocument1;
             printPreviewDialog1.ShowDialog();
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void deleteDetail()
+        {
+            if (_price == 0)
+            {
+                MessageBox.Show("Chưa chọn món ăn cần xóa!", "CẢNH BÁO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                foreach (DataGridViewRow row in dgvDetail.SelectedRows)
+                {
+                    if (row.Selected)
+                    {
+                        dgvDetail.Rows.Remove(row);
+                        _total -= _price;
+                        lbTotal.Text = _total.ToString("#,##");
+                        _price = 0;
+                        if (lbTotal.Text == "")
+                            lbTotal.Text = "0";
+                    }
+                }
+            }
+        }
+        private void dgvDetail_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int selectedRow = dgvDetail.SelectedRows.Count;
+            if (selectedRow == 1)
+            {
+                int t = dgvDetail.CurrentCell.RowIndex;
+                _price = double.Parse(dgvDetail.Rows[t].Cells[2].Value.ToString());
+            }
+        }
+
+        private void dgvDetail_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+                deleteDetail();
+        }
+
+        private void dgvDetail_SelectionChanged(object sender, EventArgs e)
+        {
+            /*if(dgvDetail.SelectedRows.Count > 0)
+            {
+                _price = 0;
+                foreach (DataGridViewRow row in dgvDetail.SelectedRows)
+                {
+                    _price += double.Parse(row.Cells[2].Value.ToString());
+                }
+            }*/
         }
     }
 }
