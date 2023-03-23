@@ -53,9 +53,9 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
@@ -162,6 +162,7 @@
             this.btnAddBill.Size = new System.Drawing.Size(128, 42);
             this.btnAddBill.TabIndex = 2;
             this.btnAddBill.Text = "Add";
+            this.btnAddBill.Click += new System.EventHandler(this.btnAddBill_Click);
             // 
             // btnPrint
             // 
@@ -312,15 +313,6 @@
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(687, 504);
-            this.flowLayoutPanel1.TabIndex = 2;
-            // 
             // printPreviewDialog1
             // 
             this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
@@ -334,6 +326,15 @@
             // printDocument1
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(687, 504);
+            this.flowLayoutPanel1.TabIndex = 2;
             // 
             // Bill
             // 
@@ -361,8 +362,6 @@
 
         private Panel panel1;
         private Panel panel2;
-        private DataGridView dgvDetail;
-        private FlowLayoutPanel flowLayoutPanel1;
         private Label label1;
         private Label lbTotal;
         private Guna.UI2.WinForms.Guna2Button btnPrintPriview;
@@ -370,9 +369,11 @@
         private Guna.UI2.WinForms.Guna2Button btnFoodManagement;
         private PrintPreviewDialog printPreviewDialog1;
         private System.Drawing.Printing.PrintDocument printDocument1;
+        private Guna.UI2.WinForms.Guna2Button btnAddBill;
+        private DataGridView dgvDetail;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
-        private Guna.UI2.WinForms.Guna2Button btnAddBill;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }

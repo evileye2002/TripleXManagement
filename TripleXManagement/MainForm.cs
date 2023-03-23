@@ -5,6 +5,7 @@ namespace TripleXManagement
 {
     public partial class MainForm : Form
     {
+        static Form ff;
         private int borderSize = 2;
         private Button ?currencyButton;
         private Form ?activateForm;
@@ -172,7 +173,7 @@ namespace TripleXManagement
 
         private void btnFoodDrink_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenChildForm(new FoodManagement(), sender);
         }
 
         private void btnCustomer_Click(object sender, EventArgs e)

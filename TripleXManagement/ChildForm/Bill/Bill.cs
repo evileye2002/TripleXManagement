@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
 using System.Xml.Linq;
+using TripleXManagement.ChildForm.Bill;
 
 namespace TripleXManagement
 {
@@ -103,7 +104,7 @@ namespace TripleXManagement
 
         private void btnFoodManagement_Click(object sender, EventArgs e)
         {
-            Form form = new FoodManagement();
+            Form form = new BillManagement();
             form.ShowDialog();
         }
 
@@ -193,7 +194,8 @@ namespace TripleXManagement
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-
+            sizePrintPage();
+            printDocument1.Print();
         }
 
         private void deleteDetail()
@@ -244,6 +246,22 @@ namespace TripleXManagement
                     _price += double.Parse(row.Cells[2].Value.ToString());
                 }
             }*/
+        }
+
+        private void btnAddBill_Click(object sender, EventArgs e)
+        {
+            String sql = "";
+            for (int i = 0; i < dgvDetail.Rows.Count; i++)
+            {
+                sql += @"exec addBill " + dgvDetail.Rows[i].Cells[0].Value.ToString() + " \n";
+            }
+            conn.Open();
+            cmd = new SqlCommand(sql, conn);
+            //cmd.Parameters.AddWithValue("@FoodID", dgvDetail.Rows[i].Cells[0].Value.ToString());
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+            MessageBox.Show(sql);
         }
     }
 }
