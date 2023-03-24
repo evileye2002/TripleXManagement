@@ -17,8 +17,8 @@ namespace TripleXManagement.ChildForm.Bill
     {
         private Form activateForm;
         private int borderSize = 2;
+        public static String BillID = "";
         SqlConnection conn;
-        SqlCommand? cmd;
         public BillManagement()
         {
             InitializeComponent();
@@ -79,6 +79,8 @@ namespace TripleXManagement.ChildForm.Bill
             {
                 this.WindowState = FormWindowState.Maximized;
                 btnMaximize.Image = Properties.Resources.icons8_restore_down_261;
+                this.Padding = new Padding(0);
+
             }
             else
             {
@@ -111,7 +113,12 @@ namespace TripleXManagement.ChildForm.Bill
         private void btnCloseChildForm_Click(object sender, EventArgs e)
         {
             if (activateForm != null)
+            {
+                BillID = "";
                 activateForm.Close();
+                btnCloseChildForm.Visible = false;
+                pnFooter.Visible = true;
+            }
         }
         private void GetData()
         {
@@ -131,7 +138,24 @@ namespace TripleXManagement.ChildForm.Bill
 
         private void btnDetail_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new AddFood(), sender);
+            if (BillID == "")
+            {
+                MessageBox.Show("Chưa chọn Hóa đơn", "CẢNH BÁO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                OpenChildForm(new BillDetail(), sender);
+            }
+        }
+
+        private void dgvBill_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int selectedRow = dgvBill.SelectedRows.Count;
+            if (selectedRow == 1)
+            {
+                int t = dgvBill.CurrentCell.RowIndex;
+                BillID = dgvBill.Rows[t].Cells[0].Value.ToString();
+            }
         }
     }
 }

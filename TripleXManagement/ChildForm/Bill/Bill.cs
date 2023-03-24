@@ -250,18 +250,24 @@ namespace TripleXManagement
 
         private void btnAddBill_Click(object sender, EventArgs e)
         {
-            String sql = "";
-            for (int i = 0; i < dgvDetail.Rows.Count; i++)
+            int rowCount = dgvDetail.Rows.Count;
+            if (rowCount > 0)
             {
-                sql += @"exec addBill " + dgvDetail.Rows[i].Cells[0].Value.ToString() + " \n";
+                String sql = "";
+                for (int i = 0; i < rowCount; i++)
+                {
+                    sql += @"exec addBill " + dgvDetail.Rows[i].Cells[0].Value.ToString() + " \n";
+                }
+                conn.Open();
+                cmd = new SqlCommand(sql, conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                MessageBox.Show("Thêm thành công!", "Thông Báo", MessageBoxButtons.OK);
             }
-            conn.Open();
-            cmd = new SqlCommand(sql, conn);
-            //cmd.Parameters.AddWithValue("@FoodID", dgvDetail.Rows[i].Cells[0].Value.ToString());
-            cmd.ExecuteNonQuery();
-            conn.Close();
-
-            MessageBox.Show(sql);
+            else
+            {
+                MessageBox.Show("Chưa chọn Món!", "Thông Báo",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
