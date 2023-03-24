@@ -19,7 +19,7 @@ namespace TripleXManagement
     {
         double _total;
         double _price = 0;
-        String ?dash = "--------------------------------------------------------------------------------";
+        String ?dash = "------------------------------------------------------------------------------------------------";
         SqlConnection conn;
         SqlCommand ?cmd;
         SqlDataReader ?reader;
@@ -111,17 +111,24 @@ namespace TripleXManagement
         public void sizePrintPage()
         {
             int a;
-            if (dgvDetail.Rows.Count <= 11) { a = 0; }
-            else { a = dgvDetail.Rows.Count * 20 - 220; }
-            printDocument1.DefaultPageSettings.PaperSize = new PaperSize("size", 500, a + 700);
+            if (dgvDetail.Rows.Count <= 10) { a = 0; }
+            else { a = dgvDetail.Rows.Count * 40 - 400; }
+            printDocument1.DefaultPageSettings.PaperSize = new PaperSize("size", 500, a + 710);
         }
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
             (printPreviewDialog1 as Form).WindowState = FormWindowState.Maximized;
+            int gap = 10;
+            int gapDetail = 15;
+            int startY = 20;
+            int mn1 = 0;
+            int mn2 = 0;
+            int mn3 = 0;
             Graphics ?graphics = e.Graphics;
-            Font font = new("Arial", 12, FontStyle.Regular);
-            Font fontDetail = new("Arial", 10, FontStyle.Regular);
+            Font font = new("Arial", 10, FontStyle.Regular);
+            Font fontDetail = new("Arial", 8, FontStyle.Regular);
+            Font fontTitle = new("Arial", 10, FontStyle.Bold);
             Brush brush = Brushes.Black;
             StringFormat formatLeft = new(StringFormatFlags.NoClip);
             StringFormat formatCenter = new(formatLeft);
@@ -129,58 +136,70 @@ namespace TripleXManagement
             formatCenter.Alignment = StringAlignment.Center;
             formatRight.Alignment = StringAlignment.Far;
             formatLeft.Alignment = StringAlignment.Near;
+            
+            graphics.DrawString("NHÀ HÀNG TRIPLEX", new("Arial", 8, FontStyle.Bold), brush, new Point(25, startY));
+            graphics.DrawString("Z115 - Tân Thịnh - Thái Nguyên", fontDetail, brush, new Point(25, startY += gapDetail));
+            graphics.DrawString("0123456789", fontDetail, brush, new Point(25, startY += gapDetail));
 
-            graphics.DrawString("Nhà hàng TripleX", new Font("Arial", 10, FontStyle.Bold), brush, new Point(250, 40), formatCenter);
-            graphics.DrawString("Z115 - Tân Thịnh - Thái Nguyên", fontDetail, brush, new Point(250, 60), formatCenter);
-            graphics.DrawString("0123456789", fontDetail, brush, new Point(250, 80), formatCenter);
+            graphics.DrawString("HÓA ĐƠN", new Font("Arial", 16, FontStyle.Bold), brush, new Point(250, startY += gapDetail), formatCenter);
 
-            graphics.DrawString("HÓA ĐƠN", new Font("Arial", 16, FontStyle.Bold), brush, new Point(250, 100), formatCenter);
+            graphics.DrawString("Số Hóa đơn:" , font, brush, new Point(25, startY += gapDetail));
+            graphics.DrawString("Ngày:", font, brush, new Point(25, startY += gapDetail));
+            graphics.DrawString("Thu ngân:", font, brush, new Point(25, startY += gapDetail));
+            graphics.DrawString("Quầy:", font, brush, new Point(25, startY += gapDetail));
+            graphics.DrawString("Khách hàng:", font, brush, new Point(25, startY += gapDetail));
 
-            graphics.DrawString("Số Hóa đơn:", fontDetail, brush, new Point(25, 120));
-            graphics.DrawString("Ngày:", fontDetail, brush, new Point(25, 140));
-            graphics.DrawString("Thu ngân:", fontDetail, brush, new Point(25, 160));
-            graphics.DrawString("Quầy:", fontDetail, brush, new Point(25, 180));
-            graphics.DrawString("Khách hàng:", fontDetail, brush, new Point(25, 200));
+            graphics.DrawString(dash, font, brush, new Point(25, startY += gap));
 
-            graphics.DrawString(dash, font, brush, new Point(25, 220));
-
-            graphics.DrawString("Tên món", font,brush, new Point(25, 240));
-            graphics.DrawString("Giá", font,brush, new Point(420, 240), formatRight);
-
-            graphics.DrawString(dash, font,brush, new Point(25, 260));
+            graphics.DrawString("Mã món", fontTitle, brush, new Point(25, startY += gap));
+            graphics.DrawString("Đơn giá", fontTitle, brush, new Point(220, startY ), formatRight);
+            graphics.DrawString("Số lượng", fontTitle, brush, new Point(320, startY ), formatRight);
+            graphics.DrawString("Thành tiền" , fontTitle, brush, new Point(470, startY ), formatRight);
 
             for (int i = 0; i < dgvDetail.Rows.Count; i++)
             {
+                graphics.DrawString(dash , font, brush, new Point(25, i * gap + (startY += gap) ));
+
                 graphics.DrawString(dgvDetail.Rows[i].Cells[1].Value.ToString(),
-                    font, brush, new Point(25, i * 20 + 280));
+                    new("Arial", 10, FontStyle.Bold), brush, new Point(25, i * gap + (startY += gap)));
+
+                graphics.DrawString(dash, font, brush, new Point(25, i * gap + (startY += gap)));
+
+                int Y = startY;
                 graphics.DrawString(dgvDetail.Rows[i].Cells[2].Value.ToString(),
-                    font, brush, new Point(420, i * 20 + 280), formatRight);
-                graphics.DrawString("VNĐ", font,brush,new Point(425, i * 20 + 280), formatLeft);
+                    font, brush, new Point(25, i * gap + (Y += gap)) );
+                graphics.DrawString(dgvDetail.Rows[i].Cells[2].Value.ToString(),
+                    font, brush, new Point(220, i * gap + Y), formatRight);
+                graphics.DrawString(dgvDetail.Rows[i].Cells[2].Value.ToString(),
+                    font, brush, new Point(320, i * gap + Y), formatRight);
+                graphics.DrawString(dgvDetail.Rows[i].Cells[2].Value.ToString(),
+                    font, brush, new Point(430, i * gap + Y), formatRight);
+                graphics.DrawString("VNĐ", font,brush,new Point(470, i * gap + Y), formatRight);
 
             }
-            graphics.DrawString(dash, font,brush, new Point(25, dgvDetail.Rows.Count * 20 + 280));
+            graphics.DrawString(dash, font,brush, new Point(25, dgvDetail.Rows.Count * gap + (startY += gap)));
 
-            graphics.DrawString("Bằng chữ: ", font,brush, new Point(25, dgvDetail.Rows.Count * 20 + 300));
-            graphics.DrawString("Tổng: ", font,brush, new Point(25, dgvDetail.Rows.Count * 20 + 320));
-            graphics.DrawString("Tiền mặt: ", font,brush, new Point(25, dgvDetail.Rows.Count * 20 + 340));
-            graphics.DrawString("Thẻ ngân hàng: ", font,brush, new Point(25, dgvDetail.Rows.Count * 20 + 360));
+            graphics.DrawString("Bằng chữ: " , font,brush, new Point(25, dgvDetail.Rows.Count * gap + (startY += gapDetail)));
+            graphics.DrawString("Tổng: ", font,brush, new Point(25, dgvDetail.Rows.Count * gap + (mn1 += (startY += gapDetail))));
+            graphics.DrawString("Tiền mặt: ", font,brush, new Point(25, dgvDetail.Rows.Count * gap + (mn2 += (startY += gapDetail))));
+            graphics.DrawString("Thẻ ngân hàng: ", font,brush, new Point(25, dgvDetail.Rows.Count * gap + (mn3 += (startY += gapDetail))));
 
-            graphics.DrawString(lbTotal.Text, font,brush, new Point(420, dgvDetail.Rows.Count * 20 + 320), formatRight);
-            graphics.DrawString("1000", font,brush, new Point(420, dgvDetail.Rows.Count * 20 + 340), formatRight);
-            graphics.DrawString("1000", font,brush, new Point(420, dgvDetail.Rows.Count * 20 + 360), formatRight);
+            graphics.DrawString(lbTotal.Text, font,brush, new Point(430, dgvDetail.Rows.Count * gap + mn1), formatRight);
+            graphics.DrawString("1000", font,brush, new Point(430, dgvDetail.Rows.Count * gap + mn2), formatRight);
+            graphics.DrawString("1000", font,brush, new Point(430, dgvDetail.Rows.Count * gap + mn3), formatRight);
 
-            graphics.DrawString("VNĐ", font,brush, new Point(425, dgvDetail.Rows.Count * 20 + 320), formatLeft);
-            graphics.DrawString("VNĐ", font,brush, new Point(425, dgvDetail.Rows.Count * 20 + 340), formatLeft);
-            graphics.DrawString("VNĐ", font,brush, new Point(425, dgvDetail.Rows.Count * 20 + 360), formatLeft);
+            graphics.DrawString("VNĐ", font,brush, new Point(470, dgvDetail.Rows.Count * gap + mn1), formatRight);
+            graphics.DrawString("VNĐ", font,brush, new Point(470, dgvDetail.Rows.Count * gap + mn2), formatRight);
+            graphics.DrawString("VNĐ", font,brush, new Point(470, dgvDetail.Rows.Count * gap + mn3), formatRight);
 
-            graphics.DrawString(dash, font,brush, new Point(25, dgvDetail.Rows.Count * 20 + 380));
+            graphics.DrawString(dash, font,brush, new Point(25, dgvDetail.Rows.Count * gap + (startY += gap)));
 
             graphics.DrawString("QUÝ KHÁCH VUI LÒNG KIỂM TRA HÓA ĐƠN",
-                new Font("Arial", 10, FontStyle.Regular), brush, new Point(250, dgvDetail.Rows.Count * 20 + 400), formatCenter);
+                new Font("Arial", 8, FontStyle.Regular), brush, new Point(250, dgvDetail.Rows.Count * gap + (startY += gapDetail)), formatCenter);
             graphics.DrawString("TRƯỚC KHI RA KHỎI QUẦY",
-                new Font("Arial", 10, FontStyle.Regular), brush, new Point(250, dgvDetail.Rows.Count * 20 + 420), formatCenter);
+                new Font("Arial", 8, FontStyle.Regular), brush, new Point(250, dgvDetail.Rows.Count * gap + (startY += gapDetail)), formatCenter);
             graphics.DrawString("Xin chân thành cảm ơn quý khách và hẹn gặp lại",
-                new Font("Arial", 10, FontStyle.Bold), brush, new Point(250, dgvDetail.Rows.Count * 20 + 440), formatCenter);
+                new Font("Arial", 8, FontStyle.Bold), brush, new Point(250, dgvDetail.Rows.Count * gap + (startY += gapDetail)) , formatCenter);
 
             e.HasMorePages = false;
         }

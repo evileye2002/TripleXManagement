@@ -24,7 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="StaticClass\" />
     <Folder Include="Resources\" />
   </ItemGroup>
 
