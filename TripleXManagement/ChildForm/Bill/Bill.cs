@@ -17,6 +17,7 @@ namespace TripleXManagement
 {
     public partial class Bill : Form
     {
+        private Form activateForm;
         double _total;
         double _price = 0;
         int isBank = 0;
@@ -103,8 +104,9 @@ namespace TripleXManagement
 
         private void btnFoodManagement_Click(object sender, EventArgs e)
         {
-            Form form = new BillManagement();
-            form.ShowDialog();
+            OpenChildForm(new BillManagement(), sender);
+            /*Form form = new BillManagement();
+            form.ShowDialog();*/
         }
 
         /*public void sizePrintPage()
@@ -295,6 +297,37 @@ namespace TripleXManagement
             else
             {
                 MessageBox.Show("Chưa chọn Món!", "Thông Báo",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        public void OpenChildForm(Form childForm, object btnSender)
+        {
+            if (activateForm != null)
+            {
+                activateForm.Close();
+            }
+            activateForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            this.pnMain.Controls.Add(childForm);
+            this.pnMain.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            //btnCloseChildForm.Visible = true;
+            pnFooter.Visible = false;
+            pnDGV.Visible = false;
+        }
+        private void btnCloseChildForm_Click(object sender, EventArgs e)
+        {
+            if (activateForm != null)
+            {
+                //BillID = "";
+                activateForm.Close();
+                //btnCloseChildForm.Visible = false;
+                pnFooter.Visible = true;
+
+                GetData();
             }
         }
     }

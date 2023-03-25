@@ -64,7 +64,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 398);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(937, 52);
+            this.panel1.Size = new System.Drawing.Size(826, 52);
             this.panel1.TabIndex = 1;
             // 
             // btnSave
@@ -156,7 +156,7 @@
             this.txtPrice.ShadowDecoration.Depth = 20;
             this.txtPrice.ShadowDecoration.Enabled = true;
             this.txtPrice.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(4, 3, 4, 5);
-            this.txtPrice.Size = new System.Drawing.Size(555, 50);
+            this.txtPrice.Size = new System.Drawing.Size(437, 50);
             this.txtPrice.TabIndex = 2;
             this.txtPrice.TextOffset = new System.Drawing.Point(8, 0);
             // 
@@ -189,7 +189,7 @@
             this.txtName.ShadowDecoration.Depth = 20;
             this.txtName.ShadowDecoration.Enabled = true;
             this.txtName.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(4, 3, 4, 5);
-            this.txtName.Size = new System.Drawing.Size(555, 50);
+            this.txtName.Size = new System.Drawing.Size(437, 50);
             this.txtName.TabIndex = 2;
             this.txtName.TextOffset = new System.Drawing.Point(8, 0);
             // 
@@ -202,7 +202,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(937, 450);
+            this.ClientSize = new System.Drawing.Size(826, 450);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.panel1);

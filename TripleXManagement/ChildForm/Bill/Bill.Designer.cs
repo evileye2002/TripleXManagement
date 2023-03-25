@@ -36,34 +36,36 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnFooter = new System.Windows.Forms.Panel();
             this.btnFoodManagement = new Guna.UI2.WinForms.Guna2Button();
             this.btnAddBill = new Guna.UI2.WinForms.Guna2Button();
             this.lbTotal = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnDGV = new System.Windows.Forms.Panel();
             this.dgvDetail = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.pnMain = new System.Windows.Forms.Panel();
+            this.pnFooter.SuspendLayout();
+            this.pnDGV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
+            this.pnMain.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnFooter
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            this.panel1.Controls.Add(this.btnFoodManagement);
-            this.panel1.Controls.Add(this.btnAddBill);
-            this.panel1.Controls.Add(this.lbTotal);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 504);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1000, 51);
-            this.panel1.TabIndex = 0;
+            this.pnFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.pnFooter.Controls.Add(this.btnFoodManagement);
+            this.pnFooter.Controls.Add(this.btnAddBill);
+            this.pnFooter.Controls.Add(this.lbTotal);
+            this.pnFooter.Controls.Add(this.label1);
+            this.pnFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnFooter.Location = new System.Drawing.Point(0, 504);
+            this.pnFooter.Name = "pnFooter";
+            this.pnFooter.Size = new System.Drawing.Size(1000, 51);
+            this.pnFooter.TabIndex = 0;
             // 
             // btnFoodManagement
             // 
@@ -150,14 +152,14 @@
             this.label1.Text = "VNĐ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // panel2
+            // pnDGV
             // 
-            this.panel2.Controls.Add(this.dgvDetail);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(687, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(313, 504);
-            this.panel2.TabIndex = 1;
+            this.pnDGV.Controls.Add(this.dgvDetail);
+            this.pnDGV.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnDGV.Location = new System.Drawing.Point(687, 0);
+            this.pnDGV.Name = "pnDGV";
+            this.pnDGV.Size = new System.Drawing.Size(313, 504);
+            this.pnDGV.TabIndex = 1;
             // 
             // dgvDetail
             // 
@@ -171,7 +173,7 @@
             this.dgvDetail.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
@@ -252,32 +254,42 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(687, 504);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
+            // pnMain
+            // 
+            this.pnMain.Controls.Add(this.flowLayoutPanel1);
+            this.pnMain.Controls.Add(this.pnDGV);
+            this.pnMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnMain.Location = new System.Drawing.Point(0, 0);
+            this.pnMain.Name = "pnMain";
+            this.pnMain.Size = new System.Drawing.Size(1000, 504);
+            this.pnMain.TabIndex = 3;
+            // 
             // Bill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1000, 555);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnMain);
+            this.Controls.Add(this.pnFooter);
             this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Bill";
             this.Text = "Bill";
             this.Load += new System.EventHandler(this.Bill_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
+            this.pnFooter.ResumeLayout(false);
+            this.pnFooter.PerformLayout();
+            this.pnDGV.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).EndInit();
+            this.pnMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Panel panel1;
-        private Panel panel2;
+        private Panel pnFooter;
+        private Panel pnDGV;
         private Label label1;
         private Label lbTotal;
         private Guna.UI2.WinForms.Guna2Button btnFoodManagement;
@@ -287,5 +299,6 @@
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private FlowLayoutPanel flowLayoutPanel1;
+        private Panel pnMain;
     }
 }
