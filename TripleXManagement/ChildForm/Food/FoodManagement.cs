@@ -13,15 +13,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TripleXManagement.ChildForm.Bill;
+using TripleXManagement.ChildForm.Food;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace TripleXManagement
 {
     public partial class FoodManagement : Form
     {
-        private string foodID;
-        private string name;
-        private string price;
+        public static string foodID = "";
+        public static string name = "" ;
+        public static string price = "";
+        //public static string image = "";
         private Form activateForm;
         SqlConnection conn;
         SqlCommand cmd;
@@ -50,7 +52,7 @@ namespace TripleXManagement
             this.pnMain.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-            //btnCloseChildForm.Visible = true;
+            pnFooter.Visible = false;
         }
 
         private void btnAddFood_Click(object sender, EventArgs e)
@@ -83,6 +85,7 @@ namespace TripleXManagement
                 foodID = dgvFood.Rows[t].Cells[0].Value.ToString();
                 name = dgvFood.Rows[t].Cells[1].Value.ToString();
                 price = dgvFood.Rows[t].Cells[2].Value.ToString();
+                //image = dgvFood.Rows[t].Cells[3].Value.ToString();
             }
         }
 
@@ -102,13 +105,18 @@ namespace TripleXManagement
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            String sql = "exec editFoodbyId " + foodID + ", " + name + ", " + price;
-            conn.Open();
-            cmd = new SqlCommand(sql, conn);
-            cmd.ExecuteNonQuery();
-            conn.Close();
+            /* String sql = "exec editFoodbyId " + foodID + ", " + name + ", " + price;
+             conn.Open();
+             cmd = new SqlCommand(sql, conn);
+             cmd.ExecuteNonQuery();
+             conn.Close();
 
-            GetData();
+             GetData();*/
+
+            if(foodID != "")
+            {
+                OpenChildForm(new EditFood(), sender);
+            }
         }
     }
 }

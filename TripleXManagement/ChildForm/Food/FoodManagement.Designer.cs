@@ -44,6 +44,7 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnFooter.SuspendLayout();
             this.pnMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFood)).BeginInit();
@@ -153,7 +154,8 @@
             this.dgvFood.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
-            this.Column3});
+            this.Column3,
+            this.Column4});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -217,6 +219,14 @@
             this.Column3.ReadOnly = true;
             this.Column3.Width = 200;
             // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Image";
+            this.Column4.HeaderText = "img";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Visible = false;
+            // 
             // FoodManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -241,9 +251,10 @@
         private Panel pnFooter;
         private Panel pnMain;
         private DataGridView dgvFood;
+        private Guna.UI2.WinForms.Guna2Button btnEdit;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
-        private Guna.UI2.WinForms.Guna2Button btnEdit;
+        private DataGridViewTextBoxColumn Column4;
     }
 }

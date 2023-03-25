@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,10 +27,21 @@ namespace TripleXManagement
 
         private void btnBrowse_Click(object sender, EventArgs e)
         {
-            ofdBrowse.Filter = "Image files (*.png) |*.png|(*.jpg)|*.jpg|(*.gif)|*.gif|(*.jpeg)|*.jpeg";
+            ofdBrowse.Filter = "Image files (*.jpeg)|*.jpeg|(*.png)|*.png|(*.jpg)|*.jpg|(*.gif)|*.gif";
             ofdBrowse.ShowDialog();
-            pbPic.BackgroundImage = Image.FromFile(ofdBrowse.FileName);
-            pbPic.BackgroundImageLayout = ImageLayout.Stretch;
+
+            if (ofdBrowse.FileName != "openFileDialog1")
+            {
+                pbPic.BackgroundImage = Image.FromFile(ofdBrowse.FileName);
+                pbPic.BackgroundImageLayout = ImageLayout.Stretch;
+            }
+        }
+
+        private void clear()
+        {
+            txtName.Text = "";
+            txtPrice.Text = "";
+            pbPic.BackgroundImage = null;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -47,6 +59,8 @@ namespace TripleXManagement
                 cmd.Parameters.AddWithValue("@Image", array);
                 cmd.ExecuteNonQuery();
                 conn.Close();
+
+                clear();
                 MessageBox.Show("Đã lưu!", "THÔNG BÁO!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
