@@ -40,7 +40,6 @@ namespace TripleXManagement
         private void Bill_Load(object sender, EventArgs e)
         {
             GetData();
-            sizePrintPage();
         }
 
         private void GetData()
@@ -87,7 +86,6 @@ namespace TripleXManagement
         public void OnClick(object sender, EventArgs e)
         {
             string ?tag = ((PictureBox)sender).Tag.ToString();
-            //MessageBox.Show(tag);
             conn.Open();
             cmd = new SqlCommand("select * from MonAn where ID = '" + tag + "'", conn);
             reader = cmd.ExecuteReader();

@@ -6,11 +6,13 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Azure.Core.HttpHeader;
 
 namespace TripleXManagement.ChildForm.Bill
 {
@@ -21,12 +23,12 @@ namespace TripleXManagement.ChildForm.Bill
         string finalTotalText = "";
         public static double finalTotal = 0;
         public static int isBank = 0;
+        public static String BillID = "";
         string finalTotalM = "";
         string finalTotalB = "";
         SqlConnection conn;
         SqlCommand cmd;
         SqlDataReader reader;
-        public static String BillID = ""; 
         public BillDetail()
         {
             InitializeComponent();
@@ -182,10 +184,26 @@ namespace TripleXManagement.ChildForm.Bill
             printPreviewDialog1.ShowDialog();
         }
 
-        private void btnPrint_Click(object sender, EventArgs e)
+        private void print()
         {
             sizePrintPage();
-            printDocument1.Print();
+            string path = @"E:\DAI_HOC\NAM_3\Ky 2\Thuc tap co so\TripleXManagement\Print";
+            string filName = @"E:\DAI_HOC\NAM_3\Ky 2\Thuc tap co so\TripleXManagement\Print\" + BillID + ".pdf";
+
+            if (Directory.Exists(path) && !File.Exists(filName))
+            {
+                PrintDocument pdoc = new PrintDocument();
+                pdoc.PrinterSettings.PrinterName = "Microsoft Print to PDF";
+                pdoc.PrinterSettings.PrintFileName = filName;
+                pdoc.PrinterSettings.PrintToFile = true;
+                pdoc.PrintPage += printDocument1_PrintPage;
+                pdoc.Print();
+            }
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            print();
         }
         public static string NumberToText(double inputNumber, bool suffix = true)
         {
@@ -273,6 +291,15 @@ namespace TripleXManagement.ChildForm.Bill
             result = result.Trim();
             if (isNegative) result = "Âm " + result;
             return result + (suffix ? " đồng chẵn" : "");
+        }
+
+        private void BillDetail_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.P)
+            {
+                sizePrintPage();
+                print();
+            }
         }
     }
 }

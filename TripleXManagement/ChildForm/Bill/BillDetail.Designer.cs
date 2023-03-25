@@ -102,6 +102,7 @@
             this.dgvBillDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBillDetail.Size = new System.Drawing.Size(800, 398);
             this.dgvBillDetail.TabIndex = 6;
+            this.dgvBillDetail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BillDetail_KeyDown);
             // 
             // Column1
             // 
