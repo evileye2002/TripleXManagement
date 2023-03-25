@@ -12,6 +12,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static Azure.Core.HttpHeader;
 
 namespace TripleXManagement.ChildForm.Bill
@@ -24,6 +25,7 @@ namespace TripleXManagement.ChildForm.Bill
         public static double finalTotal = 0;
         public static int isBank = 0;
         public static String BillID = "";
+        public static String foodID = "";
         string finalTotalM = "";
         string finalTotalB = "";
         SqlConnection conn;
@@ -299,6 +301,28 @@ namespace TripleXManagement.ChildForm.Bill
             {
                 sizePrintPage();
                 print();
+            }else if (e.KeyCode == Keys.Delete)
+            {
+                if(dgvBillDetail.SelectedRows.Count > 0)
+                {
+                    String sql = "exec delBillDetailbyId " + foodID + ", " + BillID;
+                    conn.Open();
+                    cmd = new SqlCommand(sql, conn);
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+
+                    GetData();
+                }
+            }
+        }
+
+        private void dgvBillDetail_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int selectedRow = dgvBillDetail.SelectedRows.Count;
+            if (selectedRow == 1)
+            {
+                int t = dgvBillDetail.CurrentCell.RowIndex;
+                foodID = dgvBillDetail.Rows[t].Cells[0].Value.ToString();
             }
         }
     }

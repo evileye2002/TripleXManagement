@@ -21,6 +21,7 @@ namespace TripleXManagement.ChildForm.Bill
         public static double FinaTotal = 0;
         public static int IsBank = 0;
         SqlConnection conn;
+        SqlCommand cmd;
         public BillManagement()
         {
             InitializeComponent();
@@ -120,6 +121,8 @@ namespace TripleXManagement.ChildForm.Bill
                 activateForm.Close();
                 btnCloseChildForm.Visible = false;
                 pnFooter.Visible = true;
+
+                GetData();
             }
         }
         private void GetData()
@@ -140,11 +143,7 @@ namespace TripleXManagement.ChildForm.Bill
 
         private void btnDetail_Click(object sender, EventArgs e)
         {
-            if (BillID == "")
-            {
-                MessageBox.Show("Chưa chọn Hóa đơn", "CẢNH BÁO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
+            if (BillID != "")
             {
                 OpenChildForm(new BillDetail(), sender);
             }
@@ -159,6 +158,20 @@ namespace TripleXManagement.ChildForm.Bill
                 BillID = dgvBill.Rows[t].Cells[0].Value.ToString();
                 FinaTotal = double.Parse(dgvBill.Rows[t].Cells[2].Value.ToString());
                 IsBank = int.Parse(dgvBill.Rows[t].Cells[3].Value.ToString());
+            }
+        }
+
+        private void dgvBill_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                String sql = "exec delBillbyId " + BillID;
+                conn.Open();
+                cmd = new SqlCommand(sql, conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+
+                GetData();
             }
         }
     }

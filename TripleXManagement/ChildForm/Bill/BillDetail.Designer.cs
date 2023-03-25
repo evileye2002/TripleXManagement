@@ -102,6 +102,7 @@
             this.dgvBillDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBillDetail.Size = new System.Drawing.Size(800, 398);
             this.dgvBillDetail.TabIndex = 6;
+            this.dgvBillDetail.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBillDetail_CellClick);
             this.dgvBillDetail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BillDetail_KeyDown);
             // 
             // Column1
@@ -268,15 +269,15 @@
         #endregion
 
         private DataGridView dgvBillDetail;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
         private Panel panel1;
         private Guna.UI2.WinForms.Guna2Button btnPrintPriview;
         private Guna.UI2.WinForms.Guna2Button btnPrint;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private PrintPreviewDialog printPreviewDialog1;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
     }
 }

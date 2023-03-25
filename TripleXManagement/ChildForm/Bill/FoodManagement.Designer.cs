@@ -32,15 +32,12 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnAddFood = new Guna.UI2.WinForms.Guna2Button();
             this.pnFooter = new System.Windows.Forms.Panel();
-            this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
             this.pnMain = new System.Windows.Forms.Panel();
             this.dgvFood = new System.Windows.Forms.DataGridView();
@@ -74,7 +71,7 @@
             this.btnAddFood.HoverState.Image = global::TripleXManagement.Properties.Resources.print_32px1;
             this.btnAddFood.Image = global::TripleXManagement.Properties.Resources.print_32px;
             this.btnAddFood.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnAddFood.Location = new System.Drawing.Point(20, 5);
+            this.btnAddFood.Location = new System.Drawing.Point(20, 4);
             this.btnAddFood.Name = "btnAddFood";
             this.btnAddFood.ShadowDecoration.CustomizableEdges = customizableEdges2;
             this.btnAddFood.Size = new System.Drawing.Size(105, 42);
@@ -85,7 +82,6 @@
             // pnFooter
             // 
             this.pnFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            this.pnFooter.Controls.Add(this.btnDelete);
             this.pnFooter.Controls.Add(this.btnEdit);
             this.pnFooter.Controls.Add(this.btnAddFood);
             this.pnFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -94,36 +90,6 @@
             this.pnFooter.Size = new System.Drawing.Size(921, 50);
             this.pnFooter.TabIndex = 2;
             // 
-            // btnDelete
-            // 
-            this.btnDelete.AutoRoundedCorners = true;
-            this.btnDelete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnDelete.BorderRadius = 20;
-            this.btnDelete.BorderThickness = 2;
-            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.CustomizableEdges = customizableEdges3;
-            this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDelete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnDelete.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnDelete.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnDelete.HoverState.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnDelete.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnDelete.HoverState.Image = global::TripleXManagement.Properties.Resources.print_32px1;
-            this.btnDelete.Image = global::TripleXManagement.Properties.Resources.print_32px;
-            this.btnDelete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDelete.Location = new System.Drawing.Point(248, 5);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            this.btnDelete.Size = new System.Drawing.Size(105, 42);
-            this.btnDelete.TabIndex = 3;
-            this.btnDelete.Text = "Xóa";
-            this.btnDelete.Click += new System.EventHandler(this.btnAddFood_Click);
-            // 
             // btnEdit
             // 
             this.btnEdit.AutoRoundedCorners = true;
@@ -131,7 +97,7 @@
             this.btnEdit.BorderRadius = 20;
             this.btnEdit.BorderThickness = 2;
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEdit.CustomizableEdges = customizableEdges5;
+            this.btnEdit.CustomizableEdges = customizableEdges3;
             this.btnEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -146,13 +112,13 @@
             this.btnEdit.HoverState.Image = global::TripleXManagement.Properties.Resources.print_32px1;
             this.btnEdit.Image = global::TripleXManagement.Properties.Resources.print_32px;
             this.btnEdit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnEdit.Location = new System.Drawing.Point(134, 5);
+            this.btnEdit.Location = new System.Drawing.Point(134, 4);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            this.btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges4;
             this.btnEdit.Size = new System.Drawing.Size(105, 42);
             this.btnEdit.TabIndex = 3;
             this.btnEdit.Text = "Sửa";
-            this.btnEdit.Click += new System.EventHandler(this.btnAddFood_Click);
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // pnMain
             // 
@@ -209,6 +175,8 @@
             this.dgvFood.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFood.Size = new System.Drawing.Size(921, 505);
             this.dgvFood.TabIndex = 1;
+            this.dgvFood.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFood_CellClick);
+            this.dgvFood.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvFood_KeyDown);
             // 
             // Column1
             // 
@@ -276,7 +244,6 @@
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
-        private Guna.UI2.WinForms.Guna2Button btnDelete;
         private Guna.UI2.WinForms.Guna2Button btnEdit;
     }
 }

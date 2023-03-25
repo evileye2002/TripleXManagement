@@ -24,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="ChildForm\Food\" />
     <Folder Include="Resources\" />
   </ItemGroup>
 
