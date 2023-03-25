@@ -109,7 +109,7 @@ namespace TripleXManagement
             form.ShowDialog();
         }
 
-        public void sizePrintPage()
+        /*public void sizePrintPage()
         {
             int a;
             if (dgvDetail.Rows.Count <= 10) { a = 0; }
@@ -216,7 +216,7 @@ namespace TripleXManagement
         {
             sizePrintPage();
             printDocument1.Print();
-        }
+        }*/
 
         private void deleteDetail()
         {

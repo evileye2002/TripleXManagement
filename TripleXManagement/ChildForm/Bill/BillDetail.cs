@@ -65,15 +65,15 @@ namespace TripleXManagement.ChildForm.Bill
         public void sizePrintPage()
         {
             int a;
-            if (dgvBillDetail.Rows.Count <= 10) { a = 0; }
-            else { a = dgvBillDetail.Rows.Count * 40 - 400; }
+            if (dgvBillDetail.Rows.Count <= 9) { a = 0; }
+            else { a = dgvBillDetail.Rows.Count * 44 - 400; }
             printDocument1.DefaultPageSettings.PaperSize = new PaperSize("size", 500, a + 710);
         }
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
             (printPreviewDialog1 as Form).WindowState = FormWindowState.Maximized;
-            int gap = 10;
+            int gap = 11;
             int gapDetail = 15;
             int startY = 20;
             int mn1 = 0;
