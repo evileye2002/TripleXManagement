@@ -43,6 +43,7 @@
             this.ofdBrowse = new System.Windows.Forms.OpenFileDialog();
             this.txtPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.textbox1 = new TripleXManagement.CustomControl.Textbox();
             ((System.ComponentModel.ISupportInitialize)(this.pbPic)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -197,12 +198,32 @@
             this.txtName.TabIndex = 2;
             this.txtName.TextOffset = new System.Drawing.Point(8, 0);
             // 
+            // textbox1
+            // 
+            this.textbox1.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.textbox1.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.textbox1.BorderRadius = 16;
+            this.textbox1.BorderSize = 2;
+            this.textbox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textbox1.Location = new System.Drawing.Point(441, 186);
+            this.textbox1.Multiline = false;
+            this.textbox1.Name = "textbox1";
+            this.textbox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.textbox1.PasswordChar = false;
+            this.textbox1.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.textbox1.PlaceholderText = "Tên Món Ăn...";
+            this.textbox1.Size = new System.Drawing.Size(201, 36);
+            this.textbox1.TabIndex = 3;
+            this.textbox1.Texts = "";
+            this.textbox1.UnderlinedStyle = false;
+            // 
             // AddFood
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(826, 450);
+            this.Controls.Add(this.textbox1);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.panel1);
@@ -225,5 +246,6 @@
         private OpenFileDialog ofdBrowse;
         private Guna.UI2.WinForms.Guna2TextBox txtPrice;
         private Guna.UI2.WinForms.Guna2TextBox txtName;
+        private CustomControl.Textbox textbox1;
     }
 }
