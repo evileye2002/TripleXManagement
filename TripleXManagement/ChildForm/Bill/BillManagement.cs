@@ -18,6 +18,8 @@ namespace TripleXManagement.ChildForm.Bill
         private Form activateForm;
         private int borderSize = 2;
         public static String BillID = "";
+        public static double FinaTotal = 0;
+        public static int IsBank = 0;
         SqlConnection conn;
         public BillManagement()
         {
@@ -155,6 +157,8 @@ namespace TripleXManagement.ChildForm.Bill
             {
                 int t = dgvBill.CurrentCell.RowIndex;
                 BillID = dgvBill.Rows[t].Cells[0].Value.ToString();
+                FinaTotal = double.Parse(dgvBill.Rows[t].Cells[2].Value.ToString());
+                IsBank = int.Parse(dgvBill.Rows[t].Cells[3].Value.ToString());
             }
         }
     }

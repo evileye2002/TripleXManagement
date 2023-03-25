@@ -19,6 +19,7 @@ namespace TripleXManagement
     {
         double _total;
         double _price = 0;
+        int isBank = 0;
         String ?dash = "------------------------------------------------------------------------------------------------";
         SqlConnection conn;
         SqlCommand ?cmd;
@@ -272,10 +273,20 @@ namespace TripleXManagement
             int rowCount = dgvDetail.Rows.Count;
             if (rowCount > 0)
             {
+                DialogResult dialogResult = MessageBox.Show("Thanh toán bằng thẻ ngân hàng?", "Loại thanh toán", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    isBank = 1;
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    isBank = 0;
+                }
+
                 String sql = "";
                 for (int i = 0; i < rowCount; i++)
                 {
-                    sql += @"exec addBill " + dgvDetail.Rows[i].Cells[0].Value.ToString() + " \n";
+                    sql += @"exec addBill " + dgvDetail.Rows[i].Cells[0].Value.ToString() + ", " + isBank.ToString() + " \n";
                 }
                 conn.Open();
                 cmd = new SqlCommand(sql, conn);
