@@ -79,5 +79,25 @@ namespace TripleXManagement.ChildForm.Staff
         {
             StaticClass.SharedClass.HoverBtnState(btnDenied, Properties.Resources.denied_20px, false);
         }
+
+        private void btnBrowse_MouseEnter(object sender, EventArgs e)
+        {
+            StaticClass.SharedClass.HoverBtnState(btnBrowse, Properties.Resources.denied_20px, true);
+        }
+
+        private void btnBrowse_MouseLeave(object sender, EventArgs e)
+        {
+            StaticClass.SharedClass.HoverBtnState(btnBrowse, Properties.Resources.denied_20px, false);
+        }
+
+        private void btnSave_MouseEnter(object sender, EventArgs e)
+        {
+            StaticClass.SharedClass.HoverBtnState(btnSave, Properties.Resources.denied_20px, true);
+        }
+
+        private void btnSave_MouseLeave(object sender, EventArgs e)
+        {
+            StaticClass.SharedClass.HoverBtnState(btnSave, Properties.Resources.denied_20px, false);
+        }
     }
 }

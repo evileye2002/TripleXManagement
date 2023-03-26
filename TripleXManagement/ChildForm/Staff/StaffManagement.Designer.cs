@@ -172,6 +172,7 @@
             this.dgvStaff.Size = new System.Drawing.Size(921, 505);
             this.dgvStaff.TabIndex = 2;
             this.dgvStaff.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStaff_CellClick);
+            this.dgvStaff.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvStaff_KeyDown);
             // 
             // Column1
             // 

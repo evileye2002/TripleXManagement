@@ -65,5 +65,25 @@ namespace TripleXManagement.ChildForm.Staff
             else
                 StaticClass.SharedClass.FillCBB("select * from Account", cbAccount, "Username");
         }
+
+        private void btnSave_MouseEnter(object sender, EventArgs e)
+        {
+            StaticClass.SharedClass.HoverBtnState(btnSave, Properties.Resources.denied_20px, true);
+        }
+
+        private void btnSave_MouseLeave(object sender, EventArgs e)
+        {
+            StaticClass.SharedClass.HoverBtnState(btnSave, Properties.Resources.denied_20px, false);
+        }
+
+        private void btnDenied_MouseEnter(object sender, EventArgs e)
+        {
+            StaticClass.SharedClass.HoverBtnState(btnDenied, Properties.Resources.denied_20px1, true);
+        }
+
+        private void btnDenied_MouseLeave(object sender, EventArgs e)
+        {
+            StaticClass.SharedClass.HoverBtnState(btnDenied, Properties.Resources.denied_20px, false);
+        }
     }
 }

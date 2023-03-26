@@ -1,5 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using TripleXManagement.ChildForm.Account;
 using TripleXManagement.ChildForm.Staff;
 
 namespace TripleXManagement
@@ -183,7 +184,7 @@ namespace TripleXManagement
 
         private void btnWarehouse_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenChildForm(new AccountManagement(), sender);
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

@@ -145,9 +145,10 @@
             this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(this.btnBrowse);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 400);
+            this.panel1.Location = new System.Drawing.Point(0, 505);
+            this.panel1.MaximumSize = new System.Drawing.Size(0, 50);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 50);
+            this.panel1.Size = new System.Drawing.Size(921, 50);
             this.panel1.TabIndex = 14;
             // 
             // btnDenied
@@ -172,6 +173,8 @@
             this.btnDenied.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDenied.UseVisualStyleBackColor = false;
             this.btnDenied.Click += new System.EventHandler(this.btnDenied_Click);
+            this.btnDenied.MouseEnter += new System.EventHandler(this.btnDenied_MouseEnter);
+            this.btnDenied.MouseLeave += new System.EventHandler(this.btnDenied_MouseLeave);
             // 
             // btnSave
             // 
@@ -196,6 +199,8 @@
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSave.MouseEnter += new System.EventHandler(this.btnSave_MouseEnter);
+            this.btnSave.MouseLeave += new System.EventHandler(this.btnSave_MouseLeave);
             // 
             // btnBrowse
             // 
@@ -226,7 +231,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(921, 555);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.cbAccount);
             this.Controls.Add(this.cbRegency);

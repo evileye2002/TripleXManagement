@@ -85,5 +85,16 @@ namespace TripleXManagement.ChildForm.Staff
         {
             StaticClass.SharedClass.HoverBtnState(btnEdit, Properties.Resources.database_administrator_20px1, false);
         }
+
+        private void dgvStaff_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                String sql = "exec delStaffbyID " + ID;
+                StaticClass.SqlClass.RunSql(sql);
+
+                GetData();
+            }
+        }
     }
 }
