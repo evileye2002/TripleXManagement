@@ -1,5 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using TripleXManagement.ChildForm.Staff;
 
 namespace TripleXManagement
 {
@@ -175,9 +176,9 @@ namespace TripleXManagement
             OpenChildForm(new FoodManagement(), sender);
         }
 
-        private void btnCustomer_Click(object sender, EventArgs e)
+        private void btnStaff_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenChildForm(new StaffManagement(), sender);
         }
 
         private void btnWarehouse_Click(object sender, EventArgs e)

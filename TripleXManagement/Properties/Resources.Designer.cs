@@ -93,6 +93,16 @@ namespace TripleXManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap coffee_table_32px {
+            get {
+                object obj = ResourceManager.GetObject("coffee_table_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Cutlery_32 {
             get {
                 object obj = ResourceManager.GetObject("Cutlery-32", resourceCulture);
@@ -136,6 +146,26 @@ namespace TripleXManagement.Properties {
         internal static System.Drawing.Bitmap database_administrator_32px1 {
             get {
                 object obj = ResourceManager.GetObject("database_administrator_32px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap denied_20px {
+            get {
+                object obj = ResourceManager.GetObject("denied_20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap denied_20px1 {
+            get {
+                object obj = ResourceManager.GetObject("denied_20px1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -256,6 +286,16 @@ namespace TripleXManagement.Properties {
         internal static System.Drawing.Bitmap Logout_32 {
             get {
                 object obj = ResourceManager.GetObject("Logout-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Male_user_32 {
+            get {
+                object obj = ResourceManager.GetObject("Male-user-32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

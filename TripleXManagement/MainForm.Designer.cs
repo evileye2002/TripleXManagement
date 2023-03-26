@@ -30,8 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.pnMenu = new System.Windows.Forms.Panel();
+            this.bntTable = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.btnWarehouse = new System.Windows.Forms.Button();
+            this.btnAccount = new System.Windows.Forms.Button();
             this.btnCustomer = new System.Windows.Forms.Button();
             this.btnFoodDrink = new System.Windows.Forms.Button();
             this.btnBill = new System.Windows.Forms.Button();
@@ -59,8 +60,9 @@
             // pnMenu
             // 
             this.pnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.pnMenu.Controls.Add(this.bntTable);
             this.pnMenu.Controls.Add(this.btnLogout);
-            this.pnMenu.Controls.Add(this.btnWarehouse);
+            this.pnMenu.Controls.Add(this.btnAccount);
             this.pnMenu.Controls.Add(this.btnCustomer);
             this.pnMenu.Controls.Add(this.btnFoodDrink);
             this.pnMenu.Controls.Add(this.btnBill);
@@ -71,13 +73,34 @@
             this.pnMenu.Size = new System.Drawing.Size(205, 516);
             this.pnMenu.TabIndex = 0;
             // 
+            // bntTable
+            // 
+            this.bntTable.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bntTable.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bntTable.FlatAppearance.BorderSize = 0;
+            this.bntTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bntTable.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.bntTable.ForeColor = System.Drawing.SystemColors.Control;
+            this.bntTable.Image = global::TripleXManagement.Properties.Resources.coffee_table_32px;
+            this.bntTable.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bntTable.Location = new System.Drawing.Point(0, 246);
+            this.bntTable.Name = "bntTable";
+            this.bntTable.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.bntTable.Size = new System.Drawing.Size(205, 50);
+            this.bntTable.TabIndex = 6;
+            this.bntTable.Tag = "Bàn ăn";
+            this.bntTable.Text = "Bàn ăn";
+            this.bntTable.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bntTable.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.bntTable.UseVisualStyleBackColor = true;
+            // 
             // btnLogout
             // 
             this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnLogout.ForeColor = System.Drawing.SystemColors.Control;
             this.btnLogout.Image = global::TripleXManagement.Properties.Resources.Logout_32;
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -93,27 +116,27 @@
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // btnWarehouse
+            // btnAccount
             // 
-            this.btnWarehouse.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnWarehouse.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnWarehouse.FlatAppearance.BorderSize = 0;
-            this.btnWarehouse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWarehouse.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnWarehouse.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnWarehouse.Image = global::TripleXManagement.Properties.Resources.Product_management_32;
-            this.btnWarehouse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnWarehouse.Location = new System.Drawing.Point(0, 196);
-            this.btnWarehouse.Name = "btnWarehouse";
-            this.btnWarehouse.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnWarehouse.Size = new System.Drawing.Size(205, 50);
-            this.btnWarehouse.TabIndex = 4;
-            this.btnWarehouse.Tag = "Kho";
-            this.btnWarehouse.Text = "Kho";
-            this.btnWarehouse.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnWarehouse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnWarehouse.UseVisualStyleBackColor = true;
-            this.btnWarehouse.Click += new System.EventHandler(this.btnWarehouse_Click);
+            this.btnAccount.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAccount.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAccount.FlatAppearance.BorderSize = 0;
+            this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccount.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAccount.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAccount.Image = global::TripleXManagement.Properties.Resources.Male_user_32;
+            this.btnAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAccount.Location = new System.Drawing.Point(0, 196);
+            this.btnAccount.Name = "btnAccount";
+            this.btnAccount.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnAccount.Size = new System.Drawing.Size(205, 50);
+            this.btnAccount.TabIndex = 4;
+            this.btnAccount.Tag = "Tài khoản";
+            this.btnAccount.Text = "Tài khoản";
+            this.btnAccount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAccount.UseVisualStyleBackColor = true;
+            this.btnAccount.Click += new System.EventHandler(this.btnWarehouse_Click);
             // 
             // btnCustomer
             // 
@@ -135,7 +158,7 @@
             this.btnCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCustomer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCustomer.UseVisualStyleBackColor = true;
-            this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
+            this.btnCustomer.Click += new System.EventHandler(this.btnStaff_Click);
             // 
             // btnFoodDrink
             // 
@@ -383,7 +406,7 @@
         private Label lbLogo2;
         private Button btnMenu;
         private Button btnLogout;
-        private Button btnWarehouse;
+        private Button btnAccount;
         private Button btnCustomer;
         private Button btnFoodDrink;
         private Panel pnTitle;
@@ -394,5 +417,6 @@
         private Label lbTitle;
         private Button btnCloseChildForm;
         private PictureBox pictureBox1;
+        private Button bntTable;
     }
 }

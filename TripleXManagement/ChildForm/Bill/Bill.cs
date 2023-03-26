@@ -46,7 +46,7 @@ namespace TripleXManagement
         private void GetData()
         {
             conn.Open();
-            cmd = new SqlCommand("select Image, Name, Price, ID from MonAn", conn);
+            cmd = new SqlCommand("exec getMonAn", conn);
             reader = cmd.ExecuteReader();
             while (reader.Read())
             {

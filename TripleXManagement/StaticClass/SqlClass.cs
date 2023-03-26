@@ -58,6 +58,25 @@ namespace TripleXManagement.StaticClass
             return kq;
         }
 
+        public static SqlDataReader Reader(string sql)
+        {
+            SqlCommand cmd = new SqlCommand(sql, Connection);
+            SqlDataReader rd;
+
+            rd = cmd.ExecuteReader();
+
+            //rd.Close();
+            return rd;
+        }
+
+        public static DataSet DataSet(string sql)
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(new SqlCommand(sql, Connection));
+            DataSet ds = new DataSet();
+            dataAdapter.Fill(ds);
+            return ds;
+        }
+
         //Delete
         public static void RunSqlDel(string sql)
         {
