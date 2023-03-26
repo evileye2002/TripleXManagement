@@ -76,12 +76,12 @@
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.btnSave.Image = global::TripleXManagement.Properties.Resources.database_administrator_20px1;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(130, 5);
+            this.btnSave.Location = new System.Drawing.Point(165, 5);
             this.btnSave.Name = "btnSave";
             this.btnSave.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnSave.Size = new System.Drawing.Size(100, 40);
             this.btnSave.TabIndex = 12;
-            this.btnSave.Text = "Sửa";
+            this.btnSave.Text = "Lưu";
             this.btnSave.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSave.UseVisualStyleBackColor = false;
@@ -105,9 +105,9 @@
             this.btnBrowse.Location = new System.Drawing.Point(20, 5);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnBrowse.Size = new System.Drawing.Size(100, 40);
+            this.btnBrowse.Size = new System.Drawing.Size(135, 40);
             this.btnBrowse.TabIndex = 11;
-            this.btnBrowse.Text = "Thêm";
+            this.btnBrowse.Text = "Chọn Ảnh";
             this.btnBrowse.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.btnBrowse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBrowse.UseVisualStyleBackColor = false;
