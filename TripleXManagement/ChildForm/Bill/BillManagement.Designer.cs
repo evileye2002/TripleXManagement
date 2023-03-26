@@ -28,15 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnFooter = new System.Windows.Forms.Panel();
-            this.btnDetail = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDetail = new CustomControls.RJControls.RJButton();
             this.pnMain = new System.Windows.Forms.Panel();
             this.dgvBill = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,40 +51,36 @@
             this.pnFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
             this.pnFooter.Controls.Add(this.btnDetail);
             this.pnFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnFooter.Location = new System.Drawing.Point(0, 503);
+            this.pnFooter.Location = new System.Drawing.Point(0, 505);
             this.pnFooter.Name = "pnFooter";
-            this.pnFooter.Size = new System.Drawing.Size(921, 52);
+            this.pnFooter.Size = new System.Drawing.Size(921, 50);
             this.pnFooter.TabIndex = 2;
             // 
             // btnDetail
             // 
-            this.btnDetail.AutoRoundedCorners = true;
+            this.btnDetail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnDetail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnDetail.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.btnDetail.BorderRadius = 20;
-            this.btnDetail.BorderThickness = 2;
-            this.btnDetail.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDetail.CustomizableEdges = customizableEdges1;
-            this.btnDetail.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDetail.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDetail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDetail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDetail.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnDetail.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnDetail.BorderSize = 2;
+            this.btnDetail.FlatAppearance.BorderSize = 0;
+            this.btnDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDetail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDetail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnDetail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnDetail.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnDetail.HoverState.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnDetail.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnDetail.HoverState.Image = global::TripleXManagement.Properties.Resources.print_32px1;
-            this.btnDetail.Image = global::TripleXManagement.Properties.Resources.print_32px;
-            this.btnDetail.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDetail.Location = new System.Drawing.Point(15, 5);
+            this.btnDetail.Image = global::TripleXManagement.Properties.Resources.database_administrator_20px1;
+            this.btnDetail.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDetail.Location = new System.Drawing.Point(20, 5);
             this.btnDetail.Name = "btnDetail";
-            this.btnDetail.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            this.btnDetail.Size = new System.Drawing.Size(127, 42);
-            this.btnDetail.TabIndex = 4;
+            this.btnDetail.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnDetail.Size = new System.Drawing.Size(115, 40);
+            this.btnDetail.TabIndex = 8;
             this.btnDetail.Text = "Chi tiết";
+            this.btnDetail.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnDetail.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDetail.UseVisualStyleBackColor = false;
             this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
+            this.btnDetail.MouseEnter += new System.EventHandler(this.btnDetail_MouseEnter);
+            this.btnDetail.MouseLeave += new System.EventHandler(this.btnDetail_MouseLeave);
             // 
             // pnMain
             // 
@@ -94,7 +88,7 @@
             this.pnMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnMain.Location = new System.Drawing.Point(0, 0);
             this.pnMain.Name = "pnMain";
-            this.pnMain.Size = new System.Drawing.Size(921, 503);
+            this.pnMain.Size = new System.Drawing.Size(921, 505);
             this.pnMain.TabIndex = 6;
             // 
             // dgvBill
@@ -141,7 +135,7 @@
             this.dgvBill.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvBill.RowTemplate.Height = 25;
             this.dgvBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBill.Size = new System.Drawing.Size(921, 503);
+            this.dgvBill.Size = new System.Drawing.Size(921, 505);
             this.dgvBill.TabIndex = 5;
             this.dgvBill.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBill_CellClick);
             this.dgvBill.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvBill_KeyDown);
@@ -218,12 +212,12 @@
         #endregion
 
         private Panel pnFooter;
-        private Guna.UI2.WinForms.Guna2Button btnDetail;
         private Panel pnMain;
         private DataGridView dgvBill;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
+        private CustomControls.RJControls.RJButton btnDetail;
     }
 }

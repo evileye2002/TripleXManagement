@@ -102,5 +102,15 @@ namespace TripleXManagement.ChildForm.Bill
                 GetData();
             }
         }
+
+        private void btnDetail_MouseEnter(object sender, EventArgs e)
+        {
+            StaticClass.SharedClass.HoverBtnState(btnDetail, Properties.Resources.database_administrator_20px, true);
+        }
+
+        private void btnDetail_MouseLeave(object sender, EventArgs e)
+        {
+            StaticClass.SharedClass.HoverBtnState(btnDetail, Properties.Resources.database_administrator_20px1, false);
+        }
     }
 }

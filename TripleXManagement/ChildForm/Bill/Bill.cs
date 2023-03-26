@@ -102,11 +102,9 @@ namespace TripleXManagement
             lbTotal.Text = _total.ToString("#,##");
         }
 
-        private void btnFoodManagement_Click(object sender, EventArgs e)
+        private void btnBillManagement_Click(object sender, EventArgs e)
         {
             OpenChildForm(new BillManagement(), sender);
-            /*Form form = new BillManagement();
-            form.ShowDialog();*/
         }
 
         /*public void sizePrintPage()
@@ -329,6 +327,26 @@ namespace TripleXManagement
 
                 GetData();
             }
+        }
+
+        private void btnBillManagement_MouseEnter(object sender, EventArgs e)
+        {
+            StaticClass.SharedClass.HoverBtnState(btnBillManagement, Properties.Resources.database_administrator_20px, true);
+        }
+
+        private void btnBillManagement_MouseLeave(object sender, EventArgs e)
+        {
+            StaticClass.SharedClass.HoverBtnState(btnBillManagement, Properties.Resources.database_administrator_20px1, false);
+        }
+
+        private void btnAddBill_MouseEnter(object sender, EventArgs e)
+        {
+            StaticClass.SharedClass.HoverBtnState(btnAddBill, Properties.Resources.database_administrator_20px, true);
+        }
+
+        private void btnAddBill_MouseLeave(object sender, EventArgs e)
+        {
+            StaticClass.SharedClass.HoverBtnState(btnAddBill, Properties.Resources.database_administrator_20px1, false);
         }
     }
 }

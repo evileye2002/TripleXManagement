@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
-using SQL;
 
-namespace Shared
+namespace TripleXManagement.StaticClass
 {
     internal static class SharedClass
     {
@@ -65,130 +64,29 @@ namespace Shared
         }
         #endregion
 
-        #region Đổi ảnh
-        // Đổi ản và bật, tắt
-        /*public static void ChangeImg_Back(Control con, string btn, bool b)
+        #region Mouse Enter & Leave
+        public static void HoverBtnState(CustomControls.RJControls.RJButton btn,Image img, bool status)
         {
-            foreach (Control c in con.Controls)
-            {
-                ChangeImg_Back(c, btn, b);
-            }
-            if (con.Name == btn && b == true && btn == "btnLuu")
-            {
-                (con as Button).Image = DuyShopApp.Properties.Resources.Save_32;
-                (con as Button).Enabled = b;
-            }
-            else if (con.Name == btn && b == false && btn == "btnLuu")
-            {
-                (con as Button).Image = DuyShopApp.Properties.Resources.Save_Black_32;
-                (con as Button).Enabled = b;
-            }
-            if (con.Name == btn && b == true && btn == "btnThem")
-            {
-                (con as Button).Image = DuyShopApp.Properties.Resources.Add_32;
-                (con as Button).Enabled = b;
-            }
-            else if (con.Name == btn && b == false && btn == "btnThem")
-            {
-                (con as Button).Image = DuyShopApp.Properties.Resources.Add_Black_32;
-                (con as Button).Enabled = b;
-            }
-            if (con.Name == btn && b == true && btn == "btnSua")
-            {
-                (con as Button).Image = DuyShopApp.Properties.Resources.Update_file_32;
-                (con as Button).Enabled = b;
-            }
-            else if (con.Name == btn && b == false && btn == "btnSua")
-            {
-                (con as Button).Image = DuyShopApp.Properties.Resources.Update_file_Black_32;
-                (con as Button).Enabled = b;
-            }
-            if (con.Name == btn && b == true && btn == "btnXoa")
-            {
-                (con as Button).Image = DuyShopApp.Properties.Resources.Delete_trash_32;
-                (con as Button).Enabled = b;
-            }
-            else if (con.Name == btn && b == false && btn == "btnXoa")
-            {
-                (con as Button).Image = DuyShopApp.Properties.Resources.Delete_trash_Black_32;
-                (con as Button).Enabled = b;
-            }
-        }*/
-        #endregion
 
-        #region Ẩn, hiện Sub Menu
-        //Hiện
-        public static void Show_SubMenu(Control con)
-        {
-            if (con != null)
+            Color white = Color.FromArgb(245, 255, 255);
+            Color black = Color.FromArgb(39, 39, 58);
+            //MouseEnter
+            if (status == true)
             {
-                foreach (Control c in con.Controls)
-                {
-                    Show_SubMenu(c);
-                }
-                if (con is TextBox || con is ComboBox || con is Label || con is CheckBox || con.Name == "pnSubMenu")
-                    con.Visible = true;
-                if (con.Name == "Title" || Convert.ToString(con.Tag) == "OnlyTrue")
-                    con.Visible = true;
-                if (Convert.ToString(con.Tag) == "OnlyFalse")
-                    con.Visible = false;
+                btn.Image = img;
+                btn.BackColor = black;
+                btn.BorderColor = white;
+                btn.ForeColor = white;
             }
-        }
-
-        //Ẩn
-        public static void Hide_SubMenu(Control con)
-        {
-            if (con != null)
+            //MouseLeave
+            else
             {
-                foreach (Control c in con.Controls)
-                {
-                    Hide_SubMenu(c);
-                }
-                if (con is TextBox || con is ComboBox || con is Label || con is CheckBox || con.Name == "pnSubMenu")
-                    con.Visible = false;
-
-                if (con.Name == "Title" || Convert.ToString(con.Tag) == "OnlyTrue")
-                    con.Visible = true;
-                if (Convert.ToString(con.Tag) == "OnlyFalse")
-                    con.Visible = false;
+                btn.Image = img;
+                btn.BackColor = white;
+                btn.BorderColor = black;
+                btn.ForeColor = black;
             }
-        }
-        #endregion
-
-        #region ToolTips
-        //Set
-        public static void ToolTips(ToolTip tool, Control con)
-        {
-            foreach (Control c in con.Controls)
-            {
-                ToolTips(tool, c);
-            }
-            if (con.Name == "btnClose")
-                tool.SetToolTip(con, "Thoát");
-            if (con.Name == "btnMenu")
-                tool.SetToolTip(con, "Menu");
-            if (con.Name == "btnThem")
-                tool.SetToolTip(con, "Thêm");
-            if (con.Name == "btnSua")
-                tool.SetToolTip(con, "Sửa");
-            if (con.Name == "btnLuu")
-                tool.SetToolTip(con, "Lưu");
-            if (con.Name == "btnXoa")
-                tool.SetToolTip(con, "Xóa");
-            if (con.Name == "btnTinh")
-                tool.SetToolTip(con, "Tính");
-            if (con.Name == "btnXoaCTHD")
-                tool.SetToolTip(con, "Xóa CTHD");
-            if (con.Name == "btnThemVaoHD")
-                tool.SetToolTip(con, "Thêm Vào Hóa Đơn");
-            if (con.Name == "btnTim")
-                tool.SetToolTip(con, "Tìm Kiếm");
-            if (con.Name == "Title")
-                tool.SetToolTip(con, "Nhấn chuột phải để xem Hướng Dẫn");
-            if (con.Name == "btnLamMoi")
-                tool.SetToolTip(con, "Làm Mới");
-            if (con.Name == "btnThemCTHD")
-                tool.SetToolTip(con, "Thêm CTHD");
+            
         }
         #endregion
 
@@ -318,13 +216,13 @@ namespace Shared
         }*/
 
         //btnMenu_Click
-        public static void btnMenu_Click(Control Form,Control subMenu)
+        /*public static void btnMenu_Click(Control Form,Control subMenu)
         {
             if (subMenu.Visible == false)
                 Show_SubMenu(Form);
             else
                 Hide_SubMenu(Form);
-        }
+        }*/
 
         //btnSua_Click
         /*public static void btnSua_Click(Control Form,Control luu,Control them,Control xoa)

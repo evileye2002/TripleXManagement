@@ -118,5 +118,25 @@ namespace TripleXManagement
                 OpenChildForm(new EditFood(), sender);
             }
         }
+
+        private void btnAddFood_MouseEnter(object sender, EventArgs e)
+        {
+            StaticClass.SharedClass.HoverBtnState(btnAddFood, Properties.Resources.database_administrator_20px, true);
+        }
+
+        private void btnAddFood_MouseLeave(object sender, EventArgs e)
+        {
+            StaticClass.SharedClass.HoverBtnState(btnAddFood, Properties.Resources.database_administrator_20px1, false);
+        }
+
+        private void btnEdit_MouseEnter(object sender, EventArgs e)
+        {
+            StaticClass.SharedClass.HoverBtnState(btnEdit, Properties.Resources.database_administrator_20px, true);
+        }
+
+        private void btnEdit_MouseLeave(object sender, EventArgs e)
+        {
+            StaticClass.SharedClass.HoverBtnState(btnEdit, Properties.Resources.database_administrator_20px1, false);
+        }
     }
 }

@@ -32,18 +32,13 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.pbPic = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSave = new Guna.UI2.WinForms.Guna2Button();
-            this.btnBrowse = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSave = new CustomControls.RJControls.RJButton();
+            this.btnBrowse = new CustomControls.RJControls.RJButton();
             this.ofdBrowse = new System.Windows.Forms.OpenFileDialog();
             this.txtPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.textbox1 = new TripleXManagement.CustomControl.Textbox();
             ((System.ComponentModel.ISupportInitialize)(this.pbPic)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -63,70 +58,62 @@
             this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(this.btnBrowse);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 398);
+            this.panel1.Location = new System.Drawing.Point(0, 400);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(826, 52);
+            this.panel1.Size = new System.Drawing.Size(826, 50);
             this.panel1.TabIndex = 1;
             // 
             // btnSave
             // 
-            this.btnSave.AutoRoundedCorners = true;
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnSave.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnSave.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.btnSave.BorderRadius = 20;
-            this.btnSave.BorderThickness = 2;
-            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.CustomizableEdges = customizableEdges1;
-            this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSave.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSave.BorderSize = 2;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnSave.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnSave.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnSave.HoverState.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSave.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnSave.HoverState.Image = global::TripleXManagement.Properties.Resources.print_32px1;
-            this.btnSave.Image = global::TripleXManagement.Properties.Resources.print_32px;
-            this.btnSave.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnSave.Location = new System.Drawing.Point(173, 5);
+            this.btnSave.Image = global::TripleXManagement.Properties.Resources.database_administrator_20px1;
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.Location = new System.Drawing.Point(130, 5);
             this.btnSave.Name = "btnSave";
-            this.btnSave.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            this.btnSave.Size = new System.Drawing.Size(140, 42);
-            this.btnSave.TabIndex = 4;
-            this.btnSave.Text = "Lưu";
+            this.btnSave.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnSave.Size = new System.Drawing.Size(100, 40);
+            this.btnSave.TabIndex = 12;
+            this.btnSave.Text = "Sửa";
+            this.btnSave.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSave.MouseEnter += new System.EventHandler(this.btnSave_MouseEnter);
+            this.btnSave.MouseLeave += new System.EventHandler(this.btnSave_MouseLeave);
             // 
             // btnBrowse
             // 
-            this.btnBrowse.AutoRoundedCorners = true;
+            this.btnBrowse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnBrowse.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnBrowse.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.btnBrowse.BorderRadius = 20;
-            this.btnBrowse.BorderThickness = 2;
-            this.btnBrowse.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBrowse.CustomizableEdges = customizableEdges3;
-            this.btnBrowse.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnBrowse.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnBrowse.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnBrowse.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnBrowse.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnBrowse.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnBrowse.BorderSize = 2;
+            this.btnBrowse.FlatAppearance.BorderSize = 0;
+            this.btnBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBrowse.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBrowse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnBrowse.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnBrowse.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnBrowse.HoverState.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnBrowse.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnBrowse.HoverState.Image = global::TripleXManagement.Properties.Resources.print_32px1;
-            this.btnBrowse.Image = global::TripleXManagement.Properties.Resources.print_32px;
-            this.btnBrowse.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnBrowse.Location = new System.Drawing.Point(15, 5);
+            this.btnBrowse.Image = global::TripleXManagement.Properties.Resources.database_administrator_20px1;
+            this.btnBrowse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBrowse.Location = new System.Drawing.Point(20, 5);
             this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            this.btnBrowse.Size = new System.Drawing.Size(140, 42);
-            this.btnBrowse.TabIndex = 4;
-            this.btnBrowse.Text = "Chọn Ảnh";
+            this.btnBrowse.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnBrowse.Size = new System.Drawing.Size(100, 40);
+            this.btnBrowse.TabIndex = 11;
+            this.btnBrowse.Text = "Thêm";
+            this.btnBrowse.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnBrowse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBrowse.UseVisualStyleBackColor = false;
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
+            this.btnBrowse.MouseEnter += new System.EventHandler(this.btnBrowse_MouseEnter);
+            this.btnBrowse.MouseLeave += new System.EventHandler(this.btnBrowse_MouseLeave);
             // 
             // ofdBrowse
             // 
@@ -137,7 +124,7 @@
             this.txtPrice.BackColor = System.Drawing.Color.Transparent;
             this.txtPrice.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.txtPrice.BorderRadius = 21;
-            this.txtPrice.CustomizableEdges = customizableEdges5;
+            this.txtPrice.CustomizableEdges = customizableEdges1;
             this.txtPrice.DefaultText = "";
             this.txtPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -157,7 +144,7 @@
             this.txtPrice.SelectedText = "";
             this.txtPrice.ShadowDecoration.BorderRadius = 26;
             this.txtPrice.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.txtPrice.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            this.txtPrice.ShadowDecoration.CustomizableEdges = customizableEdges2;
             this.txtPrice.ShadowDecoration.Depth = 20;
             this.txtPrice.ShadowDecoration.Enabled = true;
             this.txtPrice.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(4, 3, 4, 5);
@@ -170,7 +157,7 @@
             this.txtName.BackColor = System.Drawing.Color.Transparent;
             this.txtName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.txtName.BorderRadius = 21;
-            this.txtName.CustomizableEdges = customizableEdges7;
+            this.txtName.CustomizableEdges = customizableEdges3;
             this.txtName.DefaultText = "";
             this.txtName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -190,7 +177,7 @@
             this.txtName.SelectedText = "";
             this.txtName.ShadowDecoration.BorderRadius = 26;
             this.txtName.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.txtName.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            this.txtName.ShadowDecoration.CustomizableEdges = customizableEdges4;
             this.txtName.ShadowDecoration.Depth = 20;
             this.txtName.ShadowDecoration.Enabled = true;
             this.txtName.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(4, 3, 4, 5);
@@ -198,32 +185,12 @@
             this.txtName.TabIndex = 2;
             this.txtName.TextOffset = new System.Drawing.Point(8, 0);
             // 
-            // textbox1
-            // 
-            this.textbox1.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.textbox1.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.textbox1.BorderRadius = 16;
-            this.textbox1.BorderSize = 2;
-            this.textbox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textbox1.Location = new System.Drawing.Point(441, 186);
-            this.textbox1.Multiline = false;
-            this.textbox1.Name = "textbox1";
-            this.textbox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.textbox1.PasswordChar = false;
-            this.textbox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.textbox1.PlaceholderText = "Tên Món Ăn...";
-            this.textbox1.Size = new System.Drawing.Size(201, 36);
-            this.textbox1.TabIndex = 3;
-            this.textbox1.Texts = "";
-            this.textbox1.UnderlinedStyle = false;
-            // 
             // AddFood
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(826, 450);
-            this.Controls.Add(this.textbox1);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.panel1);
@@ -241,11 +208,10 @@
 
         private PictureBox pbPic;
         private Panel panel1;
-        private Guna.UI2.WinForms.Guna2Button btnSave;
-        private Guna.UI2.WinForms.Guna2Button btnBrowse;
         private OpenFileDialog ofdBrowse;
         private Guna.UI2.WinForms.Guna2TextBox txtPrice;
         private Guna.UI2.WinForms.Guna2TextBox txtName;
-        private CustomControl.Textbox textbox1;
+        private CustomControls.RJControls.RJButton btnSave;
+        private CustomControls.RJControls.RJButton btnBrowse;
     }
 }

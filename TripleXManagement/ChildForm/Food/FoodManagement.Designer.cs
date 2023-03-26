@@ -28,17 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnAddFood = new Guna.UI2.WinForms.Guna2Button();
             this.pnFooter = new System.Windows.Forms.Panel();
-            this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
+            this.btnEdit = new CustomControls.RJControls.RJButton();
+            this.btnAddFood = new CustomControls.RJControls.RJButton();
             this.pnMain = new System.Windows.Forms.Panel();
             this.dgvFood = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,36 +45,6 @@
             this.pnMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFood)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnAddFood
-            // 
-            this.btnAddFood.AutoRoundedCorners = true;
-            this.btnAddFood.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnAddFood.BorderRadius = 20;
-            this.btnAddFood.BorderThickness = 2;
-            this.btnAddFood.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddFood.CustomizableEdges = customizableEdges1;
-            this.btnAddFood.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddFood.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddFood.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAddFood.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAddFood.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnAddFood.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAddFood.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnAddFood.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnAddFood.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnAddFood.HoverState.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAddFood.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnAddFood.HoverState.Image = global::TripleXManagement.Properties.Resources.print_32px1;
-            this.btnAddFood.Image = global::TripleXManagement.Properties.Resources.print_32px;
-            this.btnAddFood.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnAddFood.Location = new System.Drawing.Point(20, 4);
-            this.btnAddFood.Name = "btnAddFood";
-            this.btnAddFood.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            this.btnAddFood.Size = new System.Drawing.Size(105, 42);
-            this.btnAddFood.TabIndex = 3;
-            this.btnAddFood.Text = "Thêm";
-            this.btnAddFood.Click += new System.EventHandler(this.btnAddFood_Click);
             // 
             // pnFooter
             // 
@@ -93,33 +59,55 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.AutoRoundedCorners = true;
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnEdit.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnEdit.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.btnEdit.BorderRadius = 20;
-            this.btnEdit.BorderThickness = 2;
-            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEdit.CustomizableEdges = customizableEdges3;
-            this.btnEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEdit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEdit.BorderSize = 2;
+            this.btnEdit.FlatAppearance.BorderSize = 0;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnEdit.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnEdit.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnEdit.HoverState.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnEdit.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnEdit.HoverState.Image = global::TripleXManagement.Properties.Resources.print_32px1;
-            this.btnEdit.Image = global::TripleXManagement.Properties.Resources.print_32px;
-            this.btnEdit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnEdit.Location = new System.Drawing.Point(134, 4);
+            this.btnEdit.Image = global::TripleXManagement.Properties.Resources.database_administrator_20px1;
+            this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEdit.Location = new System.Drawing.Point(130, 5);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            this.btnEdit.Size = new System.Drawing.Size(105, 42);
-            this.btnEdit.TabIndex = 3;
+            this.btnEdit.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnEdit.Size = new System.Drawing.Size(100, 40);
+            this.btnEdit.TabIndex = 10;
             this.btnEdit.Text = "Sửa";
+            this.btnEdit.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.btnEdit.MouseEnter += new System.EventHandler(this.btnEdit_MouseEnter);
+            this.btnEdit.MouseLeave += new System.EventHandler(this.btnEdit_MouseLeave);
+            // 
+            // btnAddFood
+            // 
+            this.btnAddFood.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnAddFood.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnAddFood.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnAddFood.BorderRadius = 20;
+            this.btnAddFood.BorderSize = 2;
+            this.btnAddFood.FlatAppearance.BorderSize = 0;
+            this.btnAddFood.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddFood.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAddFood.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnAddFood.Image = global::TripleXManagement.Properties.Resources.database_administrator_20px1;
+            this.btnAddFood.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddFood.Location = new System.Drawing.Point(20, 5);
+            this.btnAddFood.Name = "btnAddFood";
+            this.btnAddFood.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnAddFood.Size = new System.Drawing.Size(100, 40);
+            this.btnAddFood.TabIndex = 9;
+            this.btnAddFood.Text = "Thêm";
+            this.btnAddFood.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnAddFood.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddFood.UseVisualStyleBackColor = false;
+            this.btnAddFood.Click += new System.EventHandler(this.btnAddFood_Click);
+            this.btnAddFood.MouseEnter += new System.EventHandler(this.btnAddFood_MouseEnter);
+            this.btnAddFood.MouseLeave += new System.EventHandler(this.btnAddFood_MouseLeave);
             // 
             // pnMain
             // 
@@ -247,14 +235,14 @@
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2Button btnAddFood;
         private Panel pnFooter;
         private Panel pnMain;
         private DataGridView dgvFood;
-        private Guna.UI2.WinForms.Guna2Button btnEdit;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
+        private CustomControls.RJControls.RJButton btnEdit;
+        private CustomControls.RJControls.RJButton btnAddFood;
     }
 }

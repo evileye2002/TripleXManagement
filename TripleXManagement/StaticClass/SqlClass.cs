@@ -1,8 +1,7 @@
 ﻿using System.Data.SqlClient;
 using System.Data;
-using Shared;
 
-namespace SQL
+namespace TripleXManagement.StaticClass
 {
     static class SqlClass
     {

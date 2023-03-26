@@ -28,17 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnFooter = new System.Windows.Forms.Panel();
-            this.btnFoodManagement = new Guna.UI2.WinForms.Guna2Button();
-            this.btnAddBill = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAddBill = new CustomControls.RJControls.RJButton();
+            this.btnBillManagement = new CustomControls.RJControls.RJButton();
             this.lbTotal = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnDGV = new System.Windows.Forms.Panel();
@@ -57,74 +53,67 @@
             // pnFooter
             // 
             this.pnFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            this.pnFooter.Controls.Add(this.btnFoodManagement);
             this.pnFooter.Controls.Add(this.btnAddBill);
+            this.pnFooter.Controls.Add(this.btnBillManagement);
             this.pnFooter.Controls.Add(this.lbTotal);
             this.pnFooter.Controls.Add(this.label1);
             this.pnFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnFooter.Location = new System.Drawing.Point(0, 504);
+            this.pnFooter.Location = new System.Drawing.Point(0, 505);
             this.pnFooter.Name = "pnFooter";
-            this.pnFooter.Size = new System.Drawing.Size(1000, 51);
+            this.pnFooter.Size = new System.Drawing.Size(1000, 50);
             this.pnFooter.TabIndex = 0;
-            // 
-            // btnFoodManagement
-            // 
-            this.btnFoodManagement.AutoRoundedCorners = true;
-            this.btnFoodManagement.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnFoodManagement.BorderRadius = 20;
-            this.btnFoodManagement.BorderThickness = 2;
-            this.btnFoodManagement.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFoodManagement.CustomizableEdges = customizableEdges1;
-            this.btnFoodManagement.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnFoodManagement.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnFoodManagement.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnFoodManagement.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnFoodManagement.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnFoodManagement.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnFoodManagement.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnFoodManagement.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnFoodManagement.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnFoodManagement.HoverState.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnFoodManagement.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnFoodManagement.HoverState.Image = global::TripleXManagement.Properties.Resources.print_file_32px1;
-            this.btnFoodManagement.Image = global::TripleXManagement.Properties.Resources.print_file_32px;
-            this.btnFoodManagement.Location = new System.Drawing.Point(162, 3);
-            this.btnFoodManagement.Name = "btnFoodManagement";
-            this.btnFoodManagement.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            this.btnFoodManagement.Size = new System.Drawing.Size(150, 42);
-            this.btnFoodManagement.TabIndex = 2;
-            this.btnFoodManagement.Text = "Management";
-            this.btnFoodManagement.Click += new System.EventHandler(this.btnFoodManagement_Click);
             // 
             // btnAddBill
             // 
-            this.btnAddBill.AutoRoundedCorners = true;
+            this.btnAddBill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnAddBill.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnAddBill.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.btnAddBill.BorderRadius = 20;
-            this.btnAddBill.BorderThickness = 2;
-            this.btnAddBill.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddBill.CustomizableEdges = customizableEdges3;
-            this.btnAddBill.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddBill.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddBill.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAddBill.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAddBill.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.btnAddBill.BorderSize = 2;
+            this.btnAddBill.FlatAppearance.BorderSize = 0;
+            this.btnAddBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddBill.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAddBill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnAddBill.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnAddBill.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnAddBill.HoverState.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAddBill.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnAddBill.HoverState.Image = global::TripleXManagement.Properties.Resources.print_32px1;
-            this.btnAddBill.Image = global::TripleXManagement.Properties.Resources.print_32px;
-            this.btnAddBill.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnAddBill.Location = new System.Drawing.Point(28, 3);
+            this.btnAddBill.Image = global::TripleXManagement.Properties.Resources.database_administrator_20px1;
+            this.btnAddBill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddBill.Location = new System.Drawing.Point(20, 5);
             this.btnAddBill.Name = "btnAddBill";
-            this.btnAddBill.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            this.btnAddBill.Size = new System.Drawing.Size(128, 42);
-            this.btnAddBill.TabIndex = 2;
-            this.btnAddBill.Text = "Add";
+            this.btnAddBill.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnAddBill.Size = new System.Drawing.Size(100, 40);
+            this.btnAddBill.TabIndex = 3;
+            this.btnAddBill.Text = "Thêm";
+            this.btnAddBill.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnAddBill.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddBill.UseVisualStyleBackColor = false;
             this.btnAddBill.Click += new System.EventHandler(this.btnAddBill_Click);
+            this.btnAddBill.MouseEnter += new System.EventHandler(this.btnAddBill_MouseEnter);
+            this.btnAddBill.MouseLeave += new System.EventHandler(this.btnAddBill_MouseLeave);
+            // 
+            // btnBillManagement
+            // 
+            this.btnBillManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnBillManagement.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnBillManagement.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnBillManagement.BorderRadius = 20;
+            this.btnBillManagement.BorderSize = 2;
+            this.btnBillManagement.FlatAppearance.BorderSize = 0;
+            this.btnBillManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBillManagement.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnBillManagement.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnBillManagement.Image = global::TripleXManagement.Properties.Resources.database_administrator_20px1;
+            this.btnBillManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBillManagement.Location = new System.Drawing.Point(130, 5);
+            this.btnBillManagement.Name = "btnBillManagement";
+            this.btnBillManagement.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnBillManagement.Size = new System.Drawing.Size(120, 40);
+            this.btnBillManagement.TabIndex = 3;
+            this.btnBillManagement.Text = "Hóa đơn";
+            this.btnBillManagement.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnBillManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBillManagement.UseVisualStyleBackColor = false;
+            this.btnBillManagement.Click += new System.EventHandler(this.btnBillManagement_Click);
+            this.btnBillManagement.MouseEnter += new System.EventHandler(this.btnBillManagement_MouseEnter);
+            this.btnBillManagement.MouseLeave += new System.EventHandler(this.btnBillManagement_MouseLeave);
             // 
             // lbTotal
             // 
@@ -158,7 +147,7 @@
             this.pnDGV.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnDGV.Location = new System.Drawing.Point(687, 0);
             this.pnDGV.Name = "pnDGV";
-            this.pnDGV.Size = new System.Drawing.Size(313, 504);
+            this.pnDGV.Size = new System.Drawing.Size(313, 505);
             this.pnDGV.TabIndex = 1;
             // 
             // dgvDetail
@@ -204,7 +193,7 @@
             this.dgvDetail.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvDetail.RowTemplate.Height = 25;
             this.dgvDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetail.Size = new System.Drawing.Size(313, 504);
+            this.dgvDetail.Size = new System.Drawing.Size(313, 505);
             this.dgvDetail.TabIndex = 0;
             this.dgvDetail.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetail_CellClick);
             this.dgvDetail.SelectionChanged += new System.EventHandler(this.dgvDetail_SelectionChanged);
@@ -251,7 +240,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(687, 504);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(687, 505);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // pnMain
@@ -261,7 +250,7 @@
             this.pnMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnMain.Location = new System.Drawing.Point(0, 0);
             this.pnMain.Name = "pnMain";
-            this.pnMain.Size = new System.Drawing.Size(1000, 504);
+            this.pnMain.Size = new System.Drawing.Size(1000, 505);
             this.pnMain.TabIndex = 3;
             // 
             // Bill
@@ -292,13 +281,13 @@
         private Panel pnDGV;
         private Label label1;
         private Label lbTotal;
-        private Guna.UI2.WinForms.Guna2Button btnFoodManagement;
-        private Guna.UI2.WinForms.Guna2Button btnAddBill;
         private DataGridView dgvDetail;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private FlowLayoutPanel flowLayoutPanel1;
         private Panel pnMain;
+        private CustomControls.RJControls.RJButton btnBillManagement;
+        private CustomControls.RJControls.RJButton btnAddBill;
     }
 }

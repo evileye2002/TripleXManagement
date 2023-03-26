@@ -325,5 +325,26 @@ namespace TripleXManagement.ChildForm.Bill
                 foodID = dgvBillDetail.Rows[t].Cells[0].Value.ToString();
             }
         }
+
+
+        private void btnPrint_MouseEnter(object sender, EventArgs e)
+        {
+            StaticClass.SharedClass.HoverBtnState(btnPrint, Properties.Resources.database_administrator_20px, true);
+        }
+
+        private void btnPrint_MouseLeave(object sender, EventArgs e)
+        {
+            StaticClass.SharedClass.HoverBtnState(btnPrint, Properties.Resources.database_administrator_20px1, false);
+        }
+
+        private void btnPrintPreview_MouseEnter(object sender, EventArgs e)
+        {
+            StaticClass.SharedClass.HoverBtnState(btnPrintPreview, Properties.Resources.database_administrator_20px, true);
+        }
+
+        private void btnPrintPreview_MouseLeave(object sender, EventArgs e)
+        {
+            StaticClass.SharedClass.HoverBtnState(btnPrintPreview, Properties.Resources.database_administrator_20px1, false);
+        }
     }
 }

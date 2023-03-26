@@ -69,5 +69,25 @@ namespace TripleXManagement
                 conn.Close();
             }
         }
+
+        private void btnBrowse_MouseEnter(object sender, EventArgs e)
+        {
+            StaticClass.SharedClass.HoverBtnState(btnBrowse, Properties.Resources.database_administrator_20px, true);
+        }
+
+        private void btnBrowse_MouseLeave(object sender, EventArgs e)
+        {
+            StaticClass.SharedClass.HoverBtnState(btnBrowse, Properties.Resources.database_administrator_20px1, false);
+        }
+
+        private void btnSave_MouseEnter(object sender, EventArgs e)
+        {
+            StaticClass.SharedClass.HoverBtnState(btnSave, Properties.Resources.database_administrator_20px, true);
+        }
+
+        private void btnSave_MouseLeave(object sender, EventArgs e)
+        {
+            StaticClass.SharedClass.HoverBtnState(btnSave, Properties.Resources.database_administrator_20px1, false);
+        }
     }
 }

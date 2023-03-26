@@ -35,10 +35,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BillDetail));
             this.dgvBillDetail = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,8 +43,8 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnPrintPriview = new Guna.UI2.WinForms.Guna2Button();
-            this.btnPrint = new Guna.UI2.WinForms.Guna2Button();
+            this.btnPrint = new CustomControls.RJControls.RJButton();
+            this.btnPrintPreview = new CustomControls.RJControls.RJButton();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBillDetail)).BeginInit();
@@ -100,7 +96,7 @@
             this.dgvBillDetail.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvBillDetail.RowTemplate.Height = 25;
             this.dgvBillDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBillDetail.Size = new System.Drawing.Size(800, 398);
+            this.dgvBillDetail.Size = new System.Drawing.Size(800, 400);
             this.dgvBillDetail.TabIndex = 6;
             this.dgvBillDetail.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBillDetail_CellClick);
             this.dgvBillDetail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BillDetail_KeyDown);
@@ -168,72 +164,65 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            this.panel1.Controls.Add(this.btnPrintPriview);
             this.panel1.Controls.Add(this.btnPrint);
+            this.panel1.Controls.Add(this.btnPrintPreview);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 398);
+            this.panel1.Location = new System.Drawing.Point(0, 400);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 52);
+            this.panel1.Size = new System.Drawing.Size(800, 50);
             this.panel1.TabIndex = 7;
-            // 
-            // btnPrintPriview
-            // 
-            this.btnPrintPriview.AutoRoundedCorners = true;
-            this.btnPrintPriview.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnPrintPriview.BorderRadius = 20;
-            this.btnPrintPriview.BorderThickness = 2;
-            this.btnPrintPriview.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPrintPriview.CustomizableEdges = customizableEdges1;
-            this.btnPrintPriview.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnPrintPriview.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnPrintPriview.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnPrintPriview.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnPrintPriview.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnPrintPriview.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnPrintPriview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnPrintPriview.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnPrintPriview.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnPrintPriview.HoverState.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnPrintPriview.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnPrintPriview.HoverState.Image = global::TripleXManagement.Properties.Resources.print_file_32px1;
-            this.btnPrintPriview.Image = global::TripleXManagement.Properties.Resources.print_file_32px;
-            this.btnPrintPriview.Location = new System.Drawing.Point(159, 5);
-            this.btnPrintPriview.Name = "btnPrintPriview";
-            this.btnPrintPriview.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            this.btnPrintPriview.Size = new System.Drawing.Size(150, 42);
-            this.btnPrintPriview.TabIndex = 5;
-            this.btnPrintPriview.Text = "Print Priview";
-            this.btnPrintPriview.Click += new System.EventHandler(this.btnPrintPriview_Click);
             // 
             // btnPrint
             // 
-            this.btnPrint.AutoRoundedCorners = true;
+            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnPrint.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnPrint.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.btnPrint.BorderRadius = 20;
-            this.btnPrint.BorderThickness = 2;
-            this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPrint.CustomizableEdges = customizableEdges3;
-            this.btnPrint.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnPrint.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnPrint.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnPrint.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnPrint.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.btnPrint.BorderSize = 2;
+            this.btnPrint.FlatAppearance.BorderSize = 0;
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrint.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnPrint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnPrint.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnPrint.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnPrint.HoverState.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnPrint.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnPrint.HoverState.Image = global::TripleXManagement.Properties.Resources.print_32px1;
-            this.btnPrint.Image = global::TripleXManagement.Properties.Resources.print_32px;
-            this.btnPrint.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnPrint.Location = new System.Drawing.Point(23, 5);
+            this.btnPrint.Image = global::TripleXManagement.Properties.Resources.database_administrator_20px1;
+            this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPrint.Location = new System.Drawing.Point(20, 5);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            this.btnPrint.Size = new System.Drawing.Size(128, 42);
-            this.btnPrint.TabIndex = 6;
-            this.btnPrint.Text = "Print";
+            this.btnPrint.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnPrint.Size = new System.Drawing.Size(85, 40);
+            this.btnPrint.TabIndex = 7;
+            this.btnPrint.Text = "In";
+            this.btnPrint.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPrint.UseVisualStyleBackColor = false;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            this.btnPrint.MouseEnter += new System.EventHandler(this.btnPrint_MouseEnter);
+            this.btnPrint.MouseLeave += new System.EventHandler(this.btnPrint_MouseLeave);
+            // 
+            // btnPrintPreview
+            // 
+            this.btnPrintPreview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnPrintPreview.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnPrintPreview.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnPrintPreview.BorderRadius = 20;
+            this.btnPrintPreview.BorderSize = 2;
+            this.btnPrintPreview.FlatAppearance.BorderSize = 0;
+            this.btnPrintPreview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrintPreview.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnPrintPreview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnPrintPreview.Image = global::TripleXManagement.Properties.Resources.database_administrator_20px1;
+            this.btnPrintPreview.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPrintPreview.Location = new System.Drawing.Point(115, 5);
+            this.btnPrintPreview.Name = "btnPrintPreview";
+            this.btnPrintPreview.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnPrintPreview.Size = new System.Drawing.Size(90, 40);
+            this.btnPrintPreview.TabIndex = 8;
+            this.btnPrintPreview.Text = "Xem";
+            this.btnPrintPreview.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnPrintPreview.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPrintPreview.UseVisualStyleBackColor = false;
+            this.btnPrintPreview.Click += new System.EventHandler(this.btnPrintPriview_Click);
+            this.btnPrintPreview.MouseEnter += new System.EventHandler(this.btnPrintPreview_MouseEnter);
+            this.btnPrintPreview.MouseLeave += new System.EventHandler(this.btnPrintPreview_MouseLeave);
             // 
             // printDocument1
             // 
@@ -270,8 +259,6 @@
 
         private DataGridView dgvBillDetail;
         private Panel panel1;
-        private Guna.UI2.WinForms.Guna2Button btnPrintPriview;
-        private Guna.UI2.WinForms.Guna2Button btnPrint;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private PrintPreviewDialog printPreviewDialog1;
         private DataGridViewTextBoxColumn Column1;
@@ -279,5 +266,7 @@
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
+        private CustomControls.RJControls.RJButton btnPrint;
+        private CustomControls.RJControls.RJButton btnPrintPreview;
     }
 }
