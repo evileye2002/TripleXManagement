@@ -33,8 +33,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnFooter = new System.Windows.Forms.Panel();
-            this.btnEdit = new CustomControls.RJControls.RJButton();
-            this.btnAddFood = new CustomControls.RJControls.RJButton();
+            this.btnEdit = new CustomControl.RJButton();
+            this.btnAddFood = new CustomControl.RJButton();
             this.pnMain = new System.Windows.Forms.Panel();
             this.dgvFood = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -242,7 +242,7 @@
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
-        private CustomControls.RJControls.RJButton btnEdit;
-        private CustomControls.RJControls.RJButton btnAddFood;
+        private CustomControl.RJButton btnEdit;
+        private CustomControl.RJButton btnAddFood;
     }
 }

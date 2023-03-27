@@ -30,7 +30,7 @@
         {
             this.ofdBrowse = new System.Windows.Forms.OpenFileDialog();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSave = new CustomControls.RJControls.RJButton();
+            this.btnSave = new CustomControl.RJButton();
             this.txtPrice = new TripleXManagement.CustomControl.Textbox();
             this.txtName = new TripleXManagement.CustomControl.Textbox();
             this.panel1.SuspendLayout();
@@ -139,7 +139,7 @@
         #endregion
         private OpenFileDialog ofdBrowse;
         private Panel panel1;
-        private CustomControls.RJControls.RJButton btnSave;
+        private CustomControl.RJButton btnSave;
         private CustomControl.Textbox txtPrice;
         private CustomControl.Textbox txtName;
     }

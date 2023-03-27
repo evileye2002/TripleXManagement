@@ -35,9 +35,9 @@
             this.txtName = new TripleXManagement.CustomControl.Textbox();
             this.pbPic = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnDenied = new CustomControls.RJControls.RJButton();
-            this.btnSave = new CustomControls.RJControls.RJButton();
-            this.btnBrowse = new CustomControls.RJControls.RJButton();
+            this.btnDenied = new CustomControl.RJButton();
+            this.btnSave = new CustomControl.RJButton();
+            this.btnBrowse = new CustomControl.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbPic)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -259,8 +259,8 @@
         private CustomControl.Textbox txtName;
         private PictureBox pbPic;
         private Panel panel1;
-        private CustomControls.RJControls.RJButton btnDenied;
-        private CustomControls.RJControls.RJButton btnSave;
-        private CustomControls.RJControls.RJButton btnBrowse;
+        private CustomControl.RJButton btnDenied;
+        private CustomControl.RJButton btnSave;
+        private CustomControl.RJButton btnBrowse;
     }
 }

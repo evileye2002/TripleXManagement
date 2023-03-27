@@ -43,8 +43,8 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnPrint = new CustomControls.RJControls.RJButton();
-            this.btnPrintPreview = new CustomControls.RJControls.RJButton();
+            this.btnPrint = new CustomControl.RJButton();
+            this.btnPrintPreview = new CustomControl.RJButton();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBillDetail)).BeginInit();
@@ -266,7 +266,7 @@
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
-        private CustomControls.RJControls.RJButton btnPrint;
-        private CustomControls.RJControls.RJButton btnPrintPreview;
+        private CustomControl.RJButton btnPrint;
+        private CustomControl.RJButton btnPrintPreview;
     }
 }

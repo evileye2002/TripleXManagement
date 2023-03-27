@@ -33,9 +33,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnFooter = new System.Windows.Forms.Panel();
-            this.btnSave = new CustomControls.RJControls.RJButton();
-            this.btnEdit = new CustomControls.RJControls.RJButton();
-            this.btnAddAccount = new CustomControls.RJControls.RJButton();
+            this.btnSave = new CustomControl.RJButton();
+            this.btnEdit = new CustomControl.RJButton();
+            this.btnAddAccount = new CustomControl.RJButton();
             this.pnMain = new System.Windows.Forms.Panel();
             this.dgvAccount = new System.Windows.Forms.DataGridView();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -299,14 +299,14 @@
         #endregion
 
         private Panel pnFooter;
-        private CustomControls.RJControls.RJButton btnEdit;
-        private CustomControls.RJControls.RJButton btnAddAccount;
+        private CustomControl.RJButton btnEdit;
+        private CustomControl.RJButton btnAddAccount;
         private Panel pnMain;
         private DataGridView dgvAccount;
         private Panel pnTextBox;
         private CustomControl.Textbox txtName;
         private CustomControl.Textbox txtPassword;
-        private CustomControls.RJControls.RJButton btnSave;
+        private CustomControl.RJButton btnSave;
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewTextBoxColumn Column1;
     }

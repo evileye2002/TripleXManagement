@@ -33,8 +33,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnFooter = new System.Windows.Forms.Panel();
-            this.btnAddBill = new CustomControls.RJControls.RJButton();
-            this.btnBillManagement = new CustomControls.RJControls.RJButton();
+            this.btnAddBill = new TripleXManagement.CustomControl.RJButton();
+            this.btnBillManagement = new TripleXManagement.CustomControl.RJButton();
             this.lbTotal = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnDGV = new System.Windows.Forms.Panel();
@@ -286,7 +286,7 @@
         private DataGridViewTextBoxColumn Column3;
         private FlowLayoutPanel flowLayoutPanel1;
         private Panel pnMain;
-        private CustomControls.RJControls.RJButton btnBillManagement;
-        private CustomControls.RJControls.RJButton btnAddBill;
+        private CustomControl.RJButton btnBillManagement;
+        private CustomControl.RJButton btnAddBill;
     }
 }

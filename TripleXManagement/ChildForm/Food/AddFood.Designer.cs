@@ -30,8 +30,8 @@
         {
             this.pbPic = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSave = new CustomControls.RJControls.RJButton();
-            this.btnBrowse = new CustomControls.RJControls.RJButton();
+            this.btnSave = new CustomControl.RJButton();
+            this.btnBrowse = new CustomControl.RJButton();
             this.ofdBrowse = new System.Windows.Forms.OpenFileDialog();
             this.txtName = new TripleXManagement.CustomControl.Textbox();
             this.txtPrice = new TripleXManagement.CustomControl.Textbox();
@@ -46,6 +46,7 @@
             this.pbPic.Location = new System.Drawing.Point(12, 12);
             this.pbPic.Name = "pbPic";
             this.pbPic.Size = new System.Drawing.Size(320, 320);
+            this.pbPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPic.TabIndex = 0;
             this.pbPic.TabStop = false;
             // 
@@ -183,8 +184,8 @@
         private PictureBox pbPic;
         private Panel panel1;
         private OpenFileDialog ofdBrowse;
-        private CustomControls.RJControls.RJButton btnSave;
-        private CustomControls.RJControls.RJButton btnBrowse;
+        private CustomControl.RJButton btnSave;
+        private CustomControl.RJButton btnBrowse;
         private CustomControl.Textbox txtName;
         private CustomControl.Textbox txtPrice;
     }

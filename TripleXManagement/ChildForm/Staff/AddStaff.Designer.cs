@@ -32,9 +32,9 @@
             this.txtCCCD = new TripleXManagement.CustomControl.Textbox();
             this.txtName = new TripleXManagement.CustomControl.Textbox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnDenied = new CustomControls.RJControls.RJButton();
-            this.btnSave = new CustomControls.RJControls.RJButton();
-            this.btnBrowse = new CustomControls.RJControls.RJButton();
+            this.btnDenied = new CustomControl.RJButton();
+            this.btnSave = new CustomControl.RJButton();
+            this.btnBrowse = new CustomControl.RJButton();
             this.txtPhone = new TripleXManagement.CustomControl.Textbox();
             this.cbRegency = new System.Windows.Forms.ComboBox();
             this.cbAccount = new System.Windows.Forms.ComboBox();
@@ -261,12 +261,12 @@
         private CustomControl.Textbox txtCCCD;
         private CustomControl.Textbox txtName;
         private Panel panel1;
-        private CustomControls.RJControls.RJButton btnSave;
-        private CustomControls.RJControls.RJButton btnBrowse;
+        private CustomControl.RJButton btnSave;
+        private CustomControl.RJButton btnBrowse;
         private CustomControl.Textbox txtPhone;
         private ComboBox cbRegency;
         private ComboBox cbAccount;
         private OpenFileDialog ofdBrowse;
-        private CustomControls.RJControls.RJButton btnDenied;
+        private CustomControl.RJButton btnDenied;
     }
 }

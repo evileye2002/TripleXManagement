@@ -34,7 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnFooter = new System.Windows.Forms.Panel();
-            this.btnDetail = new CustomControls.RJControls.RJButton();
+            this.btnDetail = new CustomControl.RJButton();
             this.pnMain = new System.Windows.Forms.Panel();
             this.dgvBill = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -218,6 +218,6 @@
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
-        private CustomControls.RJControls.RJButton btnDetail;
+        private CustomControl.RJButton btnDetail;
     }
 }

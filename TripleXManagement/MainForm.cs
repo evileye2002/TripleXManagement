@@ -211,6 +211,7 @@ namespace TripleXManagement
         private void bntTable_Click(object sender, EventArgs e)
         {
             OpenChildForm(new TableManagement(), sender);
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }

@@ -68,6 +68,7 @@
             // 
             // pnBody
             // 
+            this.pnBody.BackColor = System.Drawing.Color.Gray;
             this.pnBody.Controls.Add(this.pictureBox1);
             this.pnBody.Controls.Add(this.lbCustomer);
             this.pnBody.Dock = System.Windows.Forms.DockStyle.Fill;
