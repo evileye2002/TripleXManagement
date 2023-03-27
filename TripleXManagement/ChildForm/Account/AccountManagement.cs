@@ -88,6 +88,9 @@ namespace TripleXManagement.ChildForm.Account
             string sql = "exec addAccount '" + txtName.Texts + "','" + txtPassword.Texts + "'";
             StaticClass.SqlClass.RunSql(sql);
             GetData();
+            btnAddAccount.Enabled = true;
+            btnEdit.Enabled = true;
+            btnSave.Enabled = false;
         }
 
         private void dgvAccount_CellClick(object sender, DataGridViewCellEventArgs e)

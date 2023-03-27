@@ -2,6 +2,7 @@
 using System.Runtime.InteropServices;
 using TripleXManagement.ChildForm.Account;
 using TripleXManagement.ChildForm.Staff;
+using TripleXManagement.ChildForm.Table;
 
 namespace TripleXManagement
 {
@@ -182,7 +183,7 @@ namespace TripleXManagement
             OpenChildForm(new StaffManagement(), sender);
         }
 
-        private void btnWarehouse_Click(object sender, EventArgs e)
+        private void btnAccount_Click(object sender, EventArgs e)
         {
             OpenChildForm(new AccountManagement(), sender);
         }
@@ -207,5 +208,9 @@ namespace TripleXManagement
             btnCloseChildForm.Visible=false;
         }
 
+        private void bntTable_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new TableManagement(), sender);
+        }
     }
 }

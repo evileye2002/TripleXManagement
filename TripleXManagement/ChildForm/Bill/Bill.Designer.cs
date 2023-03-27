@@ -145,9 +145,9 @@
             // 
             this.pnDGV.Controls.Add(this.dgvDetail);
             this.pnDGV.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnDGV.Location = new System.Drawing.Point(687, 0);
+            this.pnDGV.Location = new System.Drawing.Point(680, 0);
             this.pnDGV.Name = "pnDGV";
-            this.pnDGV.Size = new System.Drawing.Size(313, 505);
+            this.pnDGV.Size = new System.Drawing.Size(320, 505);
             this.pnDGV.TabIndex = 1;
             // 
             // dgvDetail
@@ -193,10 +193,9 @@
             this.dgvDetail.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvDetail.RowTemplate.Height = 25;
             this.dgvDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetail.Size = new System.Drawing.Size(313, 505);
+            this.dgvDetail.Size = new System.Drawing.Size(320, 505);
             this.dgvDetail.TabIndex = 0;
             this.dgvDetail.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetail_CellClick);
-            this.dgvDetail.SelectionChanged += new System.EventHandler(this.dgvDetail_SelectionChanged);
             this.dgvDetail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvDetail_KeyDown);
             // 
             // Column1
@@ -240,7 +239,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(687, 505);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(680, 505);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // pnMain

@@ -39,8 +39,8 @@ namespace TripleXManagement
 
         private void clear()
         {
-            txtName.Text = "";
-            txtPrice.Text = "";
+            txtName.Texts = "";
+            txtPrice.Texts = "";
             pbPic.BackgroundImage = null;
         }
 
@@ -54,8 +54,8 @@ namespace TripleXManagement
 
                 conn.Open();
                 cmd = new SqlCommand("exec addmMonAn @Name, @Price, @Image", conn);
-                cmd.Parameters.AddWithValue("@Name", txtName.Text);
-                cmd.Parameters.AddWithValue("@Price", int.Parse(txtPrice.Text));
+                cmd.Parameters.AddWithValue("@Name", txtName.Texts);
+                cmd.Parameters.AddWithValue("@Price", int.Parse(txtPrice.Texts));
                 cmd.Parameters.AddWithValue("@Image", array);
                 cmd.ExecuteNonQuery();
                 conn.Close();

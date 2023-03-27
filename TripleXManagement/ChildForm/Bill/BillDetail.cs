@@ -30,7 +30,7 @@ namespace TripleXManagement.ChildForm.Bill
         string finalTotalB = "";
         SqlConnection conn;
         SqlCommand cmd;
-        SqlDataReader reader;
+
         public BillDetail()
         {
             InitializeComponent();

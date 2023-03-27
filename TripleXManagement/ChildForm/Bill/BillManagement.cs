@@ -16,7 +16,6 @@ namespace TripleXManagement.ChildForm.Bill
     public partial class BillManagement : Form
     {
         private Form activateForm;
-        private int borderSize = 2;
         public static String BillID = "";
         public static double FinaTotal = 0;
         public static int IsBank = 0;
