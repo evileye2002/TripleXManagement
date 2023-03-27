@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TripleXManagement.ChildForm.Account
+namespace TripleXManagement.ChildForm.Table
 {
-    public partial class AddAccount : Form
+    public partial class TableManagement : Form
     {
-        public AddAccount()
+        public TableManagement()
         {
             InitializeComponent();
         }

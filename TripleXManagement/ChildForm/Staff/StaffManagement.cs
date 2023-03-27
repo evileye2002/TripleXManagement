@@ -14,8 +14,8 @@ namespace TripleXManagement.ChildForm.Staff
 {
     public partial class StaffManagement : Form
     {
-        public static string ID = "";
-        private Form activateForm;
+        public static string? ID = "";
+        private Form? activateForm;
         public StaffManagement()
         {
             InitializeComponent();
@@ -58,7 +58,7 @@ namespace TripleXManagement.ChildForm.Staff
 
         private void dgvStaff_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int selectedRow = dgvStaff.SelectedRows.Count;
+            int? selectedRow = dgvStaff.SelectedRows.Count;
             if (selectedRow == 1)
             {
                 int t = dgvStaff.CurrentCell.RowIndex;
@@ -90,7 +90,7 @@ namespace TripleXManagement.ChildForm.Staff
         {
             if (e.KeyCode == Keys.Delete)
             {
-                String sql = "exec delStaffbyID " + ID;
+                String? sql = "exec delStaffbyID " + ID;
                 StaticClass.SqlClass.RunSql(sql);
 
                 GetData();
