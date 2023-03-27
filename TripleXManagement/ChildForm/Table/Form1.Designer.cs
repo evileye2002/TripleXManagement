@@ -71,6 +71,7 @@
             this.pnBody.BackColor = System.Drawing.Color.Gray;
             this.pnBody.Controls.Add(this.pictureBox1);
             this.pnBody.Controls.Add(this.lbCustomer);
+            this.pnBody.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnBody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnBody.Location = new System.Drawing.Point(0, 30);
             this.pnBody.Name = "pnBody";

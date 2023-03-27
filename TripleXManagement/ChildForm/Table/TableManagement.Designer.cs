@@ -211,6 +211,7 @@
             this.rbAllKind.Text = "Tất cả";
             this.rbAllKind.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.rbAllKind.UseVisualStyleBackColor = false;
+            this.rbAllKind.CheckedChanged += new System.EventHandler(this.rbAllKind_CheckedChanged);
             // 
             // rbNormal
             // 
@@ -228,6 +229,7 @@
             this.rbNormal.Text = "Thường";
             this.rbNormal.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.rbNormal.UseVisualStyleBackColor = false;
+            this.rbNormal.CheckedChanged += new System.EventHandler(this.rbNormal_CheckedChanged);
             // 
             // rbMid
             // 
@@ -245,6 +247,7 @@
             this.rbMid.Text = "Vừa";
             this.rbMid.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.rbMid.UseVisualStyleBackColor = false;
+            this.rbMid.CheckedChanged += new System.EventHandler(this.rbMid_CheckedChanged);
             // 
             // rbBig
             // 
@@ -262,6 +265,7 @@
             this.rbBig.Text = "To";
             this.rbBig.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.rbBig.UseVisualStyleBackColor = false;
+            this.rbBig.CheckedChanged += new System.EventHandler(this.rbBig_CheckedChanged);
             // 
             // label2
             // 
