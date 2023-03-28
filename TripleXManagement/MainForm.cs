@@ -190,7 +190,7 @@ namespace TripleXManagement
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            OpenChildForm(new Form1(), sender);
         }
 
         private void btnCloseChildForm_Click(object sender, EventArgs e)

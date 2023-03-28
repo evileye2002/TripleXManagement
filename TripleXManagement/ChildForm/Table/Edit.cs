@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace TripleXManagement.ChildForm.Table
 {
-    public partial class Form1 : Form
+    public partial class Edit : Form
     {
-        public Form1()
+        public Edit()
         {
             InitializeComponent();
-        }
-
-        private void lbCustomer_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnBody_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("aa");
         }
     }
 }
