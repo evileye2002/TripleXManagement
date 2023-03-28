@@ -29,13 +29,12 @@
         private void InitializeComponent()
         {
             this.pnFooter = new System.Windows.Forms.Panel();
-            this.btnCustomer = new TripleXManagement.CustomControl.RJButton();
-            this.btnEdit = new TripleXManagement.CustomControl.RJButton();
-            this.btnOrder = new TripleXManagement.CustomControl.RJButton();
+            this.btnManagement = new TripleXManagement.CustomControl.RJButton();
             this.pnMain = new System.Windows.Forms.Panel();
             this.flpNullTable = new System.Windows.Forms.FlowLayoutPanel();
             this.flpBookTable = new System.Windows.Forms.FlowLayoutPanel();
             this.pnFilter = new System.Windows.Forms.Panel();
+            this.txtSearch = new TripleXManagement.CustomControl.Textbox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.rbAllKind = new TripleXManagement.CustomControl.RJRadioButton();
             this.rbNormal = new TripleXManagement.CustomControl.RJRadioButton();
@@ -56,84 +55,37 @@
             // pnFooter
             // 
             this.pnFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            this.pnFooter.Controls.Add(this.btnCustomer);
-            this.pnFooter.Controls.Add(this.btnEdit);
-            this.pnFooter.Controls.Add(this.btnOrder);
+            this.pnFooter.Controls.Add(this.btnManagement);
             this.pnFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnFooter.Location = new System.Drawing.Point(0, 505);
             this.pnFooter.Name = "pnFooter";
             this.pnFooter.Size = new System.Drawing.Size(921, 50);
             this.pnFooter.TabIndex = 5;
             // 
-            // btnCustomer
+            // btnManagement
             // 
-            this.btnCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnCustomer.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnCustomer.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnCustomer.BorderRadius = 20;
-            this.btnCustomer.BorderSize = 2;
-            this.btnCustomer.Enabled = false;
-            this.btnCustomer.FlatAppearance.BorderSize = 0;
-            this.btnCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCustomer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnCustomer.Image = global::TripleXManagement.Properties.Resources.database_administrator_20px1;
-            this.btnCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCustomer.Location = new System.Drawing.Point(240, 5);
-            this.btnCustomer.Name = "btnCustomer";
-            this.btnCustomer.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnCustomer.Size = new System.Drawing.Size(100, 40);
-            this.btnCustomer.TabIndex = 14;
-            this.btnCustomer.Text = "Lưu";
-            this.btnCustomer.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnCustomer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCustomer.UseVisualStyleBackColor = false;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnEdit.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnEdit.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnEdit.BorderRadius = 20;
-            this.btnEdit.BorderSize = 2;
-            this.btnEdit.FlatAppearance.BorderSize = 0;
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnEdit.Image = global::TripleXManagement.Properties.Resources.database_administrator_20px1;
-            this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEdit.Location = new System.Drawing.Point(130, 5);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnEdit.Size = new System.Drawing.Size(100, 40);
-            this.btnEdit.TabIndex = 10;
-            this.btnEdit.Text = "Sửa";
-            this.btnEdit.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEdit.UseVisualStyleBackColor = false;
-            // 
-            // btnOrder
-            // 
-            this.btnOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnOrder.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnOrder.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnOrder.BorderRadius = 20;
-            this.btnOrder.BorderSize = 2;
-            this.btnOrder.FlatAppearance.BorderSize = 0;
-            this.btnOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOrder.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnOrder.Image = global::TripleXManagement.Properties.Resources.database_administrator_20px1;
-            this.btnOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOrder.Location = new System.Drawing.Point(20, 5);
-            this.btnOrder.Name = "btnOrder";
-            this.btnOrder.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnOrder.Size = new System.Drawing.Size(100, 40);
-            this.btnOrder.TabIndex = 9;
-            this.btnOrder.Text = "Đặt";
-            this.btnOrder.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnOrder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnOrder.UseVisualStyleBackColor = false;
+            this.btnManagement.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnManagement.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnManagement.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnManagement.BorderRadius = 20;
+            this.btnManagement.BorderSize = 2;
+            this.btnManagement.FlatAppearance.BorderSize = 0;
+            this.btnManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManagement.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnManagement.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnManagement.Image = global::TripleXManagement.Properties.Resources.database_administrator_20px1;
+            this.btnManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnManagement.Location = new System.Drawing.Point(707, 5);
+            this.btnManagement.Name = "btnManagement";
+            this.btnManagement.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnManagement.Size = new System.Drawing.Size(115, 40);
+            this.btnManagement.TabIndex = 9;
+            this.btnManagement.Text = "Bàn Ăn";
+            this.btnManagement.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnManagement.UseVisualStyleBackColor = false;
+            this.btnManagement.Click += new System.EventHandler(this.btnManagement_Click);
             // 
             // pnMain
             // 
@@ -168,6 +120,7 @@
             // 
             // pnFilter
             // 
+            this.pnFilter.Controls.Add(this.txtSearch);
             this.pnFilter.Controls.Add(this.panel1);
             this.pnFilter.Controls.Add(this.label2);
             this.pnFilter.Controls.Add(this.label1);
@@ -181,6 +134,28 @@
             this.pnFilter.Size = new System.Drawing.Size(234, 505);
             this.pnFilter.TabIndex = 7;
             // 
+            // txtSearch
+            // 
+            this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.txtSearch.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.txtSearch.BorderRadius = 0;
+            this.txtSearch.BorderSize = 2;
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.txtSearch.Location = new System.Drawing.Point(17, 39);
+            this.txtSearch.Multiline = false;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtSearch.PasswordChar = false;
+            this.txtSearch.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.txtSearch.PlaceholderText = "Tìm kiếm...";
+            this.txtSearch.Size = new System.Drawing.Size(202, 36);
+            this.txtSearch.TabIndex = 16;
+            this.txtSearch.Texts = "";
+            this.txtSearch.UnderlinedStyle = true;
+            this.txtSearch._TextChanged += new System.EventHandler(this.txtSearch__TextChanged);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -188,9 +163,9 @@
             this.panel1.Controls.Add(this.rbNormal);
             this.panel1.Controls.Add(this.rbMid);
             this.panel1.Controls.Add(this.rbBig);
-            this.panel1.Location = new System.Drawing.Point(30, 289);
+            this.panel1.Location = new System.Drawing.Point(20, 289);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(126, 202);
+            this.panel1.Size = new System.Drawing.Size(126, 152);
             this.panel1.TabIndex = 15;
             // 
             // rbAllKind
@@ -273,7 +248,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            this.label2.Location = new System.Drawing.Point(30, 252);
+            this.label2.Location = new System.Drawing.Point(20, 252);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 25);
             this.label2.TabIndex = 1;
@@ -285,7 +260,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            this.label1.Location = new System.Drawing.Point(30, 112);
+            this.label1.Location = new System.Drawing.Point(20, 112);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 25);
             this.label1.TabIndex = 1;
@@ -299,7 +274,7 @@
             this.rbNullTable.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
             this.rbNullTable.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.rbNullTable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.rbNullTable.Location = new System.Drawing.Point(45, 146);
+            this.rbNullTable.Location = new System.Drawing.Point(35, 146);
             this.rbNullTable.MinimumSize = new System.Drawing.Size(0, 21);
             this.rbNullTable.Name = "rbNullTable";
             this.rbNullTable.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -318,7 +293,7 @@
             this.rbToday.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
             this.rbToday.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.rbToday.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.rbToday.Location = new System.Drawing.Point(44, 218);
+            this.rbToday.Location = new System.Drawing.Point(34, 218);
             this.rbToday.MinimumSize = new System.Drawing.Size(0, 21);
             this.rbToday.Name = "rbToday";
             this.rbToday.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -336,7 +311,7 @@
             this.rbOrderTable.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
             this.rbOrderTable.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.rbOrderTable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.rbOrderTable.Location = new System.Drawing.Point(45, 182);
+            this.rbOrderTable.Location = new System.Drawing.Point(35, 182);
             this.rbOrderTable.MinimumSize = new System.Drawing.Size(0, 21);
             this.rbOrderTable.Name = "rbOrderTable";
             this.rbOrderTable.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -392,9 +367,7 @@
         #endregion
 
         private Panel pnFooter;
-        private CustomControl.RJButton btnCustomer;
-        private CustomControl.RJButton btnEdit;
-        private CustomControl.RJButton btnOrder;
+        private CustomControl.RJButton btnManagement;
         private CustomControl.RJRadioButton rdTable;
         private Panel pnMain;
         private FlowLayoutPanel flpBookTable;
@@ -411,5 +384,6 @@
         private CustomControl.RJButton btnFilter;
         private Panel panel1;
         private CustomControl.RJRadioButton rbToday;
+        private CustomControl.Textbox txtSearch;
     }
 }
