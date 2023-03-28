@@ -87,7 +87,7 @@ namespace TripleXManagement.ChildForm.Staff
             else
                 StaticClass.SharedClass.FillCBB("select * from Account", cbAccount, "Username");
         }
-
+        #region HoverState
         private void btnDenied_MouseEnter(object sender, EventArgs e)
         {
             StaticClass.SharedClass.HoverBtnState(btnDenied, Properties.Resources.denied_20px1, true);
@@ -117,5 +117,6 @@ namespace TripleXManagement.ChildForm.Staff
         {
             StaticClass.SharedClass.HoverBtnState(btnSave, Properties.Resources.denied_20px, false);
         }
+        #endregion
     }
 }

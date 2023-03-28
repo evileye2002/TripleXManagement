@@ -632,10 +632,13 @@ namespace TripleXManagement.ChildForm.Table
             childForm.BringToFront();
             childForm.Show();
             pnFooter.Visible = false;
+            pnFilter.Visible = false;
         }
         private void btnManagement_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Form, sender);
+            //OpenChildForm(new AddTable(), sender);
+            Form f = new AddTable();
+            f.Show();
         }
 
         private void txtSearch__TextChanged(object sender, EventArgs e)
@@ -660,6 +663,16 @@ namespace TripleXManagement.ChildForm.Table
                     GetOrderedTable(sql + txtSearch.Texts + "%'");
                 }
             }
+        }
+
+        private void btnManagement_MouseEnter(object sender, EventArgs e)
+        {
+            StaticClass.SharedClass.HoverBtnState(btnManagement, Properties.Resources.denied_20px, true);
+        }
+
+        private void btnManagement_MouseLeave(object sender, EventArgs e)
+        {
+            StaticClass.SharedClass.HoverBtnState(btnManagement, Properties.Resources.denied_20px, false);
         }
     }
 }

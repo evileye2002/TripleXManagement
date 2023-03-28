@@ -86,6 +86,8 @@
             this.btnManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnManagement.UseVisualStyleBackColor = false;
             this.btnManagement.Click += new System.EventHandler(this.btnManagement_Click);
+            this.btnManagement.MouseEnter += new System.EventHandler(this.btnManagement_MouseEnter);
+            this.btnManagement.MouseLeave += new System.EventHandler(this.btnManagement_MouseLeave);
             // 
             // pnMain
             // 

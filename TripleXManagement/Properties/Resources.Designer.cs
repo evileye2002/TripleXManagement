@@ -73,6 +73,16 @@ namespace TripleXManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap close_20px {
+            get {
+                object obj = ResourceManager.GetObject("close_20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Close_26 {
             get {
                 object obj = ResourceManager.GetObject("Close-26", resourceCulture);
@@ -303,6 +313,16 @@ namespace TripleXManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap maximize_button_20px {
+            get {
+                object obj = ResourceManager.GetObject("maximize_button_20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Maximize_button_32 {
             get {
                 object obj = ResourceManager.GetObject("Maximize-button-32", resourceCulture);
@@ -316,6 +336,16 @@ namespace TripleXManagement.Properties {
         internal static System.Drawing.Bitmap menu_32 {
             get {
                 object obj = ResourceManager.GetObject("menu-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap multiply_20px {
+            get {
+                object obj = ResourceManager.GetObject("multiply_20px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -376,6 +406,16 @@ namespace TripleXManagement.Properties {
         internal static System.Drawing.Bitmap staff_32 {
             get {
                 object obj = ResourceManager.GetObject("staff-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap subtract_20px {
+            get {
+                object obj = ResourceManager.GetObject("subtract_20px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
