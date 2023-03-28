@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace TripleXManagement.StaticClass
@@ -11,6 +12,7 @@ namespace TripleXManagement.StaticClass
         private static string _globalVar = "";
         private static string _globalVar1 = "";
         private static string _globalVar2 = "";
+        public static CultureInfo cultureVN =  CultureInfo.GetCultureInfo("vn-VN");
 
         public static string TenTK
         {

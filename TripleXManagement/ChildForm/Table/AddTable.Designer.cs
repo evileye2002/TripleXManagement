@@ -28,15 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnClose = new TripleXManagement.CustomControl.RJButton();
             this.btnSave = new TripleXManagement.CustomControl.RJButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.txtName = new TripleXManagement.CustomControl.Textbox();
             this.txtKind = new TripleXManagement.CustomControl.Textbox();
             this.txtChair = new TripleXManagement.CustomControl.Textbox();
-            this.txtName = new TripleXManagement.CustomControl.Textbox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.lbTableName = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnClose.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnClose.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnClose.BorderRadius = 20;
+            this.btnClose.BorderSize = 2;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnClose.Image = global::TripleXManagement.Properties.Resources.database_administrator_20px1;
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.Location = new System.Drawing.Point(470, 290);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnClose.Size = new System.Drawing.Size(100, 40);
+            this.btnClose.TabIndex = 2;
+            this.btnClose.Text = "Thoát";
+            this.btnClose.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnClose.MouseEnter += new System.EventHandler(this.btnClose_MouseEnter);
+            this.btnClose.MouseLeave += new System.EventHandler(this.btnClose_MouseLeave);
             // 
             // btnSave
             // 
@@ -51,15 +77,51 @@
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.btnSave.Image = global::TripleXManagement.Properties.Resources.database_administrator_20px1;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(30, 285);
+            this.btnSave.Location = new System.Drawing.Point(350, 290);
             this.btnSave.Name = "btnSave";
             this.btnSave.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnSave.Size = new System.Drawing.Size(100, 40);
-            this.btnSave.TabIndex = 12;
+            this.btnSave.TabIndex = 1;
             this.btnSave.Text = "Lưu";
             this.btnSave.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSave.MouseEnter += new System.EventHandler(this.btnSave_MouseEnter);
+            this.btnSave.MouseLeave += new System.EventHandler(this.btnSave_MouseLeave);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel2.Controls.Add(this.txtName);
+            this.panel2.Controls.Add(this.txtKind);
+            this.panel2.Controls.Add(this.txtChair);
+            this.panel2.Location = new System.Drawing.Point(30, 30);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(540, 249);
+            this.panel2.TabIndex = 0;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // txtName
+            // 
+            this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.txtName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.txtName.BorderRadius = 18;
+            this.txtName.BorderSize = 2;
+            this.txtName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.txtName.Location = new System.Drawing.Point(50, 52);
+            this.txtName.Multiline = true;
+            this.txtName.Name = "txtName";
+            this.txtName.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtName.PasswordChar = false;
+            this.txtName.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.txtName.PlaceholderText = "Tên bàn...";
+            this.txtName.Size = new System.Drawing.Size(437, 42);
+            this.txtName.TabIndex = 0;
+            this.txtName.Texts = "";
+            this.txtName.UnderlinedStyle = false;
             // 
             // txtKind
             // 
@@ -70,7 +132,7 @@
             this.txtKind.BorderSize = 2;
             this.txtKind.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtKind.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.txtKind.Location = new System.Drawing.Point(50, 82);
+            this.txtKind.Location = new System.Drawing.Point(50, 114);
             this.txtKind.Multiline = true;
             this.txtKind.Name = "txtKind";
             this.txtKind.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
@@ -78,7 +140,7 @@
             this.txtKind.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.txtKind.PlaceholderText = "Loại...";
             this.txtKind.Size = new System.Drawing.Size(437, 42);
-            this.txtKind.TabIndex = 8;
+            this.txtKind.TabIndex = 1;
             this.txtKind.Texts = "";
             this.txtKind.UnderlinedStyle = false;
             // 
@@ -91,7 +153,7 @@
             this.txtChair.BorderSize = 2;
             this.txtChair.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtChair.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.txtChair.Location = new System.Drawing.Point(50, 144);
+            this.txtChair.Location = new System.Drawing.Point(50, 176);
             this.txtChair.Multiline = true;
             this.txtChair.Name = "txtChair";
             this.txtChair.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
@@ -99,52 +161,23 @@
             this.txtChair.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.txtChair.PlaceholderText = "Số ghế...";
             this.txtChair.Size = new System.Drawing.Size(437, 42);
-            this.txtChair.TabIndex = 9;
+            this.txtChair.TabIndex = 2;
             this.txtChair.Texts = "";
             this.txtChair.UnderlinedStyle = false;
             // 
-            // txtName
+            // lbTableName
             // 
-            this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.txtName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            this.txtName.BorderRadius = 18;
-            this.txtName.BorderSize = 2;
-            this.txtName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.txtName.Location = new System.Drawing.Point(50, 20);
-            this.txtName.Multiline = true;
-            this.txtName.Name = "txtName";
-            this.txtName.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtName.PasswordChar = false;
-            this.txtName.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.txtName.PlaceholderText = "Tên bàn...";
-            this.txtName.Size = new System.Drawing.Size(437, 42);
-            this.txtName.TabIndex = 10;
-            this.txtName.Texts = "";
-            this.txtName.UnderlinedStyle = false;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Silver;
-            this.panel2.Controls.Add(this.txtName);
-            this.panel2.Controls.Add(this.txtKind);
-            this.panel2.Controls.Add(this.txtChair);
-            this.panel2.Location = new System.Drawing.Point(30, 60);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(540, 206);
-            this.panel2.TabIndex = 11;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.btnSave);
-            this.panel3.Controls.Add(this.panel2);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(600, 340);
-            this.panel3.TabIndex = 12;
+            this.lbTableName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbTableName.AutoSize = true;
+            this.lbTableName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lbTableName.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbTableName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.lbTableName.Location = new System.Drawing.Point(253, 36);
+            this.lbTableName.Name = "lbTableName";
+            this.lbTableName.Size = new System.Drawing.Size(94, 30);
+            this.lbTableName.TabIndex = 16;
+            this.lbTableName.Text = "Tên Bàn";
+            this.lbTableName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // AddTable
             // 
@@ -152,24 +185,29 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(600, 340);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.lbTableName);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddTable";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddTable";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.AddTable_Paint);
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private CustomControl.RJButton btnClose;
         private CustomControl.RJButton btnSave;
+        private Panel panel2;
+        private CustomControl.Textbox txtName;
         private CustomControl.Textbox txtKind;
         private CustomControl.Textbox txtChair;
-        private CustomControl.Textbox txtName;
-        private Panel panel2;
-        private Panel panel3;
+        private Label lbTableName;
     }
 }

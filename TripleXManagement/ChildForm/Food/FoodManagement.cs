@@ -23,7 +23,6 @@ namespace TripleXManagement
         public static string foodID = "";
         public static string name = "" ;
         public static string price = "";
-        //public static string image = "";
         private Form activateForm;
         SqlConnection conn;
         SqlCommand cmd;
@@ -35,7 +34,7 @@ namespace TripleXManagement
                 ConnectionString = @"Data Source=DESKTOP-J6D7SL6\SQLEXPRESS;Initial Catalog=TripleX;Integrated Security=True"
             };
             this.dgvFood.Columns[2].DefaultCellStyle.Format = "c";
-            dgvFood.Columns[2].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("vn-VN");
+            dgvFood.Columns[2].DefaultCellStyle.FormatProvider = StaticClass.SharedClass.cultureVN;
         }
         
         public void OpenChildForm(Form childForm, object btnSender)

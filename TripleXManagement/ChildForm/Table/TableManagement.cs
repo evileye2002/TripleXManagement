@@ -14,7 +14,6 @@ namespace TripleXManagement.ChildForm.Table
 {
     public partial class TableManagement : Form
     {
-        private Form activateForm;
         public static string tag = "";
         SqlDataReader? reader;
 
@@ -46,9 +45,10 @@ namespace TripleXManagement.ChildForm.Table
             reader = StaticClass.SqlClass.Reader(sql);
             if (reader.HasRows)
             {
-                reader.Close();
+                //reader.Close();
                 rbToday.Checked = true;
             }
+            reader.Close();
             GetData();
         }
 
@@ -194,11 +194,11 @@ namespace TripleXManagement.ChildForm.Table
                 pnTable.Controls.Add(footer);
 
                 flpBookTable.Controls.Add(pnTable);
-                Tcustomer.Click += new EventHandler(OnClick);
-                Tname.Click += new EventHandler(OnClick);
-                TGetDate.Click += new EventHandler(OnClick);
-                Tstatus.Click += new EventHandler(OnClick);
-                Tchair.Click += new EventHandler(OnClick);
+                Tcustomer.Click += new EventHandler(editOrder);
+                Tname.Click += new EventHandler(editOrder);
+                TGetDate.Click += new EventHandler(editOrder);
+                Tstatus.Click += new EventHandler(editOrder);
+                Tchair.Click += new EventHandler(editOrder);
             }
             reader.Close();
         }
@@ -344,11 +344,11 @@ namespace TripleXManagement.ChildForm.Table
                 pnTable.Controls.Add(footer);
 
                 flpBookTable.Controls.Add(pnTable);
-                Tcustomer.Click += new EventHandler(OnClick);
-                Tname.Click += new EventHandler(OnClick);
-                TGetDate.Click += new EventHandler(OnClick);
-                Tstatus.Click += new EventHandler(OnClick);
-                Tchair.Click += new EventHandler(OnClick);
+                Tcustomer.Click += new EventHandler(addOrder);
+                Tname.Click += new EventHandler(addOrder);
+                TGetDate.Click += new EventHandler(addOrder);
+                Tstatus.Click += new EventHandler(addOrder);
+                Tchair.Click += new EventHandler(addOrder);
             }
             reader.Close();
         }
@@ -494,11 +494,11 @@ namespace TripleXManagement.ChildForm.Table
                 pnTable.Controls.Add(footer);
 
                 flpBookTable.Controls.Add(pnTable);
-                Tcustomer.Click += new EventHandler(OnClick);
-                Tname.Click += new EventHandler(OnClick);
-                TGetDate.Click += new EventHandler(OnClick);
-                Tstatus.Click += new EventHandler(OnClick);
-                Tchair.Click += new EventHandler(OnClick);
+                Tcustomer.Click += new EventHandler(editOrder);
+                Tname.Click += new EventHandler(editOrder);
+                TGetDate.Click += new EventHandler(editOrder);
+                Tstatus.Click += new EventHandler(editOrder);
+                Tchair.Click += new EventHandler(editOrder);
             }
             reader.Close();
         }
@@ -612,33 +612,22 @@ namespace TripleXManagement.ChildForm.Table
         }
         #endregion
 
-        public void OnClick(object sender, EventArgs e)
+        public void editOrder(object sender, EventArgs e)
         {
             tag = ((Label)sender).Tag.ToString();
-            MessageBox.Show(tag);
+            Form f = new EditOrder();
+            f.ShowDialog();
         }
-        public void OpenChildForm(Form childForm, object btnSender)
+        public void addOrder(object sender, EventArgs e)
         {
-            if (activateForm != null)
-            {
-                activateForm.Close();
-            }
-            activateForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            this.pnMain.Controls.Add(childForm);
-            this.pnMain.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
-            pnFooter.Visible = false;
-            pnFilter.Visible = false;
+            tag = ((Label)sender).Tag.ToString();
+            Form f = new AddOrder();
+            f.ShowDialog();
         }
         private void btnManagement_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new AddTable(), sender);
             Form f = new AddTable();
-            f.Show();
+            f.ShowDialog();
         }
 
         private void txtSearch__TextChanged(object sender, EventArgs e)

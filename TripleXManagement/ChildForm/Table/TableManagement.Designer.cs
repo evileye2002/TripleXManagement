@@ -31,7 +31,6 @@
             this.pnFooter = new System.Windows.Forms.Panel();
             this.btnManagement = new TripleXManagement.CustomControl.RJButton();
             this.pnMain = new System.Windows.Forms.Panel();
-            this.flpNullTable = new System.Windows.Forms.FlowLayoutPanel();
             this.flpBookTable = new System.Windows.Forms.FlowLayoutPanel();
             this.pnFilter = new System.Windows.Forms.Panel();
             this.txtSearch = new TripleXManagement.CustomControl.Textbox();
@@ -76,12 +75,12 @@
             this.btnManagement.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.btnManagement.Image = global::TripleXManagement.Properties.Resources.database_administrator_20px1;
             this.btnManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnManagement.Location = new System.Drawing.Point(707, 5);
+            this.btnManagement.Location = new System.Drawing.Point(770, 5);
             this.btnManagement.Name = "btnManagement";
             this.btnManagement.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnManagement.Size = new System.Drawing.Size(115, 40);
+            this.btnManagement.Size = new System.Drawing.Size(134, 40);
             this.btnManagement.TabIndex = 9;
-            this.btnManagement.Text = "Bàn Ăn";
+            this.btnManagement.Text = "Thêm Bàn";
             this.btnManagement.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.btnManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnManagement.UseVisualStyleBackColor = false;
@@ -92,23 +91,12 @@
             // pnMain
             // 
             this.pnMain.AutoScroll = true;
-            this.pnMain.Controls.Add(this.flpNullTable);
             this.pnMain.Controls.Add(this.flpBookTable);
             this.pnMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnMain.Location = new System.Drawing.Point(0, 0);
             this.pnMain.Name = "pnMain";
             this.pnMain.Size = new System.Drawing.Size(687, 505);
             this.pnMain.TabIndex = 6;
-            // 
-            // flpNullTable
-            // 
-            this.flpNullTable.BackColor = System.Drawing.Color.Gray;
-            this.flpNullTable.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flpNullTable.Location = new System.Drawing.Point(0, 450);
-            this.flpNullTable.Name = "flpNullTable";
-            this.flpNullTable.Size = new System.Drawing.Size(687, 55);
-            this.flpNullTable.TabIndex = 1;
-            this.flpNullTable.Visible = false;
             // 
             // flpBookTable
             // 
@@ -143,16 +131,16 @@
             this.txtSearch.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
             this.txtSearch.BorderRadius = 0;
             this.txtSearch.BorderSize = 2;
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.txtSearch.Location = new System.Drawing.Point(17, 39);
-            this.txtSearch.Multiline = false;
+            this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.txtSearch.PasswordChar = false;
             this.txtSearch.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.txtSearch.PlaceholderText = "Tìm kiếm...";
-            this.txtSearch.Size = new System.Drawing.Size(202, 36);
+            this.txtSearch.Size = new System.Drawing.Size(202, 35);
             this.txtSearch.TabIndex = 16;
             this.txtSearch.Texts = "";
             this.txtSearch.UnderlinedStyle = true;
@@ -374,7 +362,6 @@
         private Panel pnMain;
         private FlowLayoutPanel flpBookTable;
         private Panel pnFilter;
-        private FlowLayoutPanel flpNullTable;
         private Label label1;
         private CustomControl.RJRadioButton rbNullTable;
         private CustomControl.RJRadioButton rbOrderTable;
