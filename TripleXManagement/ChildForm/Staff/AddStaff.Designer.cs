@@ -32,13 +32,13 @@
             this.txtCCCD = new TripleXManagement.CustomControl.Textbox();
             this.txtName = new TripleXManagement.CustomControl.Textbox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnDenied = new CustomControl.RJButton();
-            this.btnSave = new CustomControl.RJButton();
-            this.btnBrowse = new CustomControl.RJButton();
+            this.btnDenied = new TripleXManagement.CustomControl.RJButton();
+            this.btnSave = new TripleXManagement.CustomControl.RJButton();
+            this.btnBrowse = new TripleXManagement.CustomControl.RJButton();
             this.txtPhone = new TripleXManagement.CustomControl.Textbox();
-            this.cbRegency = new System.Windows.Forms.ComboBox();
-            this.cbAccount = new System.Windows.Forms.ComboBox();
             this.ofdBrowse = new System.Windows.Forms.OpenFileDialog();
+            this.cbRegency = new TripleXManagement.CustomControl.CComboBox();
+            this.cbAccount = new TripleXManagement.CustomControl.CComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbPic)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -206,31 +206,47 @@
             this.txtPhone.Texts = "";
             this.txtPhone.UnderlinedStyle = false;
             // 
+            // ofdBrowse
+            // 
+            this.ofdBrowse.FileName = "openFileDialog1";
+            // 
             // cbRegency
             // 
             this.cbRegency.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbRegency.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.cbRegency.BorderSize = 2;
+            this.cbRegency.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.cbRegency.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbRegency.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.cbRegency.FormattingEnabled = true;
-            this.cbRegency.Location = new System.Drawing.Point(351, 204);
+            this.cbRegency.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.cbRegency.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.cbRegency.ListTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbRegency.Location = new System.Drawing.Point(351, 203);
+            this.cbRegency.MinimumSize = new System.Drawing.Size(200, 30);
             this.cbRegency.Name = "cbRegency";
-            this.cbRegency.Size = new System.Drawing.Size(200, 29);
-            this.cbRegency.TabIndex = 7;
+            this.cbRegency.Padding = new System.Windows.Forms.Padding(2);
+            this.cbRegency.Size = new System.Drawing.Size(200, 39);
+            this.cbRegency.TabIndex = 8;
+            this.cbRegency.Texts = "";
             // 
             // cbAccount
             // 
             this.cbAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbAccount.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.cbAccount.BorderSize = 2;
+            this.cbAccount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.cbAccount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.cbAccount.FormattingEnabled = true;
-            this.cbAccount.Location = new System.Drawing.Point(579, 204);
+            this.cbAccount.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.cbAccount.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.cbAccount.ListTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbAccount.Location = new System.Drawing.Point(588, 203);
+            this.cbAccount.MinimumSize = new System.Drawing.Size(200, 30);
             this.cbAccount.Name = "cbAccount";
-            this.cbAccount.Size = new System.Drawing.Size(209, 29);
-            this.cbAccount.TabIndex = 7;
-            // 
-            // ofdBrowse
-            // 
-            this.ofdBrowse.FileName = "openFileDialog1";
+            this.cbAccount.Padding = new System.Windows.Forms.Padding(2);
+            this.cbAccount.Size = new System.Drawing.Size(200, 39);
+            this.cbAccount.TabIndex = 8;
+            this.cbAccount.Texts = "";
             // 
             // AddStaff
             // 
@@ -264,9 +280,9 @@
         private CustomControl.RJButton btnSave;
         private CustomControl.RJButton btnBrowse;
         private CustomControl.Textbox txtPhone;
-        private ComboBox cbRegency;
-        private ComboBox cbAccount;
         private OpenFileDialog ofdBrowse;
         private CustomControl.RJButton btnDenied;
+        private CustomControl.CComboBox cbRegency;
+        private CustomControl.CComboBox cbAccount;
     }
 }

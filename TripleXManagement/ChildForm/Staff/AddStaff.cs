@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,9 +14,12 @@ namespace TripleXManagement.ChildForm.Staff
 {
     public partial class AddStaff : Form
     {
+        SqlCommand cmd;
+        SqlConnection conn;
         public AddStaff()
         {
             InitializeComponent();
+            conn = StaticClass.SqlClass.Connection;
         }
         private void GetData()
         {
@@ -44,15 +48,29 @@ namespace TripleXManagement.ChildForm.Staff
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            MemoryStream ms = new MemoryStream();
-            pbPic.BackgroundImage.Save(ms, ImageFormat.Jpeg);
-            byte[] array = ms.GetBuffer();
+            try
+            {
+                MemoryStream ms = new MemoryStream();
+                pbPic.BackgroundImage.Save(ms, ImageFormat.Jpeg);
+                byte[] array = ms.GetBuffer();
 
-            string sql = @"exec addStaff '" + txtName.Texts + "', '" + txtCCCD.Texts + "', '" + txtPhone.Texts + "', '"
-                + array + "', N'%" + cbRegency.Text + "%', '" + cbAccount.Text + "'";
-            StaticClass.SqlClass.RunSql(sql);
+                
+                cmd = new SqlCommand("exec addStaff @Name, @CCCD, @Phone, @Image, @Regency, @Account", conn);
+                cmd.Parameters.AddWithValue("@Name", txtName.Texts);
+                cmd.Parameters.AddWithValue("@CCCD", txtCCCD.Texts);
+                cmd.Parameters.AddWithValue("@Phone", txtPhone.Texts);
+                cmd.Parameters.AddWithValue("@Regency", cbRegency.Texts);
+                cmd.Parameters.AddWithValue("@Account", cbAccount.Texts);
+                cmd.Parameters.AddWithValue("@Image", array);
+                cmd.ExecuteNonQuery();
 
-            clear();
+                clear();
+                MessageBox.Show("Đã lưu!", "THÔNG BÁO!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "CẢNH BÁO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
         private void clear()
         {
