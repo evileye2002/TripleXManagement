@@ -129,7 +129,7 @@ namespace TripleXManagement.StaticClass
         }
 
         //Đổ dữ liệu vào ComboBox
-        public static void FillCBB(string sql, CustomControl.CComboBox cbo/*, string ma*/, string ten)
+        public static void FillCBB(string sql, ComboBox cbo/*, string ma*/, string ten)
         {
             cbo.DataSource = SqlClass.FillTable(sql);
             //cbo.ValueMember = ma; //Trường giá trị

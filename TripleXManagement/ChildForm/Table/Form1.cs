@@ -21,10 +21,5 @@ namespace TripleXManagement.ChildForm.Table
         {
 
         }
-
-        private void pnBody_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("aa");
-        }
     }
 }

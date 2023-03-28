@@ -21,6 +21,8 @@ namespace TripleXManagement
     public partial class FoodManagement : Form
     {
         public static string foodID = "";
+        public static string name = "" ;
+        public static string price = "";
         //public static string image = "";
         private Form activateForm;
         SqlConnection conn;
@@ -81,6 +83,9 @@ namespace TripleXManagement
             {
                 int t = dgvFood.CurrentCell.RowIndex;
                 foodID = dgvFood.Rows[t].Cells[0].Value.ToString();
+                name = dgvFood.Rows[t].Cells[1].Value.ToString();
+                price = dgvFood.Rows[t].Cells[2].Value.ToString();
+                //image = dgvFood.Rows[t].Cells[3].Value.ToString();
             }
         }
 

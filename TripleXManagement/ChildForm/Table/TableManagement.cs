@@ -15,7 +15,7 @@ namespace TripleXManagement.ChildForm.Table
     public partial class TableManagement : Form
     {
         private Form activateForm;
-        public static string? tag = "";
+        public static string tag = "";
         SqlDataReader? reader;
 
         private Panel pnTable;
@@ -49,14 +49,12 @@ namespace TripleXManagement.ChildForm.Table
                 reader.Close();
                 rbToday.Checked = true;
             }
-            else
-                rbEmptyTable.Checked = true;
             GetData();
         }
 
-        #region GetData
-        private void GetOrderTableInToday(string sql)
+        private void GetOrderTableInToday()
         {
+            string sql = "exec getOrderTableInToday";
             reader = StaticClass.SqlClass.Reader(sql);
 
             Color bodyFC = Color.FromArgb(245,255,255);
@@ -71,8 +69,7 @@ namespace TripleXManagement.ChildForm.Table
                 {
                     Size = new Size(250,150),
                     Cursor = Cursors.Hand,
-                    Tag = reader["ID"].ToString(),
-                    Enabled = true,
+                    Tag = reader["ID"].ToString()
                 };
 
                 body = new Panel
@@ -198,13 +195,13 @@ namespace TripleXManagement.ChildForm.Table
                 pnTable.Controls.Add(footer);
 
                 flpBookTable.Controls.Add(pnTable);
-                Tcustomer.Click += new EventHandler(OnClick);
-
+                pnTable.Click += new EventHandler(OnClick);
             }
             reader.Close();
         }
-        private void GetEmptyTable(string sql)
+        private void GetEmptyTable()
         {
+            string sql = "exec getEmptyTable";
             reader = StaticClass.SqlClass.Reader(sql);
 
             Color bodyFC = Color.FromArgb(245, 255, 255);
@@ -345,12 +342,13 @@ namespace TripleXManagement.ChildForm.Table
                 pnTable.Controls.Add(footer);
 
                 flpBookTable.Controls.Add(pnTable);
-                Tcustomer.Click += new EventHandler(OnClick);
+                pnTable.Click += new EventHandler(OnClick);
             }
             reader.Close();
         }
-        private void GetOrderedTable(string sql)
+        private void GetOrderedTable()
         {
+            string sql = "exec getOrderedTable";
             reader = StaticClass.SqlClass.Reader(sql);
 
             Color bodyFC = Color.FromArgb(245, 255, 255);
@@ -491,64 +489,519 @@ namespace TripleXManagement.ChildForm.Table
                 pnTable.Controls.Add(footer);
 
                 flpBookTable.Controls.Add(pnTable);
-                Tcustomer.Click += new EventHandler(OnClick);
+                pnTable.Click += new EventHandler(OnClick);
             }
             reader.Close();
         }
         private void GetData()
         {
             flpBookTable.Controls.Clear();
-            string sql = "";
             if (rbAllKind.Checked)
             {
-                if (rbEmptyTable.Checked)
-                    GetEmptyTable("exec getEmptyTable");
+                if (rbNullTable.Checked)
+                {
+                    GetEmptyTable();
+                }
                 if (rbToday.Checked)
-                    GetOrderTableInToday("exec getOrderTableInToday");
+                {
+                    GetOrderTableInToday();
+                }
                 if (rbOrderTable.Checked)
-                    GetOrderedTable("exec getOrderedTable");
-
-                /*GetEmptyTable("exec getEmptyTable");
-                GetOrderTableInToday("exec getOrderTableInToday");
-                GetOrderedTable("exec getOrderedTable");*/
+                {
+                    GetOrderedTable();
+                }
             }
-
-            if (rbEmptyTable.Checked)
+            if (rbNullTable.Checked)
             {
-                sql = "exec getEmptyTablebyKind N'";
                 if (rbNormal.Checked)
-                    GetEmptyTable(sql + rbNormal.Text + "'");
+                {
+                    GetEmptyTablebyKind(rbNormal.Text);
+                }
                 if (rbMid.Checked)
-                    GetEmptyTable(sql + rbMid.Text + "'");
+                {
+                    GetEmptyTablebyKind(rbMid.Text);
+                }
                 if (rbBig.Checked)
-                    GetEmptyTable(sql + rbBig.Text + "'");
+                {
+                    GetEmptyTablebyKind(rbBig.Text);
+                }
             }
             if (rbToday.Checked)
             {
-                sql = "exec getOrderTableInTodaybyKind N'";
                 if (rbNormal.Checked)
-                    GetOrderTableInToday(sql + rbNormal.Text + "'");
+                {
+                    GetOrderTableInTodaybyKind(rbNormal.Text);
+                }
                 if (rbMid.Checked)
-                    GetOrderTableInToday(sql + rbMid.Text + "'");
+                {
+                    GetOrderTableInTodaybyKind(rbMid.Text);
+                }
                 if (rbBig.Checked)
-                    GetOrderTableInToday(sql + rbBig.Text + "'");
+                {
+                    GetOrderTableInTodaybyKind(rbBig.Text);
+                }
             }
             if (rbOrderTable.Checked)
             {
-                sql = "exec getOrderedTablebyKind N'";
                 if (rbNormal.Checked)
-                    GetOrderedTable(sql + rbNormal.Text + "'");
+                {
+                    GetOrderedTablebyKind(rbNormal.Text);
+                }
                 if (rbMid.Checked)
-                    GetOrderedTable(sql + rbMid.Text + "'");
+                {
+                    GetOrderedTablebyKind(rbMid.Text);
+                }
                 if (rbBig.Checked)
-                    GetOrderedTable(sql + rbBig.Text + "'");
+                {
+                    GetOrderedTablebyKind(rbBig.Text);
+                }
             }
 
-
         }
-        #endregion
 
-        #region Checked Changed
+        private void GetOrderTableInTodaybyKind(string kind)
+        {
+            string sql = "exec getOrderTableInTodaybyKind N'" + kind + "'";
+            reader = StaticClass.SqlClass.Reader(sql);
+
+            Color bodyFC = Color.FromArgb(245, 255, 255);
+            Color bodyBC = Color.LimeGreen;
+            Color footerBC = Color.LightGray;
+            Color footerFC = Color.FromArgb(39, 39, 58);
+
+
+            while (reader.Read())
+            {
+                pnTable = new Panel
+                {
+                    Size = new Size(250, 150),
+                    Cursor = Cursors.Hand,
+                    Tag = reader["ID"].ToString()
+                };
+
+                body = new Panel
+                {
+                    BackColor = bodyBC,
+                    ForeColor = bodyFC,
+                    Font = new("Arial", 12, FontStyle.Bold),
+                    Dock = DockStyle.Fill,
+                };
+
+                header = new Panel
+                {
+                    Size = new Size(250, 30),
+                    BackColor = bodyBC,
+                    ForeColor = bodyFC,
+                    Font = new("Arial", 10, FontStyle.Bold),
+                    Dock = DockStyle.Top,
+                };
+
+                footer = new Panel
+                {
+                    Size = new Size(250, 30),
+                    BackColor = footerBC,
+                    ForeColor = footerFC,
+                    Font = new("Arial", 10, FontStyle.Bold),
+                    Dock = DockStyle.Bottom,
+                };
+
+                pic = new Panel
+                {
+                    Dock = DockStyle.Fill,
+                };
+                picT = new Panel
+                {
+                    Dock = DockStyle.Top,
+                    Height = 64,
+                };
+                picB = new Panel
+                {
+                    Dock = DockStyle.Bottom,
+                    Height = 26,
+                };
+                picL = new Panel
+                {
+                    Dock = DockStyle.Left,
+                    Width = 34,
+                };
+
+                Tname = new Label
+                {
+                    Padding = new Padding(10, 6, 0, 0),
+                    Text = reader["Name"].ToString(),
+                    Size = new Size(70, 30),
+                    TextAlign = ContentAlignment.MiddleLeft,
+                    Dock = DockStyle.None,
+                    Tag = reader["ID"].ToString()
+                };
+
+                Tstatus = new Label
+                {
+                    Padding = new Padding(0, 6, 10, 0),
+                    Text = reader["StatusName"].ToString(),
+                    Size = new Size(155, 30),
+                    TextAlign = ContentAlignment.MiddleRight,
+                    Dock = DockStyle.Right,
+                    RightToLeft = RightToLeft.Yes,
+                    Tag = reader["ID"].ToString(),
+                };
+
+                img = new CustomControl.RJButton
+                {
+                    Dock = DockStyle.Fill,
+                    BackColor = bodyBC,
+                    Tag = reader["ID"].ToString(),
+                    Enabled = false,
+                };
+
+                Tcustomer = new Label
+                {
+                    Padding = new Padding(0, 40, 0, 0),
+                    Text = reader["CustomerName"].ToString(),
+                    Size = new Size(180, 30),
+                    TextAlign = ContentAlignment.MiddleLeft,
+                    Dock = DockStyle.Right,
+                    Tag = reader["ID"].ToString()
+                };
+
+                TGetDate = new Label
+                {
+                    Padding = new Padding(10, 6, 0, 5),
+                    Text = "Ngày: " + reader["StatusName"].ToString(),
+                    Size = new Size(130, 30),
+                    TextAlign = ContentAlignment.MiddleLeft,
+                    Dock = DockStyle.Left,
+                    Tag = reader["ID"].ToString(),
+                };
+
+                Tchair = new Label
+                {
+                    Padding = new Padding(0, 6, 10, 5),
+                    Text = "Ghế: " + reader["Chair"].ToString(),
+                    Size = new Size(70, 30),
+                    TextAlign = ContentAlignment.MiddleLeft,
+                    Dock = DockStyle.Right,
+                    Tag = reader["ID"].ToString(),
+                };
+                img.BackgroundImage = Properties.Resources.bill_32;
+
+                header.Controls.Add(Tname);
+                header.Controls.Add(Tstatus);
+                pnTable.Controls.Add(header);
+
+                pic.Controls.Add(picT);
+                pic.Controls.Add(picB);
+                pic.Controls.Add(picL);
+                pic.Controls.Add(img);
+                body.Controls.Add(pic);
+                body.Controls.Add(Tcustomer);
+                pnTable.Controls.Add(body);
+
+                footer.Controls.Add(TGetDate);
+                footer.Controls.Add(Tchair);
+                pnTable.Controls.Add(footer);
+
+                flpBookTable.Controls.Add(pnTable);
+                pnTable.Click += new EventHandler(OnClick);
+            }
+            reader.Close();
+        }
+
+        private void GetEmptyTablebyKind(string kind)
+        {
+            string sql = "exec getEmptyTablebyKind N'" + kind + "'";
+            reader = StaticClass.SqlClass.Reader(sql);
+
+            Color bodyFC = Color.FromArgb(245, 255, 255);
+            Color bodyBC = Color.FromArgb(98, 102, 244);
+            Color footerBC = Color.LightGray;
+            Color footerFC = Color.FromArgb(39, 39, 58);
+
+
+            while (reader.Read())
+            {
+                pnTable = new Panel
+                {
+                    Size = new Size(250, 150),
+                    Cursor = Cursors.Hand,
+                    Tag = reader["ID"].ToString()
+                };
+
+                body = new Panel
+                {
+                    BackColor = bodyBC,
+                    ForeColor = bodyFC,
+                    Font = new("Arial", 12, FontStyle.Bold),
+                    Dock = DockStyle.Fill,
+                };
+
+                header = new Panel
+                {
+                    Size = new Size(250, 30),
+                    BackColor = bodyBC,
+                    ForeColor = bodyFC,
+                    Font = new("Arial", 10, FontStyle.Bold),
+                    Dock = DockStyle.Top,
+                };
+
+                footer = new Panel
+                {
+                    Size = new Size(250, 30),
+                    BackColor = footerBC,
+                    ForeColor = footerFC,
+                    Font = new("Arial", 10, FontStyle.Bold),
+                    Dock = DockStyle.Bottom,
+                };
+
+                pic = new Panel
+                {
+                    Dock = DockStyle.Fill,
+                };
+                picT = new Panel
+                {
+                    Dock = DockStyle.Top,
+                    Height = 64,
+                };
+                picB = new Panel
+                {
+                    Dock = DockStyle.Bottom,
+                    Height = 26,
+                };
+                picL = new Panel
+                {
+                    Dock = DockStyle.Left,
+                    Width = 34,
+                };
+
+                Tname = new Label
+                {
+                    Padding = new Padding(10, 6, 0, 0),
+                    Text = reader["Name"].ToString(),
+                    Size = new Size(70, 30),
+                    TextAlign = ContentAlignment.MiddleLeft,
+                    Dock = DockStyle.None,
+                    Tag = reader["ID"].ToString()
+                };
+
+                Tstatus = new Label
+                {
+                    Padding = new Padding(0, 6, 10, 0),
+                    Text = reader["StatusName"].ToString(),
+                    Size = new Size(95, 30),
+                    TextAlign = ContentAlignment.MiddleRight,
+                    Dock = DockStyle.Right,
+                    RightToLeft = RightToLeft.Yes,
+                    Tag = reader["ID"].ToString(),
+                };
+
+                img = new CustomControl.RJButton
+                {
+                    Dock = DockStyle.Fill,
+                    BackColor = bodyBC,
+                    Tag = reader["ID"].ToString(),
+                    Enabled = false,
+                };
+
+                Tcustomer = new Label
+                {
+                    Padding = new Padding(0, 40, 0, 0),
+                    Text = reader["StatusName"].ToString(),
+                    Size = new Size(180, 30),
+                    TextAlign = ContentAlignment.MiddleLeft,
+                    Dock = DockStyle.Right,
+                    Tag = reader["ID"].ToString()
+                };
+
+                TGetDate = new Label
+                {
+                    Padding = new Padding(10, 6, 0, 5),
+                    Text = "Ngày: " + reader["Date"].ToString(),
+                    Size = new Size(180, 30),
+                    TextAlign = ContentAlignment.MiddleLeft,
+                    Dock = DockStyle.Left,
+                    Tag = reader["ID"].ToString(),
+                };
+
+                Tchair = new Label
+                {
+                    Padding = new Padding(0, 6, 10, 5),
+                    Text = "Ghế: " + reader["Chair"].ToString(),
+                    Size = new Size(70, 30),
+                    TextAlign = ContentAlignment.MiddleLeft,
+                    Dock = DockStyle.Right,
+                    Tag = reader["ID"].ToString(),
+                };
+                img.BackgroundImage = Properties.Resources.bill_32;
+
+                header.Controls.Add(Tname);
+                header.Controls.Add(Tstatus);
+                pnTable.Controls.Add(header);
+
+                pic.Controls.Add(picT);
+                pic.Controls.Add(picB);
+                pic.Controls.Add(picL);
+                pic.Controls.Add(img);
+                body.Controls.Add(pic);
+                body.Controls.Add(Tcustomer);
+                pnTable.Controls.Add(body);
+
+                footer.Controls.Add(TGetDate);
+                footer.Controls.Add(Tchair);
+                pnTable.Controls.Add(footer);
+
+                flpBookTable.Controls.Add(pnTable);
+                pnTable.Click += new EventHandler(OnClick);
+            }
+            reader.Close();
+        }
+        private void GetOrderedTablebyKind(string kind)
+        {
+            string sql = "exec getOrderedTablebyKind N'" + kind + "'";
+            reader = StaticClass.SqlClass.Reader(sql);
+
+            Color bodyFC = Color.FromArgb(245, 255, 255);
+            Color bodyBC = Color.Gray;
+            Color footerBC = Color.LightGray;
+            Color footerFC = Color.FromArgb(39, 39, 58);
+
+
+            while (reader.Read())
+            {
+                pnTable = new Panel
+                {
+                    Size = new Size(250, 150),
+                    Cursor = Cursors.Hand,
+                    Tag = reader["ID"].ToString()
+                };
+
+                body = new Panel
+                {
+                    BackColor = bodyBC,
+                    ForeColor = bodyFC,
+                    Font = new("Arial", 12, FontStyle.Bold),
+                    Dock = DockStyle.Fill,
+                };
+
+                header = new Panel
+                {
+                    Size = new Size(250, 30),
+                    BackColor = bodyBC,
+                    ForeColor = bodyFC,
+                    Font = new("Arial", 10, FontStyle.Bold),
+                    Dock = DockStyle.Top,
+                };
+
+                footer = new Panel
+                {
+                    Size = new Size(250, 30),
+                    BackColor = footerBC,
+                    ForeColor = footerFC,
+                    Font = new("Arial", 10, FontStyle.Bold),
+                    Dock = DockStyle.Bottom,
+                };
+
+                pic = new Panel
+                {
+                    Dock = DockStyle.Fill,
+                };
+                picT = new Panel
+                {
+                    Dock = DockStyle.Top,
+                    Height = 64,
+                };
+                picB = new Panel
+                {
+                    Dock = DockStyle.Bottom,
+                    Height = 26,
+                };
+                picL = new Panel
+                {
+                    Dock = DockStyle.Left,
+                    Width = 34,
+                };
+
+                Tname = new Label
+                {
+                    Padding = new Padding(10, 6, 0, 0),
+                    Text = reader["Name"].ToString(),
+                    Size = new Size(70, 30),
+                    TextAlign = ContentAlignment.MiddleLeft,
+                    Dock = DockStyle.None,
+                    Tag = reader["ID"].ToString()
+                };
+
+                Tstatus = new Label
+                {
+                    Padding = new Padding(0, 6, 10, 0),
+                    Text = reader["StatusName"].ToString(),
+                    Size = new Size(70, 30),
+                    TextAlign = ContentAlignment.MiddleRight,
+                    Dock = DockStyle.Right,
+                    RightToLeft = RightToLeft.Yes,
+                    Tag = reader["ID"].ToString(),
+                };
+
+                img = new CustomControl.RJButton
+                {
+                    Dock = DockStyle.Fill,
+                    BackColor = bodyBC,
+                    Tag = reader["ID"].ToString(),
+                    Enabled = false,
+                };
+
+                Tcustomer = new Label
+                {
+                    Padding = new Padding(0, 40, 0, 0),
+                    Text = reader["CustomerName"].ToString(),
+                    Size = new Size(180, 30),
+                    TextAlign = ContentAlignment.MiddleLeft,
+                    Dock = DockStyle.Right,
+                    Tag = reader["ID"].ToString()
+                };
+
+                TGetDate = new Label
+                {
+                    Padding = new Padding(10, 6, 0, 5),
+                    Text = "Ngày: " + reader["Get"].ToString(),
+                    Size = new Size(180, 30),
+                    TextAlign = ContentAlignment.MiddleLeft,
+                    Dock = DockStyle.Left,
+                    Tag = reader["ID"].ToString(),
+                };
+
+                Tchair = new Label
+                {
+                    Padding = new Padding(0, 6, 10, 5),
+                    Text = "Ghế: " + reader["Chair"].ToString(),
+                    Size = new Size(70, 30),
+                    TextAlign = ContentAlignment.MiddleLeft,
+                    Dock = DockStyle.Right,
+                    Tag = reader["ID"].ToString(),
+                };
+                img.BackgroundImage = Properties.Resources.bill_32;
+
+                header.Controls.Add(Tname);
+                header.Controls.Add(Tstatus);
+                pnTable.Controls.Add(header);
+
+                pic.Controls.Add(picT);
+                pic.Controls.Add(picB);
+                pic.Controls.Add(picL);
+                pic.Controls.Add(img);
+                body.Controls.Add(pic);
+                body.Controls.Add(Tcustomer);
+                pnTable.Controls.Add(body);
+
+                footer.Controls.Add(TGetDate);
+                footer.Controls.Add(Tchair);
+                pnTable.Controls.Add(footer);
+
+                flpBookTable.Controls.Add(pnTable);
+                pnTable.Click += new EventHandler(OnClick);
+            }
+            reader.Close();
+        }
+
         private void rbNullTable_CheckedChanged(object sender, EventArgs e)
         {
             GetData();
@@ -583,51 +1036,10 @@ namespace TripleXManagement.ChildForm.Table
         {
             GetData();
         }
-        #endregion
-
         public void OnClick(object sender, EventArgs e)
         {
-            tag = ((Label)sender).Tag.ToString();
-        }
-
-        private void btnSearch_MouseEnter(object sender, EventArgs e)
-        {
-            StaticClass.SharedClass.HoverBtnState(btnSearch, Properties.Resources.database_administrator_20px, true);
-        }
-
-        private void btnSearch_MouseLeave(object sender, EventArgs e)
-        {
-            StaticClass.SharedClass.HoverBtnState(btnSearch, Properties.Resources.database_administrator_20px, false);
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            flpBookTable.Controls.Clear();
-            if (txtSearch.Texts != "")
-            {
-                if (rbEmptyTable.Checked)
-                    GetEmptyTable("exec getEmptyTableSearch N'%" + txtSearch.Texts + "%'");
-                if (rbToday.Checked)
-                    GetOrderTableInToday("exec getOrderTableInTodaySearch N'%" + txtSearch.Texts + "%'");
-                if (rbOrderTable.Checked)
-                    GetOrderedTable("exec getOrderedTableSearch N'%" + txtSearch.Texts + "%'");
-            }
-        }
-        public void OpenChildForm(Form childForm, object btnSender)
-        {
-            if (activateForm != null)
-            {
-                activateForm.Close();
-            }
-            activateForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            this.pnMain.Controls.Add(childForm);
-            this.pnMain.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
-            pnFooter.Visible = false;
+            tag = ((Panel)sender).Tag.ToString();
+            MessageBox.Show(tag);
         }
     }
 }

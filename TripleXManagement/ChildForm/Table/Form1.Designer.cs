@@ -77,7 +77,6 @@
             this.pnBody.Name = "pnBody";
             this.pnBody.Size = new System.Drawing.Size(250, 90);
             this.pnBody.TabIndex = 2;
-            this.pnBody.Click += new System.EventHandler(this.pnBody_Click);
             // 
             // pictureBox1
             // 
