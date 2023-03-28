@@ -45,7 +45,7 @@ namespace TripleXManagement.ChildForm.Table
             reader = StaticClass.SqlClass.Reader(sql);
             if (reader.HasRows)
             {
-                //reader.Close();
+                reader.Close();
                 rbToday.Checked = true;
             }
             reader.Close();
@@ -129,8 +129,8 @@ namespace TripleXManagement.ChildForm.Table
 
                 Tstatus = new Label
                 {
-                    Padding = new Padding(0, 6, 10, 0),
-                    Text = reader["StatusName"].ToString(),
+                    Padding = new Padding(2, 6, 0, 0),
+                    Text = "Hôm nay nhận bàn",
                     Size = new Size(155, 30),
                     TextAlign = ContentAlignment.MiddleRight,
                     Dock = DockStyle.Right,
@@ -159,7 +159,7 @@ namespace TripleXManagement.ChildForm.Table
                 TGetDate = new Label
                 {
                     Padding = new Padding(10, 6, 0, 5),
-                    Text = "Ngày: " + reader["StatusName"].ToString(),
+                    Text = "Ngày: Hôm nay",
                     Size = new Size(130, 30),
                     TextAlign = ContentAlignment.MiddleLeft,
                     Dock = DockStyle.Left,
@@ -309,7 +309,7 @@ namespace TripleXManagement.ChildForm.Table
                 TGetDate = new Label
                 {
                     Padding = new Padding(10, 6, 0, 5),
-                    Text = "Ngày: " + reader["Date"].ToString(),
+                    Text = "Ngày: 0",
                     Size = new Size(180, 30),
                     TextAlign = ContentAlignment.MiddleLeft,
                     Dock = DockStyle.Left,

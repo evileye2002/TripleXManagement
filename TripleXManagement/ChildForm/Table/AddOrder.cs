@@ -135,7 +135,6 @@ namespace TripleXManagement.ChildForm.Table
                 + DateToString(dtpOrderDate) + " " + TimeToString(dtpOrderTime) + "',N'" 
                 + DateToString(dtpGetDate) + " " + TimeToString(dtpGetTime) + "'";
             StaticClass.SqlClass.RunSql(sql);
-            //MessageBox.Show(sql);
             
         }
         private string DateToString(RJDatePicker dtpDate)
