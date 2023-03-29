@@ -31,25 +31,33 @@
             this.pbPic = new System.Windows.Forms.PictureBox();
             this.txtCCCD = new TripleXManagement.CustomControl.Textbox();
             this.txtName = new TripleXManagement.CustomControl.Textbox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnDenied = new TripleXManagement.CustomControl.RJButton();
             this.btnSave = new TripleXManagement.CustomControl.RJButton();
             this.btnBrowse = new TripleXManagement.CustomControl.RJButton();
             this.txtPhone = new TripleXManagement.CustomControl.Textbox();
             this.ofdBrowse = new System.Windows.Forms.OpenFileDialog();
             this.cbRegency = new TripleXManagement.CustomControl.CComboBox();
             this.cbAccount = new TripleXManagement.CustomControl.CComboBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.rbYes = new TripleXManagement.CustomControl.RJRadioButton();
+            this.rbNo = new TripleXManagement.CustomControl.RJRadioButton();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lbTableName = new System.Windows.Forms.Label();
+            this.btnClose = new TripleXManagement.CustomControl.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbPic)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // pbPic
             // 
             this.pbPic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbPic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbPic.Location = new System.Drawing.Point(12, 12);
+            this.pbPic.Location = new System.Drawing.Point(30, 60);
             this.pbPic.Name = "pbPic";
-            this.pbPic.Size = new System.Drawing.Size(320, 320);
+            this.pbPic.Size = new System.Drawing.Size(190, 190);
             this.pbPic.TabIndex = 1;
             this.pbPic.TabStop = false;
             // 
@@ -62,17 +70,17 @@
             this.txtCCCD.BorderSize = 2;
             this.txtCCCD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtCCCD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.txtCCCD.Location = new System.Drawing.Point(351, 70);
+            this.txtCCCD.Location = new System.Drawing.Point(247, 118);
             this.txtCCCD.Multiline = true;
             this.txtCCCD.Name = "txtCCCD";
             this.txtCCCD.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.txtCCCD.PasswordChar = false;
             this.txtCCCD.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.txtCCCD.PlaceholderText = "CCCD...";
-            this.txtCCCD.Size = new System.Drawing.Size(437, 42);
+            this.txtCCCD.Size = new System.Drawing.Size(200, 35);
             this.txtCCCD.TabIndex = 4;
             this.txtCCCD.Texts = "";
-            this.txtCCCD.UnderlinedStyle = false;
+            this.txtCCCD.UnderlinedStyle = true;
             // 
             // txtName
             // 
@@ -83,55 +91,17 @@
             this.txtName.BorderSize = 2;
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.txtName.Location = new System.Drawing.Point(351, 12);
+            this.txtName.Location = new System.Drawing.Point(247, 60);
             this.txtName.Multiline = true;
             this.txtName.Name = "txtName";
             this.txtName.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.txtName.PasswordChar = false;
             this.txtName.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.txtName.PlaceholderText = "Họ và Tên...";
-            this.txtName.Size = new System.Drawing.Size(437, 42);
+            this.txtName.Size = new System.Drawing.Size(200, 35);
             this.txtName.TabIndex = 5;
             this.txtName.Texts = "";
-            this.txtName.UnderlinedStyle = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            this.panel1.Controls.Add(this.btnDenied);
-            this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(this.btnBrowse);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 505);
-            this.panel1.MaximumSize = new System.Drawing.Size(0, 50);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(921, 50);
-            this.panel1.TabIndex = 6;
-            // 
-            // btnDenied
-            // 
-            this.btnDenied.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnDenied.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnDenied.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnDenied.BorderRadius = 20;
-            this.btnDenied.BorderSize = 2;
-            this.btnDenied.FlatAppearance.BorderSize = 0;
-            this.btnDenied.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDenied.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnDenied.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnDenied.Image = global::TripleXManagement.Properties.Resources.denied_20px;
-            this.btnDenied.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDenied.Location = new System.Drawing.Point(285, 5);
-            this.btnDenied.Name = "btnDenied";
-            this.btnDenied.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
-            this.btnDenied.Size = new System.Drawing.Size(40, 40);
-            this.btnDenied.TabIndex = 13;
-            this.btnDenied.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnDenied.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDenied.UseVisualStyleBackColor = false;
-            this.btnDenied.Click += new System.EventHandler(this.btnDenied_Click);
-            this.btnDenied.MouseEnter += new System.EventHandler(this.btnDenied_MouseEnter);
-            this.btnDenied.MouseLeave += new System.EventHandler(this.btnDenied_MouseLeave);
+            this.txtName.UnderlinedStyle = true;
             // 
             // btnSave
             // 
@@ -146,7 +116,7 @@
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.btnSave.Image = global::TripleXManagement.Properties.Resources.database_administrator_20px1;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(170, 5);
+            this.btnSave.Location = new System.Drawing.Point(529, 321);
             this.btnSave.Name = "btnSave";
             this.btnSave.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnSave.Size = new System.Drawing.Size(100, 40);
@@ -172,7 +142,7 @@
             this.btnBrowse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.btnBrowse.Image = global::TripleXManagement.Properties.Resources.database_administrator_20px1;
             this.btnBrowse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBrowse.Location = new System.Drawing.Point(20, 5);
+            this.btnBrowse.Location = new System.Drawing.Point(60, 321);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnBrowse.Size = new System.Drawing.Size(135, 40);
@@ -194,17 +164,17 @@
             this.txtPhone.BorderSize = 2;
             this.txtPhone.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.txtPhone.Location = new System.Drawing.Point(351, 136);
+            this.txtPhone.Location = new System.Drawing.Point(247, 184);
             this.txtPhone.Multiline = true;
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.txtPhone.PasswordChar = false;
             this.txtPhone.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.txtPhone.PlaceholderText = "Số điện thoại...";
-            this.txtPhone.Size = new System.Drawing.Size(437, 42);
+            this.txtPhone.Size = new System.Drawing.Size(200, 35);
             this.txtPhone.TabIndex = 5;
             this.txtPhone.Texts = "";
-            this.txtPhone.UnderlinedStyle = false;
+            this.txtPhone.UnderlinedStyle = true;
             // 
             // ofdBrowse
             // 
@@ -221,11 +191,11 @@
             this.cbRegency.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
             this.cbRegency.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
             this.cbRegency.ListTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cbRegency.Location = new System.Drawing.Point(351, 203);
+            this.cbRegency.Location = new System.Drawing.Point(484, 60);
             this.cbRegency.MinimumSize = new System.Drawing.Size(200, 30);
             this.cbRegency.Name = "cbRegency";
             this.cbRegency.Padding = new System.Windows.Forms.Padding(2);
-            this.cbRegency.Size = new System.Drawing.Size(200, 39);
+            this.cbRegency.Size = new System.Drawing.Size(200, 35);
             this.cbRegency.TabIndex = 8;
             this.cbRegency.Texts = "";
             // 
@@ -240,33 +210,162 @@
             this.cbAccount.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
             this.cbAccount.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
             this.cbAccount.ListTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cbAccount.Location = new System.Drawing.Point(588, 203);
+            this.cbAccount.Location = new System.Drawing.Point(484, 118);
             this.cbAccount.MinimumSize = new System.Drawing.Size(200, 30);
             this.cbAccount.Name = "cbAccount";
             this.cbAccount.Padding = new System.Windows.Forms.Padding(2);
-            this.cbAccount.Size = new System.Drawing.Size(200, 39);
+            this.cbAccount.Size = new System.Drawing.Size(200, 35);
             this.cbAccount.TabIndex = 8;
             this.cbAccount.Texts = "";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.cbAccount);
+            this.panel2.Controls.Add(this.pbPic);
+            this.panel2.Controls.Add(this.cbRegency);
+            this.panel2.Controls.Add(this.txtName);
+            this.panel2.Controls.Add(this.txtPhone);
+            this.panel2.Controls.Add(this.txtCCCD);
+            this.panel2.Location = new System.Drawing.Point(30, 30);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(714, 278);
+            this.panel2.TabIndex = 18;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(484, 161);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 19);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Cấp tài khoản?";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel4.Controls.Add(this.rbYes);
+            this.panel4.Controls.Add(this.rbNo);
+            this.panel4.Location = new System.Drawing.Point(484, 184);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(141, 69);
+            this.panel4.TabIndex = 29;
+            // 
+            // rbYes
+            // 
+            this.rbYes.AutoSize = true;
+            this.rbYes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.rbYes.Checked = true;
+            this.rbYes.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.rbYes.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rbYes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.rbYes.Location = new System.Drawing.Point(15, 3);
+            this.rbYes.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rbYes.Name = "rbYes";
+            this.rbYes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.rbYes.Size = new System.Drawing.Size(55, 23);
+            this.rbYes.TabIndex = 0;
+            this.rbYes.TabStop = true;
+            this.rbYes.Text = "Có";
+            this.rbYes.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.rbYes.UseVisualStyleBackColor = false;
+            this.rbYes.CheckedChanged += new System.EventHandler(this.rbYes_CheckedChanged);
+            // 
+            // rbNo
+            // 
+            this.rbNo.AutoSize = true;
+            this.rbNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.rbNo.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.rbNo.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rbNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.rbNo.Location = new System.Drawing.Point(14, 39);
+            this.rbNo.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rbNo.Name = "rbNo";
+            this.rbNo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.rbNo.Size = new System.Drawing.Size(80, 23);
+            this.rbNo.TabIndex = 0;
+            this.rbNo.Text = "Không";
+            this.rbNo.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.rbNo.UseVisualStyleBackColor = false;
+            this.rbNo.CheckedChanged += new System.EventHandler(this.rbNo_CheckedChanged);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.lbTableName);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(714, 46);
+            this.panel3.TabIndex = 25;
+            // 
+            // lbTableName
+            // 
+            this.lbTableName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbTableName.AutoSize = true;
+            this.lbTableName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lbTableName.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbTableName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.lbTableName.Location = new System.Drawing.Point(265, 8);
+            this.lbTableName.Name = "lbTableName";
+            this.lbTableName.Size = new System.Drawing.Size(184, 30);
+            this.lbTableName.TabIndex = 21;
+            this.lbTableName.Text = "Thêm Nhân Viên";
+            this.lbTableName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnClose.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnClose.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnClose.BorderRadius = 20;
+            this.btnClose.BorderSize = 2;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnClose.Image = global::TripleXManagement.Properties.Resources.database_administrator_20px1;
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.Location = new System.Drawing.Point(644, 321);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnClose.Size = new System.Drawing.Size(100, 40);
+            this.btnClose.TabIndex = 20;
+            this.btnClose.Text = "Thoát";
+            this.btnClose.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnClose.MouseEnter += new System.EventHandler(this.btnClose_MouseEnter);
+            this.btnClose.MouseLeave += new System.EventHandler(this.btnClose_MouseLeave);
             // 
             // AddStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(921, 555);
-            this.Controls.Add(this.cbAccount);
-            this.Controls.Add(this.cbRegency);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.txtCCCD);
-            this.Controls.Add(this.txtPhone);
-            this.Controls.Add(this.txtName);
-            this.Controls.Add(this.pbPic);
+            this.ClientSize = new System.Drawing.Size(774, 373);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnBrowse);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddStaff";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddStaff";
             this.Load += new System.EventHandler(this.AddStaff_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.AddTable_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pbPic)).EndInit();
-            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -276,13 +375,19 @@
         private PictureBox pbPic;
         private CustomControl.Textbox txtCCCD;
         private CustomControl.Textbox txtName;
-        private Panel panel1;
         private CustomControl.RJButton btnSave;
         private CustomControl.RJButton btnBrowse;
         private CustomControl.Textbox txtPhone;
         private OpenFileDialog ofdBrowse;
-        private CustomControl.RJButton btnDenied;
         private CustomControl.CComboBox cbRegency;
         private CustomControl.CComboBox cbAccount;
+        private Panel panel2;
+        private Panel panel3;
+        private Label lbTableName;
+        private Panel panel4;
+        private CustomControl.RJRadioButton rbYes;
+        private CustomControl.RJRadioButton rbNo;
+        private Label label1;
+        private CustomControl.RJButton btnClose;
     }
 }

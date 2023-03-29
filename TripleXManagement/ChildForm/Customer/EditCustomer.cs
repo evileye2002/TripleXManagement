@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,19 +10,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TripleXManagement.ChildForm.Table
+namespace TripleXManagement.ChildForm.Customer
 {
-    public partial class AddTable : Form
+    public partial class EditCustomer : Form
     {
+        public static string ID = "";
+        public static string name = "";
+        public static string CCCD = "";
+        public static string birthday = "";
+        public static string address = "";
+        public static string phone = "";
         private int borderRadius = 20;
         private int borderSize = 2;
         private Color borderColor = Color.FromArgb(98, 102, 244);
-        public AddTable()
+        public EditCustomer()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(borderRadius);
         }
+
+        #region Rounded
         private GraphicsPath GetRoundedPath(Rectangle rect, float radius)
         {
             GraphicsPath path = new GraphicsPath();
@@ -59,29 +68,26 @@ namespace TripleXManagement.ChildForm.Table
                 }
             }
         }
-
         private void AddTable_Paint(object sender, PaintEventArgs e)
         {
             FormRegionAndBorder(this, borderRadius, e.Graphics, borderColor, borderSize);
         }
-
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
             FormRegionAndBorder2(panel2, borderRadius, e.Graphics, borderSize);
         }
-
-        private void FormRegionAndBorder2(Panel panel2, int borderRadius, Graphics graphics, int borderSize)
+        private void FormRegionAndBorder2(Control c, int borderRadius, Graphics graphics, int borderSize)
         {
             if (this.WindowState != FormWindowState.Minimized)
             {
-                using (GraphicsPath roundPath = GetRoundedPath(panel2.ClientRectangle, borderRadius))
+                using (GraphicsPath roundPath = GetRoundedPath(c.ClientRectangle, borderRadius))
                 using (Matrix transform = new Matrix())
                 {
                     graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                    panel2.Region = new Region(roundPath);
+                    c.Region = new Region(roundPath);
                     if (borderSize >= 1)
                     {
-                        Rectangle rect = panel2.ClientRectangle;
+                        Rectangle rect = c.ClientRectangle;
                         float scaleX = 1.0F - ((borderSize + 1) / rect.Width);
                         float scaleY = 1.0F - ((borderSize + 1) / rect.Height);
 
@@ -94,7 +100,9 @@ namespace TripleXManagement.ChildForm.Table
                 }
             }
         }
+        #endregion
 
+        #region HoverState
         private void btnClose_MouseEnter(object sender, EventArgs e)
         {
             StaticClass.SharedClass.HoverSubBtnState(btnClose, Properties.Resources.denied_20px, true);
@@ -113,6 +121,7 @@ namespace TripleXManagement.ChildForm.Table
         {
             StaticClass.SharedClass.HoverSubBtnState(btnSave, Properties.Resources.denied_20px, false);
         }
+        #endregion
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -121,8 +130,27 @@ namespace TripleXManagement.ChildForm.Table
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string sql = "exec addTable N'" + txtName.Texts + "', N'" + txtKind.Texts +"'," +txtChair.Texts;
+            string sql = "exec editCustomer " + ID + ",N'" + txtName.Texts + "','" + txtCCCD.Texts + "','" + dtpBirthday.Value.ToString()
+                + "',N'" + txtAddress.Texts + "','" + txtPhone.Texts + "'";
             StaticClass.SqlClass.RunSql(sql);
+        }
+
+        private void AddCustomer_Load(object sender, EventArgs e)
+        {
+            StaticClass.SqlClass.Connect();
+            GetData();
+        }
+        private void GetData()
+        {
+            ID = CustomerManagement.ID;
+            txtName.Texts = CustomerManagement.name;
+            txtCCCD.Texts = CustomerManagement.CCCD;
+            txtAddress.Texts = CustomerManagement.address;
+            birthday = CustomerManagement.birthday;
+            txtPhone.Texts = CustomerManagement.phone;
+
+            DateTime dt = DateTime.ParseExact(birthday, "dd/MM/yyyy HH:mm:ss", StaticClass.SharedClass.cultureVN);
+            dtpBirthday.Value = dt;
         }
     }
 }

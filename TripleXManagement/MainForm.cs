@@ -1,6 +1,7 @@
 ﻿using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TripleXManagement.ChildForm.Account;
+using TripleXManagement.ChildForm.Customer;
 using TripleXManagement.ChildForm.Staff;
 using TripleXManagement.ChildForm.Table;
 
@@ -212,6 +213,11 @@ namespace TripleXManagement
         {
             OpenChildForm(new TableManagement(), sender);
             this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void btnCustomer_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new CustomerManagement(), sender);
         }
     }
 }

@@ -29,6 +29,8 @@ namespace TripleXManagement.ChildForm.Table
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(borderRadius);
         }
+
+        #region Rounded
         private GraphicsPath GetRoundedPath(Rectangle rect, float radius)
         {
             GraphicsPath path = new GraphicsPath();
@@ -66,7 +68,6 @@ namespace TripleXManagement.ChildForm.Table
                 }
             }
         }
-
         private void AddTable_Paint(object sender, PaintEventArgs e)
         {
             FormRegionAndBorder(this, borderRadius, e.Graphics, borderColor, borderSize);
@@ -99,30 +100,33 @@ namespace TripleXManagement.ChildForm.Table
                 }
             }
         }
+        #endregion
 
         private void dgvCustomer_Paint(object sender, PaintEventArgs e)
         {
             FormRegionAndBorder2(dgvCustomer, 15, e.Graphics, borderSize);
         }
 
+        #region HoverState
         private void btnClose_MouseEnter(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnClose, Properties.Resources.denied_20px, true);
+            StaticClass.SharedClass.HoverSubBtnState(btnClose, Properties.Resources.denied_20px, true);
         }
 
         private void btnClose_MouseLeave(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnClose, Properties.Resources.denied_20px, false);
+            StaticClass.SharedClass.HoverSubBtnState(btnClose, Properties.Resources.denied_20px, false);
         }
         private void btnSave_MouseEnter(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnSave, Properties.Resources.denied_20px, true);
+            StaticClass.SharedClass.HoverSubBtnState(btnSave, Properties.Resources.denied_20px, true);
         }
 
         private void btnSave_MouseLeave(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnSave, Properties.Resources.denied_20px, false);
+            StaticClass.SharedClass.HoverSubBtnState(btnSave, Properties.Resources.denied_20px, false);
         }
+        #endregion
 
         private void btnClose_Click(object sender, EventArgs e)
         {

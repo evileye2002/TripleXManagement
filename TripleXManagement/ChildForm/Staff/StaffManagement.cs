@@ -42,7 +42,8 @@ namespace TripleXManagement.ChildForm.Staff
         }
         private void btnAddStaff_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new AddStaff(),sender);
+            Form f = new AddStaff();
+            f.ShowDialog();
         }
 
         private void StaffManagement_Load(object sender, EventArgs e)
@@ -52,8 +53,9 @@ namespace TripleXManagement.ChildForm.Staff
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if(ID != "")
-                OpenChildForm(new EditStaff(), sender);
+            Form f = new EditStaff();
+            if (ID != "")
+                f.ShowDialog();
         }
 
         private void dgvStaff_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -33,7 +33,7 @@
             this.bntTable = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnAccount = new System.Windows.Forms.Button();
-            this.btnCustomer = new System.Windows.Forms.Button();
+            this.btnStaff = new System.Windows.Forms.Button();
             this.btnFoodDrink = new System.Windows.Forms.Button();
             this.btnBill = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -49,6 +49,7 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.pnMain = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnCustomer = new System.Windows.Forms.Button();
             this.pnMenu.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
@@ -60,10 +61,11 @@
             // pnMenu
             // 
             this.pnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.pnMenu.Controls.Add(this.btnCustomer);
             this.pnMenu.Controls.Add(this.bntTable);
             this.pnMenu.Controls.Add(this.btnLogout);
             this.pnMenu.Controls.Add(this.btnAccount);
-            this.pnMenu.Controls.Add(this.btnCustomer);
+            this.pnMenu.Controls.Add(this.btnStaff);
             this.pnMenu.Controls.Add(this.btnFoodDrink);
             this.pnMenu.Controls.Add(this.btnBill);
             this.pnMenu.Controls.Add(this.panel2);
@@ -139,27 +141,27 @@
             this.btnAccount.UseVisualStyleBackColor = true;
             this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
-            // btnCustomer
+            // btnStaff
             // 
-            this.btnCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCustomer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCustomer.FlatAppearance.BorderSize = 0;
-            this.btnCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCustomer.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCustomer.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnCustomer.Image = global::TripleXManagement.Properties.Resources.staff_32;
-            this.btnCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCustomer.Location = new System.Drawing.Point(0, 146);
-            this.btnCustomer.Name = "btnCustomer";
-            this.btnCustomer.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnCustomer.Size = new System.Drawing.Size(205, 50);
-            this.btnCustomer.TabIndex = 3;
-            this.btnCustomer.Tag = "Nhân viên";
-            this.btnCustomer.Text = "Nhân viên";
-            this.btnCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCustomer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCustomer.UseVisualStyleBackColor = true;
-            this.btnCustomer.Click += new System.EventHandler(this.btnStaff_Click);
+            this.btnStaff.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnStaff.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnStaff.FlatAppearance.BorderSize = 0;
+            this.btnStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStaff.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnStaff.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnStaff.Image = global::TripleXManagement.Properties.Resources.staff_32;
+            this.btnStaff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStaff.Location = new System.Drawing.Point(0, 146);
+            this.btnStaff.Name = "btnStaff";
+            this.btnStaff.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnStaff.Size = new System.Drawing.Size(205, 50);
+            this.btnStaff.TabIndex = 3;
+            this.btnStaff.Tag = "Nhân viên";
+            this.btnStaff.Text = "Nhân viên";
+            this.btnStaff.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStaff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnStaff.UseVisualStyleBackColor = true;
+            this.btnStaff.Click += new System.EventHandler(this.btnStaff_Click);
             // 
             // btnFoodDrink
             // 
@@ -371,6 +373,28 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // btnCustomer
+            // 
+            this.btnCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCustomer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCustomer.FlatAppearance.BorderSize = 0;
+            this.btnCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCustomer.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCustomer.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnCustomer.Image = global::TripleXManagement.Properties.Resources.coffee_table_32px;
+            this.btnCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCustomer.Location = new System.Drawing.Point(0, 296);
+            this.btnCustomer.Name = "btnCustomer";
+            this.btnCustomer.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnCustomer.Size = new System.Drawing.Size(205, 50);
+            this.btnCustomer.TabIndex = 7;
+            this.btnCustomer.Tag = "Khách hàng";
+            this.btnCustomer.Text = "Khách hàng";
+            this.btnCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCustomer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCustomer.UseVisualStyleBackColor = true;
+            this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -408,7 +432,7 @@
         private Button btnMenu;
         private Button btnLogout;
         private Button btnAccount;
-        private Button btnCustomer;
+        private Button btnStaff;
         private Button btnFoodDrink;
         private Panel pnTitle;
         private Button btnMinimize;
@@ -419,5 +443,6 @@
         private Button btnCloseChildForm;
         private PictureBox pictureBox1;
         private Button bntTable;
+        private Button btnCustomer;
     }
 }

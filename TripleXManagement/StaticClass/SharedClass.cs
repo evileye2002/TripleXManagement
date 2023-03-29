@@ -90,6 +90,31 @@ namespace TripleXManagement.StaticClass
             }
             
         }
+        public static void HoverSubBtnState(CustomControl.RJButton btn, Image img, bool status)
+        {
+
+            Color white = Color.FromArgb(245, 255, 255);
+            Color black = Color.FromArgb(39, 39, 58);
+            Color blue = Color.FromArgb(98, 102, 244);
+            Color gray = Color.Gray;
+            //MouseEnter
+            if (status == true)
+            {
+                btn.Image = img;
+                btn.BackColor = blue;
+                btn.BorderColor = gray;
+                btn.ForeColor = white;
+            }
+            //MouseLeave
+            else
+            {
+                btn.Image = img;
+                btn.BackColor = white;
+                btn.BorderColor = black;
+                btn.ForeColor = black;
+            }
+
+        }
         #endregion
 
         #region MessageBox

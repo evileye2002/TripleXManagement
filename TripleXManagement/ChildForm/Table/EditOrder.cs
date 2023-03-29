@@ -126,19 +126,19 @@ namespace TripleXManagement.ChildForm.Table
         #region HoverState
         private void btnClose_MouseEnter(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnClose, Properties.Resources.denied_20px, true);
+            StaticClass.SharedClass.HoverSubBtnState(btnClose, Properties.Resources.denied_20px, true);
         }
         private void btnClose_MouseLeave(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnClose, Properties.Resources.denied_20px, false);
+            StaticClass.SharedClass.HoverSubBtnState(btnClose, Properties.Resources.denied_20px, false);
         }
         private void btnSave_MouseEnter(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnSave, Properties.Resources.denied_20px, true);
+            StaticClass.SharedClass.HoverSubBtnState(btnSave, Properties.Resources.denied_20px, true);
         }
         private void btnSave_MouseLeave(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnSave, Properties.Resources.denied_20px, false);
+            StaticClass.SharedClass.HoverSubBtnState(btnSave, Properties.Resources.denied_20px, false);
         }
         #endregion
 

@@ -60,7 +60,8 @@ namespace TripleXManagement
                 {
                     Text = int.Parse(reader["Price"].ToString()).ToString("#,##") + " VNĐ",
                     BackColor = Color.LightGray,
-                    Font = new("Arial", 10, FontStyle.Regular),
+                    Font = new("Arial", 10, FontStyle.Bold),
+                    ForeColor = Color.FromArgb(39, 39, 58),
                     Width = 50,
                     TextAlign = ContentAlignment.MiddleCenter,
                     Dock = DockStyle.Bottom,
