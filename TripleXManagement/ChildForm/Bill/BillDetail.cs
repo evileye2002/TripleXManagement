@@ -17,8 +17,6 @@ namespace TripleXManagement.ChildForm.Bill
         public static String foodID = "";
         string finalTotalM = "";
         string finalTotalB = "";
-        //SqlConnection conn;
-        //SqlCommand cmd;
 
         public BillDetail()
         {

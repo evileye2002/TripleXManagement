@@ -11,10 +11,15 @@ namespace TripleXManagement.ChildForm.Food
         SqlConnection conn;
         SqlCommand? cmd;
         SqlDataReader reader;
+        private int borderRadius = 20;
+        private int borderSize = 2;
+        private Color borderColor = Color.FromArgb(98, 102, 244);
         public EditFood()
         {
             InitializeComponent();
             conn = SqlClass.Connection;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Padding = new Padding(borderRadius);
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -82,18 +87,45 @@ namespace TripleXManagement.ChildForm.Food
         {
             SharedClass.HoverBtnState(btnBrowse, Properties.Resources.database_administrator_20px, true);
         }
+
         private void btnBrowse_MouseLeave(object sender, EventArgs e)
         {
             SharedClass.HoverBtnState(btnBrowse, Properties.Resources.database_administrator_20px1, false);
         }
+
         private void btnSave_MouseEnter(object sender, EventArgs e)
         {
             SharedClass.HoverBtnState(btnSave, Properties.Resources.database_administrator_20px, true);
         }
+
         private void btnSave_MouseLeave(object sender, EventArgs e)
         {
             SharedClass.HoverBtnState(btnSave, Properties.Resources.database_administrator_20px1, false);
         }
+        private void btnClose_MouseEnter(object sender, EventArgs e)
+        {
+            SharedClass.HoverSubBtnState(btnClose, Properties.Resources.denied_20px, true);
+        }
+
+        private void btnClose_MouseLeave(object sender, EventArgs e)
+        {
+            SharedClass.HoverSubBtnState(btnClose, Properties.Resources.denied_20px, false);
+        }
         #endregion
+        #region Rounded
+        private void AddFood_Paint(object sender, PaintEventArgs e)
+        {
+            SharedClass.RoundedForm(this, borderRadius, e.Graphics, borderColor, borderSize);
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            SharedClass.RoundedControl(panel2, borderRadius, e.Graphics, borderSize);
+        }
+        #endregion
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -17,28 +17,11 @@ namespace TripleXManagement
             this.dgvFood.Columns[2].DefaultCellStyle.Format = "c";
             dgvFood.Columns[2].DefaultCellStyle.FormatProvider = SharedClass.cultureVN;
         }
-        
-        public void OpenChildForm(Form childForm, object btnSender)
-        {
-            if (activateForm != null)
-            {
-                activateForm.Close();
-            }
-            activateForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            this.pnMain.Controls.Add(childForm);
-            this.pnMain.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
-            pnFooter.Visible = false;
-        }
 
         private void btnAddFood_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new AddFood(), sender);
-            pnFooter.Visible = false;
+            Form f = new AddFood();
+            f.ShowDialog();
         }
         private void GetData()
         {
@@ -76,10 +59,10 @@ namespace TripleXManagement
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-
-            if(foodID != "")
+            Form f = new EditFood();
+            if (foodID != "")
             {
-                OpenChildForm(new EditFood(), sender);
+                f.ShowDialog();
             }
         }
         #region Hover State
