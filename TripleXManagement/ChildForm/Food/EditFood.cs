@@ -42,7 +42,7 @@ namespace TripleXManagement.ChildForm.Food
             }
             catch (Exception ex)
             {
-                SharedClass.Alert("Lỗi!", Form_Alert.enmType.Success);
+                SharedClass.Alert("Lỗi!", Form_Alert.enmType.Error);
             }
         }
 

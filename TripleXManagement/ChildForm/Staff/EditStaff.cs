@@ -77,7 +77,7 @@ namespace TripleXManagement.ChildForm.Staff
             }
             catch (Exception ex)
             {
-                SharedClass.Alert("Lỗi!", Form_Alert.enmType.Warning);
+                SharedClass.Alert("Lỗi!", Form_Alert.enmType.Error);
             }
         }
         private void btnBrowse_Click(object sender, EventArgs e)
