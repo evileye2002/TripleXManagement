@@ -1,4 +1,5 @@
-﻿using System.Data.SqlClient;
+﻿using CustomAlertBox;
+using System.Data.SqlClient;
 using System.Drawing.Imaging;
 using TripleXManagement.StaticClass;
 using Image = System.Drawing.Image;
@@ -37,11 +38,11 @@ namespace TripleXManagement.ChildForm.Food
                 cmd.ExecuteNonQuery();
 
                 GetData();
-                MessageBox.Show("Đã lưu!", "THÔNG BÁO!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                SharedClass.Alert("Sửa thành công!", Form_Alert.enmType.Success);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "CẢNH BÁO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                SharedClass.Alert("Lỗi!", Form_Alert.enmType.Success);
             }
         }
 

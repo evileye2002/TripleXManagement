@@ -1,4 +1,5 @@
-﻿using System.Drawing.Drawing2D;
+﻿using CustomAlertBox;
+using System.Drawing.Drawing2D;
 using TripleXManagement.StaticClass;
 
 namespace TripleXManagement.ChildForm.Customer
@@ -124,6 +125,7 @@ namespace TripleXManagement.ChildForm.Customer
             string sql = "exec editCustomer " + ID + ",N'" + txtName.Texts + "','" + txtCCCD.Texts + "','" + dtpBirthday.Value.ToString()
                 + "',N'" + txtAddress.Texts + "','" + txtPhone.Texts + "'";
             SqlClass.RunSql(sql);
+            SharedClass.Alert("Sửa thành công!", Form_Alert.enmType.Success);
         }
 
         private void AddCustomer_Load(object sender, EventArgs e)

@@ -1,4 +1,5 @@
-﻿using System.Drawing.Drawing2D;
+﻿using CustomAlertBox;
+using System.Drawing.Drawing2D;
 using TripleXManagement.StaticClass;
 
 namespace TripleXManagement.ChildForm.Table
@@ -51,6 +52,7 @@ namespace TripleXManagement.ChildForm.Table
         {
             string sql = "exec addTable N'" + txtName.Texts + "', N'" + txtKind.Texts +"'," +txtChair.Texts;
             SqlClass.RunSql(sql);
+            SharedClass.Alert("Thêm thành công!", Form_Alert.enmType.Success);
         }
     }
 }

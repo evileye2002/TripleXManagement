@@ -1,4 +1,5 @@
-﻿using System.Data.SqlClient;
+﻿using CustomAlertBox;
+using System.Data.SqlClient;
 using System.Drawing.Drawing2D;
 using TripleXManagement.StaticClass;
 
@@ -143,6 +144,7 @@ namespace TripleXManagement.ChildForm.Table
             {
                 empty = "exec emptyOrderTable " + ID;
                 SqlClass.RunSql(empty);
+                SharedClass.Alert("Sửa thành công!", Form_Alert.enmType.Success);
             }
 
         }

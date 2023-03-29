@@ -1,4 +1,5 @@
-﻿using System.Data.SqlClient;
+﻿using CustomAlertBox;
+using System.Data.SqlClient;
 using System.Drawing.Drawing2D;
 using TripleXManagement.CustomControl;
 using TripleXManagement.StaticClass;
@@ -68,7 +69,8 @@ namespace TripleXManagement.ChildForm.Table
                 + DateToString(dtpOrderDate) + " " + TimeToString(dtpOrderTime) + "',N'" 
                 + DateToString(dtpGetDate) + " " + TimeToString(dtpGetTime) + "'";
             SqlClass.RunSql(sql);
-            
+            SharedClass.Alert("Thêm thành công!", Form_Alert.enmType.Success);
+
         }
         private string DateToString(RJDatePicker dtpDate)
         {

@@ -1,4 +1,5 @@
-﻿using System.Data.SqlClient;
+﻿using CustomAlertBox;
+using System.Data.SqlClient;
 using TripleXManagement.ChildForm.Bill;
 using TripleXManagement.StaticClass;
 
@@ -146,11 +147,11 @@ namespace TripleXManagement
                     sql += @"exec addBill " + dgvDetail.Rows[i].Cells[0].Value.ToString() + ", " + isBank.ToString() + " \n";
                 }
                 SqlClass.RunSql(sql);
-                MessageBox.Show("Thêm thành công!", "Thông Báo", MessageBoxButtons.OK);
+                SharedClass.Alert("Thêm thành công!", Form_Alert.enmType.Success);
             }
             else
             {
-                MessageBox.Show("Chưa chọn Món!", "Thông Báo",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                SharedClass.Alert("Chưa chọn món!", Form_Alert.enmType.Warning);
             }
         }
 

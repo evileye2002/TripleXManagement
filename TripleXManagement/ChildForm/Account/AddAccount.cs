@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CustomAlertBox;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -63,7 +64,7 @@ namespace TripleXManagement.ChildForm.Account
         {
             string sql = "exec addAccount '" + txtUserName.Texts + "',N'" + txtPassword.Texts + "'";
             SqlClass.RunSql(sql);
-
+            SharedClass.Alert("Lưu thành công!", Form_Alert.enmType.Success);
         }
     }
 }

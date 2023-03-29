@@ -1,4 +1,5 @@
-﻿using System.Data.SqlClient;
+﻿using CustomAlertBox;
+using System.Data.SqlClient;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using TripleXManagement.StaticClass;
@@ -72,11 +73,11 @@ namespace TripleXManagement.ChildForm.Staff
                 cmd.ExecuteNonQuery();
 
                 GetData();
-                MessageBox.Show("Đã lưu!", "THÔNG BÁO!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                SharedClass.Alert("Sửa thành công!", Form_Alert.enmType.Success);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "CẢNH BÁO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                SharedClass.Alert("Lỗi!", Form_Alert.enmType.Warning);
             }
         }
         private void btnBrowse_Click(object sender, EventArgs e)

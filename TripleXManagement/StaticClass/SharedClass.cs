@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CustomAlertBox;
+using System;
 using System.Drawing.Drawing2D;
 using System.Globalization;
 using System.Windows.Forms;
@@ -164,6 +165,7 @@ namespace TripleXManagement.StaticClass
             cbo.DisplayMember = ten; //Trường hiển thị
         }
 
+        //Lấy GraphicPath
         public static GraphicsPath GetRoundedPath(Rectangle rect, float radius)
         {
             GraphicsPath path = new GraphicsPath();
@@ -176,6 +178,7 @@ namespace TripleXManagement.StaticClass
             path.CloseFigure();
             return path;
         }
+        //Vẽ đường bo tròn cho Form
         public static void RoundedForm(Form form, float radius, Graphics graph, Color borderColor, float borderSize)
         {
             if (form.WindowState != FormWindowState.Minimized)
@@ -201,6 +204,7 @@ namespace TripleXManagement.StaticClass
                 }
             }
         }
+        //Vẽ đường bo tròn cho Control (không có border)
         public static void RoundedControl(Control c, int borderRadius, Graphics graphics, int borderSize)
         {
             using (GraphicsPath roundPath = GetRoundedPath(c.ClientRectangle, borderRadius))
@@ -221,6 +225,12 @@ namespace TripleXManagement.StaticClass
                 }
 
             }
+        }
+
+        public static void Alert(string msg, Form_Alert.enmType type)
+        {
+            Form_Alert frm = new Form_Alert();
+            frm.showAlert(msg, type);
         }
 
         // Load form Buttons

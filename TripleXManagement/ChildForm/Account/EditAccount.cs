@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CustomAlertBox;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -71,7 +72,7 @@ namespace TripleXManagement.ChildForm.Account
         {
             string sql = "exec editAccount '" + ID + "',N'" + txtPassword.Texts + "'";
             SqlClass.RunSql(sql);
-
+            SharedClass.Alert("Sửa thành công!", Form_Alert.enmType.Success);
         }
 
         private void EditAccount_Load(object sender, EventArgs e)
