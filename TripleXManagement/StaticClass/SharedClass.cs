@@ -1,8 +1,6 @@
 ﻿using CustomAlertBox;
-using System;
 using System.Drawing.Drawing2D;
 using System.Globalization;
-using System.Windows.Forms;
 
 namespace TripleXManagement.StaticClass
 {
