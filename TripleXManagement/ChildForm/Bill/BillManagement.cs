@@ -45,7 +45,7 @@ namespace TripleXManagement.ChildForm.Bill
             childForm.Show();
             pnFooter.Visible = false;
         }
-        private void GetData()
+        public void GetData()
         {
             conn.Open();
             String sql = "exec getbill";

@@ -24,7 +24,7 @@ namespace TripleXManagement
             Form f = new AddFood();
             f.ShowDialog();
         }
-        private void GetData()
+        public void GetData()
         {
             String sql = "exec getMonAn2";
             SharedClass.FillDGV(dgvFood, sql);

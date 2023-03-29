@@ -11,7 +11,7 @@ namespace TripleXManagement.ChildForm.Account
         {
             InitializeComponent();
         }
-        private void GetData()
+        public void GetData()
         {
             string sql = "exec getAccount";
             SharedClass.FillDGV(dgvAccount, sql);
@@ -33,7 +33,7 @@ namespace TripleXManagement.ChildForm.Account
             if (username != "")
                 f.ShowDialog();
             else
-                SharedClass.Alert("Chưa chọn tài khoản!", Form_Alert.enmType.Warning);
+                SharedClass.Alert("Chưa Chọn Tài Khoản!", Form_Alert.enmType.Warning);
         }
         #region Hover State
         private void btnAddAccount_MouseEnter(object sender, EventArgs e)

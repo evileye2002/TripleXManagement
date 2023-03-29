@@ -1,6 +1,7 @@
 ﻿using CustomAlertBox;
 using System.Data.SqlClient;
 using System.Drawing.Imaging;
+using TripleXManagement.ChildForm.Staff;
 using TripleXManagement.StaticClass;
 using Image = System.Drawing.Image;
 
@@ -40,7 +41,9 @@ namespace TripleXManagement.ChildForm.Food
                     cmd.ExecuteNonQuery();
 
                     GetData();
-                    SharedClass.Alert("Sửa thành công!", Form_Alert.enmType.Success);
+                    var mainForm = Application.OpenForms.OfType<FoodManagement>().Single();
+                    mainForm.GetData();
+                    SharedClass.Alert("Sửa Thành Công!", Form_Alert.enmType.Success);
                 }
                 catch
                 {

@@ -20,7 +20,7 @@ namespace TripleXManagement.ChildForm.Customer
         {
             GetData();
         }
-        private void GetData()
+        public void GetData()
         {
             string sql = "exec getCustomer";
             SharedClass.FillDGV(dgvCustomer, sql);

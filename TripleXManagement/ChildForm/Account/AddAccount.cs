@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TripleXManagement.ChildForm.Staff;
 using TripleXManagement.StaticClass;
 
 namespace TripleXManagement.ChildForm.Account
@@ -68,7 +69,9 @@ namespace TripleXManagement.ChildForm.Account
                 try
                 {
                     SqlClass.RunSql(sql);
-                    SharedClass.Alert("Lưu thành công!", Form_Alert.enmType.Success);
+                    SharedClass.Alert("Lưu Thành Công!", Form_Alert.enmType.Success);
+                    var mainForm = Application.OpenForms.OfType<AccountManagement>().Single();
+                    mainForm.GetData();
                 }
                 catch
                 {

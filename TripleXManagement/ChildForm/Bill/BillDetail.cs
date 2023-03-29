@@ -3,6 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing.Printing;
 using System.Globalization;
+using TripleXManagement.ChildForm.Staff;
 using TripleXManagement.StaticClass;
 
 namespace TripleXManagement.ChildForm.Bill

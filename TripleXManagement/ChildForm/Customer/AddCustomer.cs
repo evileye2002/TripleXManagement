@@ -1,5 +1,6 @@
 ﻿using CustomAlertBox;
 using System.Drawing.Drawing2D;
+using TripleXManagement.ChildForm.Staff;
 using TripleXManagement.StaticClass;
 
 namespace TripleXManagement.ChildForm.Customer
@@ -122,6 +123,8 @@ namespace TripleXManagement.ChildForm.Customer
             {
                 SqlClass.RunSql(sql);
                 SharedClass.Alert("Lưu Thành Công!", Form_Alert.enmType.Success);
+                var mainForm = Application.OpenForms.OfType<CustomerManagement>().Single();
+                mainForm.GetData();
             }
             else
                 SharedClass.Alert("Chưa Nhập Đủ Dữ Liệu!", Form_Alert.enmType.Warning);

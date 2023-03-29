@@ -1,6 +1,7 @@
 ﻿using CustomAlertBox;
 using System.Data.SqlClient;
 using System.Drawing.Imaging;
+using TripleXManagement.ChildForm.Staff;
 using TripleXManagement.StaticClass;
 
 namespace TripleXManagement
@@ -55,7 +56,9 @@ namespace TripleXManagement
                     cmd.ExecuteNonQuery();
 
                     clear();
-                    SharedClass.Alert("Lưu thành công!", Form_Alert.enmType.Success);
+                    var mainForm = Application.OpenForms.OfType<FoodManagement>().Single();
+                    mainForm.GetData();
+                    SharedClass.Alert("Lưu Thành Công!", Form_Alert.enmType.Success);
                 }
                 catch
                 {

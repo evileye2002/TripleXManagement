@@ -92,7 +92,7 @@ namespace TripleXManagement
         {
             if (_price == 0)
             {
-                MessageBox.Show("Chưa chọn món ăn cần xóa!", "CẢNH BÁO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                SharedClass.Alert("Chưa chọn món ăn cần xóa", Form_Alert.enmType.Warning);
             }
             else
             {
@@ -132,7 +132,7 @@ namespace TripleXManagement
             if (rowCount > 0)
             {
                 String sql = "";
-                DialogResult dialogResult = CMessageBox.Show("Thanh toán bằng thẻ ngân hàng?", "Loại thanh toán", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = CMessageBox.Show("Thanh toán bằng thẻ ngân hàng?", "Loại Thanh Toán", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     isBank = 1;
@@ -141,7 +141,7 @@ namespace TripleXManagement
                         sql += @"exec addBill " + dgvDetail.Rows[i].Cells[0].Value.ToString() + ", " + isBank.ToString() + " \n";
                     }
                     SqlClass.RunSql(sql);
-                    SharedClass.Alert("Thêm thành công!", Form_Alert.enmType.Success);
+                    SharedClass.Alert("Thêm Thành Công!", Form_Alert.enmType.Success);
                 }
                 else if (dialogResult == DialogResult.No)
                 {
@@ -151,12 +151,12 @@ namespace TripleXManagement
                         sql += @"exec addBill " + dgvDetail.Rows[i].Cells[0].Value.ToString() + ", " + isBank.ToString() + " \n";
                     }
                     SqlClass.RunSql(sql);
-                    SharedClass.Alert("Thêm thành công!", Form_Alert.enmType.Success);
+                    SharedClass.Alert("Thêm Thành Công!", Form_Alert.enmType.Success);
                 }
             }
             else
             {
-                SharedClass.Alert("Chưa chọn món!", Form_Alert.enmType.Warning);
+                SharedClass.Alert("Chưa Chọn Món!", Form_Alert.enmType.Warning);
             }
         }
 

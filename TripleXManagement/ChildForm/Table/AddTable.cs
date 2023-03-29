@@ -54,7 +54,7 @@ namespace TripleXManagement.ChildForm.Table
             if (txtName.Texts != "" && txtKind.Texts != "" && txtChair.Texts != "")
             {
                 SqlClass.RunSql(sql);
-                SharedClass.Alert("Lưu thành công!", Form_Alert.enmType.Success);
+                SharedClass.Alert("Lưu Thành Công!", Form_Alert.enmType.Success);
                 var mainForm = Application.OpenForms.OfType<TableManagement>().Single();
                 mainForm.GetData();
             }

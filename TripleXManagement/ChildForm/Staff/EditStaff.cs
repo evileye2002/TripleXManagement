@@ -2,6 +2,7 @@
 using System.Data.SqlClient;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
+using TripleXManagement.ChildForm.Table;
 using TripleXManagement.StaticClass;
 using Image = System.Drawing.Image;
 
@@ -76,7 +77,9 @@ namespace TripleXManagement.ChildForm.Staff
                     cmd.ExecuteNonQuery();
 
                     GetData();
-                    SharedClass.Alert("Sửa thành công!", Form_Alert.enmType.Success);
+                    var mainForm = Application.OpenForms.OfType<StaffManagement>().Single();
+                    mainForm.GetData();
+                    SharedClass.Alert("Sửa Thành Công!", Form_Alert.enmType.Success);
                 }
                 catch
                 {

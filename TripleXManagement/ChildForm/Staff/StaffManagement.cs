@@ -9,7 +9,7 @@ namespace TripleXManagement.ChildForm.Staff
         {
             InitializeComponent();
         }
-        private void GetData()
+        public void GetData()
         {
             SharedClass.FillDGV(dgvStaff, "exec getStaff");
         }

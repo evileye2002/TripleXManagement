@@ -65,7 +65,9 @@ namespace TripleXManagement.ChildForm.Staff
                     cmd.ExecuteNonQuery();
 
                     clear();
-                    SharedClass.Alert("Lưu thành công!", Form_Alert.enmType.Success);
+                    var mainForm = Application.OpenForms.OfType<StaffManagement>().Single();
+                    mainForm.GetData();
+                    SharedClass.Alert("Lưu Thành Công!", Form_Alert.enmType.Success);
                 }
                 catch
                 {
