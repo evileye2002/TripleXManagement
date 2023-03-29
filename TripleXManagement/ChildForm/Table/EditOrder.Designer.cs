@@ -172,7 +172,6 @@
             this.rbEmpty.Text = "Bàn trống";
             this.rbEmpty.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.rbEmpty.UseVisualStyleBackColor = false;
-            this.rbEmpty.CheckedChanged += new System.EventHandler(this.rbEmpty_CheckedChanged);
             // 
             // rbOrdered
             // 

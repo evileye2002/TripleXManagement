@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Drawing.Printing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Data.SqlClient;
-using System.IO;
-using System.Xml.Linq;
+﻿using System.Data.SqlClient;
 using TripleXManagement.ChildForm.Bill;
+using TripleXManagement.StaticClass;
 
 namespace TripleXManagement
 {
@@ -21,8 +10,6 @@ namespace TripleXManagement
         double _total;
         double _price = 0;
         int isBank = 0;
-        SqlConnection conn;
-        SqlCommand ?cmd;
         SqlDataReader ?reader;
 
         private PictureBox ?image;
@@ -34,14 +21,14 @@ namespace TripleXManagement
 
         private void Bill_Load(object sender, EventArgs e)
         {
-            StaticClass.SqlClass.Connect();
+            SqlClass.Connect();
             GetData();
         }
 
         private void GetData()
         {
             string sql = "exec getMonAn";
-            reader = StaticClass.SqlClass.Reader(sql);
+            reader = SqlClass.Reader(sql);
             while (reader.Read())
             {
                 long len = reader.GetBytes(0, 0, null, 0, 0);
@@ -83,7 +70,7 @@ namespace TripleXManagement
         {
             string ?tag = ((PictureBox)sender).Tag.ToString();
             string sql = "select * from MonAn where ID = '" + tag + "'";
-            reader = StaticClass.SqlClass.Reader(sql);
+            reader = SqlClass.Reader(sql);
             reader.Read();
             if (reader.HasRows)
             {
@@ -158,7 +145,7 @@ namespace TripleXManagement
                 {
                     sql += @"exec addBill " + dgvDetail.Rows[i].Cells[0].Value.ToString() + ", " + isBank.ToString() + " \n";
                 }
-                StaticClass.SqlClass.RunSql(sql);
+                SqlClass.RunSql(sql);
                 MessageBox.Show("Thêm thành công!", "Thông Báo", MessageBoxButtons.OK);
             }
             else
@@ -181,7 +168,6 @@ namespace TripleXManagement
             this.pnMain.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-            //btnCloseChildForm.Visible = true;
             pnFooter.Visible = false;
             pnDGV.Visible = false;
         }
@@ -189,33 +175,32 @@ namespace TripleXManagement
         {
             if (activateForm != null)
             {
-                //BillID = "";
                 activateForm.Close();
-                //btnCloseChildForm.Visible = false;
                 pnFooter.Visible = true;
 
                 GetData();
             }
         }
-
+        #region Hover State
         private void btnBillManagement_MouseEnter(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnBillManagement, Properties.Resources.database_administrator_20px, true);
+            SharedClass.HoverBtnState(btnBillManagement, Properties.Resources.database_administrator_20px, true);
         }
 
         private void btnBillManagement_MouseLeave(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnBillManagement, Properties.Resources.database_administrator_20px1, false);
+            SharedClass.HoverBtnState(btnBillManagement, Properties.Resources.database_administrator_20px1, false);
         }
 
         private void btnAddBill_MouseEnter(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnAddBill, Properties.Resources.database_administrator_20px, true);
+            SharedClass.HoverBtnState(btnAddBill, Properties.Resources.database_administrator_20px, true);
         }
 
         private void btnAddBill_MouseLeave(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnAddBill, Properties.Resources.database_administrator_20px1, false);
+            SharedClass.HoverBtnState(btnAddBill, Properties.Resources.database_administrator_20px1, false);
         }
+        #endregion
     }
 }

@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using TripleXManagement.StaticClass;
 
 namespace TripleXManagement.ChildForm.Bill
 {
@@ -104,12 +96,12 @@ namespace TripleXManagement.ChildForm.Bill
 
         private void btnDetail_MouseEnter(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnDetail, Properties.Resources.database_administrator_20px, true);
+            SharedClass.HoverBtnState(btnDetail, Properties.Resources.database_administrator_20px, true);
         }
 
         private void btnDetail_MouseLeave(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnDetail, Properties.Resources.database_administrator_20px1, false);
+            SharedClass.HoverBtnState(btnDetail, Properties.Resources.database_administrator_20px1, false);
         }
     }
 }

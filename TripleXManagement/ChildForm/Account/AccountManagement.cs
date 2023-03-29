@@ -1,22 +1,11 @@
-﻿using Microsoft.Data.SqlClient;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Xml;
-using SqlDataReader = System.Data.SqlClient.SqlDataReader;
-
+﻿using Microsoft.SqlServer.Server;
+using TripleXManagement.StaticClass;
 namespace TripleXManagement.ChildForm.Account
 {
     public partial class AccountManagement : Form
     {
-        private string username = "";
+        public static string username = "";
+        public static string pass = "";
         public AccountManagement()
         {
             InitializeComponent();
@@ -24,7 +13,7 @@ namespace TripleXManagement.ChildForm.Account
         private void GetData()
         {
             string sql = "exec getAccount";
-            StaticClass.SharedClass.FillDGV(dgvAccount, sql);
+            SharedClass.FillDGV(dgvAccount, sql);
         }
         private void AccountManagement_Load(object sender, EventArgs e)
         {
@@ -33,65 +22,36 @@ namespace TripleXManagement.ChildForm.Account
 
         private void btnAddAccount_Click(object sender, EventArgs e)
         {
-            if(pnTextBox.Visible != true)
-            {
-                pnTextBox.Visible = true;
-                btnSave.Enabled = true;
-                btnEdit.Enabled = false;
-            }
-            else
-            {
-                pnTextBox.Visible = false;
-                btnSave.Enabled = false;
-                btnEdit.Enabled = true;
-            }
+            Form f = new AddAccount();
+            f.ShowDialog();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (username != "" && pnTextBox.Visible != true)
-            {
-                pnTextBox.Visible = true;
-                btnSave.Enabled = true;
-                btnAddAccount.Enabled = false;
-            }
-            else
-            {
-                pnTextBox.Visible = false;
-                btnSave.Enabled = false;
-                btnAddAccount.Enabled = true;
-            }
+            Form f = new EditAccount();
+            f.ShowDialog();
         }
-
+        #region Hover State
         private void btnAddAccount_MouseEnter(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnAddAccount, Properties.Resources.database_administrator_20px, true);
+            SharedClass.HoverBtnState(btnAddAccount, Properties.Resources.database_administrator_20px, true);
         }
 
         private void btnAddAccount_MouseLeave(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnAddAccount, Properties.Resources.database_administrator_20px, false);
+            SharedClass.HoverBtnState(btnAddAccount, Properties.Resources.database_administrator_20px, false);
         }
 
         private void btnEdit_MouseEnter(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnEdit, Properties.Resources.database_administrator_20px, true);
+            SharedClass.HoverBtnState(btnEdit, Properties.Resources.database_administrator_20px, true);
         }
 
         private void btnEdit_MouseLeave(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnEdit, Properties.Resources.database_administrator_20px, false);
+            SharedClass.HoverBtnState(btnEdit, Properties.Resources.database_administrator_20px, false);
         }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            string sql = "exec addAccount '" + txtName.Texts + "','" + txtPassword.Texts + "'";
-            StaticClass.SqlClass.RunSql(sql);
-            GetData();
-            btnAddAccount.Enabled = true;
-            btnEdit.Enabled = true;
-            btnSave.Enabled = false;
-        }
+        #endregion
 
         private void dgvAccount_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -100,8 +60,26 @@ namespace TripleXManagement.ChildForm.Account
             {
                 int t = dgvAccount.CurrentCell.RowIndex;
                 username = dgvAccount.Rows[t].Cells[0].Value.ToString();
-                txtName.Texts = dgvAccount.Rows[t].Cells[0].Value.ToString();
-                txtPassword.Texts = dgvAccount.Rows[t].Cells[1].Value.ToString();
+                pass = dgvAccount.Rows[t].Cells[1].Value.ToString();
+            }
+        }
+
+        private void dgvAccount_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                String? sql = "exec delAccount '" + username + "'";
+                SqlClass.RunSqlDel(sql);
+
+                GetData();
+            }
+        }
+
+        private void dgvAccount_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 1 && e.Value != null)
+            {
+                e.Value = new String('*', e.Value.ToString().Length);
             }
         }
     }

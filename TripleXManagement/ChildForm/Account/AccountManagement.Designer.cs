@@ -33,26 +33,20 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnFooter = new System.Windows.Forms.Panel();
-            this.btnSave = new CustomControl.RJButton();
-            this.btnEdit = new CustomControl.RJButton();
-            this.btnAddAccount = new CustomControl.RJButton();
+            this.btnEdit = new TripleXManagement.CustomControl.RJButton();
+            this.btnAddAccount = new TripleXManagement.CustomControl.RJButton();
             this.pnMain = new System.Windows.Forms.Panel();
             this.dgvAccount = new System.Windows.Forms.DataGridView();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pnTextBox = new System.Windows.Forms.Panel();
-            this.txtName = new TripleXManagement.CustomControl.Textbox();
-            this.txtPassword = new TripleXManagement.CustomControl.Textbox();
             this.pnFooter.SuspendLayout();
             this.pnMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccount)).BeginInit();
-            this.pnTextBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnFooter
             // 
             this.pnFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            this.pnFooter.Controls.Add(this.btnSave);
             this.pnFooter.Controls.Add(this.btnEdit);
             this.pnFooter.Controls.Add(this.btnAddAccount);
             this.pnFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -60,31 +54,6 @@
             this.pnFooter.Name = "pnFooter";
             this.pnFooter.Size = new System.Drawing.Size(905, 50);
             this.pnFooter.TabIndex = 4;
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnSave.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnSave.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnSave.BorderRadius = 20;
-            this.btnSave.BorderSize = 2;
-            this.btnSave.Enabled = false;
-            this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnSave.Image = global::TripleXManagement.Properties.Resources.database_administrator_20px1;
-            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(240, 5);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnSave.Size = new System.Drawing.Size(100, 40);
-            this.btnSave.TabIndex = 14;
-            this.btnSave.Text = "Lưu";
-            this.btnSave.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnEdit
             // 
@@ -142,9 +111,9 @@
             // 
             this.pnMain.Controls.Add(this.dgvAccount);
             this.pnMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnMain.Location = new System.Drawing.Point(0, 43);
+            this.pnMain.Location = new System.Drawing.Point(0, 0);
             this.pnMain.Name = "pnMain";
-            this.pnMain.Size = new System.Drawing.Size(905, 423);
+            this.pnMain.Size = new System.Drawing.Size(905, 466);
             this.pnMain.TabIndex = 5;
             // 
             // dgvAccount
@@ -189,9 +158,11 @@
             this.dgvAccount.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvAccount.RowTemplate.Height = 25;
             this.dgvAccount.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAccount.Size = new System.Drawing.Size(905, 423);
+            this.dgvAccount.Size = new System.Drawing.Size(905, 466);
             this.dgvAccount.TabIndex = 3;
             this.dgvAccount.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAccount_CellClick);
+            this.dgvAccount.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvAccount_CellFormatting);
+            this.dgvAccount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvAccount_KeyDown);
             // 
             // Column6
             // 
@@ -221,60 +192,6 @@
             this.Column1.ReadOnly = true;
             this.Column1.Width = 250;
             // 
-            // pnTextBox
-            // 
-            this.pnTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.pnTextBox.Controls.Add(this.txtName);
-            this.pnTextBox.Controls.Add(this.txtPassword);
-            this.pnTextBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnTextBox.Location = new System.Drawing.Point(0, 0);
-            this.pnTextBox.Name = "pnTextBox";
-            this.pnTextBox.Size = new System.Drawing.Size(905, 43);
-            this.pnTextBox.TabIndex = 6;
-            this.pnTextBox.Visible = false;
-            // 
-            // txtName
-            // 
-            this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.txtName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            this.txtName.BorderRadius = 18;
-            this.txtName.BorderSize = 2;
-            this.txtName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.txtName.Location = new System.Drawing.Point(20, 3);
-            this.txtName.Multiline = false;
-            this.txtName.Name = "txtName";
-            this.txtName.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtName.PasswordChar = false;
-            this.txtName.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.txtName.PlaceholderText = "Tên tài khoản...";
-            this.txtName.Size = new System.Drawing.Size(370, 36);
-            this.txtName.TabIndex = 7;
-            this.txtName.Texts = "";
-            this.txtName.UnderlinedStyle = false;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.txtPassword.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            this.txtPassword.BorderRadius = 18;
-            this.txtPassword.BorderSize = 2;
-            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.txtPassword.Location = new System.Drawing.Point(436, 3);
-            this.txtPassword.Multiline = false;
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtPassword.PasswordChar = true;
-            this.txtPassword.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.txtPassword.PlaceholderText = "Mật khẩu";
-            this.txtPassword.Size = new System.Drawing.Size(370, 36);
-            this.txtPassword.TabIndex = 6;
-            this.txtPassword.Texts = "";
-            this.txtPassword.UnderlinedStyle = false;
-            // 
             // AccountManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -283,7 +200,6 @@
             this.ClientSize = new System.Drawing.Size(905, 516);
             this.Controls.Add(this.pnMain);
             this.Controls.Add(this.pnFooter);
-            this.Controls.Add(this.pnTextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AccountManagement";
             this.Text = "AccountManagement";
@@ -291,7 +207,6 @@
             this.pnFooter.ResumeLayout(false);
             this.pnMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccount)).EndInit();
-            this.pnTextBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -303,10 +218,6 @@
         private CustomControl.RJButton btnAddAccount;
         private Panel pnMain;
         private DataGridView dgvAccount;
-        private Panel pnTextBox;
-        private CustomControl.Textbox txtName;
-        private CustomControl.Textbox txtPassword;
-        private CustomControl.RJButton btnSave;
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewTextBoxColumn Column1;
     }

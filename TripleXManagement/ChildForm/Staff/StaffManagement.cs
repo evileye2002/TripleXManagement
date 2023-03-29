@@ -1,45 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
+﻿using TripleXManagement.StaticClass;
 namespace TripleXManagement.ChildForm.Staff
 {
     public partial class StaffManagement : Form
     {
         public static string? ID = "";
-        private Form? activateForm;
         public StaffManagement()
         {
             InitializeComponent();
         }
         private void GetData()
         {
-            StaticClass.SharedClass.FillDGV(dgvStaff, "exec getStaff");
+            SharedClass.FillDGV(dgvStaff, "exec getStaff");
         }
-        public void OpenChildForm(Form childForm, object btnSender)
-        {
-            if (activateForm != null)
-            {
-                activateForm.Close();
-            }
-            activateForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            this.pnMain.Controls.Add(childForm);
-            this.pnMain.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
-            pnFooter.Visible = false;
-        }
+
         private void btnAddStaff_Click(object sender, EventArgs e)
         {
             Form f = new AddStaff();
@@ -67,33 +40,33 @@ namespace TripleXManagement.ChildForm.Staff
                 ID = dgvStaff.Rows[t].Cells[0].Value.ToString();
             }
         }
-
+        #region Hover State
         private void btnAddStaff_MouseEnter(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnAddStaff, Properties.Resources.database_administrator_20px, true);
+            SharedClass.HoverBtnState(btnAddStaff, Properties.Resources.database_administrator_20px, true);
         }
 
         private void btnAddStaff_MouseLeave(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnAddStaff, Properties.Resources.database_administrator_20px1, false);
+            SharedClass.HoverBtnState(btnAddStaff, Properties.Resources.database_administrator_20px1, false);
         }
 
         private void btnEdit_MouseEnter(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnEdit, Properties.Resources.database_administrator_20px, true);
+            SharedClass.HoverBtnState(btnEdit, Properties.Resources.database_administrator_20px, true);
         }
 
         private void btnEdit_MouseLeave(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnEdit, Properties.Resources.database_administrator_20px1, false);
+            SharedClass.HoverBtnState(btnEdit, Properties.Resources.database_administrator_20px1, false);
         }
-
+        #endregion
         private void dgvStaff_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Delete)
             {
                 String? sql = "exec delStaffbyID " + ID;
-                StaticClass.SqlClass.RunSql(sql);
+                SqlClass.RunSql(sql);
 
                 GetData();
             }

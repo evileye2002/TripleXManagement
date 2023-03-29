@@ -1,14 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Data.SqlClient;
+using TripleXManagement.StaticClass;
 
 namespace TripleXManagement.ChildForm.Table
 {
@@ -40,9 +31,9 @@ namespace TripleXManagement.ChildForm.Table
 
         private void TableManagement_Load(object sender, EventArgs e)
         {
-            StaticClass.SqlClass.Connect();
+            SqlClass.Connect();
             string sql = "exec getOrderTableInToday";
-            reader = StaticClass.SqlClass.Reader(sql);
+            reader = SqlClass.Reader(sql);
             if (reader.HasRows)
             {
                 reader.Close();
@@ -54,13 +45,12 @@ namespace TripleXManagement.ChildForm.Table
 
         private void GetOrderTableInToday(string sql)
         {
-            reader = StaticClass.SqlClass.Reader(sql);
+            reader = SqlClass.Reader(sql);
 
-            Color bodyFC = Color.FromArgb(245,255,255);
-            Color bodyBC = Color.LimeGreen;
+            Color bodyFC = Color.FromArgb(245, 255, 255);
+            Color bodyBC = Color.Gray;
             Color footerBC = Color.LightGray;
             Color footerFC = Color.FromArgb(39, 39, 58);
-
 
             while (reader.Read())
             {
@@ -159,7 +149,7 @@ namespace TripleXManagement.ChildForm.Table
                 TGetDate = new Label
                 {
                     Padding = new Padding(10, 6, 0, 5),
-                    Text = "Ngày: Hôm nay",
+                    Text = "Ngày: " + reader["BookDate"].ToString(),
                     Size = new Size(130, 30),
                     TextAlign = ContentAlignment.MiddleLeft,
                     Dock = DockStyle.Left,
@@ -204,7 +194,7 @@ namespace TripleXManagement.ChildForm.Table
         }
         private void GetEmptyTable(string sql)
         {
-            reader = StaticClass.SqlClass.Reader(sql);
+            reader = SqlClass.Reader(sql);
 
             Color bodyFC = Color.FromArgb(245, 255, 255);
             Color bodyBC = Color.FromArgb(98, 102, 244);
@@ -354,7 +344,7 @@ namespace TripleXManagement.ChildForm.Table
         }
         private void GetOrderedTable(string sql)
         {
-            reader = StaticClass.SqlClass.Reader(sql);
+            reader = SqlClass.Reader(sql);
 
             Color bodyFC = Color.FromArgb(245, 255, 255);
             Color bodyBC = Color.Gray;
@@ -656,12 +646,12 @@ namespace TripleXManagement.ChildForm.Table
 
         private void btnManagement_MouseEnter(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnManagement, Properties.Resources.denied_20px, true);
+            SharedClass.HoverBtnState(btnManagement, Properties.Resources.denied_20px, true);
         }
 
         private void btnManagement_MouseLeave(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnManagement, Properties.Resources.denied_20px, false);
+            SharedClass.HoverBtnState(btnManagement, Properties.Resources.denied_20px, false);
         }
     }
 }

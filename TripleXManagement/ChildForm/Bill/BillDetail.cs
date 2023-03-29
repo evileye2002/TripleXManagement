@@ -1,19 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Drawing.Printing;
 using System.Globalization;
-using System.IO;
-using System.Linq;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Xml.Linq;
-using static Azure.Core.HttpHeader;
+using TripleXManagement.StaticClass;
 
 namespace TripleXManagement.ChildForm.Bill
 {
@@ -28,16 +17,12 @@ namespace TripleXManagement.ChildForm.Bill
         public static String foodID = "";
         string finalTotalM = "";
         string finalTotalB = "";
-        SqlConnection conn;
-        SqlCommand cmd;
+        //SqlConnection conn;
+        //SqlCommand cmd;
 
         public BillDetail()
         {
             InitializeComponent();
-            conn = new SqlConnection
-            {
-                ConnectionString = @"Data Source=DESKTOP-J6D7SL6\SQLEXPRESS;Initial Catalog=TripleX;Integrated Security=True"
-            };
             this.dgvBillDetail.Columns[4].DefaultCellStyle.Format = "c";
             dgvBillDetail.Columns[4].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("vn-VN");
         }
@@ -51,13 +36,8 @@ namespace TripleXManagement.ChildForm.Bill
 
         private void GetData()
         {
-            conn.Open();
             String sql = "exec getbillbyId " + BillID;
-            DataTable table = new DataTable();
-            SqlDataAdapter sda = new(sql, conn);
-            sda.Fill(table);
-            dgvBillDetail.DataSource = table;
-            conn.Close();
+            SharedClass.FillDGV(dgvBillDetail, sql);
         }
 
         private void BillDetail_Load(object sender, EventArgs e)
@@ -306,10 +286,7 @@ namespace TripleXManagement.ChildForm.Bill
                 if(dgvBillDetail.SelectedRows.Count > 0)
                 {
                     String sql = "exec delBillDetailbyId " + foodID + ", " + BillID;
-                    conn.Open();
-                    cmd = new SqlCommand(sql, conn);
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
+                    SqlClass.RunSql(sql);
 
                     GetData();
                 }
@@ -326,25 +303,26 @@ namespace TripleXManagement.ChildForm.Bill
             }
         }
 
-
+        #region Hover State
         private void btnPrint_MouseEnter(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnPrint, Properties.Resources.database_administrator_20px, true);
+            SharedClass.HoverBtnState(btnPrint, Properties.Resources.database_administrator_20px, true);
         }
 
         private void btnPrint_MouseLeave(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnPrint, Properties.Resources.database_administrator_20px1, false);
+            SharedClass.HoverBtnState(btnPrint, Properties.Resources.database_administrator_20px1, false);
         }
 
         private void btnPrintPreview_MouseEnter(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnPrintPreview, Properties.Resources.database_administrator_20px, true);
+            SharedClass.HoverBtnState(btnPrintPreview, Properties.Resources.database_administrator_20px, true);
         }
 
         private void btnPrintPreview_MouseLeave(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnPrintPreview, Properties.Resources.database_administrator_20px1, false);
+            SharedClass.HoverBtnState(btnPrintPreview, Properties.Resources.database_administrator_20px1, false);
         }
+        #endregion
     }
 }

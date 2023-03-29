@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Drawing.Drawing2D;
+using TripleXManagement.StaticClass;
 
 namespace TripleXManagement.ChildForm.Customer
 {
@@ -98,21 +90,21 @@ namespace TripleXManagement.ChildForm.Customer
         #region HoverState
         private void btnClose_MouseEnter(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverSubBtnState(btnClose, Properties.Resources.denied_20px, true);
+            SharedClass.HoverSubBtnState(btnClose, Properties.Resources.denied_20px, true);
         }
 
         private void btnClose_MouseLeave(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverSubBtnState(btnClose, Properties.Resources.denied_20px, false);
+            SharedClass.HoverSubBtnState(btnClose, Properties.Resources.denied_20px, false);
         }
         private void btnSave_MouseEnter(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverSubBtnState(btnSave, Properties.Resources.denied_20px, true);
+            SharedClass.HoverSubBtnState(btnSave, Properties.Resources.denied_20px, true);
         }
 
         private void btnSave_MouseLeave(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverSubBtnState(btnSave, Properties.Resources.denied_20px, false);
+            SharedClass.HoverSubBtnState(btnSave, Properties.Resources.denied_20px, false);
         }
         #endregion
 
@@ -125,12 +117,12 @@ namespace TripleXManagement.ChildForm.Customer
         {
             string sql = "exec addCustomer N'" + txtName.Texts + "','" + txtCCCD.Texts + "','" + dtpBirthday.Value.ToString() 
                 + "',N'" + txtAddress.Texts + "','" + txtPhone.Texts + "'";
-            StaticClass.SqlClass.RunSql(sql);
+            SqlClass.RunSql(sql);
         }
 
         private void AddCustomer_Load(object sender, EventArgs e)
         {
-            StaticClass.SqlClass.Connect();
+            SqlClass.Connect();
         }
     }
 }

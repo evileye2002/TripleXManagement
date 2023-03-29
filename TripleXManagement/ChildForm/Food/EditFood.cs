@@ -1,16 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Diagnostics;
-using System.Drawing;
+﻿using System.Data.SqlClient;
 using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
+using TripleXManagement.StaticClass;
 using Image = System.Drawing.Image;
 
 namespace TripleXManagement.ChildForm.Food
@@ -24,7 +14,7 @@ namespace TripleXManagement.ChildForm.Food
         public EditFood()
         {
             InitializeComponent();
-            conn = StaticClass.SqlClass.Connection;
+            conn = SqlClass.Connection;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -52,7 +42,7 @@ namespace TripleXManagement.ChildForm.Food
 
         private void EditFood_Load(object sender, EventArgs e)
         {
-            StaticClass.SqlClass.Connect();
+            SqlClass.Connect();
             GetData();
         }
 
@@ -60,7 +50,7 @@ namespace TripleXManagement.ChildForm.Food
         {
             ID = FoodManagement.foodID;
             string sql = "exec getFoodbyID " + ID;
-            reader = StaticClass.SqlClass.Reader(sql);
+            reader = SqlClass.Reader(sql);
             while (reader.Read())
             {
                 long len = reader.GetBytes(0, 0, null, 0, 0);
@@ -76,16 +66,6 @@ namespace TripleXManagement.ChildForm.Food
             reader.Close();
         }
 
-        private void btnSave_MouseEnter(object sender, EventArgs e)
-        {
-            StaticClass.SharedClass.HoverBtnState(btnSave, Properties.Resources.database_administrator_20px, true);
-        }
-
-        private void btnSave_MouseLeave(object sender, EventArgs e)
-        {
-            StaticClass.SharedClass.HoverBtnState(btnSave, Properties.Resources.database_administrator_20px1, false);
-        }
-
         private void btnBrowse_Click(object sender, EventArgs e)
         {
             ofdBrowse.Filter = "Image files (*.jpeg)|*.jpeg|(*.png)|*.png|(*.jpg)|*.jpg|(*.gif)|*.gif";
@@ -97,14 +77,23 @@ namespace TripleXManagement.ChildForm.Food
                 pbPic.BackgroundImageLayout = ImageLayout.Stretch;
             }
         }
-
+        #region Hover State
         private void btnBrowse_MouseEnter(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnBrowse, Properties.Resources.database_administrator_20px, true);
+            SharedClass.HoverBtnState(btnBrowse, Properties.Resources.database_administrator_20px, true);
         }
         private void btnBrowse_MouseLeave(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnBrowse, Properties.Resources.database_administrator_20px1, false);
+            SharedClass.HoverBtnState(btnBrowse, Properties.Resources.database_administrator_20px1, false);
         }
+        private void btnSave_MouseEnter(object sender, EventArgs e)
+        {
+            SharedClass.HoverBtnState(btnSave, Properties.Resources.database_administrator_20px, true);
+        }
+        private void btnSave_MouseLeave(object sender, EventArgs e)
+        {
+            SharedClass.HoverBtnState(btnSave, Properties.Resources.database_administrator_20px1, false);
+        }
+        #endregion
     }
 }

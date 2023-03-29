@@ -1,16 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
+﻿using System.Data.SqlClient;
 using System.Drawing.Imaging;
-using System.Drawing.Printing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Xml.Linq;
+using TripleXManagement.StaticClass;
 
 namespace TripleXManagement
 {
@@ -69,25 +59,26 @@ namespace TripleXManagement
                 conn.Close();
             }
         }
-
+        #region Hover State
         private void btnBrowse_MouseEnter(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnBrowse, Properties.Resources.database_administrator_20px, true);
+            SharedClass.HoverBtnState(btnBrowse, Properties.Resources.database_administrator_20px, true);
         }
 
         private void btnBrowse_MouseLeave(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnBrowse, Properties.Resources.database_administrator_20px1, false);
+            SharedClass.HoverBtnState(btnBrowse, Properties.Resources.database_administrator_20px1, false);
         }
 
         private void btnSave_MouseEnter(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnSave, Properties.Resources.database_administrator_20px, true);
+            SharedClass.HoverBtnState(btnSave, Properties.Resources.database_administrator_20px, true);
         }
 
         private void btnSave_MouseLeave(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnSave, Properties.Resources.database_administrator_20px1, false);
+            SharedClass.HoverBtnState(btnSave, Properties.Resources.database_administrator_20px1, false);
         }
+        #endregion
     }
 }

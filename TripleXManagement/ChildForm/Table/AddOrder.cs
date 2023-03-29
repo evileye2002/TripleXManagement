@@ -1,17 +1,7 @@
 ﻿using System.Data.SqlClient;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Globalization;
 using TripleXManagement.CustomControl;
+using TripleXManagement.StaticClass;
 
 namespace TripleXManagement.ChildForm.Table
 {
@@ -31,100 +21,39 @@ namespace TripleXManagement.ChildForm.Table
         }
 
         #region Rounded
-        private GraphicsPath GetRoundedPath(Rectangle rect, float radius)
-        {
-            GraphicsPath path = new GraphicsPath();
-            float curveSize = radius * 2F;
-            path.StartFigure();
-            path.AddArc(rect.X, rect.Y, curveSize, curveSize, 180, 90);
-            path.AddArc(rect.Right - curveSize, rect.Y, curveSize, curveSize, 270, 90);
-            path.AddArc(rect.Right - curveSize, rect.Bottom - curveSize, curveSize, curveSize, 0, 90);
-            path.AddArc(rect.X, rect.Bottom - curveSize, curveSize, curveSize, 90, 90);
-            path.CloseFigure();
-            return path;
-        }
-        private void FormRegionAndBorder(Form form, float radius, Graphics graph, Color borderColor, float borderSize)
-        {
-            if (this.WindowState != FormWindowState.Minimized)
-            {
-                using (GraphicsPath roundPath = GetRoundedPath(form.ClientRectangle, radius))
-                using (Pen penBorder = new Pen(borderColor, borderSize))
-                using (Matrix transform = new Matrix())
-                {
-                    graph.SmoothingMode = SmoothingMode.AntiAlias;
-                    form.Region = new Region(roundPath);
-                    if (borderSize >= 1)
-                    {
-                        Rectangle rect = form.ClientRectangle;
-                        float scaleX = 1.0F - ((borderSize + 1) / rect.Width);
-                        float scaleY = 1.0F - ((borderSize + 1) / rect.Height);
-
-                        transform.Scale(scaleX, scaleY);
-                        transform.Translate(borderSize / 1.6F, borderSize / 1.6F);
-
-                        graph.Transform = transform;
-                        graph.DrawPath(penBorder, roundPath);
-                    }
-                }
-            }
-        }
         private void AddTable_Paint(object sender, PaintEventArgs e)
         {
-            FormRegionAndBorder(this, borderRadius, e.Graphics, borderColor, borderSize);
+            SharedClass.RoundedForm(this, borderRadius, e.Graphics, borderColor, borderSize);
         }
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
-            FormRegionAndBorder2(panel2, borderRadius, e.Graphics, borderSize);
-        }
-        private void FormRegionAndBorder2(Control c, int borderRadius, Graphics graphics, int borderSize)
-        {
-            if (this.WindowState != FormWindowState.Minimized)
-            {
-                using (GraphicsPath roundPath = GetRoundedPath(c.ClientRectangle, borderRadius))
-                using (Matrix transform = new Matrix())
-                {
-                    graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                    c.Region = new Region(roundPath);
-                    if (borderSize >= 1)
-                    {
-                        Rectangle rect = c.ClientRectangle;
-                        float scaleX = 1.0F - ((borderSize + 1) / rect.Width);
-                        float scaleY = 1.0F - ((borderSize + 1) / rect.Height);
-
-                        transform.Scale(scaleX, scaleY);
-                        transform.Translate(borderSize / 1.6F, borderSize / 1.6F);
-
-                        graphics.Transform = transform;
-                    }
-
-                }
-            }
+            SharedClass.RoundedControl(panel2, borderRadius, e.Graphics, borderSize);
         }
         #endregion
 
         private void dgvCustomer_Paint(object sender, PaintEventArgs e)
         {
-            FormRegionAndBorder2(dgvCustomer, 15, e.Graphics, borderSize);
+            SharedClass.RoundedControl(dgvCustomer, 15, e.Graphics, borderSize);
         }
 
         #region HoverState
         private void btnClose_MouseEnter(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverSubBtnState(btnClose, Properties.Resources.denied_20px, true);
+            SharedClass.HoverSubBtnState(btnClose, Properties.Resources.denied_20px, true);
         }
 
         private void btnClose_MouseLeave(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverSubBtnState(btnClose, Properties.Resources.denied_20px, false);
+            SharedClass.HoverSubBtnState(btnClose, Properties.Resources.denied_20px, false);
         }
         private void btnSave_MouseEnter(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverSubBtnState(btnSave, Properties.Resources.denied_20px, true);
+            SharedClass.HoverSubBtnState(btnSave, Properties.Resources.denied_20px, true);
         }
 
         private void btnSave_MouseLeave(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverSubBtnState(btnSave, Properties.Resources.denied_20px, false);
+            SharedClass.HoverSubBtnState(btnSave, Properties.Resources.denied_20px, false);
         }
         #endregion
 
@@ -138,19 +67,19 @@ namespace TripleXManagement.ChildForm.Table
             string sql = "exec addOrderTable " + ID + "," + CustomerID + ",N'" 
                 + DateToString(dtpOrderDate) + " " + TimeToString(dtpOrderTime) + "',N'" 
                 + DateToString(dtpGetDate) + " " + TimeToString(dtpGetTime) + "'";
-            StaticClass.SqlClass.RunSql(sql);
+            SqlClass.RunSql(sql);
             
         }
         private string DateToString(RJDatePicker dtpDate)
         {
-            DateTime dtOrederDate = DateTime.ParseExact(dtpDate.Value.ToString(), "dd/MM/yyyy HH:mm:ss", StaticClass.SharedClass.cultureVN);
-            string date = dtOrederDate.ToString("dd/MM/yyyy", StaticClass.SharedClass.cultureVN);
+            DateTime dtOrederDate = DateTime.ParseExact(dtpDate.Value.ToString(), "dd/MM/yyyy HH:mm:ss", SharedClass.cultureVN);
+            string date = dtOrederDate.ToString("dd/MM/yyyy", SharedClass.cultureVN);
             return date;
         }
         private string TimeToString(RJDatePicker dtpTime)
         {
-            DateTime dtOrderTime = DateTime.ParseExact(dtpTime.Value.ToString(), "dd/MM/yyyy HH:mm:ss", StaticClass.SharedClass.cultureVN);
-            string time = dtOrderTime.ToString("HH:mm:ss", StaticClass.SharedClass.cultureVN);
+            DateTime dtOrderTime = DateTime.ParseExact(dtpTime.Value.ToString(), "dd/MM/yyyy HH:mm:ss", SharedClass.cultureVN);
+            string time = dtOrderTime.ToString("HH:mm:ss", SharedClass.cultureVN);
             return time;
         }
         private void dgvCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -169,7 +98,7 @@ namespace TripleXManagement.ChildForm.Table
             string sql = "exec getCustomer";
             StaticClass.SharedClass.FillDGV(dgvCustomer, sql);
             string sql2 = "exec getTablebyID " + ID;
-            reader = StaticClass.SqlClass.Reader(sql2);
+            reader = SqlClass.Reader(sql2);
             while (reader.Read())
             {
                 lbTableName.Text = reader.GetValue(1).ToString();

@@ -1,16 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
+﻿using System.Data.SqlClient;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
+using TripleXManagement.StaticClass;
 using Image = System.Drawing.Image;
 
 namespace TripleXManagement.ChildForm.Staff
@@ -28,7 +19,7 @@ namespace TripleXManagement.ChildForm.Staff
         public EditStaff()
         {
             InitializeComponent();
-            conn = StaticClass.SqlClass.Connection;
+            conn = SqlClass.Connection;
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(borderRadius);
         }
@@ -36,15 +27,15 @@ namespace TripleXManagement.ChildForm.Staff
         private void EditStaff_Load(object sender, EventArgs e)
         {
             GetData();
-            StaticClass.SqlClass.Connect();
+            SqlClass.Connect();
         }
         private void GetData()
         {
             ID = StaffManagement.ID;
-            StaticClass.SharedClass.FillCBB("select * from Regency", cbRegency, "Name");
-            StaticClass.SharedClass.FillCBB("select * from Account", cbAccount, "Username");
+            SharedClass.FillCBB("select * from Regency", cbRegency, "Name");
+            SharedClass.FillCBB("select * from Account", cbAccount, "Username");
             string sql = "exec getStaffbyID " + ID;
-            reader = StaticClass.SqlClass.Reader(sql);
+            reader = SqlClass.Reader(sql);
             while (reader.Read())
             {
                 long len = reader.GetBytes(0, 0, null, 0, 0);
@@ -100,34 +91,33 @@ namespace TripleXManagement.ChildForm.Staff
             }
         }
         #region HoverState
-
         private void btnBrowse_MouseEnter(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverSubBtnState(btnBrowse, Properties.Resources.denied_20px, true);
+            SharedClass.HoverSubBtnState(btnBrowse, Properties.Resources.denied_20px, true);
         }
 
         private void btnBrowse_MouseLeave(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverSubBtnState(btnBrowse, Properties.Resources.denied_20px, false);
+            SharedClass.HoverSubBtnState(btnBrowse, Properties.Resources.denied_20px, false);
         }
 
         private void btnSave_MouseEnter(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverSubBtnState(btnSave, Properties.Resources.denied_20px, true);
+            SharedClass.HoverSubBtnState(btnSave, Properties.Resources.denied_20px, true);
         }
 
         private void btnSave_MouseLeave(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverSubBtnState(btnSave, Properties.Resources.denied_20px, false);
+            SharedClass.HoverSubBtnState(btnSave, Properties.Resources.denied_20px, false);
         }
         private void btnClose_MouseEnter(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverSubBtnState(btnClose, Properties.Resources.denied_20px, true);
+            SharedClass.HoverSubBtnState(btnClose, Properties.Resources.denied_20px, true);
         }
 
         private void btnClose_MouseLeave(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverSubBtnState(btnClose, Properties.Resources.denied_20px, false);
+            SharedClass.HoverSubBtnState(btnClose, Properties.Resources.denied_20px, false);
         }
         #endregion
         #region Round
@@ -204,7 +194,7 @@ namespace TripleXManagement.ChildForm.Staff
         private void rbYes_CheckedChanged(object sender, EventArgs e)
         {
             if (rbYes.Checked)
-                StaticClass.SharedClass.FillCBB("select * from Account", cbAccount, "Username");
+                SharedClass.FillCBB("select * from Account", cbAccount, "Username");
         }
 
         private void rbNo_CheckedChanged(object sender, EventArgs e)

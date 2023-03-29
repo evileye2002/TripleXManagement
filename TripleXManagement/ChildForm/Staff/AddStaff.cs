@@ -1,16 +1,7 @@
 ﻿using System.Data.SqlClient;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Drawing.Drawing2D;
-using System.Windows.Forms.VisualStyles;
+using TripleXManagement.StaticClass;
 
 namespace TripleXManagement.ChildForm.Staff
 {
@@ -24,21 +15,21 @@ namespace TripleXManagement.ChildForm.Staff
         public AddStaff()
         {
             InitializeComponent();
-            conn = StaticClass.SqlClass.Connection;
+            conn = SqlClass.Connection;
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(borderRadius);
         }
         private void GetData()
         {
-            StaticClass.SharedClass.FillCBB("select * from Regency", cbRegency,"Name");
-            StaticClass.SharedClass.FillCBB("select * from Account", cbAccount,"Username");
+            SharedClass.FillCBB("select * from Regency", cbRegency,"Name");
+            SharedClass.FillCBB("select * from Account", cbAccount,"Username");
             
         }
 
         private void AddStaff_Load(object sender, EventArgs e)
         {
             GetData();
-            StaticClass.SqlClass.Connect();
+            SqlClass.Connect();
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
@@ -91,31 +82,31 @@ namespace TripleXManagement.ChildForm.Staff
 
         private void btnBrowse_MouseEnter(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverSubBtnState(btnBrowse, Properties.Resources.denied_20px, true);
+            SharedClass.HoverSubBtnState(btnBrowse, Properties.Resources.denied_20px, true);
         }
 
         private void btnBrowse_MouseLeave(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverSubBtnState(btnBrowse, Properties.Resources.denied_20px, false);
+            SharedClass.HoverSubBtnState(btnBrowse, Properties.Resources.denied_20px, false);
         }
 
         private void btnSave_MouseEnter(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverSubBtnState(btnSave, Properties.Resources.denied_20px, true);
+            SharedClass.HoverSubBtnState(btnSave, Properties.Resources.denied_20px, true);
         }
 
         private void btnSave_MouseLeave(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverSubBtnState(btnSave, Properties.Resources.denied_20px, false);
+            SharedClass.HoverSubBtnState(btnSave, Properties.Resources.denied_20px, false);
         }
         private void btnClose_MouseEnter(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverSubBtnState(btnClose, Properties.Resources.denied_20px, true);
+            SharedClass.HoverSubBtnState(btnClose, Properties.Resources.denied_20px, true);
         }
 
         private void btnClose_MouseLeave(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverSubBtnState(btnClose, Properties.Resources.denied_20px, false);
+            SharedClass.HoverSubBtnState(btnClose, Properties.Resources.denied_20px, false);
         }
         #endregion
         #region Round
@@ -193,7 +184,7 @@ namespace TripleXManagement.ChildForm.Staff
         private void rbYes_CheckedChanged(object sender, EventArgs e)
         {
             if (rbYes.Checked) 
-                StaticClass.SharedClass.FillCBB("select * from Account", cbAccount, "Username");
+                SharedClass.FillCBB("select * from Account", cbAccount, "Username");
         }
 
         private void rbNo_CheckedChanged(object sender, EventArgs e)

@@ -1,20 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Data.SqlTypes;
-using System.Diagnostics;
-using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using TripleXManagement.ChildForm.Bill;
 using TripleXManagement.ChildForm.Food;
-using static System.Net.Mime.MediaTypeNames;
+using TripleXManagement.StaticClass;
 
 namespace TripleXManagement
 {
@@ -24,17 +11,11 @@ namespace TripleXManagement
         public static string name = "" ;
         public static string price = "";
         private Form activateForm;
-        SqlConnection conn;
-        SqlCommand cmd;
         public FoodManagement()
         {
             InitializeComponent();
-            conn = new SqlConnection
-            {
-                ConnectionString = @"Data Source=DESKTOP-J6D7SL6\SQLEXPRESS;Initial Catalog=TripleX;Integrated Security=True"
-            };
             this.dgvFood.Columns[2].DefaultCellStyle.Format = "c";
-            dgvFood.Columns[2].DefaultCellStyle.FormatProvider = StaticClass.SharedClass.cultureVN;
+            dgvFood.Columns[2].DefaultCellStyle.FormatProvider = SharedClass.cultureVN;
         }
         
         public void OpenChildForm(Form childForm, object btnSender)
@@ -61,13 +42,8 @@ namespace TripleXManagement
         }
         private void GetData()
         {
-            conn.Open();
             String sql = "exec getMonAn2";
-            DataTable table = new DataTable();
-            SqlDataAdapter sda = new(sql, conn);
-            sda.Fill(table);
-            dgvFood.DataSource = table;
-            conn.Close();
+            SharedClass.FillDGV(dgvFood, sql);
         }
 
         private void FoodManagement_Load(object sender, EventArgs e)
@@ -84,7 +60,6 @@ namespace TripleXManagement
                 foodID = dgvFood.Rows[t].Cells[0].Value.ToString();
                 name = dgvFood.Rows[t].Cells[1].Value.ToString();
                 price = dgvFood.Rows[t].Cells[2].Value.ToString();
-                //image = dgvFood.Rows[t].Cells[3].Value.ToString();
             }
         }
 
@@ -93,10 +68,7 @@ namespace TripleXManagement
             if (e.KeyCode == Keys.Delete)
             {
                 String sql = "exec delFoodbyId " + foodID;
-                conn.Open();
-                cmd = new SqlCommand(sql, conn);
-                cmd.ExecuteNonQuery();
-                conn.Close();
+                SqlClass.RunSqlDel(sql);
 
                 GetData();
             }
@@ -104,38 +76,32 @@ namespace TripleXManagement
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            /* String sql = "exec editFoodbyId " + foodID + ", " + name + ", " + price;
-             conn.Open();
-             cmd = new SqlCommand(sql, conn);
-             cmd.ExecuteNonQuery();
-             conn.Close();
-
-             GetData();*/
 
             if(foodID != "")
             {
                 OpenChildForm(new EditFood(), sender);
             }
         }
-
+        #region Hover State
         private void btnAddFood_MouseEnter(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnAddFood, Properties.Resources.database_administrator_20px, true);
+            SharedClass.HoverBtnState(btnAddFood, Properties.Resources.database_administrator_20px, true);
         }
 
         private void btnAddFood_MouseLeave(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnAddFood, Properties.Resources.database_administrator_20px1, false);
+            SharedClass.HoverBtnState(btnAddFood, Properties.Resources.database_administrator_20px1, false);
         }
 
         private void btnEdit_MouseEnter(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnEdit, Properties.Resources.database_administrator_20px, true);
+            SharedClass.HoverBtnState(btnEdit, Properties.Resources.database_administrator_20px, true);
         }
 
         private void btnEdit_MouseLeave(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverBtnState(btnEdit, Properties.Resources.database_administrator_20px1, false);
+            SharedClass.HoverBtnState(btnEdit, Properties.Resources.database_administrator_20px1, false);
         }
+        #endregion
     }
 }

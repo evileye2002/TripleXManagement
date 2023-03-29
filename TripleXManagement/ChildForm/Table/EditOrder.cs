@@ -1,16 +1,6 @@
 ﻿using System.Data.SqlClient;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Drawing.Drawing2D;
-using TripleXManagement.CustomControl;
-using Microsoft.VisualBasic;
+using TripleXManagement.StaticClass;
 
 namespace TripleXManagement.ChildForm.Table
 {
@@ -31,7 +21,7 @@ namespace TripleXManagement.ChildForm.Table
         {
             ID = TableManagement.tag;
             string sql = "select * from OrderedTable where ID = " + ID;
-            SqlDataReader reader = StaticClass.SqlClass.Reader(sql);
+            SqlDataReader reader = SqlClass.Reader(sql);
             if (reader.HasRows)
             {
                 rbOrdered.Checked = true;
@@ -48,7 +38,7 @@ namespace TripleXManagement.ChildForm.Table
 
         private void EditOrder_Load(object sender, EventArgs e)
         {
-            StaticClass.SqlClass.Connect();
+            SqlClass.Connect();
             GetData();
         }
         #region Round
@@ -126,19 +116,19 @@ namespace TripleXManagement.ChildForm.Table
         #region HoverState
         private void btnClose_MouseEnter(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverSubBtnState(btnClose, Properties.Resources.denied_20px, true);
+            SharedClass.HoverSubBtnState(btnClose, Properties.Resources.denied_20px, true);
         }
         private void btnClose_MouseLeave(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverSubBtnState(btnClose, Properties.Resources.denied_20px, false);
+            SharedClass.HoverSubBtnState(btnClose, Properties.Resources.denied_20px, false);
         }
         private void btnSave_MouseEnter(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverSubBtnState(btnSave, Properties.Resources.denied_20px, true);
+            SharedClass.HoverSubBtnState(btnSave, Properties.Resources.denied_20px, true);
         }
         private void btnSave_MouseLeave(object sender, EventArgs e)
         {
-            StaticClass.SharedClass.HoverSubBtnState(btnSave, Properties.Resources.denied_20px, false);
+            SharedClass.HoverSubBtnState(btnSave, Properties.Resources.denied_20px, false);
         }
         #endregion
 
@@ -152,21 +142,16 @@ namespace TripleXManagement.ChildForm.Table
             if (rbEmpty.Checked)
             {
                 empty = "exec emptyOrderTable " + ID;
-                StaticClass.SqlClass.RunSql(empty);
+                SqlClass.RunSql(empty);
             }
 
         }
         private string DateToString(string dtpDate)
         {
-            DateTime dtOrederDate = DateTime.ParseExact(dtpDate, "dd/MM/yyyy HH:mm:ss", StaticClass.SharedClass.cultureVN);
-            string date = dtOrederDate.ToString("dd/MM/yyyy HH:mm:ss", StaticClass.SharedClass.cultureVN);
+            DateTime dtOrederDate = DateTime.ParseExact(dtpDate, "dd/MM/yyyy HH:mm:ss", SharedClass.cultureVN);
+            string date = dtOrederDate.ToString("dd/MM/yyyy HH:mm:ss", SharedClass.cultureVN);
             return date;
         }
 
-        private void rbEmpty_CheckedChanged(object sender, EventArgs e)
-        {
-
-            
-        }
     }
 }
