@@ -1,7 +1,5 @@
 ﻿using CustomAlertBox;
 using System.Data.SqlClient;
-using System.Drawing.Drawing2D;
-using TripleXManagement.ChildForm.Staff;
 using TripleXManagement.CustomControl;
 using TripleXManagement.StaticClass;
 

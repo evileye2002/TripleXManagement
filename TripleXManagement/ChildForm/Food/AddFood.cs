@@ -106,7 +106,7 @@ namespace TripleXManagement
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
-            SharedClass.RoundedControl(panel2, borderRadius, e.Graphics, borderSize);
+            SharedClass.RoundedControl(panel2, borderRadius, e.Graphics, 0);
         }
         #endregion
         private void btnClose_Click(object sender, EventArgs e)

@@ -1,4 +1,4 @@
-﻿namespace TripleXManagement
+﻿namespace TripleXManagement.ChildForm.Bill
 {
     partial class Bill
     {

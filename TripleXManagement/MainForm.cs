@@ -1,14 +1,18 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.Data.SqlClient;
 using System.Runtime.InteropServices;
 using TripleXManagement.ChildForm.Account;
 using TripleXManagement.ChildForm.Customer;
 using TripleXManagement.ChildForm.Staff;
 using TripleXManagement.ChildForm.Table;
+using TripleXManagement.ChildForm.Bill;
+using TripleXManagement.StaticClass;
 
 namespace TripleXManagement
 {
     public partial class MainForm : Form
     {
+        public static string u = "";
+        public static string StaffID = "";
         private int borderSize = 2;
         private Button ?currencyButton;
         private Form ?activateForm;
@@ -129,7 +133,7 @@ namespace TripleXManagement
                     DisableButton();
                     currencyButton = (Button)btnSender;
                     currencyButton.BackColor = Color.FromArgb(98, 102, 244);
-                    currencyButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point); 
+                    currencyButton.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point); 
                     pnTitle.BackColor = Color.FromArgb(98, 102, 244);
                     lbTitle.ForeColor = Color.White;
                     lbTitle.Text = currencyButton.Tag.ToString();
@@ -145,7 +149,7 @@ namespace TripleXManagement
                 if(previousBtn.GetType() == typeof(Button))
                 {
                     previousBtn.BackColor = Color.FromArgb(39, 39, 58);
-                    previousBtn.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+                    previousBtn.Font = new Font("Arial", 10F, FontStyle.Regular, GraphicsUnit.Point);
                 }
             }
         }
@@ -226,6 +230,22 @@ namespace TripleXManagement
             {
                 
             }
+        }
+        private void GetData()
+        {
+            u = LoginForm.u;
+            string sql = "exec getStaffbyUsername '" + u + "'";
+            SqlDataReader reader = SqlClass.Reader(sql);
+            while (reader.Read())
+            {
+                StaffID = reader["ID"].ToString();
+            }
+            reader.Close();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            GetData();
         }
     }
 }

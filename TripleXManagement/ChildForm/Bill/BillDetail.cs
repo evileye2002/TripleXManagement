@@ -83,11 +83,22 @@ namespace TripleXManagement.ChildForm.Bill
 
             graphics.DrawString("HÓA ĐƠN", new Font("Arial", 16, FontStyle.Bold), brush, new Point(250, startY += gapDetail), formatCenter);
 
-            graphics.DrawString("Số Hóa đơn:", font, brush, new Point(25, startY += gapDetail));
-            graphics.DrawString("Ngày:", font, brush, new Point(25, startY += gapDetail));
-            graphics.DrawString("Thu ngân:", font, brush, new Point(25, startY += gapDetail));
-            graphics.DrawString("Quầy:", font, brush, new Point(25, startY += gapDetail));
-            graphics.DrawString("Khách hàng:", font, brush, new Point(25, startY += gapDetail));
+            int a1 = startY += gapDetail;
+            int a2 = startY += gapDetail;
+            int a3 = startY += gapDetail;
+            int a4 = startY += gapDetail;
+            int a5 = startY += gapDetail;
+            graphics.DrawString("Số Hóa đơn:", font, brush, new Point(25, a1));
+            graphics.DrawString("Ngày:", font, brush, new Point(25, a2));
+            graphics.DrawString("Thu ngân:", font, brush, new Point(25, a3));
+            graphics.DrawString("Quầy:", font, brush, new Point(25, a4));
+            graphics.DrawString("Khách hàng:", font, brush, new Point(25, a5));
+
+            graphics.DrawString("Số Hóa đơn:", font, brush, new Point(100, a1));
+            graphics.DrawString("Ngày:", font, brush, new Point(100, a2));
+            graphics.DrawString("Thu ngân:", font, brush, new Point(100, a3));
+            graphics.DrawString("Quầy:", font, brush, new Point(100, a4));
+            graphics.DrawString("Khách hàng:", font, brush, new Point(100, a5));
 
             graphics.DrawString(dash, font, brush, new Point(25, startY += gap));
 

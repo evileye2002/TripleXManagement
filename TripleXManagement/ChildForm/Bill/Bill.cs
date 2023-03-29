@@ -1,16 +1,18 @@
 ﻿using CustomAlertBox;
 using System.Data.SqlClient;
-using TripleXManagement.ChildForm.Bill;
 using TripleXManagement.StaticClass;
 
-namespace TripleXManagement
+namespace TripleXManagement.ChildForm.Bill
 {
     public partial class Bill : Form
     {
+        public static string StaffID = "";
+        public static string StaffName = "";
+        public static bool isBank = false;
+        public static bool isHasCustomer = false;
         private Form activateForm;
         double _total;
         double _price = 0;
-        int isBank = 0;
         SqlDataReader ?reader;
 
         private PictureBox ?image;
@@ -28,6 +30,7 @@ namespace TripleXManagement
 
         private void GetData()
         {
+            StaffID = MainForm.StaffID;
             string sql = "exec getMonAn";
             reader = SqlClass.Reader(sql);
             while (reader.Read())
@@ -59,9 +62,7 @@ namespace TripleXManagement
                 MemoryStream ms = new(array);
                 Bitmap bitmap = new(ms);
                 image.BackgroundImage = bitmap;
-
                 image.Controls.Add(price);
-
                 flowLayoutPanel1.Controls.Add(image);
                 image.Click += new EventHandler(OnClick);
             }
@@ -125,36 +126,33 @@ namespace TripleXManagement
             if (e.KeyCode == Keys.Delete)
                 deleteDetail();
         }
-
+        public void AddBill()
+        {
+            int rowCount = dgvDetail.Rows.Count;
+            StaffID = SelectCustomer.StaffID;
+            isBank = SelectCustomer.isBank;
+            string bank = "0";
+            if (isBank)
+                bank = "1";
+            isHasCustomer = SelectCustomer.isHasCustomer;
+            if (!isHasCustomer)
+                StaffID = "8";
+            String sql = "";
+            for (int i = 0; i < rowCount; i++)
+            {
+                sql += @"exec addBill " + dgvDetail.Rows[i].Cells[0].Value.ToString() + ", " + bank + "','" + StaffID + " \n";
+            }
+            SqlClass.RunSql(sql);
+            dgvDetail.Rows.Clear();
+            SharedClass.Alert("Thêm Thành Công!", Form_Alert.enmType.Success);
+        }
         private void btnAddBill_Click(object sender, EventArgs e)
         {
             int rowCount = dgvDetail.Rows.Count;
             if (rowCount > 0)
             {
-                String sql = "";
-                DialogResult dialogResult = CMessageBox.Show("Thanh toán bằng thẻ ngân hàng?", "Loại Thanh Toán", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    isBank = 1;
-                    for (int i = 0; i < rowCount; i++)
-                    {
-                        sql += @"exec addBill " + dgvDetail.Rows[i].Cells[0].Value.ToString() + ", " + isBank.ToString() + " \n";
-                    }
-                    SqlClass.RunSql(sql);
-                    dgvDetail.Rows.Clear();
-                    SharedClass.Alert("Thêm Thành Công!", Form_Alert.enmType.Success);
-                }
-                else if (dialogResult == DialogResult.No)
-                {
-                    isBank = 0;
-                    for (int i = 0; i < rowCount; i++)
-                    {
-                        sql += @"exec addBill " + dgvDetail.Rows[i].Cells[0].Value.ToString() + ", " + isBank.ToString() + " \n";
-                    }
-                    SqlClass.RunSql(sql);
-                    dgvDetail.Rows.Clear();
-                    SharedClass.Alert("Thêm Thành Công!", Form_Alert.enmType.Success);
-                }
+                Form f = new SelectCustomer();
+                f.ShowDialog();
             }
             else
             {
