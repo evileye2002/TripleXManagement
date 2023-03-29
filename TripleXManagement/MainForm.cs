@@ -219,5 +219,13 @@ namespace TripleXManagement
         {
             OpenChildForm(new CustomerManagement(), sender);
         }
+
+        private void MainForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Delete)
+            {
+                
+            }
+        }
     }
 }

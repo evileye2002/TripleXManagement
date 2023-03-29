@@ -6,7 +6,9 @@ namespace TripleXManagement.ChildForm.Table
 {
     public partial class TableManagement : Form
     {
-        public static string tag = "";
+        public static string OrderID = "";
+        public static string TableID = "";
+        public static string TableName = "";
         SqlDataReader? reader;
 
         private Panel pnTable;
@@ -59,7 +61,7 @@ namespace TripleXManagement.ChildForm.Table
                 {
                     Size = new Size(250,150),
                     Cursor = Cursors.Hand,
-                    Tag = reader["ID"].ToString()
+                    Tag = reader["OrderID"].ToString()
                 };
 
                 body = new Panel
@@ -115,7 +117,7 @@ namespace TripleXManagement.ChildForm.Table
                     Size = new Size(70, 30),
                     TextAlign = ContentAlignment.MiddleLeft,
                     Dock = DockStyle.None,
-                    Tag = reader["ID"].ToString()
+                    Tag = reader["OrderID"].ToString()
                 };
 
                 Tstatus = new Label
@@ -126,14 +128,14 @@ namespace TripleXManagement.ChildForm.Table
                     TextAlign = ContentAlignment.MiddleRight,
                     Dock = DockStyle.Right,
                     RightToLeft = RightToLeft.Yes,
-                    Tag = reader["ID"].ToString(),
+                    Tag = reader["OrderID"].ToString(),
                 };
 
                 img = new CustomControl.RJButton
                 {
                     Dock = DockStyle.Fill,
                     BackColor = bodyBC, 
-                    Tag = reader["ID"].ToString(),
+                    Tag = reader["OrderID"].ToString(),
                     Enabled = false,
                 };
 
@@ -144,17 +146,17 @@ namespace TripleXManagement.ChildForm.Table
                     Size = new Size(180,30),
                     TextAlign = ContentAlignment.MiddleLeft,
                     Dock = DockStyle.Right,
-                    Tag = reader["ID"].ToString()
+                    Tag = reader["OrderID"].ToString()
                 };
 
                 TGetDate = new Label
                 {
                     Padding = new Padding(10, 6, 0, 5),
-                    Text = "Ngày: " + reader["BookDate"].ToString(),
-                    Size = new Size(130, 30),
+                    Text = "Ngày: " + reader["Get"].ToString(),
+                    Size = new Size(180, 30),
                     TextAlign = ContentAlignment.MiddleLeft,
                     Dock = DockStyle.Left,
-                    Tag = reader["ID"].ToString(),
+                    Tag = reader["OrderID"].ToString(),
                 };
 
                 Tchair = new Label
@@ -164,7 +166,7 @@ namespace TripleXManagement.ChildForm.Table
                     Size = new Size(70, 30),
                     TextAlign = ContentAlignment.MiddleLeft,
                     Dock = DockStyle.Right,
-                    Tag = reader["ID"].ToString(),
+                    Tag = reader["OrderID"].ToString(),
                 };
                 img.BackgroundImage = Properties.Resources.bill_32;
 
@@ -359,7 +361,7 @@ namespace TripleXManagement.ChildForm.Table
                 {
                     Size = new Size(250, 150),
                     Cursor = Cursors.Hand,
-                    Tag = reader["ID"].ToString()
+                    Tag = reader["OrderID"].ToString()
                 };
 
                 body = new Panel
@@ -415,7 +417,7 @@ namespace TripleXManagement.ChildForm.Table
                     Size = new Size(70, 30),
                     TextAlign = ContentAlignment.MiddleLeft,
                     Dock = DockStyle.None,
-                    Tag = reader["ID"].ToString()
+                    Tag = reader["OrderID"].ToString()
                 };
 
                 Tstatus = new Label
@@ -426,7 +428,7 @@ namespace TripleXManagement.ChildForm.Table
                     TextAlign = ContentAlignment.MiddleRight,
                     Dock = DockStyle.Right,
                     RightToLeft = RightToLeft.Yes,
-                    Tag = reader["ID"].ToString(),
+                    Tag = reader["OrderID"].ToString(),
                 };
 
                 img = new CustomControl.RJButton
@@ -444,7 +446,7 @@ namespace TripleXManagement.ChildForm.Table
                     Size = new Size(180, 30),
                     TextAlign = ContentAlignment.MiddleLeft,
                     Dock = DockStyle.Right,
-                    Tag = reader["ID"].ToString()
+                    Tag = reader["OrderID"].ToString()
                 };
 
                 TGetDate = new Label
@@ -454,7 +456,7 @@ namespace TripleXManagement.ChildForm.Table
                     Size = new Size(180, 30),
                     TextAlign = ContentAlignment.MiddleLeft,
                     Dock = DockStyle.Left,
-                    Tag = reader["ID"].ToString(),
+                    Tag = reader["OrderID"].ToString(),
                 };
 
                 Tchair = new Label
@@ -464,7 +466,7 @@ namespace TripleXManagement.ChildForm.Table
                     Size = new Size(70, 30),
                     TextAlign = ContentAlignment.MiddleLeft,
                     Dock = DockStyle.Right,
-                    Tag = reader["ID"].ToString(),
+                    Tag = reader["OrderID"].ToString(),
                 };
                 img.BackgroundImage = Properties.Resources.bill_32;
 
@@ -493,7 +495,7 @@ namespace TripleXManagement.ChildForm.Table
             }
             reader.Close();
         }
-        private void GetData()
+        public void GetData()
         {
             flpBookTable.Controls.Clear();
             string sql = "";
@@ -605,14 +607,25 @@ namespace TripleXManagement.ChildForm.Table
 
         public void editOrder(object sender, EventArgs e)
         {
-            tag = ((Label)sender).Tag.ToString();
+            OrderID = ((Label)sender).Tag.ToString();
+            string sql = "select * from OrderedTable where OrderID  = " + OrderID;
+            reader = SqlClass.Reader(sql);
+            while (reader.Read())
+            {
+                TableID = reader["ID"].ToString();
+                TableName = reader["Name"].ToString();
+            }
+            reader.Close();
+
             Form f = new EditOrder();
-            if(tag != "")
+            if(OrderID != "")
                 f.ShowDialog();
         }
         public void addOrder(object sender, EventArgs e)
         {
-            tag = ((Label)sender).Tag.ToString();
+            TableID = ((Label)sender).Tag.ToString();
+            TableName =  SqlClass.GetOneValue("select Name from EmptyTable where ID = " + TableID);
+
             Form f = new AddOrder();
             f.ShowDialog();
         }

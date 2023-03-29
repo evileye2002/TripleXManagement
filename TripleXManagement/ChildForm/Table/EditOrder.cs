@@ -7,7 +7,8 @@ namespace TripleXManagement.ChildForm.Table
 {
     public partial class EditOrder : Form
     {
-        public static string ID = "";
+        public static string TableID = "";
+        public static string OrderID = "";
         public static string empty = "";
         private int borderRadius = 20;
         private int borderSize = 2;
@@ -20,15 +21,17 @@ namespace TripleXManagement.ChildForm.Table
         }
         private void GetData()
         {
-            ID = TableManagement.tag;
-            string sql = "select * from OrderedTable where ID = " + ID;
+            OrderID = TableManagement.OrderID;
+            TableID = TableManagement.TableID;
+            lbTableName.Text = TableManagement.TableName;
+
+            string sql = "select * from OrderedTable where OrderID = " + OrderID;
             SqlDataReader reader = SqlClass.Reader(sql);
             if (reader.HasRows)
             {
                 rbOrdered.Checked = true;
                 while (reader.Read())
                 {
-                    lbTableName.Text = reader["Name"].ToString();
                     txtName.Texts = reader["CustomerName"].ToString();
                     txtOrderDate.Texts = DateToString(reader["BookDate"].ToString());
                     txtGetDate.Texts = reader["Get"].ToString();
@@ -142,9 +145,11 @@ namespace TripleXManagement.ChildForm.Table
         {
             if (rbEmpty.Checked)
             {
-                empty = "exec emptyOrderTable " + ID;
+                empty = "exec emptyOrderTable " + TableID + "," + OrderID;
                 SqlClass.RunSql(empty);
                 SharedClass.Alert("Sửa thành công!", Form_Alert.enmType.Success);
+                var mainForm = Application.OpenForms.OfType<TableManagement>().Single();
+                mainForm.GetData();
             }
 
         }

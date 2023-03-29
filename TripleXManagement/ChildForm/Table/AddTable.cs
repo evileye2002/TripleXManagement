@@ -55,6 +55,8 @@ namespace TripleXManagement.ChildForm.Table
             {
                 SqlClass.RunSql(sql);
                 SharedClass.Alert("Lưu thành công!", Form_Alert.enmType.Success);
+                var mainForm = Application.OpenForms.OfType<TableManagement>().Single();
+                mainForm.GetData();
             }
             else
                 SharedClass.Alert("Chưa Nhập Dữ Liệu!", Form_Alert.enmType.Warning);

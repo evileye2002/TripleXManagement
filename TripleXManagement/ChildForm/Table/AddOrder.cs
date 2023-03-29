@@ -8,7 +8,8 @@ namespace TripleXManagement.ChildForm.Table
 {
     public partial class AddOrder : Form
     {
-        public static string ID = "";
+        public static string TableID = "";
+        public static string OrderID = "";
         public static string CustomerID = "";
         private int borderRadius = 20;
         private int borderSize = 2;
@@ -56,6 +57,15 @@ namespace TripleXManagement.ChildForm.Table
         {
             SharedClass.HoverSubBtnState(btnSave, Properties.Resources.denied_20px, false);
         }
+        private void btnDelete_MouseEnter(object sender, EventArgs e)
+        {
+            SharedClass.HoverSubBtnState(btnDelete, Properties.Resources.denied_20px, true);
+        }
+
+        private void btnDelete_MouseLeave(object sender, EventArgs e)
+        {
+            SharedClass.HoverSubBtnState(btnDelete, Properties.Resources.denied_20px, false);
+        }
         #endregion
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -65,14 +75,16 @@ namespace TripleXManagement.ChildForm.Table
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string sql = "exec addOrderTable " + ID + "," + CustomerID + ",N'" 
+            string sql = "exec addOrderTable " + TableID + "," + CustomerID + ",N'" 
                 + DateToString(dtpOrderDate) + " " + TimeToString(dtpOrderTime) + "',N'" 
                 + DateToString(dtpGetDate) + " " + TimeToString(dtpGetTime) + "'";
 
-            if (ID != "")
+            if (CustomerID != "")
             {
                 SqlClass.RunSql(sql);
                 SharedClass.Alert("Lưu thành công!", Form_Alert.enmType.Success);
+                var mainForm = Application.OpenForms.OfType<TableManagement>().Single();
+                mainForm.GetData();
             }
             else
                 SharedClass.Alert("Chưa Chọn Khách Hàng!", Form_Alert.enmType.Warning);
@@ -102,16 +114,10 @@ namespace TripleXManagement.ChildForm.Table
         }
         private void GetData()
         {
-            ID = TableManagement.tag;
+            TableID = TableManagement.TableID;
+            lbTableName.Text = TableManagement.TableName;
             string sql = "exec getCustomer";
             StaticClass.SharedClass.FillDGV(dgvCustomer, sql);
-            string sql2 = "exec getTablebyID " + ID;
-            reader = SqlClass.Reader(sql2);
-            while (reader.Read())
-            {
-                lbTableName.Text = reader.GetValue(1).ToString();
-            }
-            reader.Close();
         }
 
         private void AddOrder_Load(object sender, EventArgs e)
@@ -121,18 +127,13 @@ namespace TripleXManagement.ChildForm.Table
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void AddOrder_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Delete)
+            String? sql = "exec delTable " + TableID;
+            if (TableID != "")
             {
-                String? sql = "exec delTable " + ID;
-                if (ID != "")
-                {
-                    SqlClass.RunSqlDel(sql);
-                }
+                SqlClass.RunSqlDel(sql);
+                var mainForm = Application.OpenForms.OfType<TableManagement>().Single();
+                mainForm.GetData();
+                this.Close();
             }
         }
     }
