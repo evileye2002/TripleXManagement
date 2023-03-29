@@ -141,6 +141,7 @@ namespace TripleXManagement
                         sql += @"exec addBill " + dgvDetail.Rows[i].Cells[0].Value.ToString() + ", " + isBank.ToString() + " \n";
                     }
                     SqlClass.RunSql(sql);
+                    dgvDetail.Rows.Clear();
                     SharedClass.Alert("Thêm Thành Công!", Form_Alert.enmType.Success);
                 }
                 else if (dialogResult == DialogResult.No)
@@ -151,6 +152,7 @@ namespace TripleXManagement
                         sql += @"exec addBill " + dgvDetail.Rows[i].Cells[0].Value.ToString() + ", " + isBank.ToString() + " \n";
                     }
                     SqlClass.RunSql(sql);
+                    dgvDetail.Rows.Clear();
                     SharedClass.Alert("Thêm Thành Công!", Form_Alert.enmType.Success);
                 }
             }

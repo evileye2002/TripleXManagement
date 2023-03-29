@@ -91,6 +91,7 @@ namespace TripleXManagement.ChildForm.Bill
                 if(BillID != "")
                 {
                     SqlClass.RunSqlDel(sql);
+                    BillID = "";
                 }
                 else
                     SharedClass.Alert("Chưa Chọn Hóa Đơn!", Form_Alert.enmType.Warning);

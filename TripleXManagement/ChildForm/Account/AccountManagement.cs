@@ -76,6 +76,7 @@ namespace TripleXManagement.ChildForm.Account
                 if(username != "")
                 {
                     SqlClass.RunSqlDel(sql);
+                    username = "";
                 }
                 else
                     SharedClass.Alert("Chưa Chọn Tài Khoản!", Form_Alert.enmType.Warning);

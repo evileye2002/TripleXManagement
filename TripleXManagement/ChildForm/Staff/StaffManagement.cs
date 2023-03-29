@@ -72,6 +72,7 @@ namespace TripleXManagement.ChildForm.Staff
                 if (ID != "")
                 {
                     SqlClass.RunSqlDel(sql);
+                    ID = "";
                 }
                 else
                     SharedClass.Alert("Chưa Chọn Nhân Viên!", Form_Alert.enmType.Warning);

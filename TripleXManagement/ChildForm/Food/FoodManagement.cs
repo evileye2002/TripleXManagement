@@ -55,6 +55,7 @@ namespace TripleXManagement
                 if (foodID != "")
                 {
                     SqlClass.RunSqlDel(sql);
+                    foodID = "";
                 }
                 else
                     SharedClass.Alert("Chưa Chọn Món!", Form_Alert.enmType.Warning);

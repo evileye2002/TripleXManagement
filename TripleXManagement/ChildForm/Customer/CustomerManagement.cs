@@ -83,6 +83,7 @@ namespace TripleXManagement.ChildForm.Customer
                 if(ID != "")
                 {
                     SqlClass.RunSqlDel(sql);
+                    ID = "";
                 }
                 else
                     SharedClass.Alert("Chưa Chọn Khách Hàng!", Form_Alert.enmType.Warning);
