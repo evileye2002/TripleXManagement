@@ -62,9 +62,21 @@ namespace TripleXManagement.ChildForm.Account
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string sql = "exec addAccount '" + txtUserName.Texts + "',N'" + txtPassword.Texts + "'";
-            SqlClass.RunSql(sql);
-            SharedClass.Alert("Lưu thành công!", Form_Alert.enmType.Success);
+            if(txtUserName.Texts != "" && txtPassword.Texts != "")
+            {
+                string sql = "exec addAccount '" + txtUserName.Texts + "',N'" + txtPassword.Texts + "'";
+                try
+                {
+                    SqlClass.RunSql(sql);
+                    SharedClass.Alert("Lưu thành công!", Form_Alert.enmType.Success);
+                }
+                catch
+                {
+                    SharedClass.Alert("Tài Khoản Đã Tồn Tại!", Form_Alert.enmType.Error);
+                }
+            }
+            else
+                SharedClass.Alert("Dữ Liệu Trống!", Form_Alert.enmType.Warning);
         }
     }
 }

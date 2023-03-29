@@ -70,9 +70,15 @@ namespace TripleXManagement.ChildForm.Account
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string sql = "exec editAccount '" + ID + "',N'" + txtPassword.Texts + "'";
-            SqlClass.RunSql(sql);
-            SharedClass.Alert("Sửa thành công!", Form_Alert.enmType.Success);
+            if(txtPassword.Texts != "")
+            {
+                string sql = "exec editAccount '" + ID + "',N'" + txtPassword.Texts + "'";
+                SqlClass.RunSql(sql);
+                SharedClass.Alert("Sửa thành công!", Form_Alert.enmType.Success);
+            }
+            else
+                SharedClass.Alert("Mật Khẩu Trống!", Form_Alert.enmType.Warning);
+
         }
 
         private void EditAccount_Load(object sender, EventArgs e)

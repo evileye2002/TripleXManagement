@@ -1,4 +1,5 @@
-﻿using Microsoft.SqlServer.Server;
+﻿using CustomAlertBox;
+using Microsoft.SqlServer.Server;
 using TripleXManagement.StaticClass;
 namespace TripleXManagement.ChildForm.Account
 {
@@ -29,7 +30,10 @@ namespace TripleXManagement.ChildForm.Account
         private void btnEdit_Click(object sender, EventArgs e)
         {
             Form f = new EditAccount();
-            f.ShowDialog();
+            if (username != "")
+                f.ShowDialog();
+            else
+                SharedClass.Alert("Chưa chọn tài khoản!", Form_Alert.enmType.Warning);
         }
         #region Hover State
         private void btnAddAccount_MouseEnter(object sender, EventArgs e)
