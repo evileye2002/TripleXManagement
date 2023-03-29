@@ -116,10 +116,15 @@ namespace TripleXManagement.ChildForm.Customer
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string sql = "exec addCustomer N'" + txtName.Texts + "','" + txtCCCD.Texts + "','" + dtpBirthday.Value.ToString() 
-                + "',N'" + txtAddress.Texts + "','" + txtPhone.Texts + "'";
-            SqlClass.RunSql(sql);
-            SharedClass.Alert("Lưu thành công!", Form_Alert.enmType.Success);
+            string sql = "exec addCustomer N'" + txtName.Texts + "','" + txtCCCD.Texts + "','" + dtpBirthday.Value.ToString() + "',N'" + 
+                            txtAddress.Texts + "','" + txtPhone.Texts + "'";
+            if(txtCCCD.Texts != "" && txtCCCD.Texts != "" && txtName.Texts != "" && txtPhone.Texts != "")
+            {
+                SqlClass.RunSql(sql);
+                SharedClass.Alert("Lưu Thành Công!", Form_Alert.enmType.Success);
+            }
+            else
+                SharedClass.Alert("Chưa Nhập Đủ Dữ Liệu!", Form_Alert.enmType.Warning);
         }
 
         private void AddCustomer_Load(object sender, EventArgs e)

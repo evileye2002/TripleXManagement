@@ -73,7 +73,12 @@ namespace TripleXManagement.ChildForm.Account
             if (e.KeyCode == Keys.Delete)
             {
                 String? sql = "exec delAccount '" + username + "'";
-                SqlClass.RunSqlDel(sql);
+                if(username != "")
+                {
+                    SqlClass.RunSqlDel(sql);
+                }
+                else
+                    SharedClass.Alert("Chưa Chọn Tài Khoản!", Form_Alert.enmType.Warning);
 
                 GetData();
             }

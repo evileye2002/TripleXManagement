@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using CustomAlertBox;
+using System.Data;
 using System.Data.SqlClient;
 using System.Drawing.Printing;
 using System.Globalization;
@@ -184,6 +185,7 @@ namespace TripleXManagement.ChildForm.Bill
         private void btnPrint_Click(object sender, EventArgs e)
         {
             print();
+            SharedClass.Alert("In Thành Công!", Form_Alert.enmType.Success);
         }
         public static string NumberToText(double inputNumber, bool suffix = true)
         {
@@ -279,15 +281,19 @@ namespace TripleXManagement.ChildForm.Bill
             {
                 sizePrintPage();
                 print();
-            }else if (e.KeyCode == Keys.Delete)
+                SharedClass.Alert("In Thành Công!", Form_Alert.enmType.Success);
+            }
+            else if (e.KeyCode == Keys.Delete)
             {
-                if(dgvBillDetail.SelectedRows.Count > 0)
+                String sql = "exec delBillDetailbyId " + foodID + ", " + BillID;
+                if (foodID != "")
                 {
-                    String sql = "exec delBillDetailbyId " + foodID + ", " + BillID;
-                    SqlClass.RunSql(sql);
+                    SqlClass.RunSqlDel(sql);
 
                     GetData();
                 }
+                else
+                    SharedClass.Alert("Chưa Chọn Món!", Form_Alert.enmType.Warning);
             }
         }
 

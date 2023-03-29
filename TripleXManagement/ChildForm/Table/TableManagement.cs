@@ -1,4 +1,5 @@
-﻿using System.Data.SqlClient;
+﻿using CustomAlertBox;
+using System.Data.SqlClient;
 using TripleXManagement.StaticClass;
 
 namespace TripleXManagement.ChildForm.Table
@@ -606,7 +607,8 @@ namespace TripleXManagement.ChildForm.Table
         {
             tag = ((Label)sender).Tag.ToString();
             Form f = new EditOrder();
-            f.ShowDialog();
+            if(tag != "")
+                f.ShowDialog();
         }
         public void addOrder(object sender, EventArgs e)
         {

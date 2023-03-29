@@ -68,8 +68,14 @@ namespace TripleXManagement.ChildForm.Table
             string sql = "exec addOrderTable " + ID + "," + CustomerID + ",N'" 
                 + DateToString(dtpOrderDate) + " " + TimeToString(dtpOrderTime) + "',N'" 
                 + DateToString(dtpGetDate) + " " + TimeToString(dtpGetTime) + "'";
-            SqlClass.RunSql(sql);
-            SharedClass.Alert("Thêm thành công!", Form_Alert.enmType.Success);
+
+            if (ID != "")
+            {
+                SqlClass.RunSql(sql);
+                SharedClass.Alert("Lưu thành công!", Form_Alert.enmType.Success);
+            }
+            else
+                SharedClass.Alert("Chưa Chọn Khách Hàng!", Form_Alert.enmType.Warning);
 
         }
         private string DateToString(RJDatePicker dtpDate)
@@ -111,6 +117,23 @@ namespace TripleXManagement.ChildForm.Table
         private void AddOrder_Load(object sender, EventArgs e)
         {
             GetData();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddOrder_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                String? sql = "exec delTable " + ID;
+                if (ID != "")
+                {
+                    SqlClass.RunSqlDel(sql);
+                }
+            }
         }
     }
 }

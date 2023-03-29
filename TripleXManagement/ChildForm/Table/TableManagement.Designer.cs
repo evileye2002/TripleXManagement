@@ -35,15 +35,15 @@
             this.pnFilter = new System.Windows.Forms.Panel();
             this.txtSearch = new TripleXManagement.CustomControl.Textbox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.rbAllKind = new TripleXManagement.CustomControl.RJRadioButton();
-            this.rbNormal = new TripleXManagement.CustomControl.RJRadioButton();
-            this.rbMid = new TripleXManagement.CustomControl.RJRadioButton();
-            this.rbBig = new TripleXManagement.CustomControl.RJRadioButton();
+            this.rbAllKind = new TripleXManagement.CustomControl.CRadioButton();
+            this.rbNormal = new TripleXManagement.CustomControl.CRadioButton();
+            this.rbMid = new TripleXManagement.CustomControl.CRadioButton();
+            this.rbBig = new TripleXManagement.CustomControl.CRadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.rbNullTable = new TripleXManagement.CustomControl.RJRadioButton();
-            this.rbToday = new TripleXManagement.CustomControl.RJRadioButton();
-            this.rbOrderTable = new TripleXManagement.CustomControl.RJRadioButton();
+            this.rbNullTable = new TripleXManagement.CustomControl.CRadioButton();
+            this.rbToday = new TripleXManagement.CustomControl.CRadioButton();
+            this.rbOrderTable = new TripleXManagement.CustomControl.CRadioButton();
             this.btnFilter = new TripleXManagement.CustomControl.RJButton();
             this.pnFooter.SuspendLayout();
             this.pnMain.SuspendLayout();
@@ -358,21 +358,21 @@
 
         private Panel pnFooter;
         private CustomControl.RJButton btnManagement;
-        private CustomControl.RJRadioButton rdTable;
+        private CustomControl.CRadioButton rdTable;
         private Panel pnMain;
         private FlowLayoutPanel flpBookTable;
         private Panel pnFilter;
         private Label label1;
-        private CustomControl.RJRadioButton rbNullTable;
-        private CustomControl.RJRadioButton rbOrderTable;
+        private CustomControl.CRadioButton rbNullTable;
+        private CustomControl.CRadioButton rbOrderTable;
         private Label label2;
-        private CustomControl.RJRadioButton rbAllKind;
-        private CustomControl.RJRadioButton rbBig;
-        private CustomControl.RJRadioButton rbMid;
-        private CustomControl.RJRadioButton rbNormal;
+        private CustomControl.CRadioButton rbAllKind;
+        private CustomControl.CRadioButton rbBig;
+        private CustomControl.CRadioButton rbMid;
+        private CustomControl.CRadioButton rbNormal;
         private CustomControl.RJButton btnFilter;
         private Panel panel1;
-        private CustomControl.RJRadioButton rbToday;
+        private CustomControl.CRadioButton rbToday;
         private CustomControl.Textbox txtSearch;
     }
 }

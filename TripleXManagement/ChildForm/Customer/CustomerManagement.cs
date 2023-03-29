@@ -1,4 +1,5 @@
-﻿using TripleXManagement.StaticClass;
+﻿using CustomAlertBox;
+using TripleXManagement.StaticClass;
 
 namespace TripleXManagement.ChildForm.Customer
 {
@@ -55,6 +56,8 @@ namespace TripleXManagement.ChildForm.Customer
             Form f = new EditCustomer();
             if(ID != "")
                 f.ShowDialog();
+            else
+                SharedClass.Alert("Chưa Chọn Khách Hàng!", Form_Alert.enmType.Warning);
         }
 
         private void dgvCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -77,7 +80,12 @@ namespace TripleXManagement.ChildForm.Customer
             if (e.KeyCode == Keys.Delete)
             {
                 String? sql = "exec delCustomer " + ID;
-                SqlClass.RunSql(sql);
+                if(ID != "")
+                {
+                    SqlClass.RunSqlDel(sql);
+                }
+                else
+                    SharedClass.Alert("Chưa Chọn Khách Hàng!", Form_Alert.enmType.Warning);
 
                 GetData();
             }

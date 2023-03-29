@@ -25,25 +25,30 @@ namespace TripleXManagement.ChildForm.Food
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            try
+            if(txtName.Texts != "" && txtPrice.Texts != "")
             {
-                MemoryStream ms = new MemoryStream();
-                pbPic.BackgroundImage.Save(ms, ImageFormat.Jpeg);
-                byte[] array = ms.GetBuffer();
-                cmd = new SqlCommand("exec editFoodbyID @ID, @Name, @Price, @Image", conn);
-                cmd.Parameters.AddWithValue("@ID", ID);
-                cmd.Parameters.AddWithValue("@Name", txtName.Texts);
-                cmd.Parameters.AddWithValue("@Price", int.Parse(txtPrice.Texts));
-                cmd.Parameters.AddWithValue("@Image", array);
-                cmd.ExecuteNonQuery();
+                try
+                {
+                    MemoryStream ms = new MemoryStream();
+                    pbPic.BackgroundImage.Save(ms, ImageFormat.Jpeg);
+                    byte[] array = ms.GetBuffer();
+                    cmd = new SqlCommand("exec editFoodbyID @ID, @Name, @Price, @Image", conn);
+                    cmd.Parameters.AddWithValue("@ID", ID);
+                    cmd.Parameters.AddWithValue("@Name", txtName.Texts);
+                    cmd.Parameters.AddWithValue("@Price", int.Parse(txtPrice.Texts));
+                    cmd.Parameters.AddWithValue("@Image", array);
+                    cmd.ExecuteNonQuery();
 
-                GetData();
-                SharedClass.Alert("Sửa thành công!", Form_Alert.enmType.Success);
+                    GetData();
+                    SharedClass.Alert("Sửa thành công!", Form_Alert.enmType.Success);
+                }
+                catch
+                {
+                    SharedClass.Alert("Chưa Chọn Ảnh!", Form_Alert.enmType.Error);
+                }
             }
-            catch (Exception ex)
-            {
-                SharedClass.Alert("Lỗi!", Form_Alert.enmType.Error);
-            }
+            else
+                SharedClass.Alert("Chưa Nhập Dữ Liệu!", Form_Alert.enmType.Warning);
         }
 
         private void EditFood_Load(object sender, EventArgs e)

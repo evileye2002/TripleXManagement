@@ -9,7 +9,7 @@ using System.Drawing.Drawing2D;
 
 namespace TripleXManagement.CustomControl
 {
-    public class RJRadioButton : RadioButton
+    public class CRadioButton : RadioButton
     {
         //Fields
         private Color checkedColor = Color.MediumSlateBlue;
@@ -45,7 +45,7 @@ namespace TripleXManagement.CustomControl
         }
 
         //Constructor
-        public RJRadioButton()
+        public CRadioButton()
         {
             this.MinimumSize = new Size(0, 21);
             //Add a padding of 10 to the left to have a considerable distance between the text and the RadioButton.

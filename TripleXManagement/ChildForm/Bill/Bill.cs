@@ -131,23 +131,28 @@ namespace TripleXManagement
             int rowCount = dgvDetail.Rows.Count;
             if (rowCount > 0)
             {
-                DialogResult dialogResult = MessageBox.Show("Thanh toán bằng thẻ ngân hàng?", "Loại thanh toán", MessageBoxButtons.YesNo);
+                String sql = "";
+                DialogResult dialogResult = CMessageBox.Show("Thanh toán bằng thẻ ngân hàng?", "Loại thanh toán", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     isBank = 1;
+                    for (int i = 0; i < rowCount; i++)
+                    {
+                        sql += @"exec addBill " + dgvDetail.Rows[i].Cells[0].Value.ToString() + ", " + isBank.ToString() + " \n";
+                    }
+                    SqlClass.RunSql(sql);
+                    SharedClass.Alert("Thêm thành công!", Form_Alert.enmType.Success);
                 }
                 else if (dialogResult == DialogResult.No)
                 {
                     isBank = 0;
+                    for (int i = 0; i < rowCount; i++)
+                    {
+                        sql += @"exec addBill " + dgvDetail.Rows[i].Cells[0].Value.ToString() + ", " + isBank.ToString() + " \n";
+                    }
+                    SqlClass.RunSql(sql);
+                    SharedClass.Alert("Thêm thành công!", Form_Alert.enmType.Success);
                 }
-
-                String sql = "";
-                for (int i = 0; i < rowCount; i++)
-                {
-                    sql += @"exec addBill " + dgvDetail.Rows[i].Cells[0].Value.ToString() + ", " + isBank.ToString() + " \n";
-                }
-                SqlClass.RunSql(sql);
-                SharedClass.Alert("Thêm thành công!", Form_Alert.enmType.Success);
             }
             else
             {

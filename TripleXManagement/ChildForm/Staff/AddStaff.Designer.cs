@@ -40,8 +40,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.rbYes = new TripleXManagement.CustomControl.RJRadioButton();
-            this.rbNo = new TripleXManagement.CustomControl.RJRadioButton();
+            this.rbYes = new TripleXManagement.CustomControl.CRadioButton();
+            this.rbNo = new TripleXManagement.CustomControl.CRadioButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbTableName = new System.Windows.Forms.Label();
             this.btnClose = new TripleXManagement.CustomControl.RJButton();
@@ -385,8 +385,8 @@
         private Panel panel3;
         private Label lbTableName;
         private Panel panel4;
-        private CustomControl.RJRadioButton rbYes;
-        private CustomControl.RJRadioButton rbNo;
+        private CustomControl.CRadioButton rbYes;
+        private CustomControl.CRadioButton rbNo;
         private Label label1;
         private CustomControl.RJButton btnClose;
     }

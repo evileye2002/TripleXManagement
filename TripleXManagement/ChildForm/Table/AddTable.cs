@@ -51,8 +51,13 @@ namespace TripleXManagement.ChildForm.Table
         private void btnSave_Click(object sender, EventArgs e)
         {
             string sql = "exec addTable N'" + txtName.Texts + "', N'" + txtKind.Texts +"'," +txtChair.Texts;
-            SqlClass.RunSql(sql);
-            SharedClass.Alert("Thêm thành công!", Form_Alert.enmType.Success);
+            if (txtName.Texts != "" && txtKind.Texts != "" && txtChair.Texts != "")
+            {
+                SqlClass.RunSql(sql);
+                SharedClass.Alert("Lưu thành công!", Form_Alert.enmType.Success);
+            }
+            else
+                SharedClass.Alert("Chưa Nhập Dữ Liệu!", Form_Alert.enmType.Warning);
         }
     }
 }

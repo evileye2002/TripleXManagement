@@ -35,8 +35,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.rbEmpty = new TripleXManagement.CustomControl.RJRadioButton();
-            this.rbOrdered = new TripleXManagement.CustomControl.RJRadioButton();
+            this.rbEmpty = new TripleXManagement.CustomControl.CRadioButton();
+            this.rbOrdered = new TripleXManagement.CustomControl.CRadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbTableName = new System.Windows.Forms.Label();
             this.txtGetDate = new TripleXManagement.CustomControl.Textbox();
@@ -315,8 +315,8 @@
         private Label lbTableName;
         private CustomControl.Textbox txtName;
         private Panel panel3;
-        private CustomControl.RJRadioButton rbEmpty;
-        private CustomControl.RJRadioButton rbOrdered;
+        private CustomControl.CRadioButton rbEmpty;
+        private CustomControl.CRadioButton rbOrdered;
         private Label label3;
         private Label label2;
         private Label label1;

@@ -124,8 +124,14 @@ namespace TripleXManagement.ChildForm.Customer
         {
             string sql = "exec editCustomer " + ID + ",N'" + txtName.Texts + "','" + txtCCCD.Texts + "','" + dtpBirthday.Value.ToString()
                 + "',N'" + txtAddress.Texts + "','" + txtPhone.Texts + "'";
-            SqlClass.RunSql(sql);
-            SharedClass.Alert("Sửa thành công!", Form_Alert.enmType.Success);
+
+            if (txtCCCD.Texts != "" && txtCCCD.Texts != "" && txtName.Texts != "" && txtPhone.Texts != "")
+            {
+                SqlClass.RunSql(sql);
+                SharedClass.Alert("Sửa Thành Công!", Form_Alert.enmType.Success);
+            }
+            else
+                SharedClass.Alert("Chưa Nhập Đủ Dữ Liệu!", Form_Alert.enmType.Warning);
         }
 
         private void AddCustomer_Load(object sender, EventArgs e)

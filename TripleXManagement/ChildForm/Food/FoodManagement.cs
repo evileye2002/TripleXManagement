@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using CustomAlertBox;
+using System.Data;
 using System.Data.SqlClient;
 using TripleXManagement.ChildForm.Food;
 using TripleXManagement.StaticClass;
@@ -51,7 +52,12 @@ namespace TripleXManagement
             if (e.KeyCode == Keys.Delete)
             {
                 String sql = "exec delFoodbyId " + foodID;
-                SqlClass.RunSqlDel(sql);
+                if (foodID != "")
+                {
+                    SqlClass.RunSqlDel(sql);
+                }
+                else
+                    SharedClass.Alert("Chưa Chọn Món!", Form_Alert.enmType.Warning);
 
                 GetData();
             }
@@ -61,9 +67,9 @@ namespace TripleXManagement
         {
             Form f = new EditFood();
             if (foodID != "")
-            {
                 f.ShowDialog();
-            }
+            else
+                SharedClass.Alert("Chưa Chọn Món!", Form_Alert.enmType.Warning);
         }
         #region Hover State
         private void btnAddFood_MouseEnter(object sender, EventArgs e)

@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using CustomAlertBox;
+using System.Data;
 using System.Data.SqlClient;
 using System.Globalization;
 using TripleXManagement.StaticClass;
@@ -66,6 +67,8 @@ namespace TripleXManagement.ChildForm.Bill
             {
                 OpenChildForm(new BillDetail(), sender);
             }
+            else
+                SharedClass.Alert("Chưa Chọn Hóa Đơn!", Form_Alert.enmType.Warning);
         }
 
         private void dgvBill_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -85,10 +88,12 @@ namespace TripleXManagement.ChildForm.Bill
             if (e.KeyCode == Keys.Delete)
             {
                 String sql = "exec delBillbyId " + BillID;
-                conn.Open();
-                cmd = new SqlCommand(sql, conn);
-                cmd.ExecuteNonQuery();
-                conn.Close();
+                if(BillID != "")
+                {
+                    SqlClass.RunSqlDel(sql);
+                }
+                else
+                    SharedClass.Alert("Chưa Chọn Hóa Đơn!", Form_Alert.enmType.Warning);
 
                 GetData();
             }

@@ -1,4 +1,5 @@
-﻿using TripleXManagement.StaticClass;
+﻿using CustomAlertBox;
+using TripleXManagement.StaticClass;
 namespace TripleXManagement.ChildForm.Staff
 {
     public partial class StaffManagement : Form
@@ -29,6 +30,8 @@ namespace TripleXManagement.ChildForm.Staff
             Form f = new EditStaff();
             if (ID != "")
                 f.ShowDialog();
+            else
+                SharedClass.Alert("Chưa Chọn Nhân Viên!", Form_Alert.enmType.Warning);
         }
 
         private void dgvStaff_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -66,7 +69,12 @@ namespace TripleXManagement.ChildForm.Staff
             if (e.KeyCode == Keys.Delete)
             {
                 String? sql = "exec delStaffbyID " + ID;
-                SqlClass.RunSql(sql);
+                if (ID != "")
+                {
+                    SqlClass.RunSqlDel(sql);
+                }
+                else
+                    SharedClass.Alert("Chưa Chọn Nhân Viên!", Form_Alert.enmType.Warning);
 
                 GetData();
             }

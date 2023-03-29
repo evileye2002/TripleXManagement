@@ -47,29 +47,33 @@ namespace TripleXManagement.ChildForm.Staff
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            try
+            if(txtCCCD.Texts != "" && txtName.Texts != "" && txtPhone.Texts != "")
             {
-                MemoryStream ms = new MemoryStream();
-                pbPic.BackgroundImage.Save(ms, ImageFormat.Jpeg);
-                byte[] array = ms.GetBuffer();
+                try
+                {
+                    MemoryStream ms = new MemoryStream();
+                    pbPic.BackgroundImage.Save(ms, ImageFormat.Jpeg);
+                    byte[] array = ms.GetBuffer();
 
-                
-                cmd = new SqlCommand("exec addStaff @Name, @CCCD, @Phone, @Image, @Regency, @Account", conn);
-                cmd.Parameters.AddWithValue("@Name", txtName.Texts);
-                cmd.Parameters.AddWithValue("@CCCD", txtCCCD.Texts);
-                cmd.Parameters.AddWithValue("@Phone", txtPhone.Texts);
-                cmd.Parameters.AddWithValue("@Regency", cbRegency.Texts);
-                cmd.Parameters.AddWithValue("@Account", cbAccount.Texts);
-                cmd.Parameters.AddWithValue("@Image", array);
-                cmd.ExecuteNonQuery();
+                    cmd = new SqlCommand("exec addStaff @Name, @CCCD, @Phone, @Image, @Regency, @Account", conn);
+                    cmd.Parameters.AddWithValue("@Name", txtName.Texts);
+                    cmd.Parameters.AddWithValue("@CCCD", txtCCCD.Texts);
+                    cmd.Parameters.AddWithValue("@Phone", txtPhone.Texts);
+                    cmd.Parameters.AddWithValue("@Regency", cbRegency.Texts);
+                    cmd.Parameters.AddWithValue("@Account", cbAccount.Texts);
+                    cmd.Parameters.AddWithValue("@Image", array);
+                    cmd.ExecuteNonQuery();
 
-                clear();
-                SharedClass.Alert("Lưu thành công!", Form_Alert.enmType.Success);
+                    clear();
+                    SharedClass.Alert("Lưu thành công!", Form_Alert.enmType.Success);
+                }
+                catch
+                {
+                    SharedClass.Alert("Chưa Chọn Ảnh!", Form_Alert.enmType.Error);
+                }
             }
-            catch (Exception ex)
-            {
-                SharedClass.Alert("Lỗi!", Form_Alert.enmType.Error);
-            }
+            else
+                SharedClass.Alert("Chưa Nhập Dữ Liệu!", Form_Alert.enmType.Warning);
         }
         private void clear()
         {

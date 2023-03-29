@@ -1,5 +1,6 @@
 ﻿using System.Data.SqlClient;
 using System.Data;
+using CustomAlertBox;
 
 namespace TripleXManagement.StaticClass
 {
@@ -65,7 +66,6 @@ namespace TripleXManagement.StaticClass
 
             rd = cmd.ExecuteReader();
 
-            //rd.Close();
             return rd;
         }
 
@@ -83,11 +83,11 @@ namespace TripleXManagement.StaticClass
             try
             {
                 RunSql(sql);
-                SharedClass.MBShow("Xóa thành công!", "Info");
+                SharedClass.Alert("Xóa Thành Công!", Form_Alert.enmType.Success);
             }
             catch
             {
-                SharedClass.MBShow("Dữ liệu đang được sử dụng\nKhông thể xoá!", "Warning");
+                SharedClass.Alert("Dữ Liệu Đang Được Sử Dụng\nKhông Thể Xoá!", Form_Alert.enmType.Error);
             }
         }
         #endregion
