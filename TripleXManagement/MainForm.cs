@@ -13,6 +13,7 @@ namespace TripleXManagement
     {
         public static string u = "";
         public static string StaffID = "";
+        public static string regency = "";
         private int borderSize = 2;
         private Button ?currencyButton;
         private Form ?activateForm;
@@ -23,6 +24,7 @@ namespace TripleXManagement
             this.BackColor = Color.FromArgb(98, 102, 244);
             btnCloseChildForm.Visible = false;
             CollapseMenu();
+            btnClose.Click += new EventHandler(btnLogout_Click);
         }
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -58,11 +60,6 @@ namespace TripleXManagement
                     if (this.Padding.Top != borderSize) { this.Padding = new Padding(borderSize); }
                     break;
             }
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
 
         private void btnMaximize_Click(object sender, EventArgs e)
@@ -195,7 +192,10 @@ namespace TripleXManagement
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            SqlClass.Disconnect();
+            this.Close();
+            Form f = new LoginForm();
+            f.Show();
         }
 
         private void btnCloseChildForm_Click(object sender, EventArgs e)
@@ -234,10 +234,22 @@ namespace TripleXManagement
         private void GetData()
         {
             u = LoginForm.u;
+            if(u != "admin")
+                regency = "thungan";
+            else
+                regency = "admin";
+            Regency();
             string sql = "exec getStaffbyUsername '" + u + "'";
             StaffID = SqlClass.GetOneValue(sql);
         }
-
+        private void Regency()
+        {
+            if(regency != "admin")
+            {
+                btnAccount.Visible=false;
+                btnStaff.Visible=false;
+            }
+        }
         private void MainForm_Load(object sender, EventArgs e)
         {
             GetData();

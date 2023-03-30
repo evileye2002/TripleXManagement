@@ -64,7 +64,7 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnClose.Size = new System.Drawing.Size(100, 40);
-            this.btnClose.TabIndex = 28;
+            this.btnClose.TabIndex = 2;
             this.btnClose.Text = "Thoát";
             this.btnClose.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -83,7 +83,7 @@
             this.panel2.Location = new System.Drawing.Point(30, 30);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(479, 278);
-            this.panel2.TabIndex = 27;
+            this.panel2.TabIndex = 3;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel3
@@ -93,7 +93,7 @@
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(479, 46);
-            this.panel3.TabIndex = 25;
+            this.panel3.TabIndex = 2;
             // 
             // lbTableName
             // 
@@ -105,7 +105,7 @@
             this.lbTableName.Location = new System.Drawing.Point(158, 8);
             this.lbTableName.Name = "lbTableName";
             this.lbTableName.Size = new System.Drawing.Size(162, 30);
-            this.lbTableName.TabIndex = 21;
+            this.lbTableName.TabIndex = 0;
             this.lbTableName.Text = "Sửa Thông Tin";
             this.lbTableName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -136,7 +136,7 @@
             this.txtName.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.txtName.PlaceholderText = "Tên món...";
             this.txtName.Size = new System.Drawing.Size(200, 35);
-            this.txtName.TabIndex = 5;
+            this.txtName.TabIndex = 0;
             this.txtName.Texts = "";
             this.txtName.UnderlinedStyle = true;
             // 
@@ -157,7 +157,7 @@
             this.txtPrice.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.txtPrice.PlaceholderText = "Giá (VNĐ)...";
             this.txtPrice.Size = new System.Drawing.Size(200, 35);
-            this.txtPrice.TabIndex = 4;
+            this.txtPrice.TabIndex = 1;
             this.txtPrice.Texts = "";
             this.txtPrice.UnderlinedStyle = true;
             // 
@@ -178,7 +178,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnSave.Size = new System.Drawing.Size(100, 40);
-            this.btnSave.TabIndex = 26;
+            this.btnSave.TabIndex = 1;
             this.btnSave.Text = "Lưu";
             this.btnSave.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -204,7 +204,7 @@
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnBrowse.Size = new System.Drawing.Size(135, 40);
-            this.btnBrowse.TabIndex = 25;
+            this.btnBrowse.TabIndex = 0;
             this.btnBrowse.Text = "Chọn Ảnh";
             this.btnBrowse.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.btnBrowse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;

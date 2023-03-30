@@ -11,6 +11,7 @@ namespace TripleXManagement.ChildForm.Customer
         public static string birthday = "";
         public static string address = "";
         public static string phone = "";
+        public static string regency = "";
         public CustomerManagement()
         {
             InitializeComponent();
@@ -22,6 +23,10 @@ namespace TripleXManagement.ChildForm.Customer
         }
         public void GetData()
         {
+            ID = "";
+            regency = MainForm.regency;
+            if (regency != "admin")
+                btnEdit.Visible = false;
             string sql = "exec getCustomer";
             SharedClass.FillDGV(dgvCustomer, sql);
         }
@@ -79,16 +84,19 @@ namespace TripleXManagement.ChildForm.Customer
         {
             if (e.KeyCode == Keys.Delete)
             {
-                String? sql = "exec delCustomer " + ID;
-                if(ID != "")
+                if(regency == "admin")
                 {
-                    SqlClass.RunSqlDel(sql);
-                    ID = "";
-                }
-                else
-                    SharedClass.Alert("Chưa Chọn Khách Hàng!", Form_Alert.enmType.Warning);
+                    String? sql = "exec delCustomer " + ID;
+                    if (ID != "")
+                    {
+                        SqlClass.RunSqlDel(sql);
+                        ID = "";
+                    }
+                    else
+                        SharedClass.Alert("Chưa Chọn Khách Hàng!", Form_Alert.enmType.Warning);
 
-                GetData();
+                    GetData();
+                }
             }
         }
     }

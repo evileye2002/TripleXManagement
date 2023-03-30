@@ -11,6 +11,7 @@ namespace TripleXManagement
         public static string foodID = "";
         public static string name = "" ;
         public static string price = "";
+        public static string regency = "";
         private Form activateForm;
         public FoodManagement()
         {
@@ -26,6 +27,10 @@ namespace TripleXManagement
         }
         public void GetData()
         {
+            foodID = "";
+            regency = MainForm.regency;
+            if (regency != "admin")
+                btnEdit.Visible = false;
             String sql = "exec getMonAn2";
             SharedClass.FillDGV(dgvFood, sql);
         }
@@ -51,16 +56,19 @@ namespace TripleXManagement
         {
             if (e.KeyCode == Keys.Delete)
             {
-                String sql = "exec delFoodbyId " + foodID;
-                if (foodID != "")
+                if(regency == "admin")
                 {
-                    SqlClass.RunSqlDel(sql);
-                    foodID = "";
-                }
-                else
-                    SharedClass.Alert("Chưa Chọn Món!", Form_Alert.enmType.Warning);
+                    String sql = "exec delFoodbyId " + foodID;
+                    if (foodID != "")
+                    {
+                        SqlClass.RunSqlDel(sql);
+                        foodID = "";
+                    }
+                    else
+                        SharedClass.Alert("Chưa Chọn Món!", Form_Alert.enmType.Warning);
 
-                GetData();
+                    GetData();
+                }
             }
         }
 

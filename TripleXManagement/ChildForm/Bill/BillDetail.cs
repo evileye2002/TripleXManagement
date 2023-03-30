@@ -1,10 +1,8 @@
 ﻿using CustomAlertBox;
-using System.Data;
-using System.Data.SqlClient;
 using System.Drawing.Printing;
 using System.Globalization;
-using TripleXManagement.ChildForm.Staff;
 using TripleXManagement.StaticClass;
+using TripleXManagement.Properties;
 
 namespace TripleXManagement.ChildForm.Bill
 {
@@ -26,7 +24,9 @@ namespace TripleXManagement.ChildForm.Bill
         public BillDetail()
         {
             InitializeComponent();
-            this.dgvBillDetail.Columns[4].DefaultCellStyle.Format = "c";
+            dgvBillDetail.Columns[2].DefaultCellStyle.Format = "c";
+            dgvBillDetail.Columns[4].DefaultCellStyle.Format = "c";
+            dgvBillDetail.Columns[2].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("vn-VN");
             dgvBillDetail.Columns[4].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("vn-VN");
         }
 
@@ -328,28 +328,47 @@ namespace TripleXManagement.ChildForm.Bill
         #region Hover State
         private void btnPrint_MouseEnter(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnPrint, Properties.Resources.database_administrator_20px, true);
+            SharedClass.HoverBtnState(btnPrint, Resources.database_administrator_20px, true);
         }
 
         private void btnPrint_MouseLeave(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnPrint, Properties.Resources.database_administrator_20px1, false);
+            SharedClass.HoverBtnState(btnPrint, Resources.database_administrator_20px1, false);
         }
 
         private void btnPrintPreview_MouseEnter(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnPrintPreview, Properties.Resources.database_administrator_20px, true);
+            SharedClass.HoverBtnState(btnPrintPreview, Resources.database_administrator_20px, true);
         }
 
         private void btnPrintPreview_MouseLeave(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnPrintPreview, Properties.Resources.database_administrator_20px1, false);
+            SharedClass.HoverBtnState(btnPrintPreview, Resources.database_administrator_20px1, false);
+        }
+        private void btnClose_MouseEnter(object sender, EventArgs e)
+        {
+            SharedClass.HoverBtnState(btnClose, Resources.database_administrator_20px, true);
+        }
+
+        private void btnClose_MouseLeave(object sender, EventArgs e)
+        {
+            SharedClass.HoverBtnState(btnClose, Resources.database_administrator_20px1, false);
         }
         #endregion
 
         private void BillDetail_Paint(object sender, PaintEventArgs e)
         {
             SharedClass.RoundedForm(this, 20, e.Graphics, Color.FromArgb(98, 102, 244), 2);
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            SharedClass.RoundedControl(panel2, 15, e.Graphics, 0);
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

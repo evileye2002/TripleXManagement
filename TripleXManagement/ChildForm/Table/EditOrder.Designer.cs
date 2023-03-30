@@ -64,7 +64,7 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnClose.Size = new System.Drawing.Size(100, 40);
-            this.btnClose.TabIndex = 22;
+            this.btnClose.TabIndex = 1;
             this.btnClose.Text = "Thoát";
             this.btnClose.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -90,7 +90,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnSave.Size = new System.Drawing.Size(100, 40);
-            this.btnSave.TabIndex = 21;
+            this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Lưu";
             this.btnSave.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -113,7 +113,7 @@
             this.panel2.Location = new System.Drawing.Point(30, 30);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(513, 293);
-            this.panel2.TabIndex = 20;
+            this.panel2.TabIndex = 2;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label3
@@ -154,7 +154,7 @@
             this.panel3.Location = new System.Drawing.Point(293, 81);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(141, 69);
-            this.panel3.TabIndex = 28;
+            this.panel3.TabIndex = 3;
             // 
             // rbEmpty
             // 
@@ -186,7 +186,7 @@
             this.rbOrdered.Name = "rbOrdered";
             this.rbOrdered.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.rbOrdered.Size = new System.Drawing.Size(119, 23);
-            this.rbOrdered.TabIndex = 0;
+            this.rbOrdered.TabIndex = 1;
             this.rbOrdered.TabStop = true;
             this.rbOrdered.Text = "Đã được đặt";
             this.rbOrdered.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
@@ -233,7 +233,7 @@
             this.txtGetDate.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.txtGetDate.PlaceholderText = "Tên khách hàng...";
             this.txtGetDate.Size = new System.Drawing.Size(212, 35);
-            this.txtGetDate.TabIndex = 24;
+            this.txtGetDate.TabIndex = 2;
             this.txtGetDate.Texts = "";
             this.txtGetDate.UnderlinedStyle = true;
             // 
@@ -255,7 +255,7 @@
             this.txtOrderDate.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.txtOrderDate.PlaceholderText = "Tên khách hàng...";
             this.txtOrderDate.Size = new System.Drawing.Size(212, 35);
-            this.txtOrderDate.TabIndex = 24;
+            this.txtOrderDate.TabIndex = 1;
             this.txtOrderDate.Texts = "";
             this.txtOrderDate.UnderlinedStyle = true;
             // 
@@ -277,7 +277,7 @@
             this.txtName.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.txtName.PlaceholderText = "Tên khách hàng...";
             this.txtName.Size = new System.Drawing.Size(212, 35);
-            this.txtName.TabIndex = 24;
+            this.txtName.TabIndex = 0;
             this.txtName.Texts = "";
             this.txtName.UnderlinedStyle = true;
             // 

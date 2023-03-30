@@ -11,6 +11,7 @@ namespace TripleXManagement.ChildForm.Bill
         public static String StaffName = "";
         public static String CustomerName = "";
         public static String BillDate = "";
+        public static String regency = "";
         public static double FinaTotal = 0;
         public static int IsBank = 0;
         public BillManagement()
@@ -42,6 +43,7 @@ namespace TripleXManagement.ChildForm.Bill
         }
         public void GetData()
         {
+            regency = MainForm.regency;
             String sql = "exec getbill";
             SharedClass.FillDGV(dgvBill, sql);
         }
@@ -83,15 +85,18 @@ namespace TripleXManagement.ChildForm.Bill
             if (e.KeyCode == Keys.Delete)
             {
                 String sql = "exec delBillbyId " + BillID;
-                if(BillID != "")
+                if(regency == "admin")
                 {
-                    SqlClass.RunSqlDel(sql);
-                    BillID = "";
-                }
-                else
-                    SharedClass.Alert("Chưa Chọn Hóa Đơn!", Form_Alert.enmType.Warning);
+                    if (BillID != "")
+                    {
+                        SqlClass.RunSqlDel(sql);
+                        BillID = "";
+                    }
+                    else
+                        SharedClass.Alert("Chưa Chọn Hóa Đơn!", Form_Alert.enmType.Warning);
 
-                GetData();
+                    GetData();
+                }
             }
         }
 

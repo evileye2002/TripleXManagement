@@ -60,7 +60,7 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnClose.Size = new System.Drawing.Size(100, 40);
-            this.btnClose.TabIndex = 25;
+            this.btnClose.TabIndex = 1;
             this.btnClose.Text = "Thoát";
             this.btnClose.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -86,7 +86,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnSave.Size = new System.Drawing.Size(100, 40);
-            this.btnSave.TabIndex = 24;
+            this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Lưu";
             this.btnSave.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -108,7 +108,7 @@
             this.panel2.Location = new System.Drawing.Point(21, 23);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(549, 243);
-            this.panel2.TabIndex = 23;
+            this.panel2.TabIndex = 2;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // txtAddress
@@ -128,7 +128,7 @@
             this.txtAddress.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.txtAddress.PlaceholderText = "Địa chỉ...";
             this.txtAddress.Size = new System.Drawing.Size(219, 35);
-            this.txtAddress.TabIndex = 27;
+            this.txtAddress.TabIndex = 3;
             this.txtAddress.Texts = "";
             this.txtAddress.UnderlinedStyle = true;
             // 
@@ -149,7 +149,7 @@
             this.txtPhone.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.txtPhone.PlaceholderText = "Số điện thoại...";
             this.txtPhone.Size = new System.Drawing.Size(219, 35);
-            this.txtPhone.TabIndex = 27;
+            this.txtPhone.TabIndex = 1;
             this.txtPhone.Texts = "";
             this.txtPhone.UnderlinedStyle = true;
             // 
@@ -160,7 +160,7 @@
             this.label1.Location = new System.Drawing.Point(30, 158);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 19);
-            this.label1.TabIndex = 26;
+            this.label1.TabIndex = 2;
             this.label1.Text = "Ngày  sinh:";
             // 
             // panel1
@@ -170,7 +170,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(549, 46);
-            this.panel1.TabIndex = 25;
+            this.panel1.TabIndex = 0;
             // 
             // lbTableName
             // 
@@ -182,7 +182,7 @@
             this.lbTableName.Location = new System.Drawing.Point(193, 8);
             this.lbTableName.Name = "lbTableName";
             this.lbTableName.Size = new System.Drawing.Size(162, 30);
-            this.lbTableName.TabIndex = 21;
+            this.lbTableName.TabIndex = 0;
             this.lbTableName.Text = "Sửa Thông Tin";
             this.lbTableName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -203,7 +203,7 @@
             this.txtCCCD.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.txtCCCD.PlaceholderText = "CCCD...";
             this.txtCCCD.Size = new System.Drawing.Size(219, 35);
-            this.txtCCCD.TabIndex = 24;
+            this.txtCCCD.TabIndex = 2;
             this.txtCCCD.Texts = "";
             this.txtCCCD.UnderlinedStyle = true;
             // 
@@ -224,7 +224,7 @@
             this.txtName.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.txtName.PlaceholderText = "Tên khách hàng...";
             this.txtName.Size = new System.Drawing.Size(219, 35);
-            this.txtName.TabIndex = 24;
+            this.txtName.TabIndex = 0;
             this.txtName.Texts = "";
             this.txtName.UnderlinedStyle = true;
             // 
@@ -244,7 +244,7 @@
             this.dtpBirthday.Name = "dtpBirthday";
             this.dtpBirthday.Size = new System.Drawing.Size(219, 35);
             this.dtpBirthday.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dtpBirthday.TabIndex = 22;
+            this.dtpBirthday.TabIndex = 4;
             this.dtpBirthday.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             // 
             // EditCustomer

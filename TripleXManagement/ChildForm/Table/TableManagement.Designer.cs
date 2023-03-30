@@ -59,7 +59,7 @@
             this.pnFooter.Location = new System.Drawing.Point(0, 505);
             this.pnFooter.Name = "pnFooter";
             this.pnFooter.Size = new System.Drawing.Size(921, 50);
-            this.pnFooter.TabIndex = 5;
+            this.pnFooter.TabIndex = 0;
             // 
             // btnManagement
             // 
@@ -79,7 +79,7 @@
             this.btnManagement.Name = "btnManagement";
             this.btnManagement.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnManagement.Size = new System.Drawing.Size(134, 40);
-            this.btnManagement.TabIndex = 9;
+            this.btnManagement.TabIndex = 0;
             this.btnManagement.Text = "Thêm Bàn";
             this.btnManagement.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.btnManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -141,7 +141,7 @@
             this.txtSearch.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.txtSearch.PlaceholderText = "Tìm kiếm...";
             this.txtSearch.Size = new System.Drawing.Size(202, 35);
-            this.txtSearch.TabIndex = 16;
+            this.txtSearch.TabIndex = 5;
             this.txtSearch.Texts = "";
             this.txtSearch.UnderlinedStyle = true;
             this.txtSearch._TextChanged += new System.EventHandler(this.txtSearch__TextChanged);
@@ -156,7 +156,7 @@
             this.panel1.Location = new System.Drawing.Point(20, 289);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(126, 152);
-            this.panel1.TabIndex = 15;
+            this.panel1.TabIndex = 4;
             // 
             // rbAllKind
             // 
@@ -190,7 +190,7 @@
             this.rbNormal.Name = "rbNormal";
             this.rbNormal.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.rbNormal.Size = new System.Drawing.Size(88, 23);
-            this.rbNormal.TabIndex = 0;
+            this.rbNormal.TabIndex = 1;
             this.rbNormal.Text = "Thường";
             this.rbNormal.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.rbNormal.UseVisualStyleBackColor = false;
@@ -208,7 +208,7 @@
             this.rbMid.Name = "rbMid";
             this.rbMid.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.rbMid.Size = new System.Drawing.Size(63, 23);
-            this.rbMid.TabIndex = 0;
+            this.rbMid.TabIndex = 2;
             this.rbMid.Text = "Vừa";
             this.rbMid.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.rbMid.UseVisualStyleBackColor = false;
@@ -226,7 +226,7 @@
             this.rbBig.Name = "rbBig";
             this.rbBig.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.rbBig.Size = new System.Drawing.Size(53, 23);
-            this.rbBig.TabIndex = 0;
+            this.rbBig.TabIndex = 3;
             this.rbBig.Text = "To";
             this.rbBig.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.rbBig.UseVisualStyleBackColor = false;
@@ -269,7 +269,7 @@
             this.rbNullTable.Name = "rbNullTable";
             this.rbNullTable.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.rbNullTable.Size = new System.Drawing.Size(107, 23);
-            this.rbNullTable.TabIndex = 0;
+            this.rbNullTable.TabIndex = 1;
             this.rbNullTable.TabStop = true;
             this.rbNullTable.Text = "Bàn  trống";
             this.rbNullTable.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
@@ -288,7 +288,7 @@
             this.rbToday.Name = "rbToday";
             this.rbToday.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.rbToday.Size = new System.Drawing.Size(163, 23);
-            this.rbToday.TabIndex = 0;
+            this.rbToday.TabIndex = 3;
             this.rbToday.Text = "Hôm nay nhận bàn";
             this.rbToday.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.rbToday.UseVisualStyleBackColor = false;
@@ -306,7 +306,7 @@
             this.rbOrderTable.Name = "rbOrderTable";
             this.rbOrderTable.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.rbOrderTable.Size = new System.Drawing.Size(109, 23);
-            this.rbOrderTable.TabIndex = 0;
+            this.rbOrderTable.TabIndex = 2;
             this.rbOrderTable.Text = "Bàn đã đặt";
             this.rbOrderTable.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.rbOrderTable.UseVisualStyleBackColor = false;
@@ -327,7 +327,7 @@
             this.btnFilter.Location = new System.Drawing.Point(0, 0);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(234, 505);
-            this.btnFilter.TabIndex = 2;
+            this.btnFilter.TabIndex = 0;
             this.btnFilter.TextColor = System.Drawing.Color.Turquoise;
             this.btnFilter.UseVisualStyleBackColor = false;
             // 

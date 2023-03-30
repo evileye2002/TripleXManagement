@@ -11,6 +11,7 @@ namespace TripleXManagement.ChildForm.Staff
         }
         public void GetData()
         {
+            ID = "";
             SharedClass.FillDGV(dgvStaff, "exec getStaff");
         }
 

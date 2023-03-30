@@ -10,6 +10,7 @@ namespace TripleXManagement.ChildForm.Table
         public static string TableID = "";
         public static string OrderID = "";
         public static string CustomerID = "";
+        public static string regency = "";
         private int borderRadius = 20;
         private int borderSize = 2;
         private Color borderColor = Color.FromArgb(98, 102, 244);
@@ -113,6 +114,7 @@ namespace TripleXManagement.ChildForm.Table
         }
         private void GetData()
         {
+            regency = MainForm.regency;
             TableID = TableManagement.TableID;
             lbTableName.Text = TableManagement.TableName;
             string sql = "exec getCustomer";
@@ -127,12 +129,15 @@ namespace TripleXManagement.ChildForm.Table
         private void btnDelete_Click(object sender, EventArgs e)
         {
             String? sql = "exec delTable " + TableID;
-            if (TableID != "")
+            if (regency == "admin")
             {
-                SqlClass.RunSqlDel(sql);
-                var mainForm = Application.OpenForms.OfType<TableManagement>().Single();
-                mainForm.GetData();
-                this.Close();
+                if (TableID != "")
+                {
+                    SqlClass.RunSqlDel(sql);
+                    var mainForm = Application.OpenForms.OfType<TableManagement>().Single();
+                    mainForm.GetData();
+                    this.Close();
+                }
             }
         }
     }

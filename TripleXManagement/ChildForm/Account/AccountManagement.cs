@@ -13,6 +13,7 @@ namespace TripleXManagement.ChildForm.Account
         }
         public void GetData()
         {
+            username = "";
             string sql = "exec getAccount";
             SharedClass.FillDGV(dgvAccount, sql);
         }
