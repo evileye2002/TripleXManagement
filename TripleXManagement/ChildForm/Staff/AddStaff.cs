@@ -130,7 +130,7 @@ namespace TripleXManagement.ChildForm.Staff
         private void rbYes_CheckedChanged(object sender, EventArgs e)
         {
             if (rbYes.Checked) 
-                SharedClass.FillCBB("exec PAccountShow", cbAccount, "Username");
+                SharedClass.FillCBB("exec PAccountShow", cbAccount, "AUsername");
         }
 
         private void rbNo_CheckedChanged(object sender, EventArgs e)

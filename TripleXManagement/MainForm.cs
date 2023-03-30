@@ -13,7 +13,7 @@ namespace TripleXManagement
     {
         public static string u = "";
         public static string StaffID = "";
-        public static string regency = "admin";
+        public static string regency = "";
         private int borderSize = 2;
         private Button ?currencyButton;
         private Form ?activateForm;
@@ -239,7 +239,7 @@ namespace TripleXManagement
             else
                 regency = "admin";
             Regency();
-            string sql = "exec getStaffbyUsername '" + u + "'";
+            string sql = "exec PStaffFindByUsername '" + u + "'";
             StaffID = SqlClass.GetOneValue(sql);
         }
         private void Regency()
@@ -252,7 +252,7 @@ namespace TripleXManagement
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
-            //GetData();
+            GetData();
         }
     }
 }

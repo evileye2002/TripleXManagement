@@ -44,7 +44,7 @@ namespace TripleXManagement.ChildForm.Bill
         public void GetData()
         {
             regency = MainForm.regency;
-            String sql = "exec getbill";
+            String sql = "exec PBillShow";
             SharedClass.FillDGV(dgvBill, sql);
         }
 
@@ -74,9 +74,9 @@ namespace TripleXManagement.ChildForm.Bill
                 BillID = dgvBill.Rows[t].Cells[0].Value.ToString();
                 BillDate = dgvBill.Rows[t].Cells[1].Value.ToString();
                 FinaTotal = double.Parse(dgvBill.Rows[t].Cells[2].Value.ToString());
-                IsBank = int.Parse(dgvBill.Rows[t].Cells[3].Value.ToString());
-                StaffName = dgvBill.Rows[t].Cells[4].Value.ToString();
-                CustomerName = dgvBill.Rows[t].Cells[5].Value.ToString();
+                StaffName = dgvBill.Rows[t].Cells[3].Value.ToString();
+                CustomerName = dgvBill.Rows[t].Cells[4].Value.ToString();
+                IsBank = int.Parse(dgvBill.Rows[t].Cells[5].Value.ToString());
             }
         }
 
@@ -84,7 +84,7 @@ namespace TripleXManagement.ChildForm.Bill
         {
             if (e.KeyCode == Keys.Delete)
             {
-                String sql = "exec delBillbyId " + BillID;
+                String sql = "exec PBillDel " + BillID;
                 if(regency == "admin")
                 {
                     if (BillID != "")

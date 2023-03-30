@@ -42,7 +42,7 @@ namespace TripleXManagement.ChildForm.Bill
 
         private void GetData()
         {
-            String sql = "exec getbillbyId " + BillID;
+            String sql = "exec PBillDetailFindByID " + BillID;
             SharedClass.FillDGV(dgvBillDetail, sql);
         }
 
@@ -303,7 +303,7 @@ namespace TripleXManagement.ChildForm.Bill
             }
             else if (e.KeyCode == Keys.Delete)
             {
-                String sql = "exec delBillDetailbyId " + foodID + ", " + BillID;
+                String sql = "exec PBillDetailDel " + foodID + ", " + BillID;
                 if (foodID != "")
                 {
                     SqlClass.RunSqlDel(sql);

@@ -1,9 +1,5 @@
 ﻿using CustomAlertBox;
-using System.Data.SqlClient;
-using TripleXManagement.ChildForm.Table;
-using TripleXManagement.CustomControl;
 using TripleXManagement.StaticClass;
-using TripleXManagement.ChildForm;
 
 namespace TripleXManagement.ChildForm.Bill
 {
@@ -57,21 +53,22 @@ namespace TripleXManagement.ChildForm.Bill
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (!rbHasCustomerYes.Checked)
+            var mainForm = Application.OpenForms.OfType<Bill>().Single();
+            if (rbHasCustomerNO.Checked)
             {
-                var mainForm = Application.OpenForms.OfType<Bill>().Single();
                 mainForm.AddBill(isBank, isHasCustomer, CustomerID);
                 this.Close();
             }
-            else if(CustomerID == "")
-                SharedClass.Alert("Chưa Chọn Khách Hàng!",Form_Alert.enmType.Warning);
-            else
+            else if (rbHasCustomerYes.Checked)
             {
-                var mainForm = Application.OpenForms.OfType<Bill>().Single();
-                mainForm.AddBill(isBank, isHasCustomer, CustomerID);
-                this.Close();
+                if (CustomerID == "")
+                    SharedClass.Alert("Chưa Chọn Khách Hàng!", Form_Alert.enmType.Warning);
+                else
+                {
+                    mainForm.AddBill(isBank, isHasCustomer, CustomerID);
+                    this.Close();
+                }
             }
-            
         }
 
         private void SelectCustomer_Load(object sender, EventArgs e)
@@ -80,7 +77,10 @@ namespace TripleXManagement.ChildForm.Bill
         }
         private void GetData()
         {
-            string sql = "exec getCustomer";
+            CustomerID = "";
+            isBank = false;
+            isHasCustomer = false;
+            string sql = "exec PCustomerShow";
             SharedClass.FillDGV(dgvCustomer, sql);
         }
 
@@ -96,23 +96,35 @@ namespace TripleXManagement.ChildForm.Bill
             }
         }
 
-        private void rbYes_CheckedChanged(object sender, EventArgs e)
+        private void rbHasCustomerYes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbHasCustomerYes.Checked)
+                isHasCustomer = true;
+        }
+
+        private void rbHasCustomerNO_CheckedChanged(object sender, EventArgs e)
         {
             if (rbHasCustomerNO.Checked)
             {
                 txtName.Texts = "";
                 isHasCustomer = false;
             }
-            else
-                isHasCustomer = true;
         }
 
-        private void rbYes2_CheckedChanged(object sender, EventArgs e)
+        private void rbBankNo_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbBackNo.Checked)
-                isBank = false;
-            else
+            if (rbBankNo.Checked)
+            {
+                isBank= false;
+            }
+        }
+
+        private void rbBankYes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbBankYes.Checked)
+            {
                 isBank = true;
+            }
         }
     }
 }

@@ -41,9 +41,9 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnFooter.SuspendLayout();
             this.pnMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).BeginInit();
@@ -118,9 +118,9 @@
             this.Column1,
             this.Column2,
             this.Column3,
-            this.Column4,
             this.Column5,
-            this.Column6});
+            this.Column6,
+            this.Column4});
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -163,7 +163,7 @@
             // Column2
             // 
             this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.DataPropertyName = "BillDate";
+            this.Column2.DataPropertyName = "BDate";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -191,14 +191,6 @@
             this.Column3.ReadOnly = true;
             this.Column3.Width = 200;
             // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "isBank";
-            this.Column4.HeaderText = "isBank";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Visible = false;
-            // 
             // Column5
             // 
             this.Column5.DataPropertyName = "StaffName";
@@ -219,6 +211,14 @@
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
             this.Column6.Visible = false;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "BIsBank";
+            this.Column4.HeaderText = "isBank";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Visible = false;
             // 
             // BillManagement
             // 
@@ -249,8 +249,8 @@
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Column4;
     }
 }

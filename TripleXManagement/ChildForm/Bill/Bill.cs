@@ -28,7 +28,7 @@ namespace TripleXManagement.ChildForm.Bill
         private void GetData()
         {
             StaffID = MainForm.StaffID;
-            string sql = "exec getMonAn";
+            string sql = "exec PFoodShowWithImage";
             reader = SqlClass.Reader(sql);
             while (reader.Read())
             {
@@ -46,7 +46,7 @@ namespace TripleXManagement.ChildForm.Bill
 
                 price = new Label
                 {
-                    Text = int.Parse(reader["Price"].ToString()).ToString("#,##") + " VNĐ",
+                    Text = int.Parse(reader["FPrice"].ToString()).ToString("#,##") + " VNĐ",
                     BackColor = Color.LightGray,
                     Font = new("Arial", 10, FontStyle.Bold),
                     ForeColor = Color.FromArgb(39, 39, 58),
@@ -68,13 +68,13 @@ namespace TripleXManagement.ChildForm.Bill
         public void OnClick(object sender, EventArgs e)
         {
             string ?tag = ((PictureBox)sender).Tag.ToString();
-            string sql = "select * from MonAn where ID = '" + tag + "'";
+            string sql = "exec PFoodFineByID '" + tag + "'";
             reader = SqlClass.Reader(sql);
             reader.Read();
             if (reader.HasRows)
             {
-                _total += double.Parse(reader["Price"].ToString());
-                dgvDetail.Rows.Add(reader["ID"].ToString(), reader["Name"].ToString(), double.Parse(reader["Price"].ToString()).ToString("#,##"));
+                _total += double.Parse(reader["FPrice"].ToString());
+                dgvDetail.Rows.Add(reader["ID"].ToString(), reader["FName"].ToString(), double.Parse(reader["FPrice"].ToString()).ToString("#,##"));
 
             }
             reader.Close();
@@ -126,17 +126,23 @@ namespace TripleXManagement.ChildForm.Bill
         public void AddBill(bool isBank, bool isHasCustomer,string CustumerID)
         {
             int rowCount = dgvDetail.Rows.Count;
-            string bank = "0";
+            string bank = "1";
             if (isBank)
+                bank = "2";
+            else
                 bank = "1";
-            if (!isHasCustomer)
-                CustumerID = "8";
+            string cID = "";
+            if (isHasCustomer)
+                cID = CustumerID;
+            else
+                cID = "1";
 
             String sql = "";
             for (int i = 0; i < rowCount; i++)
             {
-                sql += @"exec addBill " + dgvDetail.Rows[i].Cells[0].Value.ToString() + ", " + bank + "," + StaffID + "," + CustumerID + " \n";
+                sql += @"exec PBillAdd " + dgvDetail.Rows[i].Cells[0].Value.ToString() + ", " + bank + "," + StaffID + "," + cID + " \n";
             }
+            //MessageBox.Show(sql);
             SqlClass.RunSql(sql);
             dgvDetail.Rows.Clear();
             SharedClass.Alert("Thêm Thành Công!", Form_Alert.enmType.Success);
