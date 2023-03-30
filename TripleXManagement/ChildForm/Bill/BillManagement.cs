@@ -8,6 +8,9 @@ namespace TripleXManagement.ChildForm.Bill
     {
         private Form activateForm;
         public static String BillID = "";
+        public static String StaffName = "";
+        public static String CustomerName = "";
+        public static String BillDate = "";
         public static double FinaTotal = 0;
         public static int IsBank = 0;
         public BillManagement()
@@ -51,9 +54,10 @@ namespace TripleXManagement.ChildForm.Bill
 
         private void btnDetail_Click(object sender, EventArgs e)
         {
+            Form f = new BillDetail();
             if (BillID != "")
             {
-                OpenChildForm(new BillDetail(), sender);
+                f.Show();
             }
             else
                 SharedClass.Alert("Chưa Chọn Hóa Đơn!", Form_Alert.enmType.Warning);
@@ -66,8 +70,11 @@ namespace TripleXManagement.ChildForm.Bill
             {
                 int t = dgvBill.CurrentCell.RowIndex;
                 BillID = dgvBill.Rows[t].Cells[0].Value.ToString();
+                BillDate = dgvBill.Rows[t].Cells[1].Value.ToString();
                 FinaTotal = double.Parse(dgvBill.Rows[t].Cells[2].Value.ToString());
                 IsBank = int.Parse(dgvBill.Rows[t].Cells[3].Value.ToString());
+                StaffName = dgvBill.Rows[t].Cells[4].Value.ToString();
+                CustomerName = dgvBill.Rows[t].Cells[5].Value.ToString();
             }
         }
 

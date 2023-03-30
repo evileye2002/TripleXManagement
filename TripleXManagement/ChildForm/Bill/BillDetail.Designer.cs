@@ -43,12 +43,14 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnPrint = new CustomControl.RJButton();
-            this.btnPrintPreview = new CustomControl.RJButton();
+            this.btnPrint = new TripleXManagement.CustomControl.RJButton();
+            this.btnPrintPreview = new TripleXManagement.CustomControl.RJButton();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBillDetail)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvBillDetail
@@ -96,7 +98,7 @@
             this.dgvBillDetail.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvBillDetail.RowTemplate.Height = 25;
             this.dgvBillDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBillDetail.Size = new System.Drawing.Size(800, 400);
+            this.dgvBillDetail.Size = new System.Drawing.Size(677, 281);
             this.dgvBillDetail.TabIndex = 6;
             this.dgvBillDetail.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBillDetail_CellClick);
             this.dgvBillDetail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BillDetail_KeyDown);
@@ -167,9 +169,9 @@
             this.panel1.Controls.Add(this.btnPrint);
             this.panel1.Controls.Add(this.btnPrintPreview);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 400);
+            this.panel1.Location = new System.Drawing.Point(0, 281);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 50);
+            this.panel1.Size = new System.Drawing.Size(677, 50);
             this.panel1.TabIndex = 7;
             // 
             // btnPrint
@@ -238,19 +240,30 @@
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dgvBillDetail);
+            this.panel2.Controls.Add(this.panel1);
+            this.panel2.Location = new System.Drawing.Point(30, 30);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(677, 331);
+            this.panel2.TabIndex = 8;
+            // 
             // BillDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dgvBillDetail);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(737, 386);
+            this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BillDetail";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BillDetail";
             this.Load += new System.EventHandler(this.BillDetail_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.BillDetail_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBillDetail)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -268,5 +281,6 @@
         private DataGridViewTextBoxColumn Column5;
         private CustomControl.RJButton btnPrint;
         private CustomControl.RJButton btnPrintPreview;
+        private Panel panel2;
     }
 }

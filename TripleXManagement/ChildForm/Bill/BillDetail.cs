@@ -14,9 +14,12 @@ namespace TripleXManagement.ChildForm.Bill
         string total = "";
         string finalTotalText = "";
         public static double finalTotal = 0;
+        public static string StaffName = "";
         public static int isBank = 0;
         public static String BillID = "";
         public static String foodID = "";
+        public static String BillDate = "";
+        public static String CustomerName = "";
         string finalTotalM = "";
         string finalTotalB = "";
 
@@ -27,11 +30,14 @@ namespace TripleXManagement.ChildForm.Bill
             dgvBillDetail.Columns[4].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("vn-VN");
         }
 
-        public static void  getBillID()
+        public static void  getBillDetail()
         {
             BillID = BillManagement.BillID;
+            BillDate = BillManagement.BillDate;
             finalTotal = BillManagement.FinaTotal;
             isBank = BillManagement.IsBank;
+            CustomerName = BillManagement.CustomerName;
+            StaffName = BillManagement.StaffName;
         }
 
         private void GetData()
@@ -42,15 +48,15 @@ namespace TripleXManagement.ChildForm.Bill
 
         private void BillDetail_Load(object sender, EventArgs e)
         {
-            getBillID();
+            getBillDetail();
             finalTotalText = NumberToText(finalTotal);
             GetData();
         }
         public void sizePrintPage()
         {
             int a;
-            if (dgvBillDetail.Rows.Count <= 9) { a = 0; }
-            else { a = dgvBillDetail.Rows.Count * 44 - 400; }
+            if (dgvBillDetail.Rows.Count <= 8) { a = 0; }
+            else { a = dgvBillDetail.Rows.Count * 46 - 400; }
             printDocument1.DefaultPageSettings.PaperSize = new PaperSize("size", 500, a + 710);
         }
 
@@ -83,22 +89,22 @@ namespace TripleXManagement.ChildForm.Bill
 
             graphics.DrawString("HÓA ĐƠN", new Font("Arial", 16, FontStyle.Bold), brush, new Point(250, startY += gapDetail), formatCenter);
 
-            int a1 = startY += gapDetail;
+            int a1 = startY += 30;
             int a2 = startY += gapDetail;
             int a3 = startY += gapDetail;
             int a4 = startY += gapDetail;
             int a5 = startY += gapDetail;
-            graphics.DrawString("Số Hóa đơn:", font, brush, new Point(25, a1));
-            graphics.DrawString("Ngày:", font, brush, new Point(25, a2));
-            graphics.DrawString("Thu ngân:", font, brush, new Point(25, a3));
-            graphics.DrawString("Quầy:", font, brush, new Point(25, a4));
-            graphics.DrawString("Khách hàng:", font, brush, new Point(25, a5));
+            graphics.DrawString("Số Hóa đơn: ", font, brush, new Point(25, a1));
+            graphics.DrawString("Ngày: ", font, brush, new Point(25, a2));
+            graphics.DrawString("Thu ngân: ", font, brush, new Point(25, a3));
+            graphics.DrawString("Quầy: ", font, brush, new Point(25, a4));
+            graphics.DrawString("Khách hàng: ", font, brush, new Point(25, a5));
 
-            graphics.DrawString("Số Hóa đơn:", font, brush, new Point(100, a1));
-            graphics.DrawString("Ngày:", font, brush, new Point(100, a2));
-            graphics.DrawString("Thu ngân:", font, brush, new Point(100, a3));
-            graphics.DrawString("Quầy:", font, brush, new Point(100, a4));
-            graphics.DrawString("Khách hàng:", font, brush, new Point(100, a5));
+            graphics.DrawString(BillID, font, brush, new Point(125, a1));
+            graphics.DrawString(BillDate, font, brush, new Point(125, a2));
+            graphics.DrawString(StaffName, font, brush, new Point(125, a3));
+            graphics.DrawString("Quầy 01", font, brush, new Point(125, a4));
+            graphics.DrawString(CustomerName, font, brush, new Point(125, a5));
 
             graphics.DrawString(dash, font, brush, new Point(25, startY += gap));
 
@@ -340,5 +346,10 @@ namespace TripleXManagement.ChildForm.Bill
             SharedClass.HoverBtnState(btnPrintPreview, Properties.Resources.database_administrator_20px1, false);
         }
         #endregion
+
+        private void BillDetail_Paint(object sender, PaintEventArgs e)
+        {
+            SharedClass.RoundedForm(this, 20, e.Graphics, Color.FromArgb(98, 102, 244), 2);
+        }
     }
 }

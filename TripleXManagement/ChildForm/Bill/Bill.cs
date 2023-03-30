@@ -7,9 +7,6 @@ namespace TripleXManagement.ChildForm.Bill
     public partial class Bill : Form
     {
         public static string StaffID = "";
-        public static string StaffName = "";
-        //public static bool isBank = false;
-        //public static bool isHasCustomer = false;
         private Form activateForm;
         double _total;
         double _price = 0;

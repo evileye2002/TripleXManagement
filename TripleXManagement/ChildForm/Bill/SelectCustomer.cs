@@ -63,8 +63,14 @@ namespace TripleXManagement.ChildForm.Bill
                 mainForm.AddBill(isBank, isHasCustomer, CustomerID);
                 this.Close();
             }
-            else
+            else if(CustomerID == "")
                 SharedClass.Alert("Chưa Chọn Khách Hàng!",Form_Alert.enmType.Warning);
+            else
+            {
+                var mainForm = Application.OpenForms.OfType<Bill>().Single();
+                mainForm.AddBill(isBank, isHasCustomer, CustomerID);
+                this.Close();
+            }
             
         }
 
