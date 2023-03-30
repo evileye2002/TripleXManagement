@@ -103,6 +103,7 @@
             this.dgvBillDetail.TabIndex = 6;
             this.dgvBillDetail.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBillDetail_CellClick);
             this.dgvBillDetail.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.dgvBillDetail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BillDetail_KeyDown);
             // 
             // Column1
             // 

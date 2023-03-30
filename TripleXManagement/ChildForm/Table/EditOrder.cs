@@ -150,6 +150,7 @@ namespace TripleXManagement.ChildForm.Table
                 SharedClass.Alert("Sửa Thành Công!", Form_Alert.enmType.Success);
                 var mainForm = Application.OpenForms.OfType<TableManagement>().Single();
                 mainForm.GetData();
+                this.Close();
             }
 
         }

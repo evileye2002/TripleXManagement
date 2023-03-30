@@ -1,4 +1,5 @@
-﻿namespace TripleXManagement.ChildForm.Bill
+﻿using TripleXManagement.CustomControl;
+namespace TripleXManagement.ChildForm.Bill
 {
     partial class Bill
     {
@@ -33,6 +34,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnFooter = new System.Windows.Forms.Panel();
+            this.btnBillManagement = new TripleXManagement.CustomControl.RJButton();
+            this.btnAdd = new TripleXManagement.CustomControl.RJButton();
             this.lbTotal = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnDGV = new System.Windows.Forms.Panel();
@@ -51,6 +54,8 @@
             // pnFooter
             // 
             this.pnFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.pnFooter.Controls.Add(this.btnBillManagement);
+            this.pnFooter.Controls.Add(this.btnAdd);
             this.pnFooter.Controls.Add(this.lbTotal);
             this.pnFooter.Controls.Add(this.label1);
             this.pnFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -58,6 +63,58 @@
             this.pnFooter.Name = "pnFooter";
             this.pnFooter.Size = new System.Drawing.Size(1000, 50);
             this.pnFooter.TabIndex = 0;
+            // 
+            // btnBillManagement
+            // 
+            this.btnBillManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnBillManagement.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnBillManagement.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnBillManagement.BorderRadius = 20;
+            this.btnBillManagement.BorderSize = 2;
+            this.btnBillManagement.FlatAppearance.BorderSize = 0;
+            this.btnBillManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBillManagement.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnBillManagement.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnBillManagement.Image = global::TripleXManagement.Properties.Resources.bonds_20px;
+            this.btnBillManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBillManagement.Location = new System.Drawing.Point(136, 5);
+            this.btnBillManagement.Name = "btnBillManagement";
+            this.btnBillManagement.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnBillManagement.Size = new System.Drawing.Size(100, 40);
+            this.btnBillManagement.TabIndex = 2;
+            this.btnBillManagement.Text = "Thêm";
+            this.btnBillManagement.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnBillManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBillManagement.UseVisualStyleBackColor = false;
+            this.btnBillManagement.Click += new System.EventHandler(this.btnBillManagement_Click);
+            this.btnBillManagement.MouseEnter += new System.EventHandler(this.btnBillManagement_MouseEnter);
+            this.btnBillManagement.MouseLeave += new System.EventHandler(this.btnBillManagement_MouseLeave);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnAdd.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnAdd.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnAdd.BorderRadius = 20;
+            this.btnAdd.BorderSize = 2;
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnAdd.Image = global::TripleXManagement.Properties.Resources.Add_properties_20px;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.Location = new System.Drawing.Point(20, 5);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnAdd.Size = new System.Drawing.Size(100, 40);
+            this.btnAdd.TabIndex = 2;
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAddBill_Click);
+            this.btnAdd.MouseEnter += new System.EventHandler(this.btnAddBill_MouseEnter);
+            this.btnAdd.MouseLeave += new System.EventHandler(this.btnAddBill_MouseLeave);
             // 
             // lbTotal
             // 
@@ -227,10 +284,10 @@
         private DataGridView dgvDetail;
         private FlowLayoutPanel flowLayoutPanel1;
         private Panel pnMain;
-        private CustomControl.RJButton btnBillManagement;
-        private CustomControl.RJButton btnAddBill;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
+        private RJButton btnAdd;
+        private RJButton btnBillManagement;
     }
 }

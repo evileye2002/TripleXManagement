@@ -24,7 +24,7 @@ namespace TripleXManagement
             {
                 string sql = "exec PLogin '" + txtUserName.Texts + "','" + txtPassword.Texts + "'";
                 DataTable table = SqlClass.FillTable(sql);
-                if(table.Rows.Count > 0)
+                if(table.Rows.Count == 1)
                 {
                     string username = table.Rows[0][0].ToString();
                     string password = table.Rows[0][1].ToString();
@@ -35,9 +35,10 @@ namespace TripleXManagement
                         f.Show();
                         this.Hide();
                     }
-                    else
-                        CMessageBox.Show("Tài Khoản hoặc Mật Khẩu Chưa Chính Xác!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    
                 }
+                else
+                    CMessageBox.Show("Tài Khoản hoặc Mật Khẩu Chưa Chính Xác!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
                 SharedClass.Alert("Chưa Nhập Đủ Dữ Liệu!", Form_Alert.enmType.Warning);
@@ -60,6 +61,11 @@ namespace TripleXManagement
                 txtPassword.PasswordChar = true;
                 pictureBox3.Image = Resources.blind_32px;
             }
+        }
+
+        private void pictureBox1_Paint(object sender, PaintEventArgs e)
+        {
+            SharedClass.RoundedControl(pictureBox1, 15,e.Graphics,0);
         }
     }
 }

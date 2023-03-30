@@ -2,6 +2,7 @@
 using System.Globalization;
 using TripleXManagement.StaticClass;
 using TripleXManagement.Properties;
+using TripleXManagement.ChildForm.Table;
 
 namespace TripleXManagement.ChildForm.Bill
 {
@@ -116,7 +117,7 @@ namespace TripleXManagement.ChildForm.Bill
             {
                 graphics.DrawString(dash, font, brush, new Point(25, i * gap + (startY += gap)));
 
-                graphics.DrawString(dgvBillDetail.Rows[i].Cells[1].Value.ToString(),
+                graphics.DrawString((i + 1) + "." + dgvBillDetail.Rows[i].Cells[1].Value.ToString(),
                     new("Arial", 10, FontStyle.Bold), brush, new Point(25, i * gap + (startY += gap)));
 
                 graphics.DrawString(dash, font, brush, new Point(25, i * gap + (startY += gap)));
@@ -143,13 +144,13 @@ namespace TripleXManagement.ChildForm.Bill
             graphics.DrawString("Thẻ ngân hàng: ", font, brush, new Point(25, rowCount * gap + (mn3 += (startY += gapDetail))));
 
             string ft = String.Format(CultureInfo.InvariantCulture,"{0:0,0}", finalTotal);
-            if (isBank == 1)
+            if (isBank == 2)
             {
                 finalTotalM = "0";
                 finalTotalB = ft;
             }
 
-            else if (isBank == 0) 
+            else if (isBank == 1) 
             {
                 finalTotalM = ft;
                 finalTotalB = "0";
@@ -303,11 +304,13 @@ namespace TripleXManagement.ChildForm.Bill
             else if (e.KeyCode == Keys.Delete)
             {
                 String sql = "exec PBillDetailDel " + foodID + ", " + BillID;
+                var mainForm = Application.OpenForms.OfType<BillManagement>().Single();
                 if (foodID != "")
                 {
                     SqlClass.RunSqlDel(sql);
 
                     GetData();
+                    mainForm.GetData();
                 }
                 else
                     SharedClass.Alert("Chưa Chọn Món!", Form_Alert.enmType.Warning);

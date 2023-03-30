@@ -41,6 +41,7 @@ namespace TripleXManagement.ChildForm.Bill
                     Height = 150,
                     BackgroundImageLayout = ImageLayout.Stretch,
                     BorderStyle = BorderStyle.None,
+                    Cursor = Cursors.Hand,
                     Tag = reader["ID"].ToString()
                 };
 
@@ -196,17 +197,17 @@ namespace TripleXManagement.ChildForm.Bill
 
         private void btnBillManagement_MouseLeave(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnBillManagement, Resources.bonds_20px, false);
+            SharedClass.HoverBtnState(btnBillManagement, Resources.bonds_20px1, false);
         }
 
         private void btnAddBill_MouseEnter(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnAddBill, Resources.Add_properties_20px1, true);
+            SharedClass.HoverBtnState(btnAdd, Resources.Add_properties_20px1, true);
         }
 
         private void btnAddBill_MouseLeave(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnAddBill, Resources.Add_properties_20px, false);
+            SharedClass.HoverBtnState(btnAdd, Resources.Add_properties_20px, false);
         }
         #endregion
     }
