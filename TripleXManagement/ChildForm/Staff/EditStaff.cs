@@ -34,9 +34,9 @@ namespace TripleXManagement.ChildForm.Staff
         private void GetData()
         {
             ID = StaffManagement.ID;
-            SharedClass.FillCBB("select * from Regency", cbRegency, "Name");
-            SharedClass.FillCBB("select * from Account", cbAccount, "Username");
-            string sql = "exec getStaffbyID " + ID;
+            SharedClass.FillCBB("select * from TRegency", cbRegency, "RName");
+            SharedClass.FillCBB("exec PAccountShow", cbAccount, "AUsername");
+            string sql = "exec PStaffFindByID " + ID;
             reader = SqlClass.Reader(sql);
             while (reader.Read())
             {
@@ -47,11 +47,11 @@ namespace TripleXManagement.ChildForm.Staff
                 Bitmap bitmap = new(ms);
                 pbPic.BackgroundImage = bitmap;
 
-                txtName.Texts = reader["Name"].ToString();
+                txtName.Texts = reader["SName"].ToString();
                 txtCCCD.Texts = reader["CCCD"].ToString();
-                txtPhone.Texts = reader["Phone"].ToString();
+                txtPhone.Texts = reader["SPhone"].ToString();
                 cbRegency.Texts = reader["Regency"].ToString();
-                cbAccount.Texts = reader["Account"].ToString();
+                cbAccount.Texts = reader["Username"].ToString();
             }
             reader.Close();
         }
@@ -66,7 +66,7 @@ namespace TripleXManagement.ChildForm.Staff
                     pbPic.BackgroundImage.Save(ms, ImageFormat.Jpeg);
                     byte[] array = ms.GetBuffer();
 
-                    cmd = new SqlCommand("exec editStaffbyID @ID, @Name, @CCCS, @Phone,@Regency,@Account,@Image", conn);
+                    cmd = new SqlCommand("exec PStaffEdit @ID, @Name, @CCCS, @Phone,@Regency,@Account,@Image", conn);
                     cmd.Parameters.AddWithValue("@ID", ID);
                     cmd.Parameters.AddWithValue("@Name", txtName.Texts);
                     cmd.Parameters.AddWithValue("@CCCS", txtCCCD.Texts);
@@ -204,7 +204,7 @@ namespace TripleXManagement.ChildForm.Staff
         private void rbYes_CheckedChanged(object sender, EventArgs e)
         {
             if (rbYes.Checked)
-                SharedClass.FillCBB("select * from Account", cbAccount, "Username");
+                SharedClass.FillCBB("exec PAccountShow", cbAccount, "AUsername");
         }
 
         private void rbNo_CheckedChanged(object sender, EventArgs e)

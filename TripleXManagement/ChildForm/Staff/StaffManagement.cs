@@ -12,7 +12,7 @@ namespace TripleXManagement.ChildForm.Staff
         public void GetData()
         {
             ID = "";
-            SharedClass.FillDGV(dgvStaff, "exec getStaff");
+            SharedClass.FillDGV(dgvStaff, "exec PStaffShow");
         }
 
         private void btnAddStaff_Click(object sender, EventArgs e)
@@ -69,7 +69,7 @@ namespace TripleXManagement.ChildForm.Staff
         {
             if (e.KeyCode == Keys.Delete)
             {
-                String? sql = "exec delStaffbyID " + ID;
+                String? sql = "exec PStaffDel " + ID;
                 if (ID != "")
                 {
                     SqlClass.RunSqlDel(sql);

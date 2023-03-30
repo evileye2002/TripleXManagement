@@ -22,8 +22,8 @@ namespace TripleXManagement.ChildForm.Staff
         }
         private void GetData()
         {
-            SharedClass.FillCBB("select * from Regency", cbRegency,"Name");
-            SharedClass.FillCBB("select * from Account", cbAccount,"Username");
+            SharedClass.FillCBB("select * from TRegency", cbRegency,"RName");
+            SharedClass.FillCBB("exec PAccountShow", cbAccount,"AUsername");
             
         }
 
@@ -55,7 +55,7 @@ namespace TripleXManagement.ChildForm.Staff
                     pbPic.BackgroundImage.Save(ms, ImageFormat.Jpeg);
                     byte[] array = ms.GetBuffer();
 
-                    cmd = new SqlCommand("exec addStaff @Name, @CCCD, @Phone, @Image, @Regency, @Account", conn);
+                    cmd = new SqlCommand("exec PStaffAdd @Name, @CCCD, @Phone, @Image,@Regency, @Account", conn);
                     cmd.Parameters.AddWithValue("@Name", txtName.Texts);
                     cmd.Parameters.AddWithValue("@CCCD", txtCCCD.Texts);
                     cmd.Parameters.AddWithValue("@Phone", txtPhone.Texts);
@@ -130,7 +130,7 @@ namespace TripleXManagement.ChildForm.Staff
         private void rbYes_CheckedChanged(object sender, EventArgs e)
         {
             if (rbYes.Checked) 
-                SharedClass.FillCBB("select * from Account", cbAccount, "Username");
+                SharedClass.FillCBB("exec PAccountShow", cbAccount, "Username");
         }
 
         private void rbNo_CheckedChanged(object sender, EventArgs e)
