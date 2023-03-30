@@ -1,15 +1,5 @@
-﻿using CustomAlertBox;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using TripleXManagement.ChildForm.Staff;
-using TripleXManagement.StaticClass;
+﻿using TripleXManagement.StaticClass;
+using TripleXManagement.Properties;
 
 namespace TripleXManagement.ChildForm.Account
 {
@@ -46,21 +36,21 @@ namespace TripleXManagement.ChildForm.Account
         #region HoverState
         private void btnClose_MouseEnter(object sender, EventArgs e)
         {
-            SharedClass.HoverSubBtnState(btnClose, Properties.Resources.denied_20px, true);
+            SharedClass.HoverSubBtnState(btnClose, Resources.reply_arrow_20px1, true);
         }
 
         private void btnClose_MouseLeave(object sender, EventArgs e)
         {
-            SharedClass.HoverSubBtnState(btnClose, Properties.Resources.denied_20px, false);
+            SharedClass.HoverSubBtnState(btnClose,Resources.reply_arrow_20px, false);
         }
         private void btnSave_MouseEnter(object sender, EventArgs e)
         {
-            SharedClass.HoverSubBtnState(btnSave, Properties.Resources.denied_20px, true);
+            SharedClass.HoverSubBtnState(btnSave, Resources.save_20px1, true);
         }
 
         private void btnSave_MouseLeave(object sender, EventArgs e)
         {
-            SharedClass.HoverSubBtnState(btnSave, Properties.Resources.denied_20px, false);
+            SharedClass.HoverSubBtnState(btnSave, Resources.save_20px, false);
         }
         #endregion
 

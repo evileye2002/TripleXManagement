@@ -1,4 +1,4 @@
-﻿namespace TripleXManagement
+﻿namespace TripleXManagement.ChildForm.Food
 {
     partial class AddFood
     {

@@ -89,7 +89,7 @@ namespace TripleXManagement.CustomControl
             // 
             // panelButtons
             // 
-            this.panelButtons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.panelButtons.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelButtons.Controls.Add(this.button3);
             this.panelButtons.Controls.Add(this.button2);
             this.panelButtons.Controls.Add(this.button1);

@@ -1,6 +1,5 @@
-﻿using CustomAlertBox;
-using Microsoft.SqlServer.Server;
-using TripleXManagement.StaticClass;
+﻿using TripleXManagement.StaticClass;
+using TripleXManagement.Properties;
 namespace TripleXManagement.ChildForm.Account
 {
     public partial class AccountManagement : Form
@@ -39,22 +38,22 @@ namespace TripleXManagement.ChildForm.Account
         #region Hover State
         private void btnAddAccount_MouseEnter(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnAddAccount, Properties.Resources.database_administrator_20px, true);
+            SharedClass.HoverBtnState(btnAddAccount, Resources.Add_properties_20px1, true);
         }
 
         private void btnAddAccount_MouseLeave(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnAddAccount, Properties.Resources.database_administrator_20px, false);
+            SharedClass.HoverBtnState(btnAddAccount, Resources.Add_properties_20px, false);
         }
 
         private void btnEdit_MouseEnter(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnEdit, Properties.Resources.database_administrator_20px, true);
+            SharedClass.HoverBtnState(btnEdit, Resources.edit_property_20px1, true);
         }
 
         private void btnEdit_MouseLeave(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnEdit, Properties.Resources.database_administrator_20px, false);
+            SharedClass.HoverBtnState(btnEdit, Resources.edit_property_20px, false);
         }
         #endregion
 

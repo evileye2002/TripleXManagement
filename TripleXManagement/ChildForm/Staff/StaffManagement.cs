@@ -1,5 +1,5 @@
-﻿using CustomAlertBox;
-using TripleXManagement.StaticClass;
+﻿using TripleXManagement.StaticClass;
+using TripleXManagement.Properties;
 namespace TripleXManagement.ChildForm.Staff
 {
     public partial class StaffManagement : Form
@@ -47,22 +47,22 @@ namespace TripleXManagement.ChildForm.Staff
         #region Hover State
         private void btnAddStaff_MouseEnter(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnAddStaff, Properties.Resources.database_administrator_20px, true);
+            SharedClass.HoverBtnState(btnAddStaff, Resources.Add_properties_20px1, true);
         }
 
         private void btnAddStaff_MouseLeave(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnAddStaff, Properties.Resources.database_administrator_20px1, false);
+            SharedClass.HoverBtnState(btnAddStaff, Resources.Add_properties_20px, false);
         }
 
         private void btnEdit_MouseEnter(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnEdit, Properties.Resources.database_administrator_20px, true);
+            SharedClass.HoverBtnState(btnEdit, Resources.edit_property_20px1, true);
         }
 
         private void btnEdit_MouseLeave(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnEdit, Properties.Resources.database_administrator_20px1, false);
+            SharedClass.HoverBtnState(btnEdit, Resources.edit_property_20px, false);
         }
         #endregion
         private void dgvStaff_KeyDown(object sender, KeyEventArgs e)

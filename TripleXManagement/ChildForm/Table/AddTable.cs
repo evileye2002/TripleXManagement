@@ -1,6 +1,5 @@
-﻿using CustomAlertBox;
-using System.Drawing.Drawing2D;
-using TripleXManagement.StaticClass;
+﻿using TripleXManagement.StaticClass;
+using TripleXManagement.Properties;
 
 namespace TripleXManagement.ChildForm.Table
 {
@@ -26,21 +25,21 @@ namespace TripleXManagement.ChildForm.Table
         #region Hover State
         private void btnClose_MouseEnter(object sender, EventArgs e)
         {
-            SharedClass.HoverSubBtnState(btnClose, Properties.Resources.denied_20px, true);
+            SharedClass.HoverSubBtnState(btnClose, Resources.reply_arrow_20px1, true);
         }
 
         private void btnClose_MouseLeave(object sender, EventArgs e)
         {
-            SharedClass.HoverSubBtnState(btnClose, Properties.Resources.denied_20px, false);
+            SharedClass.HoverSubBtnState(btnClose, Resources.reply_arrow_20px, false);
         }
         private void btnSave_MouseEnter(object sender, EventArgs e)
         {
-            SharedClass.HoverSubBtnState(btnSave, Properties.Resources.denied_20px, true);
+            SharedClass.HoverSubBtnState(btnSave, Resources.save_20px1, true);
         }
 
         private void btnSave_MouseLeave(object sender, EventArgs e)
         {
-            SharedClass.HoverSubBtnState(btnSave, Properties.Resources.denied_20px, false);
+            SharedClass.HoverSubBtnState(btnSave, Resources.save_20px, false);
         }
         #endregion
         private void btnClose_Click(object sender, EventArgs e)

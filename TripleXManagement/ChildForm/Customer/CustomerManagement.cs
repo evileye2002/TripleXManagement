@@ -1,5 +1,5 @@
-﻿using CustomAlertBox;
-using TripleXManagement.StaticClass;
+﻿using TripleXManagement.StaticClass;
+using TripleXManagement.Properties;
 
 namespace TripleXManagement.ChildForm.Customer
 {
@@ -34,19 +34,19 @@ namespace TripleXManagement.ChildForm.Customer
         #region Hover State
         private void btnManagement_MouseEnter(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnAddCustomer, Properties.Resources.denied_20px, true);
+            SharedClass.HoverBtnState(btnAddCustomer, Resources.Add_properties_20px1, true);
         }
         private void btnManagement_MouseLeave(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnAddCustomer, Properties.Resources.denied_20px, false);
+            SharedClass.HoverBtnState(btnAddCustomer, Resources.Add_properties_20px, false);
         }
         private void btnEdit_MouseEnter(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnEdit, Properties.Resources.denied_20px, true);
+            SharedClass.HoverBtnState(btnEdit, Resources.edit_property_20px1, true);
         }
         private void btnEdit_MouseLeave(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnEdit, Properties.Resources.denied_20px, false);
+            SharedClass.HoverBtnState(btnEdit, Resources.edit_property_20px, false);
         }
         #endregion
 

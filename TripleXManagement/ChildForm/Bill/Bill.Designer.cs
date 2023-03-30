@@ -33,8 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnFooter = new System.Windows.Forms.Panel();
-            this.btnAddBill = new TripleXManagement.CustomControl.RJButton();
-            this.btnBillManagement = new TripleXManagement.CustomControl.RJButton();
             this.lbTotal = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnDGV = new System.Windows.Forms.Panel();
@@ -53,8 +51,6 @@
             // pnFooter
             // 
             this.pnFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            this.pnFooter.Controls.Add(this.btnAddBill);
-            this.pnFooter.Controls.Add(this.btnBillManagement);
             this.pnFooter.Controls.Add(this.lbTotal);
             this.pnFooter.Controls.Add(this.label1);
             this.pnFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -62,58 +58,6 @@
             this.pnFooter.Name = "pnFooter";
             this.pnFooter.Size = new System.Drawing.Size(1000, 50);
             this.pnFooter.TabIndex = 0;
-            // 
-            // btnAddBill
-            // 
-            this.btnAddBill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnAddBill.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnAddBill.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnAddBill.BorderRadius = 20;
-            this.btnAddBill.BorderSize = 2;
-            this.btnAddBill.FlatAppearance.BorderSize = 0;
-            this.btnAddBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddBill.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAddBill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnAddBill.Image = global::TripleXManagement.Properties.Resources.Add_properties_20px;
-            this.btnAddBill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddBill.Location = new System.Drawing.Point(20, 5);
-            this.btnAddBill.Name = "btnAddBill";
-            this.btnAddBill.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnAddBill.Size = new System.Drawing.Size(100, 40);
-            this.btnAddBill.TabIndex = 0;
-            this.btnAddBill.Text = "Thêm";
-            this.btnAddBill.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnAddBill.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAddBill.UseVisualStyleBackColor = false;
-            this.btnAddBill.Click += new System.EventHandler(this.btnAddBill_Click);
-            this.btnAddBill.MouseEnter += new System.EventHandler(this.btnAddBill_MouseEnter);
-            this.btnAddBill.MouseLeave += new System.EventHandler(this.btnAddBill_MouseLeave);
-            // 
-            // btnBillManagement
-            // 
-            this.btnBillManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnBillManagement.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnBillManagement.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnBillManagement.BorderRadius = 20;
-            this.btnBillManagement.BorderSize = 2;
-            this.btnBillManagement.FlatAppearance.BorderSize = 0;
-            this.btnBillManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBillManagement.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnBillManagement.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnBillManagement.Image = global::TripleXManagement.Properties.Resources.bonds_20px;
-            this.btnBillManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBillManagement.Location = new System.Drawing.Point(130, 5);
-            this.btnBillManagement.Name = "btnBillManagement";
-            this.btnBillManagement.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnBillManagement.Size = new System.Drawing.Size(120, 40);
-            this.btnBillManagement.TabIndex = 1;
-            this.btnBillManagement.Text = "Hóa đơn";
-            this.btnBillManagement.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnBillManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBillManagement.UseVisualStyleBackColor = false;
-            this.btnBillManagement.Click += new System.EventHandler(this.btnBillManagement_Click);
-            this.btnBillManagement.MouseEnter += new System.EventHandler(this.btnBillManagement_MouseEnter);
-            this.btnBillManagement.MouseLeave += new System.EventHandler(this.btnBillManagement_MouseLeave);
             // 
             // lbTotal
             // 

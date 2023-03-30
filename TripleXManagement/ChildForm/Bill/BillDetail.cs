@@ -1,5 +1,4 @@
-﻿using CustomAlertBox;
-using System.Drawing.Printing;
+﻿using System.Drawing.Printing;
 using System.Globalization;
 using TripleXManagement.StaticClass;
 using TripleXManagement.Properties;
@@ -328,31 +327,31 @@ namespace TripleXManagement.ChildForm.Bill
         #region Hover State
         private void btnPrint_MouseEnter(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnPrint, Resources.database_administrator_20px, true);
+            SharedClass.HoverBtnState(btnPrint, Resources.print_20px1, true);
         }
 
         private void btnPrint_MouseLeave(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnPrint, Resources.database_administrator_20px1, false);
+            SharedClass.HoverBtnState(btnPrint, Resources.print_20px, false);
         }
 
         private void btnPrintPreview_MouseEnter(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnPrintPreview, Resources.database_administrator_20px, true);
+            SharedClass.HoverBtnState(btnPrintPreview, Resources.detective_20px1, true);
         }
 
         private void btnPrintPreview_MouseLeave(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnPrintPreview, Resources.database_administrator_20px1, false);
+            SharedClass.HoverBtnState(btnPrintPreview, Resources.detective_20px, false);
         }
         private void btnClose_MouseEnter(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnClose, Resources.database_administrator_20px, true);
+            SharedClass.HoverBtnState(btnClose, Resources.reply_arrow_20px1, true);
         }
 
         private void btnClose_MouseLeave(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnClose, Resources.database_administrator_20px1, false);
+            SharedClass.HoverBtnState(btnClose, Resources.reply_arrow_20px, false);
         }
         #endregion
 

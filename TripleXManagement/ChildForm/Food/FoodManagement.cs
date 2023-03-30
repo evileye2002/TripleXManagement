@@ -1,10 +1,7 @@
-﻿using CustomAlertBox;
-using System.Data;
-using System.Data.SqlClient;
-using TripleXManagement.ChildForm.Food;
-using TripleXManagement.StaticClass;
+﻿using TripleXManagement.StaticClass;
+using TripleXManagement.Properties;
 
-namespace TripleXManagement
+namespace TripleXManagement.ChildForm.Food
 {
     public partial class FoodManagement : Form
     {
@@ -83,22 +80,22 @@ namespace TripleXManagement
         #region Hover State
         private void btnAddFood_MouseEnter(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnAddFood, Properties.Resources.database_administrator_20px, true);
+            SharedClass.HoverBtnState(btnAddFood, Resources.Add_properties_20px1, true);
         }
 
         private void btnAddFood_MouseLeave(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnAddFood, Properties.Resources.database_administrator_20px1, false);
+            SharedClass.HoverBtnState(btnAddFood, Resources.Add_properties_20px, false);
         }
 
         private void btnEdit_MouseEnter(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnEdit, Properties.Resources.database_administrator_20px, true);
+            SharedClass.HoverBtnState(btnEdit, Resources.edit_property_20px1, true);
         }
 
         private void btnEdit_MouseLeave(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnEdit, Properties.Resources.database_administrator_20px1, false);
+            SharedClass.HoverBtnState(btnEdit, Resources.edit_property_20px, false);
         }
         #endregion
     }

@@ -1,6 +1,6 @@
 ﻿using TripleXManagement.Properties;
 
-namespace CustomAlertBox
+namespace TripleXManagement
 {
     public partial class Form_Alert : Form
     {

@@ -1,4 +1,5 @@
-﻿namespace TripleXManagement
+﻿using TripleXManagement.CustomControl;
+namespace TripleXManagement.ChildForm.Food
 {
     partial class FoodManagement
     {

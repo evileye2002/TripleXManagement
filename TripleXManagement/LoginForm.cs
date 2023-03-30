@@ -1,8 +1,5 @@
 ﻿using TripleXManagement.StaticClass;
 using TripleXManagement.Properties;
-using TripleXManagement.CustomControl;
-using CustomAlertBox;
-using System.Data.SqlClient;
 using System.Data;
 
 namespace TripleXManagement

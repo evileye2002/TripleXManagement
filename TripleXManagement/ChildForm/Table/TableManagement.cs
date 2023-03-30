@@ -1,6 +1,6 @@
-﻿using CustomAlertBox;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 using TripleXManagement.StaticClass;
+using TripleXManagement.Properties;
 
 namespace TripleXManagement.ChildForm.Table
 {
@@ -661,12 +661,12 @@ namespace TripleXManagement.ChildForm.Table
 
         private void btnManagement_MouseEnter(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnManagement, Properties.Resources.denied_20px, true);
+            SharedClass.HoverBtnState(btnManagement, Resources.Add_properties_20px1, true);
         }
 
         private void btnManagement_MouseLeave(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnManagement, Properties.Resources.denied_20px, false);
+            SharedClass.HoverBtnState(btnManagement, Resources.Add_properties_20px, false);
         }
     }
 }

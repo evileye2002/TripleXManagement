@@ -1,6 +1,6 @@
-﻿using CustomAlertBox;
-using System.Globalization;
+﻿using System.Globalization;
 using TripleXManagement.StaticClass;
+using TripleXManagement.Properties;
 
 namespace TripleXManagement.ChildForm.Bill
 {
@@ -102,12 +102,12 @@ namespace TripleXManagement.ChildForm.Bill
 
         private void btnDetail_MouseEnter(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnDetail, Properties.Resources.database_administrator_20px, true);
+            SharedClass.HoverBtnState(btnDetail, Resources.view_20px1, true);
         }
 
         private void btnDetail_MouseLeave(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnDetail, Properties.Resources.database_administrator_20px1, false);
+            SharedClass.HoverBtnState(btnDetail, Resources.view_20px, false);
         }
     }
 }

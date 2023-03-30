@@ -1,10 +1,9 @@
-﻿using CustomAlertBox;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 using System.Drawing.Imaging;
-using TripleXManagement.ChildForm.Staff;
 using TripleXManagement.StaticClass;
+using TripleXManagement.Properties;
 
-namespace TripleXManagement
+namespace TripleXManagement.ChildForm.Food
 {
     public partial class AddFood : Form
     {
@@ -71,31 +70,31 @@ namespace TripleXManagement
         #region Hover State
         private void btnBrowse_MouseEnter(object sender, EventArgs e)
         {
-            SharedClass.HoverSubBtnState(btnBrowse, Properties.Resources.database_administrator_20px, true);
+            SharedClass.HoverSubBtnState(btnBrowse, Resources.image_file_20px1, true);
         }
 
         private void btnBrowse_MouseLeave(object sender, EventArgs e)
         {
-            SharedClass.HoverSubBtnState(btnBrowse, Properties.Resources.database_administrator_20px1, false);
+            SharedClass.HoverSubBtnState(btnBrowse, Resources.image_file_20px, false);
         }
 
         private void btnSave_MouseEnter(object sender, EventArgs e)
         {
-            SharedClass.HoverSubBtnState(btnSave, Properties.Resources.database_administrator_20px, true);
+            SharedClass.HoverSubBtnState(btnSave, Resources.save_20px1, true);
         }
 
         private void btnSave_MouseLeave(object sender, EventArgs e)
         {
-            SharedClass.HoverSubBtnState(btnSave, Properties.Resources.database_administrator_20px1, false);
+            SharedClass.HoverSubBtnState(btnSave, Resources.save_20px, false);
         }
         private void btnClose_MouseEnter(object sender, EventArgs e)
         {
-            SharedClass.HoverSubBtnState(btnClose, Properties.Resources.denied_20px, true);
+            SharedClass.HoverSubBtnState(btnClose, Resources.reply_arrow_20px1, true);
         }
 
         private void btnClose_MouseLeave(object sender, EventArgs e)
         {
-            SharedClass.HoverSubBtnState(btnClose, Properties.Resources.denied_20px, false);
+            SharedClass.HoverSubBtnState(btnClose, Resources.reply_arrow_20px, false);
         }
         #endregion
         #region Rounded

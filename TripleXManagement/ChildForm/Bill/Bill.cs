@@ -1,6 +1,6 @@
-﻿using CustomAlertBox;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 using TripleXManagement.StaticClass;
+using TripleXManagement.Properties;
 
 namespace TripleXManagement.ChildForm.Bill
 {
@@ -191,22 +191,22 @@ namespace TripleXManagement.ChildForm.Bill
         #region Hover State
         private void btnBillManagement_MouseEnter(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnBillManagement, Properties.Resources.database_administrator_20px, true);
+            SharedClass.HoverBtnState(btnBillManagement, Resources.bonds_20px1, true);
         }
 
         private void btnBillManagement_MouseLeave(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnBillManagement, Properties.Resources.database_administrator_20px1, false);
+            SharedClass.HoverBtnState(btnBillManagement, Resources.bonds_20px, false);
         }
 
         private void btnAddBill_MouseEnter(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnAddBill, Properties.Resources.database_administrator_20px, true);
+            SharedClass.HoverBtnState(btnAddBill, Resources.Add_properties_20px1, true);
         }
 
         private void btnAddBill_MouseLeave(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnAddBill, Properties.Resources.database_administrator_20px1, false);
+            SharedClass.HoverBtnState(btnAddBill, Resources.Add_properties_20px, false);
         }
         #endregion
     }

@@ -1,4 +1,4 @@
-﻿namespace CustomAlertBox
+﻿namespace TripleXManagement
 {
     partial class Form_Alert
     {
@@ -42,7 +42,7 @@
             this.lblMsg.AutoSize = true;
             this.lblMsg.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblMsg.ForeColor = System.Drawing.Color.White;
-            this.lblMsg.Location = new System.Drawing.Point(65, 28);
+            this.lblMsg.Location = new System.Drawing.Point(65, 27);
             this.lblMsg.Name = "lblMsg";
             this.lblMsg.Size = new System.Drawing.Size(113, 19);
             this.lblMsg.TabIndex = 0;
@@ -65,9 +65,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::TripleXManagement.Properties.Resources.icons8_cancel_25px;
-            this.pictureBox2.Location = new System.Drawing.Point(298, 22);
+            this.pictureBox2.Location = new System.Drawing.Point(298, 25);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(26, 30);
+            this.pictureBox2.Size = new System.Drawing.Size(26, 26);
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);

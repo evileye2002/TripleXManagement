@@ -1,5 +1,4 @@
-﻿using CustomAlertBox;
-using System.Drawing.Drawing2D;
+﻿using System.Drawing.Drawing2D;
 using System.Globalization;
 
 namespace TripleXManagement.StaticClass
