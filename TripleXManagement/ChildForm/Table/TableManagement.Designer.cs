@@ -73,7 +73,7 @@
             this.btnManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManagement.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnManagement.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnManagement.Image = global::TripleXManagement.Properties.Resources.database_administrator_20px1;
+            this.btnManagement.Image = global::TripleXManagement.Properties.Resources.Add_properties_20px;
             this.btnManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnManagement.Location = new System.Drawing.Point(770, 5);
             this.btnManagement.Name = "btnManagement";

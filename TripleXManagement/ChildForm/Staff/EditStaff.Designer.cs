@@ -66,7 +66,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnClose.Image = global::TripleXManagement.Properties.Resources.database_administrator_20px1;
+            this.btnClose.Image = global::TripleXManagement.Properties.Resources.reply_arrow_20px;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(644, 321);
             this.btnClose.Name = "btnClose";
@@ -302,7 +302,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnSave.Image = global::TripleXManagement.Properties.Resources.database_administrator_20px1;
+            this.btnSave.Image = global::TripleXManagement.Properties.Resources.save_20px;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSave.Location = new System.Drawing.Point(529, 321);
             this.btnSave.Name = "btnSave";
@@ -328,7 +328,7 @@
             this.btnBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBrowse.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBrowse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnBrowse.Image = global::TripleXManagement.Properties.Resources.database_administrator_20px1;
+            this.btnBrowse.Image = global::TripleXManagement.Properties.Resources.image_file_20px;
             this.btnBrowse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBrowse.Location = new System.Drawing.Point(60, 321);
             this.btnBrowse.Name = "btnBrowse";

@@ -75,7 +75,7 @@
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnEdit.Image = global::TripleXManagement.Properties.Resources.database_administrator_20px1;
+            this.btnEdit.Image = global::TripleXManagement.Properties.Resources.edit_property_20px;
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEdit.Location = new System.Drawing.Point(130, 5);
             this.btnEdit.Name = "btnEdit";
@@ -101,7 +101,7 @@
             this.btnAddStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddStaff.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAddStaff.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnAddStaff.Image = global::TripleXManagement.Properties.Resources.database_administrator_20px1;
+            this.btnAddStaff.Image = global::TripleXManagement.Properties.Resources.Add_properties_20px;
             this.btnAddStaff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddStaff.Location = new System.Drawing.Point(20, 5);
             this.btnAddStaff.Name = "btnAddStaff";

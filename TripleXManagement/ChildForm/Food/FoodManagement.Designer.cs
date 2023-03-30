@@ -68,7 +68,7 @@
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnEdit.Image = global::TripleXManagement.Properties.Resources.database_administrator_20px1;
+            this.btnEdit.Image = global::TripleXManagement.Properties.Resources.edit_property_20px;
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEdit.Location = new System.Drawing.Point(130, 5);
             this.btnEdit.Name = "btnEdit";
@@ -94,7 +94,7 @@
             this.btnAddFood.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddFood.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAddFood.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnAddFood.Image = global::TripleXManagement.Properties.Resources.database_administrator_20px1;
+            this.btnAddFood.Image = global::TripleXManagement.Properties.Resources.Add_properties_20px;
             this.btnAddFood.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddFood.Location = new System.Drawing.Point(20, 5);
             this.btnAddFood.Name = "btnAddFood";

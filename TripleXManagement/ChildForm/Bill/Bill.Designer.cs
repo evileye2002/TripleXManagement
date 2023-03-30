@@ -74,7 +74,7 @@
             this.btnAddBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddBill.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAddBill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnAddBill.Image = global::TripleXManagement.Properties.Resources.database_administrator_20px1;
+            this.btnAddBill.Image = global::TripleXManagement.Properties.Resources.Add_properties_20px;
             this.btnAddBill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddBill.Location = new System.Drawing.Point(20, 5);
             this.btnAddBill.Name = "btnAddBill";
@@ -100,7 +100,7 @@
             this.btnBillManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBillManagement.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBillManagement.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnBillManagement.Image = global::TripleXManagement.Properties.Resources.database_administrator_20px1;
+            this.btnBillManagement.Image = global::TripleXManagement.Properties.Resources.bonds_20px;
             this.btnBillManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBillManagement.Location = new System.Drawing.Point(130, 5);
             this.btnBillManagement.Name = "btnBillManagement";

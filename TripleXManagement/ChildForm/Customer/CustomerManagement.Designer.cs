@@ -36,14 +36,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvCustomer = new System.Windows.Forms.DataGridView();
-            this.pnFooter = new System.Windows.Forms.Panel();
-            this.btnEdit = new TripleXManagement.CustomControl.RJButton();
-            this.btnAddCustomer = new TripleXManagement.CustomControl.RJButton();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnFooter = new System.Windows.Forms.Panel();
+            this.btnEdit = new TripleXManagement.CustomControl.RJButton();
+            this.btnAddCustomer = new TripleXManagement.CustomControl.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
             this.pnFooter.SuspendLayout();
             this.SuspendLayout();
@@ -97,69 +97,6 @@
             this.dgvCustomer.TabIndex = 24;
             this.dgvCustomer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomer_CellClick);
             this.dgvCustomer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvCustomer_KeyDown);
-            // 
-            // pnFooter
-            // 
-            this.pnFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            this.pnFooter.Controls.Add(this.btnEdit);
-            this.pnFooter.Controls.Add(this.btnAddCustomer);
-            this.pnFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnFooter.Location = new System.Drawing.Point(0, 505);
-            this.pnFooter.Name = "pnFooter";
-            this.pnFooter.Size = new System.Drawing.Size(921, 50);
-            this.pnFooter.TabIndex = 0;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnEdit.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnEdit.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnEdit.BorderRadius = 20;
-            this.btnEdit.BorderSize = 2;
-            this.btnEdit.FlatAppearance.BorderSize = 0;
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnEdit.Image = global::TripleXManagement.Properties.Resources.database_administrator_20px1;
-            this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEdit.Location = new System.Drawing.Point(130, 5);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnEdit.Size = new System.Drawing.Size(100, 40);
-            this.btnEdit.TabIndex = 1;
-            this.btnEdit.Text = "Sửa";
-            this.btnEdit.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEdit.UseVisualStyleBackColor = false;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            this.btnEdit.MouseEnter += new System.EventHandler(this.btnEdit_MouseEnter);
-            this.btnEdit.MouseLeave += new System.EventHandler(this.btnEdit_MouseLeave);
-            // 
-            // btnAddCustomer
-            // 
-            this.btnAddCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnAddCustomer.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnAddCustomer.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnAddCustomer.BorderRadius = 20;
-            this.btnAddCustomer.BorderSize = 2;
-            this.btnAddCustomer.FlatAppearance.BorderSize = 0;
-            this.btnAddCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddCustomer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAddCustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnAddCustomer.Image = global::TripleXManagement.Properties.Resources.database_administrator_20px1;
-            this.btnAddCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddCustomer.Location = new System.Drawing.Point(20, 5);
-            this.btnAddCustomer.Name = "btnAddCustomer";
-            this.btnAddCustomer.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnAddCustomer.Size = new System.Drawing.Size(100, 40);
-            this.btnAddCustomer.TabIndex = 0;
-            this.btnAddCustomer.Text = "Thêm";
-            this.btnAddCustomer.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnAddCustomer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAddCustomer.UseVisualStyleBackColor = false;
-            this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
-            this.btnAddCustomer.MouseEnter += new System.EventHandler(this.btnManagement_MouseEnter);
-            this.btnAddCustomer.MouseLeave += new System.EventHandler(this.btnManagement_MouseLeave);
             // 
             // Column2
             // 
@@ -226,6 +163,69 @@
             this.Column5.HeaderText = "Điện thoại";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
+            // 
+            // pnFooter
+            // 
+            this.pnFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.pnFooter.Controls.Add(this.btnEdit);
+            this.pnFooter.Controls.Add(this.btnAddCustomer);
+            this.pnFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnFooter.Location = new System.Drawing.Point(0, 505);
+            this.pnFooter.Name = "pnFooter";
+            this.pnFooter.Size = new System.Drawing.Size(921, 50);
+            this.pnFooter.TabIndex = 0;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnEdit.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnEdit.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnEdit.BorderRadius = 20;
+            this.btnEdit.BorderSize = 2;
+            this.btnEdit.FlatAppearance.BorderSize = 0;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnEdit.Image = global::TripleXManagement.Properties.Resources.edit_property_20px;
+            this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEdit.Location = new System.Drawing.Point(130, 5);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnEdit.Size = new System.Drawing.Size(100, 40);
+            this.btnEdit.TabIndex = 1;
+            this.btnEdit.Text = "Sửa";
+            this.btnEdit.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.btnEdit.MouseEnter += new System.EventHandler(this.btnEdit_MouseEnter);
+            this.btnEdit.MouseLeave += new System.EventHandler(this.btnEdit_MouseLeave);
+            // 
+            // btnAddCustomer
+            // 
+            this.btnAddCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnAddCustomer.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnAddCustomer.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnAddCustomer.BorderRadius = 20;
+            this.btnAddCustomer.BorderSize = 2;
+            this.btnAddCustomer.FlatAppearance.BorderSize = 0;
+            this.btnAddCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddCustomer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAddCustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnAddCustomer.Image = global::TripleXManagement.Properties.Resources.Add_properties_20px;
+            this.btnAddCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddCustomer.Location = new System.Drawing.Point(20, 5);
+            this.btnAddCustomer.Name = "btnAddCustomer";
+            this.btnAddCustomer.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnAddCustomer.Size = new System.Drawing.Size(100, 40);
+            this.btnAddCustomer.TabIndex = 0;
+            this.btnAddCustomer.Text = "Thêm";
+            this.btnAddCustomer.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnAddCustomer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddCustomer.UseVisualStyleBackColor = false;
+            this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
+            this.btnAddCustomer.MouseEnter += new System.EventHandler(this.btnManagement_MouseEnter);
+            this.btnAddCustomer.MouseLeave += new System.EventHandler(this.btnManagement_MouseLeave);
             // 
             // CustomerManagement
             // 

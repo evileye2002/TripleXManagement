@@ -70,7 +70,7 @@
             this.btnDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDetail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnDetail.Image = global::TripleXManagement.Properties.Resources.database_administrator_20px1;
+            this.btnDetail.Image = global::TripleXManagement.Properties.Resources.view_20px;
             this.btnDetail.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDetail.Location = new System.Drawing.Point(20, 5);
             this.btnDetail.Name = "btnDetail";
