@@ -65,7 +65,7 @@ namespace TripleXManagement.ChildForm.Account
         {
             if(txtUserName.Texts != "" && txtPassword.Texts != "")
             {
-                string sql = "exec addAccount '" + txtUserName.Texts + "',N'" + txtPassword.Texts + "'";
+                string sql = "exec PAccountAdd '" + txtUserName.Texts + "','" + txtPassword.Texts + "'";
                 try
                 {
                     SqlClass.RunSql(sql);

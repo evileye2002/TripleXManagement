@@ -13,7 +13,7 @@ namespace TripleXManagement
     {
         public static string u = "";
         public static string StaffID = "";
-        public static string regency = "";
+        public static string regency = "admin";
         private int borderSize = 2;
         private Button ?currencyButton;
         private Form ?activateForm;
@@ -252,7 +252,7 @@ namespace TripleXManagement
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
-            GetData();
+            //GetData();
         }
     }
 }

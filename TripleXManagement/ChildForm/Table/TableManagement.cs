@@ -35,7 +35,7 @@ namespace TripleXManagement.ChildForm.Table
         private void TableManagement_Load(object sender, EventArgs e)
         {
             SqlClass.Connect();
-            string sql = "exec getOrderTableInToday";
+            string sql = "exec POrderedTableTodayShow";
             reader = SqlClass.Reader(sql);
             if (reader.HasRows)
             {
@@ -113,7 +113,7 @@ namespace TripleXManagement.ChildForm.Table
                 Tname = new Label
                 {
                     Padding = new Padding(10,6, 0, 0),
-                    Text = reader["Name"].ToString(),
+                    Text = reader["TName"].ToString(),
                     Size = new Size(70, 30),
                     TextAlign = ContentAlignment.MiddleLeft,
                     Dock = DockStyle.None,
@@ -152,7 +152,7 @@ namespace TripleXManagement.ChildForm.Table
                 TGetDate = new Label
                 {
                     Padding = new Padding(10, 6, 0, 5),
-                    Text = "Ngày: " + reader["Get"].ToString(),
+                    Text = "Ngày: " + reader["OTake"].ToString(),
                     Size = new Size(180, 30),
                     TextAlign = ContentAlignment.MiddleLeft,
                     Dock = DockStyle.Left,
@@ -162,7 +162,7 @@ namespace TripleXManagement.ChildForm.Table
                 Tchair = new Label
                 {
                     Padding = new Padding(0, 6, 10, 5),
-                    Text = "Ghế: " + reader["Chair"].ToString(),
+                    Text = "Ghế: " + reader["TChair"].ToString(),
                     Size = new Size(70, 30),
                     TextAlign = ContentAlignment.MiddleLeft,
                     Dock = DockStyle.Right,
@@ -263,7 +263,7 @@ namespace TripleXManagement.ChildForm.Table
                 Tname = new Label
                 {
                     Padding = new Padding(10, 6, 0, 0),
-                    Text = reader["Name"].ToString(),
+                    Text = reader["TName"].ToString(),
                     Size = new Size(70, 30),
                     TextAlign = ContentAlignment.MiddleLeft,
                     Dock = DockStyle.None,
@@ -273,7 +273,7 @@ namespace TripleXManagement.ChildForm.Table
                 Tstatus = new Label
                 {
                     Padding = new Padding(0, 6, 10, 0),
-                    Text = reader["StatusName"].ToString(),
+                    Text = reader["TStatus"].ToString(),
                     Size = new Size(95, 30),
                     TextAlign = ContentAlignment.MiddleRight,
                     Dock = DockStyle.Right,
@@ -292,7 +292,7 @@ namespace TripleXManagement.ChildForm.Table
                 Tcustomer = new Label
                 {
                     Padding = new Padding(0, 40, 0, 0),
-                    Text = reader["StatusName"].ToString(),
+                    Text = reader["TStatus"].ToString(),
                     Size = new Size(180, 30),
                     TextAlign = ContentAlignment.MiddleLeft,
                     Dock = DockStyle.Right,
@@ -312,7 +312,7 @@ namespace TripleXManagement.ChildForm.Table
                 Tchair = new Label
                 {
                     Padding = new Padding(0, 6, 10, 5),
-                    Text = "Ghế: " + reader["Chair"].ToString(),
+                    Text = "Ghế: " + reader["TChair"].ToString(),
                     Size = new Size(70, 30),
                     TextAlign = ContentAlignment.MiddleLeft,
                     Dock = DockStyle.Right,
@@ -413,7 +413,7 @@ namespace TripleXManagement.ChildForm.Table
                 Tname = new Label
                 {
                     Padding = new Padding(10, 6, 0, 0),
-                    Text = reader["Name"].ToString(),
+                    Text = reader["TName"].ToString(),
                     Size = new Size(70, 30),
                     TextAlign = ContentAlignment.MiddleLeft,
                     Dock = DockStyle.None,
@@ -423,7 +423,7 @@ namespace TripleXManagement.ChildForm.Table
                 Tstatus = new Label
                 {
                     Padding = new Padding(0, 6, 10, 0),
-                    Text = reader["StatusName"].ToString(),
+                    Text = reader["TStatus"].ToString(),
                     Size = new Size(70, 30),
                     TextAlign = ContentAlignment.MiddleRight,
                     Dock = DockStyle.Right,
@@ -452,7 +452,7 @@ namespace TripleXManagement.ChildForm.Table
                 TGetDate = new Label
                 {
                     Padding = new Padding(10, 6, 0, 5),
-                    Text = "Ngày: " + reader["Get"].ToString(),
+                    Text = "Ngày: " + reader["OTake"].ToString(),
                     Size = new Size(180, 30),
                     TextAlign = ContentAlignment.MiddleLeft,
                     Dock = DockStyle.Left,
@@ -462,7 +462,7 @@ namespace TripleXManagement.ChildForm.Table
                 Tchair = new Label
                 {
                     Padding = new Padding(0, 6, 10, 5),
-                    Text = "Ghế: " + reader["Chair"].ToString(),
+                    Text = "Ghế: " + reader["TChair"].ToString(),
                     Size = new Size(70, 30),
                     TextAlign = ContentAlignment.MiddleLeft,
                     Dock = DockStyle.Right,
@@ -503,24 +503,24 @@ namespace TripleXManagement.ChildForm.Table
             {
                 if (rbNullTable.Checked)
                 {
-                    sql = "exec getEmptyTable";
+                    sql = "exec PEmptyTableShow";
                     GetEmptyTable(sql);
                 }
                 if (rbToday.Checked)
                 {
-                    sql = "exec getOrderTableInToday";
+                    sql = "exec POrderedTableTodayShow";
                     GetOrderTableInToday(sql);
                 }
                 if (rbOrderTable.Checked)
                 {
-                    sql = "exec getOrderedTable";
+                    sql = "exec POrderedTableShow";
                     GetOrderedTable(sql);
                 }
             }
 
             if (rbNullTable.Checked)
             {
-                sql = "exec getEmptyTablebyKind N'";
+                sql = "exec PEmptyTableFindByKind N'";
                 if (rbNormal.Checked)
                 {
                     GetEmptyTable(sql + rbNormal.Text + "'");
@@ -536,7 +536,7 @@ namespace TripleXManagement.ChildForm.Table
             }
             if (rbToday.Checked)
             {
-                sql = "exec getOrderTableInTodaybyKind N'";
+                sql = "exec POrderedTableTodayFindByKind N'";
                 if (rbNormal.Checked)
                 {
                     GetOrderTableInToday(sql + rbNormal.Text + "'");
@@ -552,7 +552,7 @@ namespace TripleXManagement.ChildForm.Table
             }
             if (rbOrderTable.Checked)
             {
-                sql = "exec getOrderedTablebyKind N'";
+                sql = "exec POrderedTableFindByKind N'";
                 if (rbNormal.Checked)
                 {
                     GetOrderedTable(sql + rbNormal.Text + "'");
@@ -608,12 +608,12 @@ namespace TripleXManagement.ChildForm.Table
         public void editOrder(object sender, EventArgs e)
         {
             OrderID = ((Label)sender).Tag.ToString();
-            string sql = "select * from OrderedTable where OrderID  = " + OrderID;
+            string sql = "select * from VOrderedTable where OrderID  = " + OrderID;
             reader = SqlClass.Reader(sql);
             while (reader.Read())
             {
                 TableID = reader["ID"].ToString();
-                TableName = reader["Name"].ToString();
+                TableName = reader["TName"].ToString();
             }
             reader.Close();
 
@@ -624,7 +624,7 @@ namespace TripleXManagement.ChildForm.Table
         public void addOrder(object sender, EventArgs e)
         {
             TableID = ((Label)sender).Tag.ToString();
-            TableName =  SqlClass.GetOneValue("select Name from EmptyTable where ID = " + TableID);
+            TableName =  SqlClass.GetOneValue("select TName from VEmptyTable where ID = " + TableID);
 
             Form f = new AddOrder();
             f.ShowDialog();
@@ -643,17 +643,17 @@ namespace TripleXManagement.ChildForm.Table
             {
                 if (rbNullTable.Checked)
                 {
-                    sql = "exec getEmptyTableSearch N'%";
+                    sql = "exec PEmptyTableSearch N'%";
                     GetEmptyTable(sql + txtSearch.Texts + "%'");
                 }
                 if (rbToday.Checked)
                 {
-                    sql = "exec getOrderTableInTodaySearch N'%";
+                    sql = "exec POrderedTableTodaySearch N'%";
                     GetOrderTableInToday(sql + txtSearch.Texts + "%'");
                 }
                 if (rbOrderTable.Checked)
                 {
-                    sql = "exec getOrderedTableSearch N'%";
+                    sql = "exec POrderedTableSearch N'%";
                     GetOrderedTable(sql + txtSearch.Texts + "%'");
                 }
             }

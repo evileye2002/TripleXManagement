@@ -14,7 +14,7 @@ namespace TripleXManagement.ChildForm.Account
         public void GetData()
         {
             username = "";
-            string sql = "exec getAccount";
+            string sql = "exec PAccountShow";
             SharedClass.FillDGV(dgvAccount, sql);
         }
         private void AccountManagement_Load(object sender, EventArgs e)
@@ -73,7 +73,7 @@ namespace TripleXManagement.ChildForm.Account
         {
             if (e.KeyCode == Keys.Delete)
             {
-                String? sql = "exec delAccount '" + username + "'";
+                String? sql = "exec PAccountDel '" + username + "'";
                 if(username != "")
                 {
                     SqlClass.RunSqlDel(sql);

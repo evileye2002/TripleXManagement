@@ -27,7 +27,7 @@ namespace TripleXManagement.ChildForm.Customer
             regency = MainForm.regency;
             if (regency != "admin")
                 btnEdit.Visible = false;
-            string sql = "exec getCustomer";
+            string sql = "exec PCustomerShow";
             SharedClass.FillDGV(dgvCustomer, sql);
         }
 
@@ -74,9 +74,8 @@ namespace TripleXManagement.ChildForm.Customer
                 ID = dgvCustomer.Rows[t].Cells[0].Value.ToString();
                 name = dgvCustomer.Rows[t].Cells[1].Value.ToString();
                 CCCD = dgvCustomer.Rows[t].Cells[2].Value.ToString();
-                birthday = dgvCustomer.Rows[t].Cells[3].Value.ToString();
-                address = dgvCustomer.Rows[t].Cells[4].Value.ToString();
-                phone = dgvCustomer.Rows[t].Cells[5].Value.ToString();
+                address = dgvCustomer.Rows[t].Cells[3].Value.ToString();
+                phone = dgvCustomer.Rows[t].Cells[4].Value.ToString();
             }
         }
 
@@ -86,7 +85,7 @@ namespace TripleXManagement.ChildForm.Customer
             {
                 if(regency == "admin")
                 {
-                    String? sql = "exec delCustomer " + ID;
+                    String? sql = "exec PCustomerDelByID " + ID;
                     if (ID != "")
                     {
                         SqlClass.RunSqlDel(sql);

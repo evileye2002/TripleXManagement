@@ -1,5 +1,4 @@
 ﻿using CustomAlertBox;
-using System.Data.SqlClient;
 using TripleXManagement.CustomControl;
 using TripleXManagement.StaticClass;
 
@@ -14,7 +13,6 @@ namespace TripleXManagement.ChildForm.Table
         private int borderRadius = 20;
         private int borderSize = 2;
         private Color borderColor = Color.FromArgb(98, 102, 244);
-        SqlDataReader reader;
         public AddOrder()
         {
             InitializeComponent();
@@ -75,7 +73,7 @@ namespace TripleXManagement.ChildForm.Table
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string sql = "exec addOrderTable " + TableID + "," + CustomerID + ",N'" 
+            string sql = "exec POrederTableAdd " + TableID + "," + CustomerID + ",N'" 
                 + DateToString(dtpOrderDate) + " " + TimeToString(dtpOrderTime) + "',N'" 
                 + DateToString(dtpGetDate) + " " + TimeToString(dtpGetTime) + "'";
 
@@ -117,7 +115,7 @@ namespace TripleXManagement.ChildForm.Table
             regency = MainForm.regency;
             TableID = TableManagement.TableID;
             lbTableName.Text = TableManagement.TableName;
-            string sql = "exec getCustomer";
+            string sql = "exec PCustomerShow";
             SharedClass.FillDGV(dgvCustomer, sql);
         }
 
@@ -128,15 +126,23 @@ namespace TripleXManagement.ChildForm.Table
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            String? sql = "exec delTable " + TableID;
+            String? sql = "exec PTableDel " + TableID;
             if (regency == "admin")
             {
                 if (TableID != "")
                 {
-                    SqlClass.RunSqlDel(sql);
                     var mainForm = Application.OpenForms.OfType<TableManagement>().Single();
-                    mainForm.GetData();
-                    this.Close();
+                    try
+                    {
+                        SqlClass.RunSql(sql);
+                        
+                        mainForm.GetData();
+                        this.Close();
+                    }
+                    catch
+                    {
+                        DialogResult dialogResult = CMessageBox.Show("Bàn " + lbTableName.Text + " Này Đang Được Lưu Ở CSDL Khác...\nKhông Thể Xóa!", "Thông Báo!", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    }
                 }
             }
         }

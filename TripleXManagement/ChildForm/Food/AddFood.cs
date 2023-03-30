@@ -49,7 +49,7 @@ namespace TripleXManagement
                     MemoryStream ms = new MemoryStream();
                     pbPic.BackgroundImage.Save(ms, ImageFormat.Jpeg);
                     byte[] array = ms.GetBuffer();
-                    cmd = new SqlCommand("exec addmMonAn @Name, @Price, @Image", conn);
+                    cmd = new SqlCommand("exec PFoodAdd @Name, @Price, @Image", conn);
                     cmd.Parameters.AddWithValue("@Name", txtName.Texts);
                     cmd.Parameters.AddWithValue("@Price", int.Parse(txtPrice.Texts));
                     cmd.Parameters.AddWithValue("@Image", array);
@@ -71,22 +71,22 @@ namespace TripleXManagement
         #region Hover State
         private void btnBrowse_MouseEnter(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnBrowse, Properties.Resources.database_administrator_20px, true);
+            SharedClass.HoverSubBtnState(btnBrowse, Properties.Resources.database_administrator_20px, true);
         }
 
         private void btnBrowse_MouseLeave(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnBrowse, Properties.Resources.database_administrator_20px1, false);
+            SharedClass.HoverSubBtnState(btnBrowse, Properties.Resources.database_administrator_20px1, false);
         }
 
         private void btnSave_MouseEnter(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnSave, Properties.Resources.database_administrator_20px, true);
+            SharedClass.HoverSubBtnState(btnSave, Properties.Resources.database_administrator_20px, true);
         }
 
         private void btnSave_MouseLeave(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnSave, Properties.Resources.database_administrator_20px1, false);
+            SharedClass.HoverSubBtnState(btnSave, Properties.Resources.database_administrator_20px1, false);
         }
         private void btnClose_MouseEnter(object sender, EventArgs e)
         {

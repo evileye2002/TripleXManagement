@@ -31,7 +31,7 @@ namespace TripleXManagement
             regency = MainForm.regency;
             if (regency != "admin")
                 btnEdit.Visible = false;
-            String sql = "exec getMonAn2";
+            String sql = "select * from TFood";
             SharedClass.FillDGV(dgvFood, sql);
         }
 
@@ -58,7 +58,7 @@ namespace TripleXManagement
             {
                 if(regency == "admin")
                 {
-                    String sql = "exec delFoodbyId " + foodID;
+                    String sql = "exec PFoodDelByID " + foodID;
                     if (foodID != "")
                     {
                         SqlClass.RunSqlDel(sql);

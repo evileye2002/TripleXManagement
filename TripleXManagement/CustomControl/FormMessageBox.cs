@@ -120,7 +120,7 @@ public partial class FormMessageBox : Form
                 //Cancel Button
                 button2.Visible = true;
                 button2.Location = new Point(xCenter + (button2.Width / 2) + 5, yCenter);
-                button2.Text = "Cancel";
+                button2.Text = "Thoát";
                 button2.DialogResult = DialogResult.Cancel;//Set DialogResult
                 button2.BackColor = Color.DimGray;
 
@@ -134,13 +134,13 @@ public partial class FormMessageBox : Form
                 //Retry Button
                 button1.Visible = true;
                 button1.Location = new Point(xCenter - (button1.Width / 2) - 5, yCenter);
-                button1.Text = "Retry";
+                button1.Text = "Thử Lại";
                 button1.DialogResult = DialogResult.Retry;//Set DialogResult
 
                 //Cancel Button
                 button2.Visible = true;
                 button2.Location = new Point(xCenter + (button2.Width / 2) + 5, yCenter);
-                button2.Text = "Cancel";
+                button2.Text = "Thoát";
                 button2.DialogResult = DialogResult.Cancel;//Set DialogResult
                 button2.BackColor = Color.DimGray;
 
@@ -154,13 +154,13 @@ public partial class FormMessageBox : Form
                 //Yes Button
                 button1.Visible = true;
                 button1.Location = new Point(xCenter - (button1.Width / 2) - 5, yCenter);
-                button1.Text = "Yes";
+                button1.Text = "Có";
                 button1.DialogResult = DialogResult.Yes;//Set DialogResult
 
                 //No Button
                 button2.Visible = true;
                 button2.Location = new Point(xCenter + (button2.Width / 2) + 5, yCenter);
-                button2.Text = "No";
+                button2.Text = "Không";
                 button2.DialogResult = DialogResult.No;//Set DialogResult
                 button2.BackColor = Color.IndianRed;
 
@@ -173,20 +173,20 @@ public partial class FormMessageBox : Form
                 //Yes Button
                 button1.Visible = true;
                 button1.Location = new Point(xCenter - button1.Width - 5, yCenter);
-                button1.Text = "Yes";
+                button1.Text = "Có";
                 button1.DialogResult = DialogResult.Yes;//Set DialogResult
 
                 //No Button
                 button2.Visible = true;
                 button2.Location = new Point(xCenter, yCenter);
-                button2.Text = "No";
+                button2.Text = "Không";
                 button2.DialogResult = DialogResult.No;//Set DialogResult
                 button2.BackColor = Color.IndianRed;
 
                 //Cancel Button
                 button3.Visible = true;
                 button3.Location = new Point(xCenter + button2.Width + 5, yCenter);
-                button3.Text = "Cancel";
+                button3.Text = "Thoát";
                 button3.DialogResult = DialogResult.Cancel;//Set DialogResult
                 button3.BackColor = Color.DimGray;
 

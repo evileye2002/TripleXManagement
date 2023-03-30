@@ -25,7 +25,7 @@ namespace TripleXManagement.ChildForm.Table
             TableID = TableManagement.TableID;
             lbTableName.Text = TableManagement.TableName;
 
-            string sql = "select * from OrderedTable where OrderID = " + OrderID;
+            string sql = "select * from VOrderedTable where OrderID = " + OrderID;
             SqlDataReader reader = SqlClass.Reader(sql);
             if (reader.HasRows)
             {
@@ -33,8 +33,8 @@ namespace TripleXManagement.ChildForm.Table
                 while (reader.Read())
                 {
                     txtName.Texts = reader["CustomerName"].ToString();
-                    txtOrderDate.Texts = DateToString(reader["BookDate"].ToString());
-                    txtGetDate.Texts = reader["Get"].ToString();
+                    txtOrderDate.Texts = DateToString(reader["OBook"].ToString());
+                    txtGetDate.Texts = reader["OTake"].ToString();
                 }
             }
             reader.Close();
@@ -145,7 +145,7 @@ namespace TripleXManagement.ChildForm.Table
         {
             if (rbEmpty.Checked)
             {
-                empty = "exec emptyOrderTable " + TableID + "," + OrderID;
+                empty = "exec PEmptyAOrderedTable " + TableID + "," + OrderID;
                 SqlClass.RunSql(empty);
                 SharedClass.Alert("Sửa Thành Công!", Form_Alert.enmType.Success);
                 var mainForm = Application.OpenForms.OfType<TableManagement>().Single();

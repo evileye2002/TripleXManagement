@@ -73,7 +73,7 @@ namespace TripleXManagement.ChildForm.Account
         {
             if(txtPassword.Texts != "")
             {
-                string sql = "exec editAccount '" + ID + "',N'" + txtPassword.Texts + "'";
+                string sql = "exec PAccountEdit '" + ID + "','" + txtPassword.Texts + "'";
                 SqlClass.RunSql(sql);
                 SharedClass.Alert("Sửa Thành Công!", Form_Alert.enmType.Success);
                 var mainForm = Application.OpenForms.OfType<AccountManagement>().Single();

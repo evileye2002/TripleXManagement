@@ -33,7 +33,7 @@ namespace TripleXManagement.ChildForm.Food
                     MemoryStream ms = new MemoryStream();
                     pbPic.BackgroundImage.Save(ms, ImageFormat.Jpeg);
                     byte[] array = ms.GetBuffer();
-                    cmd = new SqlCommand("exec editFoodbyID @ID, @Name, @Price, @Image", conn);
+                    cmd = new SqlCommand("exec PFoodEditByID @ID, @Name, @Price, @Image", conn);
                     cmd.Parameters.AddWithValue("@ID", ID);
                     cmd.Parameters.AddWithValue("@Name", txtName.Texts);
                     cmd.Parameters.AddWithValue("@Price", int.Parse(txtPrice.Texts));
@@ -63,7 +63,7 @@ namespace TripleXManagement.ChildForm.Food
         private void GetData()
         {
             ID = FoodManagement.foodID;
-            string sql = "exec getFoodbyID " + ID;
+            string sql = "exec PFoodFineByID " + ID;
             reader = SqlClass.Reader(sql);
             while (reader.Read())
             {
@@ -74,8 +74,8 @@ namespace TripleXManagement.ChildForm.Food
                 Bitmap bitmap = new(ms);
                 pbPic.BackgroundImage = bitmap;
 
-                txtName.Texts = reader["Name"].ToString();
-                txtPrice.Texts = reader["Price"].ToString();
+                txtName.Texts = reader["FName"].ToString();
+                txtPrice.Texts = reader["FPrice"].ToString();
             }
             reader.Close();
         }
@@ -94,22 +94,22 @@ namespace TripleXManagement.ChildForm.Food
         #region Hover State
         private void btnBrowse_MouseEnter(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnBrowse, Properties.Resources.database_administrator_20px, true);
+            SharedClass.HoverSubBtnState(btnBrowse, Properties.Resources.database_administrator_20px, true);
         }
 
         private void btnBrowse_MouseLeave(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnBrowse, Properties.Resources.database_administrator_20px1, false);
+            SharedClass.HoverSubBtnState(btnBrowse, Properties.Resources.database_administrator_20px1, false);
         }
 
         private void btnSave_MouseEnter(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnSave, Properties.Resources.database_administrator_20px, true);
+            SharedClass.HoverSubBtnState(btnSave, Properties.Resources.database_administrator_20px, true);
         }
 
         private void btnSave_MouseLeave(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnSave, Properties.Resources.database_administrator_20px1, false);
+            SharedClass.HoverSubBtnState(btnSave, Properties.Resources.database_administrator_20px1, false);
         }
         private void btnClose_MouseEnter(object sender, EventArgs e)
         {

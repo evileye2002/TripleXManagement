@@ -33,12 +33,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtAddress = new TripleXManagement.CustomControl.Textbox();
             this.txtPhone = new TripleXManagement.CustomControl.Textbox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbTableName = new System.Windows.Forms.Label();
             this.txtCCCD = new TripleXManagement.CustomControl.Textbox();
             this.txtName = new TripleXManagement.CustomControl.Textbox();
-            this.dtpBirthday = new TripleXManagement.CustomControl.RJDatePicker();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +54,7 @@
             this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.btnClose.Image = global::TripleXManagement.Properties.Resources.database_administrator_20px1;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(470, 275);
+            this.btnClose.Location = new System.Drawing.Point(470, 227);
             this.btnClose.Name = "btnClose";
             this.btnClose.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnClose.Size = new System.Drawing.Size(100, 40);
@@ -82,7 +80,7 @@
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.btnSave.Image = global::TripleXManagement.Properties.Resources.database_administrator_20px1;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(350, 275);
+            this.btnSave.Location = new System.Drawing.Point(350, 227);
             this.btnSave.Name = "btnSave";
             this.btnSave.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnSave.Size = new System.Drawing.Size(100, 40);
@@ -100,14 +98,12 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel2.Controls.Add(this.txtAddress);
             this.panel2.Controls.Add(this.txtPhone);
-            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.txtCCCD);
             this.panel2.Controls.Add(this.txtName);
-            this.panel2.Controls.Add(this.dtpBirthday);
             this.panel2.Location = new System.Drawing.Point(21, 23);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(549, 243);
+            this.panel2.Size = new System.Drawing.Size(549, 195);
             this.panel2.TabIndex = 2;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -120,7 +116,7 @@
             this.txtAddress.BorderSize = 2;
             this.txtAddress.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.txtAddress.Location = new System.Drawing.Point(300, 120);
+            this.txtAddress.Location = new System.Drawing.Point(300, 132);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
@@ -141,7 +137,7 @@
             this.txtPhone.BorderSize = 2;
             this.txtPhone.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.txtPhone.Location = new System.Drawing.Point(300, 60);
+            this.txtPhone.Location = new System.Drawing.Point(300, 72);
             this.txtPhone.Multiline = true;
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
@@ -152,16 +148,6 @@
             this.txtPhone.TabIndex = 1;
             this.txtPhone.Texts = "";
             this.txtPhone.UnderlinedStyle = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(30, 158);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 19);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Ngày  sinh:";
             // 
             // panel1
             // 
@@ -195,7 +181,7 @@
             this.txtCCCD.BorderSize = 2;
             this.txtCCCD.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtCCCD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.txtCCCD.Location = new System.Drawing.Point(30, 120);
+            this.txtCCCD.Location = new System.Drawing.Point(30, 132);
             this.txtCCCD.Multiline = true;
             this.txtCCCD.Name = "txtCCCD";
             this.txtCCCD.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
@@ -216,7 +202,7 @@
             this.txtName.BorderSize = 2;
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.txtName.Location = new System.Drawing.Point(30, 60);
+            this.txtName.Location = new System.Drawing.Point(30, 72);
             this.txtName.Multiline = true;
             this.txtName.Name = "txtName";
             this.txtName.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
@@ -228,31 +214,12 @@
             this.txtName.Texts = "";
             this.txtName.UnderlinedStyle = true;
             // 
-            // dtpBirthday
-            // 
-            this.dtpBirthday.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.dtpBirthday.BorderSize = 2;
-            this.dtpBirthday.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dtpBirthday.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            this.dtpBirthday.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            this.dtpBirthday.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dtpBirthday.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dtpBirthday.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dtpBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpBirthday.Location = new System.Drawing.Point(30, 180);
-            this.dtpBirthday.MinimumSize = new System.Drawing.Size(0, 35);
-            this.dtpBirthday.Name = "dtpBirthday";
-            this.dtpBirthday.Size = new System.Drawing.Size(219, 35);
-            this.dtpBirthday.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dtpBirthday.TabIndex = 4;
-            this.dtpBirthday.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            // 
             // AddCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(593, 325);
+            this.ClientSize = new System.Drawing.Size(593, 278);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.panel2);
@@ -263,7 +230,6 @@
             this.Load += new System.EventHandler(this.AddCustomer_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.AddTable_Paint);
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -275,11 +241,9 @@
         private CustomControl.RJButton btnClose;
         private CustomControl.RJButton btnSave;
         private Panel panel2;
-        private Label label1;
         private Panel panel1;
         private Label lbTableName;
         private CustomControl.Textbox txtName;
-        private CustomControl.RJDatePicker dtpBirthday;
         private CustomControl.Textbox txtCCCD;
         private CustomControl.Textbox txtAddress;
         private CustomControl.Textbox txtPhone;

@@ -25,7 +25,7 @@ namespace TripleXManagement
         {
             if (txtUserName.Texts != "" && txtPassword.Texts != "")
             {
-                string sql = "exec LoginP '" + txtUserName.Texts + "','" + txtPassword.Texts + "'";
+                string sql = "exec PLogin '" + txtUserName.Texts + "','" + txtPassword.Texts + "'";
                 DataTable table = SqlClass.FillTable(sql);
                 if(table.Rows.Count > 0)
                 {

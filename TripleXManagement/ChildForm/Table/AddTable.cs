@@ -50,7 +50,7 @@ namespace TripleXManagement.ChildForm.Table
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string sql = "exec addTable N'" + txtName.Texts + "', N'" + txtKind.Texts +"'," +txtChair.Texts;
+            string sql = "exec PTableAdd N'" + txtName.Texts + "', N'" + txtKind.Texts +"'," +txtChair.Texts;
             if (txtName.Texts != "" && txtKind.Texts != "" && txtChair.Texts != "")
             {
                 SqlClass.RunSql(sql);

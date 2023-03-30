@@ -10,7 +10,6 @@ namespace TripleXManagement.ChildForm.Customer
         public static string ID = "";
         public static string name = "";
         public static string CCCD = "";
-        public static string birthday = "";
         public static string address = "";
         public static string phone = "";
         private int borderRadius = 20;
@@ -123,8 +122,8 @@ namespace TripleXManagement.ChildForm.Customer
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string sql = "exec editCustomer " + ID + ",N'" + txtName.Texts + "','" + txtCCCD.Texts + "','" + dtpBirthday.Value.ToString()
-                + "',N'" + txtAddress.Texts + "','" + txtPhone.Texts + "'";
+            string sql = "exec PCustomerEdit " + ID + ",N'" + txtName.Texts + "','" + txtCCCD.Texts + "',N'" + 
+                txtAddress.Texts + "','" + txtPhone.Texts + "'";
 
             if (txtCCCD.Texts != "" && txtCCCD.Texts != "" && txtName.Texts != "" && txtPhone.Texts != "")
             {
@@ -148,11 +147,7 @@ namespace TripleXManagement.ChildForm.Customer
             txtName.Texts = CustomerManagement.name;
             txtCCCD.Texts = CustomerManagement.CCCD;
             txtAddress.Texts = CustomerManagement.address;
-            birthday = CustomerManagement.birthday;
             txtPhone.Texts = CustomerManagement.phone;
-
-            DateTime dt = DateTime.ParseExact(birthday, "dd/MM/yyyy HH:mm:ss", StaticClass.SharedClass.cultureVN);
-            dtpBirthday.Value = dt;
         }
     }
 }

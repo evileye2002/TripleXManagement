@@ -117,7 +117,7 @@ namespace TripleXManagement.ChildForm.Customer
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string sql = "exec addCustomer N'" + txtName.Texts + "','" + txtCCCD.Texts + "','" + dtpBirthday.Value.ToString() + "',N'" + 
+            string sql = "exec PCustomerAdd N'" + txtName.Texts + "','" + txtCCCD.Texts + "',N'" + 
                             txtAddress.Texts + "','" + txtPhone.Texts + "'";
             if(txtCCCD.Texts != "" && txtCCCD.Texts != "" && txtName.Texts != "" && txtPhone.Texts != "")
             {
