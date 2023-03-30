@@ -9,7 +9,7 @@ namespace TripleXManagement.ChildForm.Bill
 {
     public partial class SelectCustomer : Form
     {
-        public static string StaffID = "";
+        public static string CustomerID = "";
         public static bool isBank = false;
         public static bool isHasCustomer = false;
         private Color borderColor = Color.FromArgb(98, 102, 244);
@@ -59,13 +59,18 @@ namespace TripleXManagement.ChildForm.Bill
         {
 
             var mainForm = Application.OpenForms.OfType<Bill>().Single();
-            mainForm.AddBill();
+            mainForm.AddBill(isBank,isHasCustomer,CustomerID);
             this.Close();
         }
 
         private void SelectCustomer_Load(object sender, EventArgs e)
         {
-
+            GetData();
+        }
+        private void GetData()
+        {
+            string sql = "exec getCustomer";
+            SharedClass.FillDGV(dgvCustomer, sql);
         }
 
         private void dgvCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -74,7 +79,9 @@ namespace TripleXManagement.ChildForm.Bill
             if (selectedRow == 1)
             {
                 int t = dgvCustomer.CurrentCell.RowIndex;
-                StaffID = dgvCustomer.Rows[t].Cells[2].Value.ToString();
+                CustomerID = dgvCustomer.Rows[t].Cells[0].Value.ToString();
+                txtName.Texts = dgvCustomer.Rows[t].Cells[1].Value.ToString();
+                rbNo.Checked = true;
             }
         }
 

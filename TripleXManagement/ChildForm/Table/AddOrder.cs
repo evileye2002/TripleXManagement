@@ -116,7 +116,7 @@ namespace TripleXManagement.ChildForm.Table
             TableID = TableManagement.TableID;
             lbTableName.Text = TableManagement.TableName;
             string sql = "exec getCustomer";
-            StaticClass.SharedClass.FillDGV(dgvCustomer, sql);
+            SharedClass.FillDGV(dgvCustomer, sql);
         }
 
         private void AddOrder_Load(object sender, EventArgs e)

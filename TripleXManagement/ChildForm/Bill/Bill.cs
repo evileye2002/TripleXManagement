@@ -126,21 +126,19 @@ namespace TripleXManagement.ChildForm.Bill
             if (e.KeyCode == Keys.Delete)
                 deleteDetail();
         }
-        public void AddBill()
+        public void AddBill(bool ba,bool hc,string cid)
         {
             int rowCount = dgvDetail.Rows.Count;
-            StaffID = SelectCustomer.StaffID;
-            isBank = SelectCustomer.isBank;
             string bank = "0";
-            if (isBank)
+            if (ba)
                 bank = "1";
-            isHasCustomer = SelectCustomer.isHasCustomer;
-            if (!isHasCustomer)
-                StaffID = "8";
+            if (!hc)
+                cid = "8";
+
             String sql = "";
             for (int i = 0; i < rowCount; i++)
             {
-                sql += @"exec addBill " + dgvDetail.Rows[i].Cells[0].Value.ToString() + ", " + bank + "','" + StaffID + " \n";
+                sql += @"exec addBill " + dgvDetail.Rows[i].Cells[0].Value.ToString() + ", " + bank + "," + StaffID + "," + cid + " \n";
             }
             SqlClass.RunSql(sql);
             dgvDetail.Rows.Clear();

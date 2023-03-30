@@ -1,6 +1,4 @@
 ﻿using CustomAlertBox;
-using System.Data;
-using System.Data.SqlClient;
 using System.Globalization;
 using TripleXManagement.StaticClass;
 
@@ -12,15 +10,9 @@ namespace TripleXManagement.ChildForm.Bill
         public static String BillID = "";
         public static double FinaTotal = 0;
         public static int IsBank = 0;
-        SqlConnection conn;
-        SqlCommand cmd;
         public BillManagement()
         {
             InitializeComponent();
-            conn = new SqlConnection
-            {
-                ConnectionString = @"Data Source=DESKTOP-J6D7SL6\SQLEXPRESS;Initial Catalog=TripleX;Integrated Security=True"
-            };
             this.dgvBill.Columns[2].DefaultCellStyle.Format = "c";
             dgvBill.Columns[2].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("vn-VN");
         }
@@ -47,17 +39,13 @@ namespace TripleXManagement.ChildForm.Bill
         }
         public void GetData()
         {
-            conn.Open();
             String sql = "exec getbill";
-            DataTable table = new DataTable();
-            SqlDataAdapter sda = new(sql, conn);
-            sda.Fill(table);
-            dgvBill.DataSource = table;
-            conn.Close();
+            SharedClass.FillDGV(dgvBill, sql);
         }
 
         private void BillManagement_Load(object sender, EventArgs e)
         {
+            SqlClass.Connect();
             GetData();
         }
 
