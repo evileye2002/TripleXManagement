@@ -33,7 +33,7 @@ namespace TripleXManagement
                     string password = table.Rows[0][1].ToString();
                     if (username == txtUserName.Texts && password == txtPassword.Texts)
                     {
-                        u = txtUserName.Text;
+                        u = username;
                         Form f = new MainForm();
                         f.Show();
                         this.Hide();

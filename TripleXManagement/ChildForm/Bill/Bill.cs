@@ -8,8 +8,8 @@ namespace TripleXManagement.ChildForm.Bill
     {
         public static string StaffID = "";
         public static string StaffName = "";
-        public static bool isBank = false;
-        public static bool isHasCustomer = false;
+        //public static bool isBank = false;
+        //public static bool isHasCustomer = false;
         private Form activateForm;
         double _total;
         double _price = 0;
@@ -126,19 +126,19 @@ namespace TripleXManagement.ChildForm.Bill
             if (e.KeyCode == Keys.Delete)
                 deleteDetail();
         }
-        public void AddBill(bool ba,bool hc,string cid)
+        public void AddBill(bool isBank, bool isHasCustomer,string CustumerID)
         {
             int rowCount = dgvDetail.Rows.Count;
             string bank = "0";
-            if (ba)
+            if (isBank)
                 bank = "1";
-            if (!hc)
-                cid = "8";
+            if (!isHasCustomer)
+                CustumerID = "8";
 
             String sql = "";
             for (int i = 0; i < rowCount; i++)
             {
-                sql += @"exec addBill " + dgvDetail.Rows[i].Cells[0].Value.ToString() + ", " + bank + "," + StaffID + "," + cid + " \n";
+                sql += @"exec addBill " + dgvDetail.Rows[i].Cells[0].Value.ToString() + ", " + bank + "," + StaffID + "," + CustumerID + " \n";
             }
             SqlClass.RunSql(sql);
             dgvDetail.Rows.Clear();

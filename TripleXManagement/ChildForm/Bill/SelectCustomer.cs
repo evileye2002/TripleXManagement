@@ -57,10 +57,15 @@ namespace TripleXManagement.ChildForm.Bill
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
-            var mainForm = Application.OpenForms.OfType<Bill>().Single();
-            mainForm.AddBill(isBank,isHasCustomer,CustomerID);
-            this.Close();
+            if (!rbHasCustomerYes.Checked)
+            {
+                var mainForm = Application.OpenForms.OfType<Bill>().Single();
+                mainForm.AddBill(isBank, isHasCustomer, CustomerID);
+                this.Close();
+            }
+            else
+                SharedClass.Alert("Chưa Chọn Khách Hàng!",Form_Alert.enmType.Warning);
+            
         }
 
         private void SelectCustomer_Load(object sender, EventArgs e)

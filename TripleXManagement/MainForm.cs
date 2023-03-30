@@ -235,12 +235,7 @@ namespace TripleXManagement
         {
             u = LoginForm.u;
             string sql = "exec getStaffbyUsername '" + u + "'";
-            SqlDataReader reader = SqlClass.Reader(sql);
-            while (reader.Read())
-            {
-                StaffID = reader["ID"].ToString();
-            }
-            reader.Close();
+            StaffID = SqlClass.GetOneValue(sql);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
