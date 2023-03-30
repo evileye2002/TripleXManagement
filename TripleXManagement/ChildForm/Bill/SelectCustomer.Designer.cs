@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnClose = new TripleXManagement.CustomControl.RJButton();
             this.btnSave = new TripleXManagement.CustomControl.RJButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.rbYes2 = new TripleXManagement.CustomControl.CRadioButton();
-            this.rbNo2 = new TripleXManagement.CustomControl.CRadioButton();
+            this.rbBackNo = new TripleXManagement.CustomControl.CRadioButton();
+            this.rbBankYes = new TripleXManagement.CustomControl.CRadioButton();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.rbYes = new TripleXManagement.CustomControl.CRadioButton();
-            this.rbNo = new TripleXManagement.CustomControl.CRadioButton();
+            this.rbHasCustomerNO = new TripleXManagement.CustomControl.CRadioButton();
+            this.rbHasCustomerYes = new TripleXManagement.CustomControl.CRadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbTableName = new System.Windows.Forms.Label();
             this.txtName = new TripleXManagement.CustomControl.Textbox();
@@ -151,96 +151,96 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel4.Controls.Add(this.rbYes2);
-            this.panel4.Controls.Add(this.rbNo2);
+            this.panel4.Controls.Add(this.rbBackNo);
+            this.panel4.Controls.Add(this.rbBankYes);
             this.panel4.Location = new System.Drawing.Point(517, 253);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(164, 69);
             this.panel4.TabIndex = 29;
             // 
-            // rbYes2
+            // rbBackNo
             // 
-            this.rbYes2.AutoSize = true;
-            this.rbYes2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.rbYes2.Checked = true;
-            this.rbYes2.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            this.rbYes2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rbYes2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.rbYes2.Location = new System.Drawing.Point(15, 3);
-            this.rbYes2.MinimumSize = new System.Drawing.Size(0, 21);
-            this.rbYes2.Name = "rbYes2";
-            this.rbYes2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbYes2.Size = new System.Drawing.Size(95, 23);
-            this.rbYes2.TabIndex = 0;
-            this.rbYes2.TabStop = true;
-            this.rbYes2.Text = "Tiền Mặt";
-            this.rbYes2.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.rbYes2.UseVisualStyleBackColor = false;
-            this.rbYes2.CheckedChanged += new System.EventHandler(this.rbYes2_CheckedChanged);
+            this.rbBackNo.AutoSize = true;
+            this.rbBackNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.rbBackNo.Checked = true;
+            this.rbBackNo.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.rbBackNo.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rbBackNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.rbBackNo.Location = new System.Drawing.Point(15, 3);
+            this.rbBackNo.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rbBackNo.Name = "rbBackNo";
+            this.rbBackNo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.rbBackNo.Size = new System.Drawing.Size(95, 23);
+            this.rbBackNo.TabIndex = 0;
+            this.rbBackNo.TabStop = true;
+            this.rbBackNo.Text = "Tiền Mặt";
+            this.rbBackNo.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.rbBackNo.UseVisualStyleBackColor = false;
+            this.rbBackNo.CheckedChanged += new System.EventHandler(this.rbYes2_CheckedChanged);
             // 
-            // rbNo2
+            // rbBankYes
             // 
-            this.rbNo2.AutoSize = true;
-            this.rbNo2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.rbNo2.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            this.rbNo2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rbNo2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.rbNo2.Location = new System.Drawing.Point(14, 39);
-            this.rbNo2.MinimumSize = new System.Drawing.Size(0, 21);
-            this.rbNo2.Name = "rbNo2";
-            this.rbNo2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbNo2.Size = new System.Drawing.Size(141, 23);
-            this.rbNo2.TabIndex = 0;
-            this.rbNo2.Text = "Thẻ Ngân Hàng";
-            this.rbNo2.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.rbNo2.UseVisualStyleBackColor = false;
+            this.rbBankYes.AutoSize = true;
+            this.rbBankYes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.rbBankYes.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.rbBankYes.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rbBankYes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.rbBankYes.Location = new System.Drawing.Point(14, 39);
+            this.rbBankYes.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rbBankYes.Name = "rbBankYes";
+            this.rbBankYes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.rbBankYes.Size = new System.Drawing.Size(141, 23);
+            this.rbBankYes.TabIndex = 0;
+            this.rbBankYes.Text = "Thẻ Ngân Hàng";
+            this.rbBankYes.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.rbBankYes.UseVisualStyleBackColor = false;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel3.Controls.Add(this.rbYes);
-            this.panel3.Controls.Add(this.rbNo);
+            this.panel3.Controls.Add(this.rbHasCustomerNO);
+            this.panel3.Controls.Add(this.rbHasCustomerYes);
             this.panel3.Location = new System.Drawing.Point(517, 159);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(164, 69);
             this.panel3.TabIndex = 29;
             // 
-            // rbYes
+            // rbHasCustomerNO
             // 
-            this.rbYes.AutoSize = true;
-            this.rbYes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.rbYes.Checked = true;
-            this.rbYes.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            this.rbYes.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rbYes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.rbYes.Location = new System.Drawing.Point(15, 3);
-            this.rbYes.MinimumSize = new System.Drawing.Size(0, 21);
-            this.rbYes.Name = "rbYes";
-            this.rbYes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbYes.Size = new System.Drawing.Size(96, 23);
-            this.rbYes.TabIndex = 0;
-            this.rbYes.TabStop = true;
-            this.rbYes.Text = "Khách Lẻ";
-            this.rbYes.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.rbYes.UseVisualStyleBackColor = false;
-            this.rbYes.CheckedChanged += new System.EventHandler(this.rbYes_CheckedChanged);
+            this.rbHasCustomerNO.AutoSize = true;
+            this.rbHasCustomerNO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.rbHasCustomerNO.Checked = true;
+            this.rbHasCustomerNO.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.rbHasCustomerNO.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rbHasCustomerNO.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.rbHasCustomerNO.Location = new System.Drawing.Point(15, 3);
+            this.rbHasCustomerNO.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rbHasCustomerNO.Name = "rbHasCustomerNO";
+            this.rbHasCustomerNO.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.rbHasCustomerNO.Size = new System.Drawing.Size(96, 23);
+            this.rbHasCustomerNO.TabIndex = 0;
+            this.rbHasCustomerNO.TabStop = true;
+            this.rbHasCustomerNO.Text = "Khách Lẻ";
+            this.rbHasCustomerNO.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.rbHasCustomerNO.UseVisualStyleBackColor = false;
+            this.rbHasCustomerNO.CheckedChanged += new System.EventHandler(this.rbYes_CheckedChanged);
             // 
-            // rbNo
+            // rbHasCustomerYes
             // 
-            this.rbNo.AutoSize = true;
-            this.rbNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.rbNo.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            this.rbNo.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rbNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.rbNo.Location = new System.Drawing.Point(14, 39);
-            this.rbNo.MinimumSize = new System.Drawing.Size(0, 21);
-            this.rbNo.Name = "rbNo";
-            this.rbNo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbNo.Size = new System.Drawing.Size(99, 23);
-            this.rbNo.TabIndex = 0;
-            this.rbNo.Text = "Không Lẻ";
-            this.rbNo.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.rbNo.UseVisualStyleBackColor = false;
+            this.rbHasCustomerYes.AutoSize = true;
+            this.rbHasCustomerYes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.rbHasCustomerYes.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.rbHasCustomerYes.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rbHasCustomerYes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.rbHasCustomerYes.Location = new System.Drawing.Point(14, 39);
+            this.rbHasCustomerYes.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rbHasCustomerYes.Name = "rbHasCustomerYes";
+            this.rbHasCustomerYes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.rbHasCustomerYes.Size = new System.Drawing.Size(99, 23);
+            this.rbHasCustomerYes.TabIndex = 0;
+            this.rbHasCustomerYes.Text = "Không Lẻ";
+            this.rbHasCustomerYes.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.rbHasCustomerYes.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
@@ -296,14 +296,14 @@
             this.dgvCustomer.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCustomer.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
             this.dgvCustomer.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCustomer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCustomer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvCustomer.ColumnHeadersHeight = 30;
             this.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -313,14 +313,14 @@
             this.Column1,
             this.Column4,
             this.Column3});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCustomer.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCustomer.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvCustomer.EnableHeadersVisualStyles = false;
             this.dgvCustomer.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.dgvCustomer.Location = new System.Drawing.Point(30, 52);
@@ -347,12 +347,12 @@
             // 
             this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column6.DataPropertyName = "Name";
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle6;
             this.Column6.HeaderText = "Tên";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
@@ -367,12 +367,12 @@
             // Column1
             // 
             this.Column1.DataPropertyName = "CCCD";
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle7;
             this.Column1.HeaderText = "CCCD";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -436,11 +436,11 @@
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column3;
         private Panel panel3;
-        private CustomControl.CRadioButton rbYes;
-        private CustomControl.CRadioButton rbNo;
+        private CustomControl.CRadioButton rbHasCustomerNO;
+        private CustomControl.CRadioButton rbHasCustomerYes;
         private Panel panel4;
-        private CustomControl.CRadioButton rbYes2;
-        private CustomControl.CRadioButton rbNo2;
+        private CustomControl.CRadioButton rbBackNo;
+        private CustomControl.CRadioButton rbBankYes;
         private Label label2;
         private Label label1;
     }

@@ -40,8 +40,8 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnFooter.SuspendLayout();
             this.pnMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).BeginInit();
@@ -116,8 +116,8 @@
             this.Column1,
             this.Column2,
             this.Column3,
-            this.Column5,
-            this.Column4});
+            this.Column4,
+            this.Column5});
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -183,13 +183,6 @@
             this.Column3.ReadOnly = true;
             this.Column3.Width = 200;
             // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "StaffName";
-            this.Column5.HeaderText = "Thu Ngân";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
             // Column4
             // 
             this.Column4.DataPropertyName = "isBank";
@@ -197,6 +190,13 @@
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             this.Column4.Visible = false;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "StaffName";
+            this.Column5.HeaderText = "Thu Ngân";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // BillManagement
             // 
@@ -227,7 +227,7 @@
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
     }
 }

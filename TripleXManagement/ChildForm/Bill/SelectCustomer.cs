@@ -81,21 +81,24 @@ namespace TripleXManagement.ChildForm.Bill
                 int t = dgvCustomer.CurrentCell.RowIndex;
                 CustomerID = dgvCustomer.Rows[t].Cells[0].Value.ToString();
                 txtName.Texts = dgvCustomer.Rows[t].Cells[1].Value.ToString();
-                rbNo.Checked = true;
+                rbHasCustomerYes.Checked = true;
             }
         }
 
         private void rbYes_CheckedChanged(object sender, EventArgs e)
         {
-            if(rbYes.Checked)
+            if (rbHasCustomerNO.Checked)
+            {
+                txtName.Texts = "";
                 isHasCustomer = false;
+            }
             else
                 isHasCustomer = true;
         }
 
         private void rbYes2_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbYes2.Checked)
+            if (rbBackNo.Checked)
                 isBank = false;
             else
                 isBank = true;
