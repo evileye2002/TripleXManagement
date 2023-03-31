@@ -48,30 +48,44 @@ namespace TripleXManagement.ChildForm.Staff
         {
             if(txtCCCD.Texts != "" && txtName.Texts != "" && txtPhone.Texts != "")
             {
-                try
-                {
-                    MemoryStream ms = new MemoryStream();
-                    pbPic.BackgroundImage.Save(ms, ImageFormat.Jpeg);
-                    byte[] array = ms.GetBuffer();
-
-                    cmd = new SqlCommand("exec PStaffAdd @Name, @CCCD, @Phone, @Image,@Regency, @Account", conn);
-                    cmd.Parameters.AddWithValue("@Name", txtName.Texts);
-                    cmd.Parameters.AddWithValue("@CCCD", txtCCCD.Texts);
-                    cmd.Parameters.AddWithValue("@Phone", txtPhone.Texts);
-                    cmd.Parameters.AddWithValue("@Regency", cbRegency.Texts);
-                    cmd.Parameters.AddWithValue("@Account", cbAccount.Texts);
-                    cmd.Parameters.AddWithValue("@Image", array);
-                    cmd.ExecuteNonQuery();
-
-                    clear();
-                    var mainForm = Application.OpenForms.OfType<StaffManagement>().Single();
-                    mainForm.GetData();
-                    SharedClass.Alert("Lưu Thành Công!", Form_Alert.enmType.Success);
-                }
-                catch
-                {
+                if (txtCCCD.Texts.Length > 12 || txtCCCD.Texts.Length < 12)
+                    SharedClass.Alert("CCCD Không Đúng\n12 Kí Tự!", Form_Alert.enmType.Error);
+                else if (txtPhone.Texts.Length > 10 || txtPhone.Texts.Length < 10)
+                    SharedClass.Alert("Số Điện Thoại Không Đúng\n10 Kí Tự!", Form_Alert.enmType.Error);
+                else if(long.TryParse(txtCCCD.Texts,out long a) != true)
+                    SharedClass.Alert("CCCD Không Đúng\nĐịnh Dạng!", Form_Alert.enmType.Error);
+                else if (long.TryParse(txtPhone.Texts, out long b) != true)
+                    SharedClass.Alert("Số Điện Thoại Không Đúng\nĐịnh Dạng!", Form_Alert.enmType.Error);
+                else if (pbPic.Image == null)
                     SharedClass.Alert("Chưa Chọn Ảnh!", Form_Alert.enmType.Error);
+                else
+                {
+                    var mainForm = Application.OpenForms.OfType<StaffManagement>().Single();
+                    try
+                    {
+                        MemoryStream ms = new MemoryStream();
+                        pbPic.BackgroundImage.Save(ms, ImageFormat.Jpeg);
+                        byte[] array = ms.GetBuffer();
+
+                        cmd = new SqlCommand("exec PStaffAdd @Name, @CCCD, @Phone, @Image,@Regency, @Account", conn);
+                        cmd.Parameters.AddWithValue("@Name", txtName.Texts);
+                        cmd.Parameters.AddWithValue("@CCCD", txtCCCD.Texts);
+                        cmd.Parameters.AddWithValue("@Phone", txtPhone.Texts);
+                        cmd.Parameters.AddWithValue("@Regency", cbRegency.Texts);
+                        cmd.Parameters.AddWithValue("@Account", cbAccount.Texts);
+                        cmd.Parameters.AddWithValue("@Image", array);
+                        cmd.ExecuteNonQuery();
+
+                        clear();
+                        mainForm.GetData();
+                        SharedClass.Alert("Lưu Thành Công!", Form_Alert.enmType.Success);
+                    }
+                    catch (Exception ex)
+                    {
+                        CMessageBox.Show(ex.ToString(), "Có gì đó không đúng!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
+                
             }
             else
                 SharedClass.Alert("Chưa Nhập Dữ Liệu!", Form_Alert.enmType.Warning);
@@ -142,6 +156,11 @@ namespace TripleXManagement.ChildForm.Staff
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtPhone__TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

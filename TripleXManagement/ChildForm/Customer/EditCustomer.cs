@@ -126,10 +126,29 @@ namespace TripleXManagement.ChildForm.Customer
 
             if (txtCCCD.Texts != "" && txtCCCD.Texts != "" && txtName.Texts != "" && txtPhone.Texts != "")
             {
-                SqlClass.RunSql(sql);
-                SharedClass.Alert("Sửa Thành Công!", Form_Alert.enmType.Success);
-                var mainForm = Application.OpenForms.OfType<CustomerManagement>().Single();
-                mainForm.GetData();
+                if (txtCCCD.Texts.Length > 12 || txtCCCD.Texts.Length < 12)
+                    SharedClass.Alert("CCCD Không Đúng\n12 Kí Tự!", Form_Alert.enmType.Error);
+                else if (txtPhone.Texts.Length > 10 || txtPhone.Texts.Length < 10)
+                    SharedClass.Alert("Số Điện Thoại Không Đúng\n10 Kí Tự!", Form_Alert.enmType.Error);
+                else if (long.TryParse(txtCCCD.Texts, out long a) != true)
+                    SharedClass.Alert("CCCD Không Đúng\nĐịnh Dạng!", Form_Alert.enmType.Error);
+                else if (long.TryParse(txtPhone.Texts, out long b) != true)
+                    SharedClass.Alert("Số Điện Thoại Không Đúng\nĐịnh Dạng!", Form_Alert.enmType.Error);
+                else
+                {
+                    var mainForm = Application.OpenForms.OfType<CustomerManagement>().Single();
+                    try
+                    {
+                        SqlClass.RunSql(sql);
+                        mainForm.GetData();
+                        SharedClass.Alert("Sửa Thành Công!", Form_Alert.enmType.Success);
+                        GetData();
+                    }
+                    catch (Exception ex)
+                    {
+                        CMessageBox.Show(ex.ToString(), "Có gì đó không đúng!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
             else
                 SharedClass.Alert("Chưa Nhập Dữ Liệu!", Form_Alert.enmType.Warning);

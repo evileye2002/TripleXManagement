@@ -4,14 +4,14 @@ namespace TripleXManagement.ChildForm.Staff
 {
     public partial class StaffManagement : Form
     {
-        public static string? ID = "";
+        public static string ID = "";
         public StaffManagement()
         {
             InitializeComponent();
         }
         public void GetData()
         {
-            ID = "";
+            //ID = "";
             SharedClass.FillDGV(dgvStaff, "exec PStaffShow");
         }
 

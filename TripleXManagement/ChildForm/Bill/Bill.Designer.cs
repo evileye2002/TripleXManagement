@@ -80,9 +80,9 @@ namespace TripleXManagement.ChildForm.Bill
             this.btnBillManagement.Location = new System.Drawing.Point(136, 5);
             this.btnBillManagement.Name = "btnBillManagement";
             this.btnBillManagement.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnBillManagement.Size = new System.Drawing.Size(100, 40);
+            this.btnBillManagement.Size = new System.Drawing.Size(118, 40);
             this.btnBillManagement.TabIndex = 2;
-            this.btnBillManagement.Text = "Thêm";
+            this.btnBillManagement.Text = "Hóa Đơn";
             this.btnBillManagement.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.btnBillManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBillManagement.UseVisualStyleBackColor = false;

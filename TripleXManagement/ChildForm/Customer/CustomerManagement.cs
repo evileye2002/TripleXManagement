@@ -23,7 +23,7 @@ namespace TripleXManagement.ChildForm.Customer
         }
         public void GetData()
         {
-            ID = "";
+            //ID = "";
             regency = MainForm.regency;
             if (regency != "admin")
                 btnEdit.Visible = false;
@@ -96,6 +96,8 @@ namespace TripleXManagement.ChildForm.Customer
 
                     GetData();
                 }
+                else
+                    SharedClass.Alert("Bạn Không Có Quyền Hạn Này!", Form_Alert.enmType.Warning);
             }
         }
     }

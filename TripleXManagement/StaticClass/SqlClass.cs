@@ -58,6 +58,7 @@ namespace TripleXManagement.StaticClass
             return kq;
         }
 
+        //Reader
         public static SqlDataReader Reader(string sql)
         {
             SqlCommand cmd = new SqlCommand(sql, Connection);
@@ -68,6 +69,7 @@ namespace TripleXManagement.StaticClass
             return rd;
         }
 
+        //Dataset
         public static DataSet DataSet(string sql)
         {
             SqlDataAdapter dataAdapter = new SqlDataAdapter(new SqlCommand(sql, Connection));
@@ -84,9 +86,9 @@ namespace TripleXManagement.StaticClass
                 RunSql(sql);
                 SharedClass.Alert("Xóa Thành Công!", Form_Alert.enmType.Success);
             }
-            catch
+            catch (Exception ex)
             {
-                SharedClass.Alert("Dữ Liệu Đang Được Sử Dụng\nKhông Thể Xoá!", Form_Alert.enmType.Error);
+                CMessageBox.Show(ex.ToString(), "Có gì đó không đúng!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         #endregion

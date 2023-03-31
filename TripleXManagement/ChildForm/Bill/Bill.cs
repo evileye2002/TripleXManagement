@@ -197,7 +197,7 @@ namespace TripleXManagement.ChildForm.Bill
 
         private void btnBillManagement_MouseLeave(object sender, EventArgs e)
         {
-            SharedClass.HoverBtnState(btnBillManagement, Resources.bonds_20px1, false);
+            SharedClass.HoverBtnState(btnBillManagement, Resources.bonds_20px, false);
         }
 
         private void btnAddBill_MouseEnter(object sender, EventArgs e)

@@ -175,6 +175,7 @@
             this.txtPhone.TabIndex = 2;
             this.txtPhone.Texts = "";
             this.txtPhone.UnderlinedStyle = true;
+            this.txtPhone._TextChanged += new System.EventHandler(this.txtPhone__TextChanged);
             // 
             // ofdBrowse
             // 

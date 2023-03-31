@@ -66,6 +66,8 @@ namespace TripleXManagement.ChildForm.Food
 
                     GetData();
                 }
+                else
+                    SharedClass.Alert("Bạn Không Có Quyền Hạn Này!", Form_Alert.enmType.Warning);
             }
         }
 
