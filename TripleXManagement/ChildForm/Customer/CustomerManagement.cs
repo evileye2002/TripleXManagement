@@ -27,7 +27,7 @@ namespace TripleXManagement.ChildForm.Customer
             regency = MainForm.regency;
             if (regency != "admin")
                 btnEdit.Visible = false;
-            string sql = "exec PCustomerShow";
+            string sql = "select * from TCustomer";
             SharedClass.FillDGV(dgvCustomer, sql);
         }
 

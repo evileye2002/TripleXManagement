@@ -115,7 +115,7 @@ namespace TripleXManagement.ChildForm.Table
             regency = MainForm.regency;
             TableID = TableManagement.TableID;
             lbTableName.Text = TableManagement.TableName;
-            string sql = "exec PCustomerShow";
+            string sql = "select * from TCustomer";
             SharedClass.FillDGV(dgvCustomer, sql);
         }
 
