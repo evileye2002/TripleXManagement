@@ -83,7 +83,7 @@
             this.btnCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomer.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCustomer.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnCustomer.Image = global::TripleXManagement.Properties.Resources.coffee_table_32px;
+            this.btnCustomer.Image = global::TripleXManagement.Properties.Resources.budget_32px;
             this.btnCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCustomer.Location = new System.Drawing.Point(0, 296);
             this.btnCustomer.Name = "btnCustomer";
