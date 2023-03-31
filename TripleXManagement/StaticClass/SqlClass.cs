@@ -88,7 +88,8 @@ namespace TripleXManagement.StaticClass
             }
             catch (Exception ex)
             {
-                CMessageBox.Show(ex.ToString(), "Có gì đó không đúng!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //CMessageBox.Show(ex.ToString(), "Có gì đó không đúng!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CMessageBox.Show("Bản Ghi Này Đang Được Lưu Ở CSDL Khác...\nKhông Thể Xóa!", "Có Gì Đó Không Đúng!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         #endregion

@@ -248,6 +248,7 @@
             this.txtName.TabIndex = 0;
             this.txtName.Texts = "";
             this.txtName.UnderlinedStyle = true;
+            this.txtName.Click += new System.EventHandler(this.txtName_Click);
             // 
             // txtPhone
             // 
@@ -269,6 +270,7 @@
             this.txtPhone.TabIndex = 2;
             this.txtPhone.Texts = "";
             this.txtPhone.UnderlinedStyle = true;
+            this.txtPhone.Click += new System.EventHandler(this.txtPhone_Click);
             // 
             // txtCCCD
             // 
@@ -290,6 +292,7 @@
             this.txtCCCD.TabIndex = 1;
             this.txtCCCD.Texts = "";
             this.txtCCCD.UnderlinedStyle = true;
+            this.txtCCCD.Click += new System.EventHandler(this.txtCCCD_Click);
             // 
             // btnSave
             // 

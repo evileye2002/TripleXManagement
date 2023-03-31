@@ -83,6 +83,7 @@ namespace TripleXManagement.ChildForm.Table
                 SharedClass.Alert("Lưu Thành Công!", Form_Alert.enmType.Success);
                 var mainForm = Application.OpenForms.OfType<TableManagement>().Single();
                 mainForm.GetData();
+                this.Close();
             }
             else
                 SharedClass.Alert("Chưa Chọn Khách Hàng!", Form_Alert.enmType.Warning);
@@ -134,17 +135,10 @@ namespace TripleXManagement.ChildForm.Table
                 if (TableID != "")
                 {
                     var mainForm = Application.OpenForms.OfType<TableManagement>().Single();
-                    try
-                    {
-                        SqlClass.RunSql(sql);
+                    SqlClass.RunSqlDel(sql);
                         
-                        mainForm.GetData();
-                        this.Close();
-                    }
-                    catch
-                    {
-                        DialogResult dialogResult = CMessageBox.Show("Bàn " + lbTableName.Text + " Này Đang Được Lưu Ở CSDL Khác...\nKhông Thể Xóa!", "Thông Báo!", MessageBoxButtons.OK,MessageBoxIcon.Warning);
-                    }
+                    mainForm.GetData();
+                    this.Close();
                 }
             }
         }

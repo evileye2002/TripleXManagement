@@ -10,6 +10,9 @@ namespace TripleXManagement.ChildForm.Staff
     public partial class EditStaff : Form
     {
         public static string ID = "";
+        private string name = "";
+        private string cccd = "";
+        private string phone = "";
         private int borderRadius = 20;
         private int borderSize = 2;
         private Color borderColor = Color.FromArgb(98, 102, 244);
@@ -47,8 +50,11 @@ namespace TripleXManagement.ChildForm.Staff
                 pbPic.BackgroundImage = bitmap;
 
                 txtName.Texts = reader["SName"].ToString();
+                name = reader["SName"].ToString();
                 txtCCCD.Texts = reader["CCCD"].ToString();
+                cccd = reader["CCCD"].ToString();
                 txtPhone.Texts = reader["SPhone"].ToString();
+                phone = reader["SPhone"].ToString();
                 cbRegency.Texts = reader["Regency"].ToString();
                 cbAccount.Texts = reader["Username"].ToString();
             }
@@ -71,7 +77,7 @@ namespace TripleXManagement.ChildForm.Staff
                     SharedClass.Alert("CCCD Không Đúng\nĐịnh Dạng!", Form_Alert.enmType.Error);
                 else if (long.TryParse(txtPhone.Texts, out long b) != true)
                     SharedClass.Alert("Số Điện Thoại Không Đúng\nĐịnh Dạng!", Form_Alert.enmType.Error);
-                else if (pbPic.Image == null)
+                else if (pbPic.BackgroundImage == null)
                     SharedClass.Alert("Chưa Chọn Ảnh!", Form_Alert.enmType.Error);
                 else
                 {
@@ -233,6 +239,21 @@ namespace TripleXManagement.ChildForm.Staff
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtName_Click(object sender, EventArgs e)
+        {
+            txtName.Texts = name;
+        }
+
+        private void txtCCCD_Click(object sender, EventArgs e)
+        {
+            txtCCCD.Texts = cccd;
+        }
+
+        private void txtPhone_Click(object sender, EventArgs e)
+        {
+            txtPhone.Texts = phone;
         }
     }
 }

@@ -9,6 +9,8 @@ namespace TripleXManagement.ChildForm.Food
     public partial class EditFood : Form
     {
         public static string ID = "";
+        private string name = "";
+        public static string price = "";
         SqlConnection conn;
         SqlCommand? cmd;
         SqlDataReader reader;
@@ -27,26 +29,33 @@ namespace TripleXManagement.ChildForm.Food
         {
             if(txtName.Texts != "" && txtPrice.Texts != "")
             {
-                try
-                {
-                    MemoryStream ms = new MemoryStream();
-                    pbPic.BackgroundImage.Save(ms, ImageFormat.Jpeg);
-                    byte[] array = ms.GetBuffer();
-                    cmd = new SqlCommand("exec PFoodEditByID @ID, @Name, @Price, @Image", conn);
-                    cmd.Parameters.AddWithValue("@ID", ID);
-                    cmd.Parameters.AddWithValue("@Name", txtName.Texts);
-                    cmd.Parameters.AddWithValue("@Price", int.Parse(txtPrice.Texts));
-                    cmd.Parameters.AddWithValue("@Image", array);
-                    cmd.ExecuteNonQuery();
-
-                    GetData();
-                    var mainForm = Application.OpenForms.OfType<FoodManagement>().Single();
-                    mainForm.GetData();
-                    SharedClass.Alert("Sửa Thành Công!", Form_Alert.enmType.Success);
-                }
-                catch
-                {
+                if (int.TryParse(txtPrice.Texts, out int a) != true)
+                    SharedClass.Alert("Giá Không Đúng\nĐịnh Dạng!", Form_Alert.enmType.Error);
+                else if (pbPic.BackgroundImage == null)
                     SharedClass.Alert("Chưa Chọn Ảnh!", Form_Alert.enmType.Error);
+                else
+                {
+                    try
+                    {
+                        MemoryStream ms = new MemoryStream();
+                        pbPic.BackgroundImage.Save(ms, ImageFormat.Jpeg);
+                        byte[] array = ms.GetBuffer();
+                        cmd = new SqlCommand("exec PFoodEditByID @ID, @Name, @Price, @Image", conn);
+                        cmd.Parameters.AddWithValue("@ID", ID);
+                        cmd.Parameters.AddWithValue("@Name", txtName.Texts);
+                        cmd.Parameters.AddWithValue("@Price", int.Parse(txtPrice.Texts));
+                        cmd.Parameters.AddWithValue("@Image", array);
+                        cmd.ExecuteNonQuery();
+
+                        GetData();
+                        var mainForm = Application.OpenForms.OfType<FoodManagement>().Single();
+                        mainForm.GetData();
+                        SharedClass.Alert("Sửa Thành Công!", Form_Alert.enmType.Success);
+                    }
+                    catch (Exception ex)
+                    {
+                        CMessageBox.Show(ex.ToString(), "Có gì đó không đúng!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             else
@@ -74,7 +83,9 @@ namespace TripleXManagement.ChildForm.Food
                 pbPic.BackgroundImage = bitmap;
 
                 txtName.Texts = reader["FName"].ToString();
+                name = reader["FName"].ToString();
                 txtPrice.Texts = reader["FPrice"].ToString();
+                price = reader["FPrice"].ToString();
             }
             reader.Close();
         }
@@ -134,6 +145,16 @@ namespace TripleXManagement.ChildForm.Food
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtName_Click(object sender, EventArgs e)
+        {
+            txtName.Texts = name;
+        }
+
+        private void txtPrice_Click(object sender, EventArgs e)
+        {
+            txtPrice.Texts = price;
         }
     }
 }

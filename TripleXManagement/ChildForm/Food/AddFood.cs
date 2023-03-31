@@ -32,36 +32,35 @@ namespace TripleXManagement.ChildForm.Food
             }
         }
 
-        private void clear()
-        {
-            txtName.Texts = "";
-            txtPrice.Texts = "";
-            pbPic.BackgroundImage = null;
-        }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (txtName.Texts != "" && txtPrice.Texts != "")
             {
-                try
-                {
-                    MemoryStream ms = new MemoryStream();
-                    pbPic.BackgroundImage.Save(ms, ImageFormat.Jpeg);
-                    byte[] array = ms.GetBuffer();
-                    cmd = new SqlCommand("exec PFoodAdd @Name, @Price, @Image", conn);
-                    cmd.Parameters.AddWithValue("@Name", txtName.Texts);
-                    cmd.Parameters.AddWithValue("@Price", int.Parse(txtPrice.Texts));
-                    cmd.Parameters.AddWithValue("@Image", array);
-                    cmd.ExecuteNonQuery();
-
-                    clear();
-                    var mainForm = Application.OpenForms.OfType<FoodManagement>().Single();
-                    mainForm.GetData();
-                    SharedClass.Alert("Lưu Thành Công!", Form_Alert.enmType.Success);
-                }
-                catch
-                {
+                if (int.TryParse(txtPrice.Texts, out int a) != true)
+                    SharedClass.Alert("Giá Không Đúng\nĐịnh Dạng!", Form_Alert.enmType.Error);
+                else if (pbPic.BackgroundImage == null)
                     SharedClass.Alert("Chưa Chọn Ảnh!", Form_Alert.enmType.Error);
+                else
+                {
+                    try
+                    {
+                        MemoryStream ms = new MemoryStream();
+                        pbPic.BackgroundImage.Save(ms, ImageFormat.Jpeg);
+                        byte[] array = ms.GetBuffer();
+                        cmd = new SqlCommand("exec PFoodAdd @Name, @Price, @Image", conn);
+                        cmd.Parameters.AddWithValue("@Name", txtName.Texts);
+                        cmd.Parameters.AddWithValue("@Price", int.Parse(txtPrice.Texts));
+                        cmd.Parameters.AddWithValue("@Image", array);
+                        cmd.ExecuteNonQuery();
+
+                        var mainForm = Application.OpenForms.OfType<FoodManagement>().Single();
+                        mainForm.GetData();
+                        SharedClass.Alert("Lưu Thành Công!", Form_Alert.enmType.Success);
+                    }
+                    catch (Exception ex)
+                    {
+                        CMessageBox.Show(ex.ToString(), "Có gì đó không đúng!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             else

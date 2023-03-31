@@ -127,6 +127,7 @@
             this.txtAddress.TabIndex = 3;
             this.txtAddress.Texts = "";
             this.txtAddress.UnderlinedStyle = true;
+            this.txtAddress.Click += new System.EventHandler(this.txtAddress_Click);
             // 
             // txtPhone
             // 
@@ -148,6 +149,7 @@
             this.txtPhone.TabIndex = 1;
             this.txtPhone.Texts = "";
             this.txtPhone.UnderlinedStyle = true;
+            this.txtPhone.Click += new System.EventHandler(this.txtPhone_Click);
             // 
             // panel1
             // 
@@ -192,6 +194,7 @@
             this.txtCCCD.TabIndex = 2;
             this.txtCCCD.Texts = "";
             this.txtCCCD.UnderlinedStyle = true;
+            this.txtCCCD.Click += new System.EventHandler(this.txtCCCD_Click);
             // 
             // txtName
             // 
@@ -213,6 +216,7 @@
             this.txtName.TabIndex = 0;
             this.txtName.Texts = "";
             this.txtName.UnderlinedStyle = true;
+            this.txtName.Click += new System.EventHandler(this.txtName_Click);
             // 
             // EditCustomer
             // 

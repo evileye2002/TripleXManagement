@@ -167,5 +167,25 @@ namespace TripleXManagement.ChildForm.Customer
             txtAddress.Texts = CustomerManagement.address;
             txtPhone.Texts = CustomerManagement.phone;
         }
+
+        private void txtName_Click(object sender, EventArgs e)
+        {
+            txtName.Texts = CustomerManagement.name;
+        }
+
+        private void txtCCCD_Click(object sender, EventArgs e)
+        {
+            txtCCCD.Texts = CustomerManagement.CCCD;
+        }
+
+        private void txtPhone_Click(object sender, EventArgs e)
+        {
+            txtPhone.Texts = CustomerManagement.phone;
+        }
+
+        private void txtAddress_Click(object sender, EventArgs e)
+        {
+            txtAddress.Texts = CustomerManagement.address;
+        }
     }
 }

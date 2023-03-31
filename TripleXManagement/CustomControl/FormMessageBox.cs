@@ -246,7 +246,7 @@ public partial class FormMessageBox : Form
         switch (icon)
         {
             case MessageBoxIcon.Error: //Error
-                this.pictureBoxIcon.Image = Resources.error;
+                this.pictureBoxIcon.Image = Resources.error1;
                 PrimaryColor = Color.FromArgb(224, 79, 95);
                 this.btnClose.FlatAppearance.MouseOverBackColor = Color.Crimson;
                 break;

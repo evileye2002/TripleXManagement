@@ -56,7 +56,7 @@ namespace TripleXManagement.ChildForm.Staff
                     SharedClass.Alert("CCCD Không Đúng\nĐịnh Dạng!", Form_Alert.enmType.Error);
                 else if (long.TryParse(txtPhone.Texts, out long b) != true)
                     SharedClass.Alert("Số Điện Thoại Không Đúng\nĐịnh Dạng!", Form_Alert.enmType.Error);
-                else if (pbPic.Image == null)
+                else if (pbPic.BackgroundImage == null)
                     SharedClass.Alert("Chưa Chọn Ảnh!", Form_Alert.enmType.Error);
                 else
                 {
@@ -76,7 +76,6 @@ namespace TripleXManagement.ChildForm.Staff
                         cmd.Parameters.AddWithValue("@Image", array);
                         cmd.ExecuteNonQuery();
 
-                        clear();
                         mainForm.GetData();
                         SharedClass.Alert("Lưu Thành Công!", Form_Alert.enmType.Success);
                     }
@@ -89,13 +88,6 @@ namespace TripleXManagement.ChildForm.Staff
             }
             else
                 SharedClass.Alert("Chưa Nhập Dữ Liệu!", Form_Alert.enmType.Warning);
-        }
-        private void clear()
-        {
-            txtName.Texts = "";
-            txtCCCD.Texts = "";
-            txtPhone.Texts = "";
-            pbPic.BackgroundImage = null;
         }
 
         #region HoverState
@@ -156,11 +148,6 @@ namespace TripleXManagement.ChildForm.Staff
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void txtPhone__TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

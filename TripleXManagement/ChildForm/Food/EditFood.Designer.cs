@@ -139,6 +139,7 @@
             this.txtName.TabIndex = 0;
             this.txtName.Texts = "";
             this.txtName.UnderlinedStyle = true;
+            this.txtName.Click += new System.EventHandler(this.txtName_Click);
             // 
             // txtPrice
             // 
@@ -160,6 +161,7 @@
             this.txtPrice.TabIndex = 1;
             this.txtPrice.Texts = "";
             this.txtPrice.UnderlinedStyle = true;
+            this.txtPrice.Click += new System.EventHandler(this.txtPrice_Click);
             // 
             // btnSave
             // 
