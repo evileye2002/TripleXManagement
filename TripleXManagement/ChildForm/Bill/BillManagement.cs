@@ -6,12 +6,12 @@ namespace TripleXManagement.ChildForm.Bill
 {
     public partial class BillManagement : Form
     {
-        private Form activateForm;
         public static String BillID = "";
         public static String StaffName = "";
         public static String CustomerName = "";
         public static String BillDate = "";
         public static String regency = "";
+        public static bool isEdit = false;
         public static double FinaTotal = 0;
         public static int IsBank = 0;
         public BillManagement()
@@ -25,22 +25,6 @@ namespace TripleXManagement.ChildForm.Bill
             this.Close();
         }
 
-        public void OpenChildForm(Form childForm, object btnSender)
-        {
-            if (activateForm != null)
-            {
-                activateForm.Close();
-            }
-            activateForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            this.pnMain.Controls.Add(childForm);
-            this.pnMain.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
-            pnFooter.Visible = false;
-        }
         public void GetData()
         {
             regency = MainForm.regency;
@@ -84,7 +68,7 @@ namespace TripleXManagement.ChildForm.Bill
         {
             if (e.KeyCode == Keys.Delete)
             {
-                String sql = "exec PBillDel " + BillID;
+                String sql = "exec PBillDel '" + BillID + "'";
                 if(regency == "admin")
                 {
                     if (BillID != "")
@@ -110,6 +94,18 @@ namespace TripleXManagement.ChildForm.Bill
         private void btnDetail_MouseLeave(object sender, EventArgs e)
         {
             SharedClass.HoverBtnState(btnDetail, Resources.view_20px, false);
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            isEdit = true;
+            Form f = new SelectCustomer();
+            if (BillID != "")
+            {
+                f.ShowDialog();
+            }
+            else
+                SharedClass.Alert("Chưa Chọn Hóa Đơn!", Form_Alert.enmType.Warning);
         }
     }
 }

@@ -1,13 +1,18 @@
 ﻿using TripleXManagement.StaticClass;
 using TripleXManagement.Properties;
+using System.Data.SqlClient;
 
 namespace TripleXManagement.ChildForm.Bill
 {
     public partial class SelectCustomer : Form
     {
+        public static string BillIDForEdit = "";
+        public static string CustomerIDForEdit = "";
+        public static string IsBankForEdit = "";
         public static string CustomerID = "";
         public static bool isBank = false;
         public static bool isHasCustomer = false;
+        public static bool isEdit = false;
         private Color borderColor = Color.FromArgb(98, 102, 244);
         public SelectCustomer()
         {
@@ -53,20 +58,57 @@ namespace TripleXManagement.ChildForm.Bill
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            var mainForm = Application.OpenForms.OfType<Bill>().Single();
-            if (rbHasCustomerNO.Checked)
+            if (isEdit)
             {
-                mainForm.AddBill(isBank, isHasCustomer, CustomerID);
-                this.Close();
-            }
-            else if (rbHasCustomerYes.Checked)
-            {
-                if (CustomerID == "")
-                    SharedClass.Alert("Chưa Chọn Khách Hàng!", Form_Alert.enmType.Warning);
+                var mainForm = Application.OpenForms.OfType<BillManagement>().Single();
+                string sql = "exec PBillShowIDDetail '" + BillIDForEdit + "'";
+                string sql1 = "";
+                string sql2 = "";
+
+                string bank = "1";
+                if (isBank)
+                    bank = "2";
                 else
+                    bank = "1";
+                string cID = "";
+                if (isHasCustomer)
+                    cID = CustomerID;
+                else
+                    cID = "1";
+
+                SqlDataReader reader = SqlClass.Reader(sql);
+                while (reader.Read())
                 {
-                    mainForm.AddBill(isBank, isHasCustomer, CustomerID);
+                    if (CustomerIDForEdit != reader["CustomerID"].ToString())
+                    {
+                        sql1 = "update TBill set CustomerID = " + CustomerID + " where BillID like '" + BillIDForEdit + "'";
+                    }
+                    if (IsBankForEdit != reader["BIsBank"].ToString())
+                    {
+                        sql2 = "update TBill set BIsBank = " + isBank + " where BillID like '" + BillIDForEdit + "'";
+                    }
+                }
+                reader.Close();
+                SqlClass.RunSql(sql1 + " " + sql2);
+                
+            }
+            else
+            {
+                var billForm = Application.OpenForms.OfType<Bill>().Single();
+                if (rbHasCustomerNO.Checked)
+                {
+                    billForm.AddBill(isBank, isHasCustomer, CustomerID);
                     this.Close();
+                }
+                else if (rbHasCustomerYes.Checked)
+                {
+                    if (CustomerID == "")
+                        SharedClass.Alert("Chưa Chọn Khách Hàng!", Form_Alert.enmType.Warning);
+                    else
+                    {
+                        billForm.AddBill(isBank, isHasCustomer, CustomerID);
+                        this.Close();
+                    }
                 }
             }
         }
@@ -80,6 +122,8 @@ namespace TripleXManagement.ChildForm.Bill
             CustomerID = "";
             isBank = false;
             isHasCustomer = false;
+            BillIDForEdit = BillManagement.BillID;
+            isEdit = BillManagement.isEdit;
             string sql = "exec PCustomerShow";
             SharedClass.FillDGV(dgvCustomer, sql);
         }
@@ -125,6 +169,11 @@ namespace TripleXManagement.ChildForm.Bill
             {
                 isBank = true;
             }
+        }
+
+        private void dgvCustomer_Paint(object sender, PaintEventArgs e)
+        {
+            SharedClass.RoundedControl(dgvCustomer, 20, e.Graphics, 0);
         }
     }
 }

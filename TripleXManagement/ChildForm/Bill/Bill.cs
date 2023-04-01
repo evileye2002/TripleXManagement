@@ -1,6 +1,9 @@
 ﻿using System.Data.SqlClient;
 using TripleXManagement.StaticClass;
 using TripleXManagement.Properties;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
+using System.Security.Cryptography;
+using Microsoft.VisualBasic;
 
 namespace TripleXManagement.ChildForm.Bill
 {
@@ -148,6 +151,23 @@ namespace TripleXManagement.ChildForm.Bill
             dgvDetail.Rows.Clear();
             SharedClass.Alert("Thêm Thành Công!", Form_Alert.enmType.Success);
         }
+        public void addMoreFood(string bID, string bDate, string bStaff, string bCustomer, string bIsbank)
+        {
+            string sql = "";
+            int rowCount = dgvDetail.Rows.Count;
+
+            DateTime dtOrederDate = DateTime.ParseExact(bDate, "dd/MM/yyyy HH:mm:ss", SharedClass.cultureVN);
+            string date = dtOrederDate.ToString("MM/dd/yyyy HH:mm:ss", SharedClass.cultureVN);
+
+            for (int i = 0; i < rowCount; i++)
+            {
+                sql += @"exec PBillAddMoreFood '" + bID + "','" + date + "'," + dgvDetail.Rows[i].Cells[0].Value.ToString() + "," + bStaff + "," + bCustomer + "," + bIsbank + " \n";
+            }
+            //MessageBox.Show(sql);
+            SqlClass.RunSql(sql);
+            dgvDetail.Rows.Clear();
+            SharedClass.Alert("Thêm Thành Công!", Form_Alert.enmType.Success);
+        }
         private void btnAddBill_Click(object sender, EventArgs e)
         {
             int rowCount = dgvDetail.Rows.Count;
@@ -157,9 +177,7 @@ namespace TripleXManagement.ChildForm.Bill
                 f.ShowDialog();
             }
             else
-            {
                 SharedClass.Alert("Chưa Chọn Món!", Form_Alert.enmType.Warning);
-            }
         }
 
         public void OpenChildForm(Form childForm, object btnSender)
@@ -209,6 +227,26 @@ namespace TripleXManagement.ChildForm.Bill
         {
             SharedClass.HoverBtnState(btnAdd, Resources.Add_properties_20px, false);
         }
+        private void btnAddMoreFood_MouseEnter(object sender, EventArgs e)
+        {
+            SharedClass.HoverBtnState(btnAddMoreFood, Resources.Add_properties_20px1, true);
+        }
+
+        private void btnAddMoreFood_MouseLeave(object sender, EventArgs e)
+        {
+            SharedClass.HoverBtnState(btnAddMoreFood, Resources.Add_properties_20px, false);
+        }
         #endregion
+
+        private void btnAddMoreFood_Click(object sender, EventArgs e)
+        {
+            if (dgvDetail.Rows.Count > 0)
+            {
+                Form f = new AddMoreFood();
+                f.ShowDialog();
+            }
+            else
+                SharedClass.Alert("Chưa Chọn Món!", Form_Alert.enmType.Warning);
+        }
     }
 }

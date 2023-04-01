@@ -238,9 +238,9 @@
             this.rbHasCustomerYes.MinimumSize = new System.Drawing.Size(0, 21);
             this.rbHasCustomerYes.Name = "rbHasCustomerYes";
             this.rbHasCustomerYes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbHasCustomerYes.Size = new System.Drawing.Size(99, 23);
+            this.rbHasCustomerYes.Size = new System.Drawing.Size(80, 23);
             this.rbHasCustomerYes.TabIndex = 1;
-            this.rbHasCustomerYes.Text = "Không Lẻ";
+            this.rbHasCustomerYes.Text = "Không";
             this.rbHasCustomerYes.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.rbHasCustomerYes.UseVisualStyleBackColor = false;
             this.rbHasCustomerYes.CheckedChanged += new System.EventHandler(this.rbHasCustomerYes_CheckedChanged);
@@ -337,6 +337,7 @@
             this.dgvCustomer.Size = new System.Drawing.Size(460, 270);
             this.dgvCustomer.TabIndex = 2;
             this.dgvCustomer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomer_CellClick);
+            this.dgvCustomer.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvCustomer_Paint);
             // 
             // Column2
             // 

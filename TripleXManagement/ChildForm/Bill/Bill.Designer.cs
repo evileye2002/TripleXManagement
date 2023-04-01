@@ -34,6 +34,7 @@ namespace TripleXManagement.ChildForm.Bill
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnFooter = new System.Windows.Forms.Panel();
+            this.btnAddMoreFood = new TripleXManagement.CustomControl.RJButton();
             this.btnBillManagement = new TripleXManagement.CustomControl.RJButton();
             this.btnAdd = new TripleXManagement.CustomControl.RJButton();
             this.lbTotal = new System.Windows.Forms.Label();
@@ -54,6 +55,7 @@ namespace TripleXManagement.ChildForm.Bill
             // pnFooter
             // 
             this.pnFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.pnFooter.Controls.Add(this.btnAddMoreFood);
             this.pnFooter.Controls.Add(this.btnBillManagement);
             this.pnFooter.Controls.Add(this.btnAdd);
             this.pnFooter.Controls.Add(this.lbTotal);
@@ -63,6 +65,32 @@ namespace TripleXManagement.ChildForm.Bill
             this.pnFooter.Name = "pnFooter";
             this.pnFooter.Size = new System.Drawing.Size(1000, 50);
             this.pnFooter.TabIndex = 0;
+            // 
+            // btnAddMoreFood
+            // 
+            this.btnAddMoreFood.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnAddMoreFood.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnAddMoreFood.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnAddMoreFood.BorderRadius = 20;
+            this.btnAddMoreFood.BorderSize = 2;
+            this.btnAddMoreFood.FlatAppearance.BorderSize = 0;
+            this.btnAddMoreFood.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddMoreFood.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAddMoreFood.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnAddMoreFood.Image = global::TripleXManagement.Properties.Resources.Add_properties_20px;
+            this.btnAddMoreFood.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddMoreFood.Location = new System.Drawing.Point(256, 5);
+            this.btnAddMoreFood.Name = "btnAddMoreFood";
+            this.btnAddMoreFood.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnAddMoreFood.Size = new System.Drawing.Size(99, 40);
+            this.btnAddMoreFood.TabIndex = 2;
+            this.btnAddMoreFood.Text = "Thêm";
+            this.btnAddMoreFood.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnAddMoreFood.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddMoreFood.UseVisualStyleBackColor = false;
+            this.btnAddMoreFood.Click += new System.EventHandler(this.btnAddMoreFood_Click);
+            this.btnAddMoreFood.MouseEnter += new System.EventHandler(this.btnAddMoreFood_MouseEnter);
+            this.btnAddMoreFood.MouseLeave += new System.EventHandler(this.btnAddMoreFood_MouseLeave);
             // 
             // btnBillManagement
             // 
@@ -77,7 +105,7 @@ namespace TripleXManagement.ChildForm.Bill
             this.btnBillManagement.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.btnBillManagement.Image = global::TripleXManagement.Properties.Resources.bonds_20px;
             this.btnBillManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBillManagement.Location = new System.Drawing.Point(136, 5);
+            this.btnBillManagement.Location = new System.Drawing.Point(122, 5);
             this.btnBillManagement.Name = "btnBillManagement";
             this.btnBillManagement.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnBillManagement.Size = new System.Drawing.Size(118, 40);
@@ -106,9 +134,9 @@ namespace TripleXManagement.ChildForm.Bill
             this.btnAdd.Location = new System.Drawing.Point(20, 5);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnAdd.Size = new System.Drawing.Size(100, 40);
+            this.btnAdd.Size = new System.Drawing.Size(87, 40);
             this.btnAdd.TabIndex = 2;
-            this.btnAdd.Text = "Thêm";
+            this.btnAdd.Text = "Tạo";
             this.btnAdd.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -289,5 +317,6 @@ namespace TripleXManagement.ChildForm.Bill
         private DataGridViewTextBoxColumn Column3;
         private RJButton btnAdd;
         private RJButton btnBillManagement;
+        private RJButton btnAddMoreFood;
     }
 }
