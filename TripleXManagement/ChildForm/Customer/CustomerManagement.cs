@@ -97,7 +97,7 @@ namespace TripleXManagement.ChildForm.Customer
                     GetData();
                 }
                 else
-                    SharedClass.Alert("Bạn Không Có Quyền Hạn Này!", Form_Alert.enmType.Warning);
+                    SharedClass.Alert("Bạn Không Có\nQuyền Hạn Này!", Form_Alert.enmType.Warning);
             }
         }
     }

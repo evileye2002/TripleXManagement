@@ -38,11 +38,12 @@ namespace TripleXManagement.ChildForm.Bill
             isBank = BillManagement.IsBank;
             CustomerName = BillManagement.CustomerName;
             StaffName = BillManagement.StaffName;
+            //MessageBox.Show(BillID);
         }
 
         private void GetData()
         {
-            String sql = "exec PBillDetailFindByID " + BillID;
+            String sql = "exec PBillDetailFindByID N'" + BillID + "'";
             SharedClass.FillDGV(dgvBillDetail, sql);
         }
 
@@ -303,12 +304,13 @@ namespace TripleXManagement.ChildForm.Bill
             }
             else if (e.KeyCode == Keys.Delete)
             {
-                String sql = "exec PBillDetailDel " + foodID + ", " + BillID;
+                String sql = "exec PBillDetailDel " + foodID + ", '" + BillID + "'";
                 var mainForm = Application.OpenForms.OfType<BillManagement>().Single();
                 if (foodID != "")
                 {
                     SqlClass.RunSqlDel(sql);
 
+                    //MessageBox.Show(sql);
                     GetData();
                     mainForm.GetData();
                 }
