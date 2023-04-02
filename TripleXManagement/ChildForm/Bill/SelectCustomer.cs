@@ -1,6 +1,7 @@
 ﻿using TripleXManagement.StaticClass;
 using TripleXManagement.Properties;
 using System.Data.SqlClient;
+using Microsoft.VisualBasic;
 
 namespace TripleXManagement.ChildForm.Bill
 {
@@ -9,6 +10,7 @@ namespace TripleXManagement.ChildForm.Bill
         public static string BillIDForEdit = "";
         public static string CustomerIDForEdit = "";
         public static string IsBankForEdit = "";
+        public static string CustomerNameForEdit = "";
         public static string CustomerID = "";
         public static bool isBank = false;
         public static bool isHasCustomer = false;
@@ -53,6 +55,12 @@ namespace TripleXManagement.ChildForm.Bill
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            
+            if (isEdit)
+            {
+                var mainForm = Application.OpenForms.OfType<BillManagement>().Single();
+                mainForm.GetData();
+            }
             this.Close();
         }
 
@@ -65,32 +73,57 @@ namespace TripleXManagement.ChildForm.Bill
                 string sql1 = "";
                 string sql2 = "";
 
-                string bank = "1";
-                if (isBank)
-                    bank = "2";
-                else
-                    bank = "1";
+                string bank = "";
                 string cID = "";
-                if (isHasCustomer)
-                    cID = CustomerID;
-                else
+
+                if (rbHasCustomerNO.Checked)
                     cID = "1";
+                if (rbHasCustomerYes.Checked)
+                    cID = CustomerID;
+
+                if (rbBankNo.Checked)
+                    bank = "1";
+                if (rbBankYes.Checked)
+                    bank = "2";
 
                 SqlDataReader reader = SqlClass.Reader(sql);
                 while (reader.Read())
                 {
-                    if (CustomerIDForEdit != reader["CustomerID"].ToString())
-                    {
-                        sql1 = "update TBill set CustomerID = " + CustomerID + " where BillID like '" + BillIDForEdit + "'";
-                    }
-                    if (IsBankForEdit != reader["BIsBank"].ToString())
-                    {
-                        sql2 = "update TBill set BIsBank = " + isBank + " where BillID like '" + BillIDForEdit + "'";
-                    }
+                    if (cID != reader["CustomerID"].ToString())
+                        sql1 = "update TBill set CustomerID = " + cID + " where BillID like '" + BillIDForEdit + "'";
+                    if (bank != reader["BIsBank"].ToString())
+                        sql2 = "update TBill set BIsBank = " + bank + " where BillID like '" + BillIDForEdit + "'";
                 }
                 reader.Close();
-                SqlClass.RunSql(sql1 + " " + sql2);
-                
+
+                if (sql1 == "" && sql2 == "")
+                {
+                    SharedClass.Alert("Không Có Gì Thay đổi!", Form_Alert.enmType.Info);
+                }
+                else
+                {
+                    if (rbHasCustomerYes.Checked)
+                    {
+                        if (sql1 == "update TBill set CustomerID =  where BillID like '" + BillIDForEdit + "'")
+                            SharedClass.Alert("Chưa Chọn Khách Hàng!", Form_Alert.enmType.Warning);
+                        else
+                        {
+                            //MessageBox.Show(sql1 + " \n" + sql2);
+                            SqlClass.RunSql(sql1 + " \n" + sql2);
+                            CMessageBox.Show("Sửa Thành Công", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            mainForm.GetData();
+                            this.Close();
+                        }
+                    }
+                    if (rbHasCustomerNO.Checked)
+                    {
+                        //MessageBox.Show(sql1 + " \n" + sql2);
+                        SqlClass.RunSql(sql1 + " \n" + sql2);
+                        CMessageBox.Show("Sửa Thành Công", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        mainForm.GetData();
+                        this.Close();
+                    }
+                }
             }
             else
             {
@@ -98,6 +131,7 @@ namespace TripleXManagement.ChildForm.Bill
                 if (rbHasCustomerNO.Checked)
                 {
                     billForm.AddBill(isBank, isHasCustomer, CustomerID);
+                    CMessageBox.Show("Tạo Thành Công", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
                 else if (rbHasCustomerYes.Checked)
@@ -107,6 +141,7 @@ namespace TripleXManagement.ChildForm.Bill
                     else
                     {
                         billForm.AddBill(isBank, isHasCustomer, CustomerID);
+                        CMessageBox.Show("Tạo Thành Công", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
                 }
@@ -122,8 +157,21 @@ namespace TripleXManagement.ChildForm.Bill
             CustomerID = "";
             isBank = false;
             isHasCustomer = false;
+
             BillIDForEdit = BillManagement.BillID;
+            IsBankForEdit = BillManagement.IsBank;
             isEdit = BillManagement.isEdit;
+
+            if (isEdit)
+            {
+                lbTableName.Text = BillIDForEdit;
+                txtName.Texts = BillManagement.CustomerName;
+                CustomerNameForEdit = BillManagement.CustomerName;
+                if (CustomerNameForEdit != "Khách Lẻ")
+                    rbHasCustomerYes.Checked = true;
+                if (IsBankForEdit == "2")
+                    rbBankYes.Checked = true;
+            }
             string sql = "exec PCustomerShow";
             SharedClass.FillDGV(dgvCustomer, sql);
         }

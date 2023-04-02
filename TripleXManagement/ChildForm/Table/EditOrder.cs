@@ -147,7 +147,7 @@ namespace TripleXManagement.ChildForm.Table
             {
                 empty = "exec PEmptyAOrderedTable " + TableID + "," + OrderID;
                 SqlClass.RunSql(empty);
-                SharedClass.Alert("Sửa Thành Công!", Form_Alert.enmType.Success);
+                CMessageBox.Show("Sửa Thành Công", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 var mainForm = Application.OpenForms.OfType<TableManagement>().Single();
                 mainForm.GetData();
                 this.Close();

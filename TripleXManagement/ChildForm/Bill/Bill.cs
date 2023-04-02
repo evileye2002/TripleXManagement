@@ -10,6 +10,7 @@ namespace TripleXManagement.ChildForm.Bill
     public partial class Bill : Form
     {
         public static string StaffID = "";
+        public static bool IsEdit = false;
         private Form activateForm;
         double _total;
         double _price = 0;
@@ -146,10 +147,8 @@ namespace TripleXManagement.ChildForm.Bill
             {
                 sql += @"exec PBillAdd " + dgvDetail.Rows[i].Cells[0].Value.ToString() + ", " + bank + "," + StaffID + "," + cID + " \n";
             }
-            //MessageBox.Show(sql);
             SqlClass.RunSql(sql);
             dgvDetail.Rows.Clear();
-            SharedClass.Alert("Thêm Thành Công!", Form_Alert.enmType.Success);
         }
         public void addMoreFood(string bID, string bDate, string bStaff, string bCustomer, string bIsbank)
         {
@@ -163,13 +162,12 @@ namespace TripleXManagement.ChildForm.Bill
             {
                 sql += @"exec PBillAddMoreFood '" + bID + "','" + date + "'," + dgvDetail.Rows[i].Cells[0].Value.ToString() + "," + bStaff + "," + bCustomer + "," + bIsbank + " \n";
             }
-            //MessageBox.Show(sql);
             SqlClass.RunSql(sql);
             dgvDetail.Rows.Clear();
-            SharedClass.Alert("Thêm Thành Công!", Form_Alert.enmType.Success);
         }
         private void btnAddBill_Click(object sender, EventArgs e)
         {
+            IsEdit = false;
             int rowCount = dgvDetail.Rows.Count;
             if (rowCount > 0)
             {

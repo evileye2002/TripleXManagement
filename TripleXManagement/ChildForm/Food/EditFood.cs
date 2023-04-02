@@ -47,10 +47,10 @@ namespace TripleXManagement.ChildForm.Food
                         cmd.Parameters.AddWithValue("@Image", array);
                         cmd.ExecuteNonQuery();
 
-                        GetData();
                         var mainForm = Application.OpenForms.OfType<FoodManagement>().Single();
                         mainForm.GetData();
-                        SharedClass.Alert("Sửa Thành Công!", Form_Alert.enmType.Success);
+                        CMessageBox.Show("Sửa Thành Công", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
                     }
                     catch (Exception ex)
                     {

@@ -13,7 +13,7 @@ namespace TripleXManagement.ChildForm.Bill
         public static String regency = "";
         public static bool isEdit = false;
         public static double FinaTotal = 0;
-        public static int IsBank = 0;
+        public static string IsBank = "";
         public BillManagement()
         {
             InitializeComponent();
@@ -27,7 +27,9 @@ namespace TripleXManagement.ChildForm.Bill
 
         public void GetData()
         {
+            BillID = "";
             regency = MainForm.regency;
+            isEdit = false;
             String sql = "exec PBillShow";
             SharedClass.FillDGV(dgvBill, sql);
         }
@@ -60,7 +62,7 @@ namespace TripleXManagement.ChildForm.Bill
                 FinaTotal = double.Parse(dgvBill.Rows[t].Cells[2].Value.ToString());
                 StaffName = dgvBill.Rows[t].Cells[3].Value.ToString();
                 CustomerName = dgvBill.Rows[t].Cells[4].Value.ToString();
-                IsBank = int.Parse(dgvBill.Rows[t].Cells[5].Value.ToString());
+                IsBank = dgvBill.Rows[t].Cells[5].Value.ToString();
             }
         }
 
@@ -94,6 +96,16 @@ namespace TripleXManagement.ChildForm.Bill
         private void btnDetail_MouseLeave(object sender, EventArgs e)
         {
             SharedClass.HoverBtnState(btnDetail, Resources.view_20px, false);
+        }
+
+        private void btnEdit_MouseEnter(object sender, EventArgs e)
+        {
+            SharedClass.HoverBtnState(btnEdit, Resources.edit_property_20px1, true);
+        }
+
+        private void btnEdit_MouseLeave(object sender, EventArgs e)
+        {
+            SharedClass.HoverBtnState(btnEdit, Resources.edit_property_20px, false);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)

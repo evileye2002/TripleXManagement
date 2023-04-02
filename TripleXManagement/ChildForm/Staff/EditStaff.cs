@@ -99,8 +99,8 @@ namespace TripleXManagement.ChildForm.Staff
                         cmd.ExecuteNonQuery();
 
                         mainForm.GetData();
-                        SharedClass.Alert("Sửa Thành Công!", Form_Alert.enmType.Success);
-                        GetData();
+                        CMessageBox.Show("Sửa Thành Công", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
                     }
                     catch (Exception ex)
                     {

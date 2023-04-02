@@ -80,7 +80,7 @@ namespace TripleXManagement.ChildForm.Table
             if (CustomerID != "")
             {
                 SqlClass.RunSql(sql);
-                SharedClass.Alert("Lưu Thành Công!", Form_Alert.enmType.Success);
+                CMessageBox.Show("Lưu Thành Công", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 var mainForm = Application.OpenForms.OfType<TableManagement>().Single();
                 mainForm.GetData();
                 this.Close();

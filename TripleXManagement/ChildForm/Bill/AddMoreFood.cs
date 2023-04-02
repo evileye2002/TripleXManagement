@@ -53,6 +53,7 @@ namespace TripleXManagement.ChildForm.Bill
             else
             {
                 mainForm.addMoreFood(BillID, BillDate, StaffID, CustomerID, IsBank);
+                CMessageBox.Show("Thêm Thành Công", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
         }

@@ -45,6 +45,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnPrint = new TripleXManagement.CustomControl.RJButton();
             this.btnClose = new TripleXManagement.CustomControl.RJButton();
+            this.btnOpenFolder = new TripleXManagement.CustomControl.RJButton();
             this.btnPrintPreview = new TripleXManagement.CustomControl.RJButton();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
@@ -186,6 +187,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
             this.panel1.Controls.Add(this.btnPrint);
             this.panel1.Controls.Add(this.btnClose);
+            this.panel1.Controls.Add(this.btnOpenFolder);
             this.panel1.Controls.Add(this.btnPrintPreview);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 281);
@@ -244,6 +246,30 @@
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             this.btnClose.MouseEnter += new System.EventHandler(this.btnClose_MouseEnter);
             this.btnClose.MouseLeave += new System.EventHandler(this.btnClose_MouseLeave);
+            // 
+            // btnOpenFolder
+            // 
+            this.btnOpenFolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnOpenFolder.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnOpenFolder.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnOpenFolder.BorderRadius = 20;
+            this.btnOpenFolder.BorderSize = 2;
+            this.btnOpenFolder.FlatAppearance.BorderSize = 0;
+            this.btnOpenFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpenFolder.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnOpenFolder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnOpenFolder.Image = global::TripleXManagement.Properties.Resources.opened_folder_20px;
+            this.btnOpenFolder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOpenFolder.Location = new System.Drawing.Point(218, 5);
+            this.btnOpenFolder.Name = "btnOpenFolder";
+            this.btnOpenFolder.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnOpenFolder.Size = new System.Drawing.Size(90, 40);
+            this.btnOpenFolder.TabIndex = 1;
+            this.btnOpenFolder.Text = "Mở";
+            this.btnOpenFolder.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnOpenFolder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnOpenFolder.UseVisualStyleBackColor = false;
+            this.btnOpenFolder.Click += new System.EventHandler(this.btnOpenFolder_Click);
             // 
             // btnPrintPreview
             // 
@@ -330,5 +356,6 @@
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
+        private CustomControl.RJButton btnOpenFolder;
     }
 }

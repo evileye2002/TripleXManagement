@@ -3,6 +3,7 @@ using System.Globalization;
 using TripleXManagement.StaticClass;
 using TripleXManagement.Properties;
 using TripleXManagement.ChildForm.Table;
+using System.Diagnostics;
 
 namespace TripleXManagement.ChildForm.Bill
 {
@@ -11,15 +12,17 @@ namespace TripleXManagement.ChildForm.Bill
         string price = "";
         string total = "";
         string finalTotalText = "";
+        string finalTotalM = "";
+        string finalTotalB = "";
+        string path = @"E:\DAI_HOC\NAM_3\Ky 2\Thuc tap co so\TripleXManagement\Print\";
         public static double finalTotal = 0;
         public static string StaffName = "";
-        public static int isBank = 0;
+        public static string isBank = "";
         public static String BillID = "";
         public static String foodID = "";
         public static String BillDate = "";
         public static String CustomerName = "";
-        string finalTotalM = "";
-        string finalTotalB = "";
+        
 
         public BillDetail()
         {
@@ -38,7 +41,6 @@ namespace TripleXManagement.ChildForm.Bill
             isBank = BillManagement.IsBank;
             CustomerName = BillManagement.CustomerName;
             StaffName = BillManagement.StaffName;
-            //MessageBox.Show(BillID);
         }
 
         private void GetData()
@@ -145,13 +147,13 @@ namespace TripleXManagement.ChildForm.Bill
             graphics.DrawString("Thẻ ngân hàng: ", font, brush, new Point(25, rowCount * gap + (mn3 += (startY += gapDetail))));
 
             string ft = String.Format(CultureInfo.InvariantCulture,"{0:0,0}", finalTotal);
-            if (isBank == 2)
+            if (isBank == "2")
             {
                 finalTotalM = "0";
                 finalTotalB = ft;
             }
 
-            else if (isBank == 1) 
+            else if (isBank == "1") 
             {
                 finalTotalM = ft;
                 finalTotalB = "0";
@@ -187,24 +189,26 @@ namespace TripleXManagement.ChildForm.Bill
         private void print()
         {
             sizePrintPage();
-            string path = @"E:\DAI_HOC\NAM_3\Ky 2\Thuc tap co so\TripleXManagement\Print";
-            string filName = @"E:\DAI_HOC\NAM_3\Ky 2\Thuc tap co so\TripleXManagement\Print\" + BillID + ".pdf";
+            //string path = @"E:\DAI_HOC\NAM_3\Ky 2\Thuc tap co so\TripleXManagement\Print\";
+            string filName = path + BillID + ".pdf";
 
-            if (Directory.Exists(path) && !File.Exists(filName))
-            {
+            /*if (Directory.Exists(path) && !File.Exists(filName))
+            {*/
                 PrintDocument pdoc = new PrintDocument();
                 pdoc.PrinterSettings.PrinterName = "Microsoft Print to PDF";
                 pdoc.PrinterSettings.PrintFileName = filName;
                 pdoc.PrinterSettings.PrintToFile = true;
                 pdoc.PrintPage += printDocument1_PrintPage;
                 pdoc.Print();
-            }
+                SharedClass.Alert("In Thành Công!", Form_Alert.enmType.Success);
+            /*}
+            else
+                SharedClass.Alert("Hóa Đơn Đã Tồn Tại!", Form_Alert.enmType.Error);*/
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
             print();
-            SharedClass.Alert("In Thành Công!", Form_Alert.enmType.Success);
         }
         public static string NumberToText(double inputNumber, bool suffix = true)
         {
@@ -310,8 +314,6 @@ namespace TripleXManagement.ChildForm.Bill
                 {
                     SqlClass.RunSqlDel(sql);
 
-                    //MessageBox.Show(sql);
-                    GetData();
                     mainForm.GetData();
                 }
                 else
@@ -358,6 +360,15 @@ namespace TripleXManagement.ChildForm.Bill
         {
             SharedClass.HoverBtnState(btnClose, Resources.reply_arrow_20px, false);
         }
+        private void btnOpenFolder_MouseEnter(object sender, EventArgs e)
+        {
+            SharedClass.HoverBtnState(btnOpenFolder, Resources.opened_folder_20px1, true);
+        }
+
+        private void btnOpenFolder_MouseLeave(object sender, EventArgs e)
+        {
+            SharedClass.HoverBtnState(btnOpenFolder, Resources.opened_folder_20px, false);
+        }
         #endregion
 
         private void BillDetail_Paint(object sender, PaintEventArgs e)
@@ -373,6 +384,11 @@ namespace TripleXManagement.ChildForm.Bill
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnOpenFolder_Click(object sender, EventArgs e)
+        {
+            Process.Start(@"explorer.exe",path);
         }
     }
 }

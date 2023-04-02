@@ -84,6 +84,8 @@
             this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.btnEdit.MouseEnter += new System.EventHandler(this.btnEdit_MouseEnter);
+            this.btnEdit.MouseLeave += new System.EventHandler(this.btnEdit_MouseLeave);
             // 
             // btnDetail
             // 

@@ -613,6 +613,26 @@ namespace TripleXManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap opened_folder_20px {
+            get {
+                object obj = ResourceManager.GetObject("opened_folder_20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap opened_folder_20px1 {
+            get {
+                object obj = ResourceManager.GetObject("opened_folder_20px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Password_32 {
             get {
                 object obj = ResourceManager.GetObject("Password-32", resourceCulture);

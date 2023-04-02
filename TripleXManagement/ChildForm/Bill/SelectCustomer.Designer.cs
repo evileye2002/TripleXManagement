@@ -261,11 +261,11 @@
             this.lbTableName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lbTableName.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbTableName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            this.lbTableName.Location = new System.Drawing.Point(281, 8);
+            this.lbTableName.Location = new System.Drawing.Point(295, 8);
             this.lbTableName.Name = "lbTableName";
-            this.lbTableName.Size = new System.Drawing.Size(197, 30);
+            this.lbTableName.Size = new System.Drawing.Size(168, 30);
             this.lbTableName.TabIndex = 21;
-            this.lbTableName.Text = "Chọn Khách Hàng";
+            this.lbTableName.Text = "Thêm Hóa Đơn";
             this.lbTableName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtName
