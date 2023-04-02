@@ -1,5 +1,6 @@
 ﻿using System.Drawing.Drawing2D;
 using System.Globalization;
+using TripleXManagement.CustomControl;
 
 namespace TripleXManagement.StaticClass
 {
@@ -15,7 +16,7 @@ namespace TripleXManagement.StaticClass
         #region Controls
 
         #region Mouse Enter & Leave
-        public static void HoverBtnState(CustomControl.RJButton btn,Image img, bool status)
+        public static void HoverBtnState(RJButton btn,Image img, bool status)
         {
 
             Color white = Color.FromArgb(245, 255, 255);
@@ -38,7 +39,7 @@ namespace TripleXManagement.StaticClass
             }
             
         }
-        public static void HoverSubBtnState(CustomControl.RJButton btn, Image img, bool status)
+        public static void HoverSubBtnState(RJButton btn, Image img, bool status)
         {
 
             Color white = Color.FromArgb(245, 255, 255);
@@ -63,6 +64,7 @@ namespace TripleXManagement.StaticClass
             }
 
         }
+        
         #endregion
 
         #endregion

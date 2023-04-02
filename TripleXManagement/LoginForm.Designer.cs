@@ -157,7 +157,7 @@
             // 
             this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(45)))), ((int)(((byte)(41)))));
             this.btnLogin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(45)))), ((int)(((byte)(41)))));
-            this.btnLogin.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnLogin.BorderColor = System.Drawing.Color.Empty;
             this.btnLogin.BorderRadius = 10;
             this.btnLogin.BorderSize = 0;
             this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;

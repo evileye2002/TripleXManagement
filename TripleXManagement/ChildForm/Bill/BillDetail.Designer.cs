@@ -270,6 +270,8 @@
             this.btnOpenFolder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnOpenFolder.UseVisualStyleBackColor = false;
             this.btnOpenFolder.Click += new System.EventHandler(this.btnOpenFolder_Click);
+            this.btnOpenFolder.MouseEnter += new System.EventHandler(this.btnOpenFolder_MouseEnter);
+            this.btnOpenFolder.MouseLeave += new System.EventHandler(this.btnOpenFolder_MouseLeave);
             // 
             // btnPrintPreview
             // 
