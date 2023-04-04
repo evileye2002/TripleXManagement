@@ -307,7 +307,7 @@
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.lbTitle.Location = new System.Drawing.Point(77, 7);
+            this.lbTitle.Location = new System.Drawing.Point(77, 10);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(0, 25);
             this.lbTitle.TabIndex = 0;
@@ -387,7 +387,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::TripleXManagement.Properties.Resources.LogoMid;
-            this.pictureBox1.Location = new System.Drawing.Point(161, 150);
+            this.pictureBox1.Location = new System.Drawing.Point(161, 104);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(383, 142);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
