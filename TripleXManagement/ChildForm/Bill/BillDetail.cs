@@ -14,7 +14,7 @@ namespace TripleXManagement.ChildForm.Bill
         string finalTotalText = "";
         string finalTotalM = "";
         string finalTotalB = "";
-        string path = @"E:\DAI_HOC\NAM_3\Ky 2\Thuc tap co so\TripleXManagement\Print";
+        string path = @"E:\DAI_HOC\NAM_3\Ky 2\Thuc tap co so\TripleXManagement\Print\";
         public static double finalTotal = 0;
         public static string StaffName = "";
         public static string isBank = "";
@@ -190,7 +190,7 @@ namespace TripleXManagement.ChildForm.Bill
         {
             sizePrintPage();
             //string path = @"E:\DAI_HOC\NAM_3\Ky 2\Thuc tap co so\TripleXManagement\Print\";
-            string filName = path +@"\" + BillID + ".pdf";
+            string filName = path + BillID + ".pdf";
 
             /*if (Directory.Exists(path) && !File.Exists(filName))
             {*/
@@ -314,7 +314,6 @@ namespace TripleXManagement.ChildForm.Bill
                 {
                     SqlClass.RunSqlDel(sql);
 
-                    GetData();
                     mainForm.GetData();
                 }
                 else
@@ -370,15 +369,6 @@ namespace TripleXManagement.ChildForm.Bill
         {
             SharedClass.HoverBtnState(btnOpenFolder, Resources.opened_folder_20px, false);
         }
-        private void btnSelectSaveFolder_MouseEnter(object sender, EventArgs e)
-        {
-            SharedClass.HoverBtnState(btnSelectSaveFolder, Resources.opened_folder_20px1, true);
-        }
-
-        private void btnSelectSaveFolder_MouseLeave(object sender, EventArgs e)
-        {
-            SharedClass.HoverBtnState(btnSelectSaveFolder, Resources.opened_folder_20px, false);
-        }
         #endregion
 
         private void BillDetail_Paint(object sender, PaintEventArgs e)
@@ -399,14 +389,6 @@ namespace TripleXManagement.ChildForm.Bill
         private void btnOpenFolder_Click(object sender, EventArgs e)
         {
             Process.Start(@"explorer.exe",path);
-        }
-
-        private void btnSelectSaveFolder_Click(object sender, EventArgs e)
-        {
-            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
-            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
-                path = folderBrowserDialog.SelectedPath;
-            //MessageBox.Show(path);
         }
     }
 }
