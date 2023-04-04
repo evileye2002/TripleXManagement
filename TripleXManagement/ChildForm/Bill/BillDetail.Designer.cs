@@ -45,11 +45,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnPrint = new TripleXManagement.CustomControl.RJButton();
             this.btnClose = new TripleXManagement.CustomControl.RJButton();
+            this.btnSelectSaveFolder = new TripleXManagement.CustomControl.RJButton();
             this.btnOpenFolder = new TripleXManagement.CustomControl.RJButton();
             this.btnPrintPreview = new TripleXManagement.CustomControl.RJButton();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.ofdBrowse = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBillDetail)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -187,6 +189,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
             this.panel1.Controls.Add(this.btnPrint);
             this.panel1.Controls.Add(this.btnClose);
+            this.panel1.Controls.Add(this.btnSelectSaveFolder);
             this.panel1.Controls.Add(this.btnOpenFolder);
             this.panel1.Controls.Add(this.btnPrintPreview);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -246,6 +249,32 @@
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             this.btnClose.MouseEnter += new System.EventHandler(this.btnClose_MouseEnter);
             this.btnClose.MouseLeave += new System.EventHandler(this.btnClose_MouseLeave);
+            // 
+            // btnSelectSaveFolder
+            // 
+            this.btnSelectSaveFolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnSelectSaveFolder.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnSelectSaveFolder.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnSelectSaveFolder.BorderRadius = 20;
+            this.btnSelectSaveFolder.BorderSize = 2;
+            this.btnSelectSaveFolder.FlatAppearance.BorderSize = 0;
+            this.btnSelectSaveFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelectSaveFolder.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSelectSaveFolder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnSelectSaveFolder.Image = global::TripleXManagement.Properties.Resources.opened_folder_20px;
+            this.btnSelectSaveFolder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSelectSaveFolder.Location = new System.Drawing.Point(385, 5);
+            this.btnSelectSaveFolder.Name = "btnSelectSaveFolder";
+            this.btnSelectSaveFolder.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnSelectSaveFolder.Size = new System.Drawing.Size(162, 40);
+            this.btnSelectSaveFolder.TabIndex = 1;
+            this.btnSelectSaveFolder.Text = "Chọn Nơi Lưu";
+            this.btnSelectSaveFolder.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnSelectSaveFolder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSelectSaveFolder.UseVisualStyleBackColor = false;
+            this.btnSelectSaveFolder.Click += new System.EventHandler(this.btnSelectSaveFolder_Click);
+            this.btnSelectSaveFolder.MouseEnter += new System.EventHandler(this.btnSelectSaveFolder_MouseEnter);
+            this.btnSelectSaveFolder.MouseLeave += new System.EventHandler(this.btnSelectSaveFolder_MouseLeave);
             // 
             // btnOpenFolder
             // 
@@ -323,6 +352,10 @@
             this.panel2.TabIndex = 8;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // ofdBrowse
+            // 
+            this.ofdBrowse.FileName = "openFileDialog1";
+            // 
             // BillDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -359,5 +392,7 @@
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
         private CustomControl.RJButton btnOpenFolder;
+        private CustomControl.RJButton btnSelectSaveFolder;
+        private OpenFileDialog ofdBrowse;
     }
 }
