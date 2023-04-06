@@ -104,7 +104,7 @@ public partial class FormMessageBox : Form
                 //OK Button
                 button1.Visible = true;
                 button1.Location = new Point(xCenter, yCenter);
-                button1.Text = "Ok";
+                button1.Text = "OK";
                 button1.DialogResult = DialogResult.OK;//Set DialogResult
 
                 //Set Default Button
@@ -114,13 +114,13 @@ public partial class FormMessageBox : Form
                 //OK Button
                 button1.Visible = true;
                 button1.Location = new Point(xCenter - (button1.Width / 2) - 5, yCenter);
-                button1.Text = "Ok";
+                button1.Text = "OK";
                 button1.DialogResult = DialogResult.OK;//Set DialogResult
 
                 //Cancel Button
                 button2.Visible = true;
                 button2.Location = new Point(xCenter + (button2.Width / 2) + 5, yCenter);
-                button2.Text = "Thoát";
+                button2.Text = "Hủy";
                 button2.DialogResult = DialogResult.Cancel;//Set DialogResult
                 button2.BackColor = Color.DimGray;
 
@@ -140,7 +140,7 @@ public partial class FormMessageBox : Form
                 //Cancel Button
                 button2.Visible = true;
                 button2.Location = new Point(xCenter + (button2.Width / 2) + 5, yCenter);
-                button2.Text = "Thoát";
+                button2.Text = "Hủy";
                 button2.DialogResult = DialogResult.Cancel;//Set DialogResult
                 button2.BackColor = Color.DimGray;
 
@@ -154,7 +154,7 @@ public partial class FormMessageBox : Form
                 //Yes Button
                 button1.Visible = true;
                 button1.Location = new Point(xCenter - (button1.Width / 2) - 5, yCenter);
-                button1.Text = "Có";
+                button1.Text = "Đồng Ý";
                 button1.DialogResult = DialogResult.Yes;//Set DialogResult
 
                 //No Button
@@ -173,7 +173,7 @@ public partial class FormMessageBox : Form
                 //Yes Button
                 button1.Visible = true;
                 button1.Location = new Point(xCenter - button1.Width - 5, yCenter);
-                button1.Text = "Có";
+                button1.Text = "Đồng Ý";
                 button1.DialogResult = DialogResult.Yes;//Set DialogResult
 
                 //No Button
@@ -186,7 +186,7 @@ public partial class FormMessageBox : Form
                 //Cancel Button
                 button3.Visible = true;
                 button3.Location = new Point(xCenter + button2.Width + 5, yCenter);
-                button3.Text = "Thoát";
+                button3.Text = "Hủy";
                 button3.DialogResult = DialogResult.Cancel;//Set DialogResult
                 button3.BackColor = Color.DimGray;
 
@@ -205,13 +205,13 @@ public partial class FormMessageBox : Form
                 //Retry Button
                 button2.Visible = true;
                 button2.Location = new Point(xCenter, yCenter);
-                button2.Text = "Retry";
+                button2.Text = "Thử Lại";
                 button2.DialogResult = DialogResult.Retry;//Set DialogResult                    
 
                 //Ignore Button
                 button3.Visible = true;
                 button3.Location = new Point(xCenter + button2.Width + 5, yCenter);
-                button3.Text = "Ignore";
+                button3.Text = "Bỏ Qua";
                 button3.DialogResult = DialogResult.Ignore;//Set DialogResult
                 button3.BackColor = Color.IndianRed;
 
