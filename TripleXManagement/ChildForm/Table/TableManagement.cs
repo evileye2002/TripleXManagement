@@ -138,12 +138,15 @@ namespace TripleXManagement.ChildForm.Table
                     Tag = reader["OrderID"].ToString(),
                     Enabled = false,
                 };
+                if(reader["CustomerName"].ToString().Length >= 50)
+                {
 
+                }
                 Tcustomer = new Label
                 {
                     Padding = new Padding(0, 40, 0, 0),
                     Text = reader["CustomerName"].ToString(),
-                    Size = new Size(180,30),
+                    Size = new Size(185,30),
                     TextAlign = ContentAlignment.MiddleLeft,
                     Dock = DockStyle.Right,
                     Tag = reader["OrderID"].ToString()
@@ -168,7 +171,7 @@ namespace TripleXManagement.ChildForm.Table
                     Dock = DockStyle.Right,
                     Tag = reader["OrderID"].ToString(),
                 };
-                img.BackgroundImage = Properties.Resources.bill_32;
+                img.BackgroundImage = Resources.customer_32px;
 
                 header.Controls.Add(Tname);
                 header.Controls.Add(Tstatus);
@@ -293,7 +296,7 @@ namespace TripleXManagement.ChildForm.Table
                 {
                     Padding = new Padding(0, 40, 0, 0),
                     Text = reader["TStatus"].ToString(),
-                    Size = new Size(180, 30),
+                    Size = new Size(185, 30),
                     TextAlign = ContentAlignment.MiddleLeft,
                     Dock = DockStyle.Right,
                     Tag = reader["ID"].ToString()
@@ -318,7 +321,7 @@ namespace TripleXManagement.ChildForm.Table
                     Dock = DockStyle.Right,
                     Tag = reader["ID"].ToString(),
                 };
-                img.BackgroundImage = Properties.Resources.bill_32;
+                img.BackgroundImage = Resources.coffee_table_32px;
 
                 header.Controls.Add(Tname);
                 header.Controls.Add(Tstatus);
@@ -443,7 +446,7 @@ namespace TripleXManagement.ChildForm.Table
                 {
                     Padding = new Padding(0, 40, 0, 0),
                     Text = reader["CustomerName"].ToString(),
-                    Size = new Size(180, 30),
+                    Size = new Size(185, 30),
                     TextAlign = ContentAlignment.MiddleLeft,
                     Dock = DockStyle.Right,
                     Tag = reader["OrderID"].ToString()
@@ -468,7 +471,7 @@ namespace TripleXManagement.ChildForm.Table
                     Dock = DockStyle.Right,
                     Tag = reader["OrderID"].ToString(),
                 };
-                img.BackgroundImage = Properties.Resources.bill_32;
+                img.BackgroundImage = Resources.customer_32px;
 
                 header.Controls.Add(Tname);
                 header.Controls.Add(Tstatus);
