@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnClose = new TripleXManagement.CustomControl.RJButton();
-            this.btnSave = new TripleXManagement.CustomControl.RJButton();
+            this.btnClose = new TripleXManagement.CustomControl.CButton();
+            this.btnSave = new TripleXManagement.CustomControl.CButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtName = new TripleXManagement.CustomControl.Textbox();
-            this.txtKind = new TripleXManagement.CustomControl.Textbox();
-            this.txtChair = new TripleXManagement.CustomControl.Textbox();
+            this.txtName = new TripleXManagement.CustomControl.CTextbox();
+            this.txtKind = new TripleXManagement.CustomControl.CTextbox();
+            this.txtChair = new TripleXManagement.CustomControl.CTextbox();
             this.lbTableName = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -202,12 +202,12 @@
 
         #endregion
 
-        private CustomControl.RJButton btnClose;
-        private CustomControl.RJButton btnSave;
+        private CustomControl.CButton btnClose;
+        private CustomControl.CButton btnSave;
         private Panel panel2;
-        private CustomControl.Textbox txtName;
-        private CustomControl.Textbox txtKind;
-        private CustomControl.Textbox txtChair;
+        private CustomControl.CTextbox txtName;
+        private CustomControl.CTextbox txtKind;
+        private CustomControl.CTextbox txtChair;
         private Label lbTableName;
     }
 }

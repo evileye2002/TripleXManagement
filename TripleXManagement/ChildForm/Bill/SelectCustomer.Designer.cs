@@ -34,8 +34,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnClose = new TripleXManagement.CustomControl.RJButton();
-            this.btnSave = new TripleXManagement.CustomControl.RJButton();
+            this.btnClose = new TripleXManagement.CustomControl.CButton();
+            this.btnSave = new TripleXManagement.CustomControl.CButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,7 +47,7 @@
             this.rbHasCustomerYes = new TripleXManagement.CustomControl.CRadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbTableName = new System.Windows.Forms.Label();
-            this.txtName = new TripleXManagement.CustomControl.Textbox();
+            this.txtName = new TripleXManagement.CustomControl.CTextbox();
             this.dgvCustomer = new System.Windows.Forms.DataGridView();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -432,12 +432,12 @@
 
         #endregion
 
-        private CustomControl.RJButton btnClose;
-        private CustomControl.RJButton btnSave;
+        private CustomControl.CButton btnClose;
+        private CustomControl.CButton btnSave;
         private Panel panel2;
         private Panel panel1;
         private Label lbTableName;
-        private CustomControl.Textbox txtName;
+        private CustomControl.CTextbox txtName;
         private DataGridView dgvCustomer;
         private Panel panel3;
         private CustomControl.CRadioButton rbHasCustomerNO;

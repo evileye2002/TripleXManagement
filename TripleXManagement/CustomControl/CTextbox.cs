@@ -1,18 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.ComponentModel;
 using System.Drawing.Drawing2D;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TripleXManagement.CustomControl
 {
-    public partial class Textbox : UserControl
+    public partial class CTextbox : UserControl
     {
         #region -> Fields
         //Fields
@@ -32,13 +23,13 @@ namespace TripleXManagement.CustomControl
         public event EventHandler _TextChanged;
 
         #endregion
-        public Textbox()
+        public CTextbox()
         {
             InitializeComponent();
         }
 
         #region -> Properties
-        [Category("RJ Code Advance")]
+        [Category("CTextBox Setting")]
         public Color BorderColor
         {
             get { return borderColor; }
@@ -49,14 +40,14 @@ namespace TripleXManagement.CustomControl
             }
         }
 
-        [Category("RJ Code Advance")]
+        [Category("CTextBox Setting")]
         public Color BorderFocusColor
         {
             get { return borderFocusColor; }
             set { borderFocusColor = value; }
         }
 
-        [Category("RJ Code Advance")]
+        [Category("CTextBox Setting")]
         public int BorderSize
         {
             get { return borderSize; }
@@ -70,7 +61,7 @@ namespace TripleXManagement.CustomControl
             }
         }
 
-        [Category("RJ Code Advance")]
+        [Category("CTextBox Setting")]
         public bool UnderlinedStyle
         {
             get { return underlinedStyle; }
@@ -81,7 +72,7 @@ namespace TripleXManagement.CustomControl
             }
         }
 
-        [Category("RJ Code Advance")]
+        [Category("CTextBox Setting")]
         public bool PasswordChar
         {
             get { return isPasswordChar; }
@@ -93,14 +84,14 @@ namespace TripleXManagement.CustomControl
             }
         }
 
-        [Category("RJ Code Advance")]
+        [Category("CTextBox Setting")]
         public bool Multiline
         {
             get { return textBox1.Multiline; }
             set { textBox1.Multiline = value; }
         }
 
-        [Category("RJ Code Advance")]
+        [Category("CTextBox Setting")]
         public override Color BackColor
         {
             get { return base.BackColor; }
@@ -111,7 +102,7 @@ namespace TripleXManagement.CustomControl
             }
         }
 
-        [Category("RJ Code Advance")]
+        [Category("CTextBox Setting")]
         public override Color ForeColor
         {
             get { return base.ForeColor; }
@@ -122,7 +113,7 @@ namespace TripleXManagement.CustomControl
             }
         }
 
-        [Category("RJ Code Advance")]
+        [Category("CTextBox Setting")]
         public override Font Font
         {
             get { return base.Font; }
@@ -135,7 +126,7 @@ namespace TripleXManagement.CustomControl
             }
         }
 
-        [Category("RJ Code Advance")]
+        [Category("CTextBox Setting")]
         public string Texts
         {
             get
@@ -150,7 +141,7 @@ namespace TripleXManagement.CustomControl
             }
         }
 
-        [Category("RJ Code Advance")]
+        [Category("CTextBox Setting")]
         public int BorderRadius
         {
             get { return borderRadius; }
@@ -164,7 +155,7 @@ namespace TripleXManagement.CustomControl
             }
         }
 
-        [Category("RJ Code Advance")]
+        [Category("CTextBox Setting")]
         public Color PlaceholderColor
         {
             get { return placeholderColor; }
@@ -176,7 +167,7 @@ namespace TripleXManagement.CustomControl
             }
         }
 
-        [Category("RJ Code Advance")]
+        [Category("CTextBox Setting")]
         public string PlaceholderText
         {
             get { return placeholderText; }

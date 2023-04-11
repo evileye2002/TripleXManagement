@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using System.ComponentModel;
 using System.Drawing.Design;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace TripleXManagement.CustomControl
 {
@@ -137,7 +129,7 @@ namespace TripleXManagement.CustomControl
         }
         //Properties
         //-> Appearance
-        [Category("RJ Code - Appearance")]
+        [Category("CComboBox - Appearance")]
         public new Color BackColor
         {
             get { return backColor; }
@@ -149,7 +141,7 @@ namespace TripleXManagement.CustomControl
             }
         }
 
-        [Category("RJ Code - Appearance")]
+        [Category("CComboBox - Appearance")]
         public Color IconColor
         {
             get { return iconColor; }
@@ -160,7 +152,7 @@ namespace TripleXManagement.CustomControl
             }
         }
 
-        [Category("RJ Code - Appearance")]
+        [Category("CComboBox - Appearance")]
         public Color ListBackColor
         {
             get { return listBackColor; }
@@ -171,7 +163,7 @@ namespace TripleXManagement.CustomControl
             }
         }
 
-        [Category("RJ Code - Appearance")]
+        [Category("CComboBox - Appearance")]
         public Color ListTextColor
         {
             get { return listTextColor; }
@@ -182,7 +174,7 @@ namespace TripleXManagement.CustomControl
             }
         }
 
-        [Category("RJ Code - Appearance")]
+        [Category("CComboBox - Appearance")]
         public Color BorderColor
         {
             get { return borderColor; }
@@ -193,7 +185,7 @@ namespace TripleXManagement.CustomControl
             }
         }
 
-        [Category("RJ Code - Appearance")]
+        [Category("CComboBox - Appearance")]
         public int BorderSize
         {
             get { return borderSize; }
@@ -205,7 +197,7 @@ namespace TripleXManagement.CustomControl
             }
         }
 
-        [Category("RJ Code - Appearance")]
+        [Category("CComboBox - Appearance")]
         public override Color ForeColor
         {
             get { return base.ForeColor; }
@@ -216,7 +208,7 @@ namespace TripleXManagement.CustomControl
             }
         }
 
-        [Category("RJ Code - Appearance")]
+        [Category("CComboBox - Appearance")]
         public override Font Font
         {
             get { return base.Font; }
@@ -228,14 +220,14 @@ namespace TripleXManagement.CustomControl
             }
         }
 
-        [Category("RJ Code - Appearance")]
+        [Category("CComboBox - Appearance")]
         public string Texts
         {
             get { return lblText.Text; }
             set { lblText.Text = value; }
         }
 
-        [Category("RJ Code - Appearance")]
+        [Category("CComboBox - Appearance")]
         public ComboBoxStyle DropDownStyle
         {
             get { return cmbList.DropDownStyle; }
@@ -247,7 +239,7 @@ namespace TripleXManagement.CustomControl
         }
         //Properties
         //-> Data
-        [Category("RJ Code - Data")]
+        [Category("CComboBox - Data")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         [Editor("System.Windows.Forms.Design.ListControlStringCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         [Localizable(true)]
@@ -257,7 +249,7 @@ namespace TripleXManagement.CustomControl
             get { return cmbList.Items; }
         }
 
-        [Category("RJ Code - Data")]
+        [Category("CComboBox - Data")]
         [AttributeProvider(typeof(IListSource))]
         [DefaultValue(null)]
         public object DataSource
@@ -266,7 +258,7 @@ namespace TripleXManagement.CustomControl
             set { cmbList.DataSource = value; }
         }
 
-        [Category("RJ Code - Data")]
+        [Category("CComboBox - Data")]
         [Browsable(true)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         [Editor("System.Windows.Forms.Design.ListControlStringCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
@@ -278,7 +270,7 @@ namespace TripleXManagement.CustomControl
             set { cmbList.AutoCompleteCustomSource = value; }
         }
 
-        [Category("RJ Code - Data")]
+        [Category("CComboBox - Data")]
         [Browsable(true)]
         [DefaultValue(AutoCompleteSource.None)]
         [EditorBrowsable(EditorBrowsableState.Always)]
@@ -288,7 +280,7 @@ namespace TripleXManagement.CustomControl
             set { cmbList.AutoCompleteSource = value; }
         }
 
-        [Category("RJ Code - Data")]
+        [Category("CComboBox - Data")]
         [Browsable(true)]
         [DefaultValue(AutoCompleteMode.None)]
         [EditorBrowsable(EditorBrowsableState.Always)]
@@ -298,7 +290,7 @@ namespace TripleXManagement.CustomControl
             set { cmbList.AutoCompleteMode = value; }
         }
 
-        [Category("RJ Code - Data")]
+        [Category("CComboBox - Data")]
         [Bindable(true)]
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -308,7 +300,7 @@ namespace TripleXManagement.CustomControl
             set { cmbList.SelectedItem = value; }
         }
 
-        [Category("RJ Code - Data")]
+        [Category("CComboBox - Data")]
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int SelectedIndex
@@ -317,7 +309,7 @@ namespace TripleXManagement.CustomControl
             set { cmbList.SelectedIndex = value; }
         }
 
-        [Category("RJ Code - Data")]
+        [Category("CComboBox - Data")]
         [DefaultValue("")]
         [Editor("System.Windows.Forms.Design.DataMemberFieldEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         [TypeConverter("System.Windows.Forms.Design.DataMemberFieldConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
@@ -327,7 +319,7 @@ namespace TripleXManagement.CustomControl
             set { cmbList.DisplayMember = value; }
         }
 
-        [Category("RJ Code - Data")]
+        [Category("CComboBox - Data")]
         [DefaultValue("")]
         [Editor("System.Windows.Forms.Design.DataMemberFieldEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         public string ValueMember

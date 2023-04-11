@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.lbTableName = new System.Windows.Forms.Label();
-            this.btnClose = new TripleXManagement.CustomControl.RJButton();
-            this.btnSave = new TripleXManagement.CustomControl.RJButton();
+            this.btnClose = new TripleXManagement.CustomControl.CButton();
+            this.btnSave = new TripleXManagement.CustomControl.CButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtUserName = new TripleXManagement.CustomControl.Textbox();
-            this.txtPassword = new TripleXManagement.CustomControl.Textbox();
+            this.txtUserName = new TripleXManagement.CustomControl.CTextbox();
+            this.txtPassword = new TripleXManagement.CustomControl.CTextbox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -192,11 +192,11 @@
         #endregion
 
         private Label lbTableName;
-        private CustomControl.RJButton btnClose;
-        private CustomControl.RJButton btnSave;
+        private CustomControl.CButton btnClose;
+        private CustomControl.CButton btnSave;
         private Panel panel2;
-        private CustomControl.Textbox txtUserName;
-        private CustomControl.Textbox txtPassword;
+        private CustomControl.CTextbox txtUserName;
+        private CustomControl.CTextbox txtPassword;
         private Panel panel1;
     }
 }

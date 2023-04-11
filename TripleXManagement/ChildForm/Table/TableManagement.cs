@@ -21,7 +21,7 @@ namespace TripleXManagement.ChildForm.Table
         private Panel picT;
         private Panel picB;
         private Panel picL;
-        private CustomControl.RJButton img;
+        private CustomControl.CButton img;
         private Label Tcustomer;
 
         private Panel footer;
@@ -131,7 +131,7 @@ namespace TripleXManagement.ChildForm.Table
                     Tag = reader["OrderID"].ToString(),
                 };
 
-                img = new CustomControl.RJButton
+                img = new CustomControl.CButton
                 {
                     Dock = DockStyle.Fill,
                     BackColor = bodyBC, 
@@ -284,7 +284,7 @@ namespace TripleXManagement.ChildForm.Table
                     Tag = reader["ID"].ToString(),
                 };
 
-                img = new CustomControl.RJButton
+                img = new CustomControl.CButton
                 {
                     Dock = DockStyle.Fill,
                     BackColor = bodyBC,
@@ -434,7 +434,7 @@ namespace TripleXManagement.ChildForm.Table
                     Tag = reader["OrderID"].ToString(),
                 };
 
-                img = new CustomControl.RJButton
+                img = new CustomControl.CButton
                 {
                     Dock = DockStyle.Fill,
                     BackColor = bodyBC,

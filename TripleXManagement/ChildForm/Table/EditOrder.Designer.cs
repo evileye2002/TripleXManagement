@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnClose = new TripleXManagement.CustomControl.RJButton();
-            this.btnSave = new TripleXManagement.CustomControl.RJButton();
+            this.btnClose = new TripleXManagement.CustomControl.CButton();
+            this.btnSave = new TripleXManagement.CustomControl.CButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,9 +39,9 @@
             this.rbOrdered = new TripleXManagement.CustomControl.CRadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbTableName = new System.Windows.Forms.Label();
-            this.txtGetDate = new TripleXManagement.CustomControl.Textbox();
-            this.txtOrderDate = new TripleXManagement.CustomControl.Textbox();
-            this.txtName = new TripleXManagement.CustomControl.Textbox();
+            this.txtGetDate = new TripleXManagement.CustomControl.CTextbox();
+            this.txtOrderDate = new TripleXManagement.CustomControl.CTextbox();
+            this.txtName = new TripleXManagement.CustomControl.CTextbox();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -308,19 +308,19 @@
 
         #endregion
 
-        private CustomControl.RJButton btnClose;
-        private CustomControl.RJButton btnSave;
+        private CustomControl.CButton btnClose;
+        private CustomControl.CButton btnSave;
         private Panel panel2;
         private Panel panel1;
         private Label lbTableName;
-        private CustomControl.Textbox txtName;
+        private CustomControl.CTextbox txtName;
         private Panel panel3;
         private CustomControl.CRadioButton rbEmpty;
         private CustomControl.CRadioButton rbOrdered;
         private Label label3;
         private Label label2;
         private Label label1;
-        private CustomControl.Textbox txtGetDate;
-        private CustomControl.Textbox txtOrderDate;
+        private CustomControl.CTextbox txtGetDate;
+        private CustomControl.CTextbox txtOrderDate;
     }
 }

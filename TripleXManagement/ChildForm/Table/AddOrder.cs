@@ -89,13 +89,13 @@ namespace TripleXManagement.ChildForm.Table
                 SharedClass.Alert("Chưa Chọn Khách Hàng!", Form_Alert.enmType.Warning);
 
         }
-        private string DateToString(RJDatePicker dtpDate)
+        private string DateToString(CDatePicker dtpDate)
         {
             DateTime dtOrederDate = DateTime.ParseExact(dtpDate.Value.ToString(), "dd/MM/yyyy HH:mm:ss", SharedClass.cultureVN);
             string date = dtOrederDate.ToString("dd/MM/yyyy", SharedClass.cultureVN);
             return date;
         }
-        private string TimeToString(RJDatePicker dtpTime)
+        private string TimeToString(CDatePicker dtpTime)
         {
             DateTime dtOrderTime = DateTime.ParseExact(dtpTime.Value.ToString(), "dd/MM/yyyy HH:mm:ss", SharedClass.cultureVN);
             string time = dtOrderTime.ToString("HH:mm:ss", SharedClass.cultureVN);

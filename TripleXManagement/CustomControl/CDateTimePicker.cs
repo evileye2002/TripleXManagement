@@ -2,7 +2,7 @@
 
 namespace TripleXManagement.CustomControl
 {
-    public class RJDatePicker : DateTimePicker
+    public class CDatePicker : DateTimePicker
     {
         //Fields
         //-> Appearance
@@ -70,7 +70,7 @@ namespace TripleXManagement.CustomControl
         }
 
         //Constructor
-        public RJDatePicker()
+        public CDatePicker()
         {
             this.SetStyle(ControlStyles.UserPaint, true);
             this.MinimumSize = new Size(0, 35);

@@ -16,7 +16,7 @@ namespace TripleXManagement.StaticClass
         #region Controls
 
         #region Mouse Enter & Leave
-        public static void HoverBtnState(RJButton btn,Image img, bool status)
+        public static void HoverBtnState(CButton btn,Image img, bool status)
         {
 
             Color white = Color.FromArgb(245, 255, 255);
@@ -39,7 +39,7 @@ namespace TripleXManagement.StaticClass
             }
             
         }
-        public static void HoverSubBtnState(RJButton btn, Image img, bool status)
+        public static void HoverSubBtnState(CButton btn, Image img, bool status)
         {
 
             Color white = Color.FromArgb(245, 255, 255);

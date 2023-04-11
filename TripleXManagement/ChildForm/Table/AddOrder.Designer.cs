@@ -34,20 +34,20 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnClose = new TripleXManagement.CustomControl.RJButton();
-            this.btnSave = new TripleXManagement.CustomControl.RJButton();
+            this.btnClose = new TripleXManagement.CustomControl.CButton();
+            this.btnSave = new TripleXManagement.CustomControl.CButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbTableName = new System.Windows.Forms.Label();
-            this.txtName = new TripleXManagement.CustomControl.Textbox();
+            this.txtName = new TripleXManagement.CustomControl.CTextbox();
             this.dgvCustomer = new System.Windows.Forms.DataGridView();
-            this.dtpGetTime = new TripleXManagement.CustomControl.RJDatePicker();
-            this.dtpGetDate = new TripleXManagement.CustomControl.RJDatePicker();
-            this.dtpOrderTime = new TripleXManagement.CustomControl.RJDatePicker();
-            this.dtpOrderDate = new TripleXManagement.CustomControl.RJDatePicker();
-            this.btnDelete = new TripleXManagement.CustomControl.RJButton();
+            this.dtpGetTime = new TripleXManagement.CustomControl.CDatePicker();
+            this.dtpGetDate = new TripleXManagement.CustomControl.CDatePicker();
+            this.dtpOrderTime = new TripleXManagement.CustomControl.CDatePicker();
+            this.dtpOrderDate = new TripleXManagement.CustomControl.CDatePicker();
+            this.btnDelete = new TripleXManagement.CustomControl.CButton();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -437,20 +437,20 @@
         }
 
         #endregion
-        private CustomControl.RJButton btnClose;
-        private CustomControl.RJButton btnSave;
+        private CustomControl.CButton btnClose;
+        private CustomControl.CButton btnSave;
         private Panel panel2;
-        private CustomControl.RJDatePicker dtpOrderDate;
-        private CustomControl.RJDatePicker dtpGetDate;
+        private CustomControl.CDatePicker dtpOrderDate;
+        private CustomControl.CDatePicker dtpGetDate;
         private DataGridView dgvCustomer;
         private Panel panel1;
         private Label lbTableName;
-        private CustomControl.Textbox txtName;
+        private CustomControl.CTextbox txtName;
         private Label label2;
         private Label label1;
-        private CustomControl.RJDatePicker dtpGetTime;
-        private CustomControl.RJDatePicker dtpOrderTime;
-        private CustomControl.RJButton btnDelete;
+        private CustomControl.CDatePicker dtpGetTime;
+        private CustomControl.CDatePicker dtpOrderTime;
+        private CustomControl.CButton btnDelete;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewTextBoxColumn Column1;

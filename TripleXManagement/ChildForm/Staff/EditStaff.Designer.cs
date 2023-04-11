@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.ofdBrowse = new System.Windows.Forms.OpenFileDialog();
-            this.btnClose = new TripleXManagement.CustomControl.RJButton();
+            this.btnClose = new TripleXManagement.CustomControl.CButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -40,11 +40,11 @@
             this.cbAccount = new TripleXManagement.CustomControl.CComboBox();
             this.pbPic = new System.Windows.Forms.PictureBox();
             this.cbRegency = new TripleXManagement.CustomControl.CComboBox();
-            this.txtName = new TripleXManagement.CustomControl.Textbox();
-            this.txtPhone = new TripleXManagement.CustomControl.Textbox();
-            this.txtCCCD = new TripleXManagement.CustomControl.Textbox();
-            this.btnSave = new TripleXManagement.CustomControl.RJButton();
-            this.btnBrowse = new TripleXManagement.CustomControl.RJButton();
+            this.txtName = new TripleXManagement.CustomControl.CTextbox();
+            this.txtPhone = new TripleXManagement.CustomControl.CTextbox();
+            this.txtCCCD = new TripleXManagement.CustomControl.CTextbox();
+            this.btnSave = new TripleXManagement.CustomControl.CButton();
+            this.btnBrowse = new TripleXManagement.CustomControl.CButton();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -376,7 +376,7 @@
 
         #endregion
         private OpenFileDialog ofdBrowse;
-        private CustomControl.RJButton btnClose;
+        private CustomControl.CButton btnClose;
         private Panel panel2;
         private Label label1;
         private Panel panel4;
@@ -387,10 +387,10 @@
         private CustomControl.CComboBox cbAccount;
         private PictureBox pbPic;
         private CustomControl.CComboBox cbRegency;
-        private CustomControl.Textbox txtName;
-        private CustomControl.Textbox txtPhone;
-        private CustomControl.Textbox txtCCCD;
-        private CustomControl.RJButton btnSave;
-        private CustomControl.RJButton btnBrowse;
+        private CustomControl.CTextbox txtName;
+        private CustomControl.CTextbox txtPhone;
+        private CustomControl.CTextbox txtCCCD;
+        private CustomControl.CButton btnSave;
+        private CustomControl.CButton btnBrowse;
     }
 }

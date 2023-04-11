@@ -34,9 +34,9 @@ namespace TripleXManagement.ChildForm.Bill
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnFooter = new System.Windows.Forms.Panel();
-            this.btnAddMoreFood = new TripleXManagement.CustomControl.RJButton();
-            this.btnBillManagement = new TripleXManagement.CustomControl.RJButton();
-            this.btnAdd = new TripleXManagement.CustomControl.RJButton();
+            this.btnAddMoreFood = new TripleXManagement.CustomControl.CButton();
+            this.btnBillManagement = new TripleXManagement.CustomControl.CButton();
+            this.btnAdd = new TripleXManagement.CustomControl.CButton();
             this.lbTotal = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnDGV = new System.Windows.Forms.Panel();
@@ -312,9 +312,9 @@ namespace TripleXManagement.ChildForm.Bill
         private DataGridView dgvDetail;
         private FlowLayoutPanel flowLayoutPanel1;
         private Panel pnMain;
-        private RJButton btnAdd;
-        private RJButton btnBillManagement;
-        private RJButton btnAddMoreFood;
+        private CButton btnAdd;
+        private CButton btnBillManagement;
+        private CButton btnAddMoreFood;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;

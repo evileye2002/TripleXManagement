@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.pnFooter = new System.Windows.Forms.Panel();
-            this.btnManagement = new TripleXManagement.CustomControl.RJButton();
+            this.btnManagement = new TripleXManagement.CustomControl.CButton();
             this.pnMain = new System.Windows.Forms.Panel();
             this.flpBookTable = new System.Windows.Forms.FlowLayoutPanel();
             this.pnFilter = new System.Windows.Forms.Panel();
-            this.txtSearch = new TripleXManagement.CustomControl.Textbox();
+            this.txtSearch = new TripleXManagement.CustomControl.CTextbox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.rbAllKind = new TripleXManagement.CustomControl.CRadioButton();
             this.rbNormal = new TripleXManagement.CustomControl.CRadioButton();
@@ -44,7 +44,7 @@
             this.rbNullTable = new TripleXManagement.CustomControl.CRadioButton();
             this.rbToday = new TripleXManagement.CustomControl.CRadioButton();
             this.rbOrderTable = new TripleXManagement.CustomControl.CRadioButton();
-            this.btnFilter = new TripleXManagement.CustomControl.RJButton();
+            this.btnFilter = new TripleXManagement.CustomControl.CButton();
             this.pnFooter.SuspendLayout();
             this.pnMain.SuspendLayout();
             this.pnFilter.SuspendLayout();
@@ -357,7 +357,7 @@
         #endregion
 
         private Panel pnFooter;
-        private CustomControl.RJButton btnManagement;
+        private CustomControl.CButton btnManagement;
         private CustomControl.CRadioButton rdTable;
         private Panel pnMain;
         private FlowLayoutPanel flpBookTable;
@@ -370,9 +370,9 @@
         private CustomControl.CRadioButton rbBig;
         private CustomControl.CRadioButton rbMid;
         private CustomControl.CRadioButton rbNormal;
-        private CustomControl.RJButton btnFilter;
+        private CustomControl.CButton btnFilter;
         private Panel panel1;
         private CustomControl.CRadioButton rbToday;
-        private CustomControl.Textbox txtSearch;
+        private CustomControl.CTextbox txtSearch;
     }
 }

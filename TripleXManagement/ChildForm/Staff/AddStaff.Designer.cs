@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.pbPic = new System.Windows.Forms.PictureBox();
-            this.txtCCCD = new TripleXManagement.CustomControl.Textbox();
-            this.txtName = new TripleXManagement.CustomControl.Textbox();
-            this.btnSave = new TripleXManagement.CustomControl.RJButton();
-            this.btnBrowse = new TripleXManagement.CustomControl.RJButton();
-            this.txtPhone = new TripleXManagement.CustomControl.Textbox();
+            this.txtCCCD = new TripleXManagement.CustomControl.CTextbox();
+            this.txtName = new TripleXManagement.CustomControl.CTextbox();
+            this.btnSave = new TripleXManagement.CustomControl.CButton();
+            this.btnBrowse = new TripleXManagement.CustomControl.CButton();
+            this.txtPhone = new TripleXManagement.CustomControl.CTextbox();
             this.ofdBrowse = new System.Windows.Forms.OpenFileDialog();
             this.cbRegency = new TripleXManagement.CustomControl.CComboBox();
             this.cbAccount = new TripleXManagement.CustomControl.CComboBox();
@@ -44,7 +44,7 @@
             this.rbNo = new TripleXManagement.CustomControl.CRadioButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbTableName = new System.Windows.Forms.Label();
-            this.btnClose = new TripleXManagement.CustomControl.RJButton();
+            this.btnClose = new TripleXManagement.CustomControl.CButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbPic)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -373,11 +373,11 @@
         #endregion
 
         private PictureBox pbPic;
-        private CustomControl.Textbox txtCCCD;
-        private CustomControl.Textbox txtName;
-        private CustomControl.RJButton btnSave;
-        private CustomControl.RJButton btnBrowse;
-        private CustomControl.Textbox txtPhone;
+        private CustomControl.CTextbox txtCCCD;
+        private CustomControl.CTextbox txtName;
+        private CustomControl.CButton btnSave;
+        private CustomControl.CButton btnBrowse;
+        private CustomControl.CTextbox txtPhone;
         private OpenFileDialog ofdBrowse;
         private CustomControl.CComboBox cbRegency;
         private CustomControl.CComboBox cbAccount;
@@ -388,6 +388,6 @@
         private CustomControl.CRadioButton rbYes;
         private CustomControl.CRadioButton rbNo;
         private Label label1;
-        private CustomControl.RJButton btnClose;
+        private CustomControl.CButton btnClose;
     }
 }

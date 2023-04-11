@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace TripleXManagement.CustomControl
 {
-    public class RJButton : Button
+    public class CButton : Button
     {
         //Fields
         private int borderSize = 0;
@@ -11,7 +11,7 @@ namespace TripleXManagement.CustomControl
         private Color borderColor = Color.PaleVioletRed;
 
         //Properties
-        [Category("RJ Code Advance")]
+        [Category("CButton Setting")]
         public int BorderSize
         {
             get { return borderSize; }
@@ -22,7 +22,7 @@ namespace TripleXManagement.CustomControl
             }
         }
 
-        [Category("RJ Code Advance")]
+        [Category("CButton Setting")]
         public int BorderRadius
         {
             get { return borderRadius; }
@@ -33,7 +33,7 @@ namespace TripleXManagement.CustomControl
             }
         }
 
-        [Category("RJ Code Advance")]
+        [Category("CButton Setting")]
         public Color BorderColor
         {
             get { return borderColor; }
@@ -44,14 +44,14 @@ namespace TripleXManagement.CustomControl
             }
         }
 
-        [Category("RJ Code Advance")]
+        [Category("CButton Setting")]
         public Color BackgroundColor
         {
             get { return this.BackColor; }
             set { this.BackColor = value; }
         }
 
-        [Category("RJ Code Advance")]
+        [Category("CButton Setting")]
         public Color TextColor
         {
             get { return this.ForeColor; }
@@ -59,7 +59,7 @@ namespace TripleXManagement.CustomControl
         }
 
         //Constructor
-        public RJButton()
+        public CButton()
         {
             this.FlatStyle = FlatStyle.Flat;
             this.FlatAppearance.BorderSize = 0;

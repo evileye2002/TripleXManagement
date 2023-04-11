@@ -37,8 +37,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvCustomer = new System.Windows.Forms.DataGridView();
             this.pnFooter = new System.Windows.Forms.Panel();
-            this.btnEdit = new TripleXManagement.CustomControl.RJButton();
-            this.btnAddCustomer = new TripleXManagement.CustomControl.RJButton();
+            this.btnEdit = new TripleXManagement.CustomControl.CButton();
+            this.btnAddCustomer = new TripleXManagement.CustomControl.CButton();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -249,8 +249,8 @@
 
         private DataGridView dgvCustomer;
         private Panel pnFooter;
-        private CustomControl.RJButton btnAddCustomer;
-        private CustomControl.RJButton btnEdit;
+        private CustomControl.CButton btnAddCustomer;
+        private CustomControl.CButton btnEdit;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewTextBoxColumn Column1;

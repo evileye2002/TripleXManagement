@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.ofdBrowse = new System.Windows.Forms.OpenFileDialog();
-            this.btnClose = new TripleXManagement.CustomControl.RJButton();
+            this.btnClose = new TripleXManagement.CustomControl.CButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbTableName = new System.Windows.Forms.Label();
             this.pbPic = new System.Windows.Forms.PictureBox();
-            this.txtName = new TripleXManagement.CustomControl.Textbox();
-            this.txtPrice = new TripleXManagement.CustomControl.Textbox();
-            this.btnSave = new TripleXManagement.CustomControl.RJButton();
-            this.btnBrowse = new TripleXManagement.CustomControl.RJButton();
+            this.txtName = new TripleXManagement.CustomControl.CTextbox();
+            this.txtPrice = new TripleXManagement.CustomControl.CTextbox();
+            this.btnSave = new TripleXManagement.CustomControl.CButton();
+            this.btnBrowse = new TripleXManagement.CustomControl.CButton();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPic)).BeginInit();
@@ -241,14 +241,14 @@
 
         #endregion
         private OpenFileDialog ofdBrowse;
-        private CustomControl.RJButton btnClose;
+        private CustomControl.CButton btnClose;
         private Panel panel2;
         private Panel panel3;
         private Label lbTableName;
         private PictureBox pbPic;
-        private CustomControl.Textbox txtName;
-        private CustomControl.Textbox txtPrice;
-        private CustomControl.RJButton btnSave;
-        private CustomControl.RJButton btnBrowse;
+        private CustomControl.CTextbox txtName;
+        private CustomControl.CTextbox txtPrice;
+        private CustomControl.CButton btnSave;
+        private CustomControl.CButton btnBrowse;
     }
 }

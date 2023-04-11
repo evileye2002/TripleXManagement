@@ -1,6 +1,6 @@
 ﻿namespace TripleXManagement.CustomControl
 {
-    partial class Textbox
+    partial class CTextbox
     {
         /// <summary> 
         /// Required designer variable.
@@ -46,11 +46,11 @@
             this.textBox1.MouseEnter += new System.EventHandler(this.textBox1_MouseEnter);
             this.textBox1.MouseLeave += new System.EventHandler(this.textBox1_MouseLeave);
             // 
-            // Textbox
+            // CTextbox
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.textBox1);
-            this.Name = "Textbox";
+            this.Name = "CTextbox";
             this.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.Size = new System.Drawing.Size(250, 40);
             this.ResumeLayout(false);

@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnClose = new TripleXManagement.CustomControl.RJButton();
-            this.btnSave = new TripleXManagement.CustomControl.RJButton();
+            this.btnClose = new TripleXManagement.CustomControl.CButton();
+            this.btnSave = new TripleXManagement.CustomControl.CButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtAddress = new TripleXManagement.CustomControl.Textbox();
-            this.txtPhone = new TripleXManagement.CustomControl.Textbox();
+            this.txtAddress = new TripleXManagement.CustomControl.CTextbox();
+            this.txtPhone = new TripleXManagement.CustomControl.CTextbox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbTableName = new System.Windows.Forms.Label();
-            this.txtCCCD = new TripleXManagement.CustomControl.Textbox();
-            this.txtName = new TripleXManagement.CustomControl.Textbox();
+            this.txtCCCD = new TripleXManagement.CustomControl.CTextbox();
+            this.txtName = new TripleXManagement.CustomControl.CTextbox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -238,14 +238,14 @@
 
         #endregion
 
-        private CustomControl.RJButton btnClose;
-        private CustomControl.RJButton btnSave;
+        private CustomControl.CButton btnClose;
+        private CustomControl.CButton btnSave;
         private Panel panel2;
         private Panel panel1;
         private Label lbTableName;
-        private CustomControl.Textbox txtName;
-        private CustomControl.Textbox txtCCCD;
-        private CustomControl.Textbox txtAddress;
-        private CustomControl.Textbox txtPhone;
+        private CustomControl.CTextbox txtName;
+        private CustomControl.CTextbox txtCCCD;
+        private CustomControl.CTextbox txtAddress;
+        private CustomControl.CTextbox txtPhone;
     }
 }

@@ -35,7 +35,9 @@ namespace TripleXManagement
                         f.Show();
                         this.Hide();
                     }
-                    
+                    else
+                        CMessageBox.Show("Tài Khoản hoặc Mật Khẩu Chưa Chính Xác!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 }
                 else
                     CMessageBox.Show("Tài Khoản hoặc Mật Khẩu Chưa Chính Xác!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);

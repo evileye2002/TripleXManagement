@@ -34,8 +34,8 @@ namespace TripleXManagement.ChildForm.Food
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnFooter = new System.Windows.Forms.Panel();
-            this.btnEdit = new TripleXManagement.CustomControl.RJButton();
-            this.btnAddFood = new TripleXManagement.CustomControl.RJButton();
+            this.btnEdit = new TripleXManagement.CustomControl.CButton();
+            this.btnAddFood = new TripleXManagement.CustomControl.CButton();
             this.pnMain = new System.Windows.Forms.Panel();
             this.dgvFood = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -239,8 +239,8 @@ namespace TripleXManagement.ChildForm.Food
         private Panel pnFooter;
         private Panel pnMain;
         private DataGridView dgvFood;
-        private CustomControl.RJButton btnEdit;
-        private CustomControl.RJButton btnAddFood;
+        private CustomControl.CButton btnEdit;
+        private CustomControl.CButton btnAddFood;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;

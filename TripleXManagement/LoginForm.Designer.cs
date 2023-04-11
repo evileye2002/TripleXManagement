@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtUserName = new TripleXManagement.CustomControl.Textbox();
-            this.txtPassword = new TripleXManagement.CustomControl.Textbox();
+            this.txtUserName = new TripleXManagement.CustomControl.CTextbox();
+            this.txtPassword = new TripleXManagement.CustomControl.CTextbox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.btnLogin = new TripleXManagement.CustomControl.RJButton();
+            this.btnLogin = new TripleXManagement.CustomControl.CButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -207,13 +207,13 @@
         #endregion
 
         private PictureBox pictureBox1;
-        private CustomControl.Textbox txtUserName;
-        private CustomControl.Textbox txtPassword;
+        private CustomControl.CTextbox txtUserName;
+        private CustomControl.CTextbox txtPassword;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
         private PictureBox pictureBox4;
         private Panel panel1;
         private PictureBox pictureBox5;
-        private CustomControl.RJButton btnLogin;
+        private CustomControl.CButton btnLogin;
     }
 }
