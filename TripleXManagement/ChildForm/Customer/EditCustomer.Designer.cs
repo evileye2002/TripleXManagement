@@ -162,14 +162,13 @@
             // 
             // lbTableName
             // 
-            this.lbTableName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbTableName.AutoSize = true;
             this.lbTableName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lbTableName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbTableName.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbTableName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            this.lbTableName.Location = new System.Drawing.Point(193, 8);
+            this.lbTableName.Location = new System.Drawing.Point(0, 0);
             this.lbTableName.Name = "lbTableName";
-            this.lbTableName.Size = new System.Drawing.Size(162, 30);
+            this.lbTableName.Size = new System.Drawing.Size(549, 46);
             this.lbTableName.TabIndex = 0;
             this.lbTableName.Text = "Sửa Thông Tin";
             this.lbTableName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -235,7 +234,6 @@
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.AddTable_Paint);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -39,41 +39,55 @@ namespace TripleXManagement.ChildForm.Bill
                 long len = reader.GetBytes(0, 0, null, 0, 0);
                 byte[] array = new byte[Convert.ToInt32(len) + 1];
                 reader.GetBytes(0, 0, array, 0, Convert.ToInt32(len));
-                image = new PictureBox
-                {
-                    Width = 150,
-                    Height = 150,
-                    BackgroundImageLayout = ImageLayout.Stretch,
-                    BorderStyle = BorderStyle.None,
-                    Cursor = Cursors.Hand,
-                    Tag = reader["ID"].ToString()
-                };
+                /*
+                                image = new PictureBox
+                                {
+                                    Width = 150,
+                                    Height = 150,
+                                    BackgroundImageLayout = ImageLayout.Stretch,
+                                    BorderStyle = BorderStyle.None,
+                                    Cursor = Cursors.Hand,
+                                    Tag = reader["ID"].ToString()
+                                };
 
-                price = new Label
+                                price = new Label
+                                {
+                                    Text = int.Parse(reader["FPrice"].ToString()).ToString("#,##") + " VNĐ",
+                                    BackColor = Color.LightGray,
+                                    Font = new("Arial", 10, FontStyle.Bold),
+                                    ForeColor = Color.FromArgb(39, 39, 58),
+                                    Width = 50,
+                                    TextAlign = ContentAlignment.MiddleCenter,
+                                    Dock = DockStyle.Bottom,
+                                    Tag = reader["ID"].ToString()
+                                };
+
+                                MemoryStream ms = new(array);
+                                Bitmap bitmap = new(ms);
+                                image.BackgroundImage = bitmap;
+                                image.Controls.Add(price);
+                                flowLayoutPanel1.Controls.Add(image);
+                                image.Click += new EventHandler(OnClick);*/
+
+                CFoodImage foodImage = new CFoodImage
                 {
-                    Text = int.Parse(reader["FPrice"].ToString()).ToString("#,##") + " VNĐ",
-                    BackColor = Color.LightGray,
-                    Font = new("Arial", 10, FontStyle.Bold),
-                    ForeColor = Color.FromArgb(39, 39, 58),
-                    Width = 50,
-                    TextAlign = ContentAlignment.MiddleCenter,
-                    Dock = DockStyle.Bottom,
-                    Tag = reader["ID"].ToString()
+                    FoodID = reader["ID"].ToString(),
+                    FoodName = reader["FName"].ToString(),
+                    FoodPrice = int.Parse(reader["FPrice"].ToString()).ToString("#,##") + " VNĐ",
                 };
 
                 MemoryStream ms = new(array);
                 Bitmap bitmap = new(ms);
-                image.BackgroundImage = bitmap;
-                image.Controls.Add(price);
-                flowLayoutPanel1.Controls.Add(image);
-                image.Click += new EventHandler(OnClick);
+                foodImage.FoodImage = bitmap;
+                flowLayoutPanel1.Controls.Add(foodImage);
+                foodImage._CClick += new EventHandler(OnClick);
             }
             reader.Close();
         }
         public void OnClick(object sender, EventArgs e)
         {
-            string ?tag = ((PictureBox)sender).Tag.ToString();
-            string sql = "exec PFoodFineByID '" + tag + "'";
+            string id = ((PictureBox)sender).Tag.ToString();
+            string sql = "exec PFoodFineByID '" + id + "'";
             reader = SqlClass.Reader(sql);
             reader.Read();
             if (reader.HasRows)

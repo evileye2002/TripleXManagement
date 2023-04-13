@@ -1,6 +1,7 @@
 ﻿using System.Data.SqlClient;
 using TripleXManagement.StaticClass;
 using TripleXManagement.Properties;
+using Microsoft.VisualBasic;
 
 namespace TripleXManagement.ChildForm.Table
 {
@@ -49,452 +50,69 @@ namespace TripleXManagement.ChildForm.Table
         private void GetOrderTableInToday(string sql)
         {
             reader = SqlClass.Reader(sql);
-
-            Color bodyFC = Color.FromArgb(245, 255, 255);
-            Color bodyBC = Color.Gray;
-            Color footerBC = Color.LightGray;
-            Color footerFC = Color.FromArgb(39, 39, 58);
-
             while (reader.Read())
             {
-                pnTable = new Panel
-                {
-                    Size = new Size(250,150),
-                    Cursor = Cursors.Hand,
-                    Tag = reader["OrderID"].ToString()
-                };
+                DateTime dtOrederDate = DateTime.ParseExact(reader["OTake"].ToString(), "dd/MM/yyyy HH:mm:ss", SharedClass.cultureVN);
+                string date = dtOrederDate.ToString("dd/MM/yyyy", SharedClass.cultureVN);
 
-                body = new Panel
+                CTable cTable = new CTable
                 {
-                    BackColor = bodyBC,
-                    ForeColor = bodyFC,
-                    Font = new("Arial", 12, FontStyle.Bold),
-                    Dock = DockStyle.Fill,
+                    TableID = reader["ID"].ToString(),
+                    TableName = reader["TName"].ToString(),
+                    TableStatus = "Hôm Nay Nhận",
+                    Customer = reader["CustomerName"].ToString(),
+                    OrderDate = "Ngày: " + date,
+                    Chair = "Ghế: " + reader["TChair"].ToString(),
+                    TableImage = Resources.customer_32px
                 };
+                cTable._CClick += new EventHandler(editOrder);
 
-                header = new Panel
-                {
-                    Size = new Size(250, 30),
-                    BackColor = bodyBC,
-                    ForeColor = bodyFC,
-                    Font = new("Arial", 10, FontStyle.Bold),
-                    Dock = DockStyle.Top,
-                };
-
-                footer = new Panel
-                {
-                    Size = new Size(250, 30),
-                    BackColor = footerBC,
-                    ForeColor = footerFC,
-                    Font = new("Arial", 10, FontStyle.Bold),
-                    Dock = DockStyle.Bottom,
-                };
-
-                pic = new Panel
-                {
-                    Dock = DockStyle.Fill,
-                };
-                picT = new Panel
-                {
-                    Dock = DockStyle.Top,
-                    Height = 64,
-                };
-                picB = new Panel
-                {
-                    Dock = DockStyle.Bottom,
-                    Height = 26,
-                };
-                picL = new Panel
-                {
-                    Dock = DockStyle.Left,
-                    Width = 34,
-                };
-
-                Tname = new Label
-                {
-                    Padding = new Padding(10,6, 0, 0),
-                    Text = reader["TName"].ToString(),
-                    Size = new Size(70, 30),
-                    TextAlign = ContentAlignment.MiddleLeft,
-                    Dock = DockStyle.None,
-                    Tag = reader["OrderID"].ToString()
-                };
-
-                Tstatus = new Label
-                {
-                    Padding = new Padding(2, 6, 0, 0),
-                    Text = "Hôm nay nhận bàn",
-                    Size = new Size(155, 30),
-                    TextAlign = ContentAlignment.MiddleRight,
-                    Dock = DockStyle.Right,
-                    RightToLeft = RightToLeft.Yes,
-                    Tag = reader["OrderID"].ToString(),
-                };
-
-                img = new CustomControl.CButton
-                {
-                    Dock = DockStyle.Fill,
-                    BackColor = bodyBC, 
-                    Tag = reader["OrderID"].ToString(),
-                    Enabled = false,
-                };
-                if(reader["CustomerName"].ToString().Length >= 50)
-                {
-
-                }
-                Tcustomer = new Label
-                {
-                    Padding = new Padding(0, 40, 0, 0),
-                    Text = reader["CustomerName"].ToString(),
-                    Size = new Size(185,30),
-                    TextAlign = ContentAlignment.MiddleLeft,
-                    Dock = DockStyle.Right,
-                    Tag = reader["OrderID"].ToString()
-                };
-
-                TGetDate = new Label
-                {
-                    Padding = new Padding(10, 6, 0, 5),
-                    Text = "Ngày: " + reader["OTake"].ToString(),
-                    Size = new Size(180, 30),
-                    TextAlign = ContentAlignment.MiddleLeft,
-                    Dock = DockStyle.Left,
-                    Tag = reader["OrderID"].ToString(),
-                };
-
-                Tchair = new Label
-                {
-                    Padding = new Padding(0, 6, 10, 5),
-                    Text = "Ghế: " + reader["TChair"].ToString(),
-                    Size = new Size(70, 30),
-                    TextAlign = ContentAlignment.MiddleLeft,
-                    Dock = DockStyle.Right,
-                    Tag = reader["OrderID"].ToString(),
-                };
-                img.BackgroundImage = Resources.customer_32px;
-
-                header.Controls.Add(Tname);
-                header.Controls.Add(Tstatus);
-                pnTable.Controls.Add(header);
-
-                pic.Controls.Add(picT);
-                pic.Controls.Add(picB);
-                pic.Controls.Add(picL);
-                pic.Controls.Add(img);
-                body.Controls.Add(pic);
-                body.Controls.Add(Tcustomer);
-                pnTable.Controls.Add(body);
-
-                footer.Controls.Add(TGetDate);
-                footer.Controls.Add(Tchair);
-                pnTable.Controls.Add(footer);
-
-                flpBookTable.Controls.Add(pnTable);
-                Tcustomer.Click += new EventHandler(editOrder);
-                Tname.Click += new EventHandler(editOrder);
-                TGetDate.Click += new EventHandler(editOrder);
-                Tstatus.Click += new EventHandler(editOrder);
-                Tchair.Click += new EventHandler(editOrder);
+                flpBookTable.Controls.Add(cTable);
             }
             reader.Close();
         }
         private void GetEmptyTable(string sql)
         {
             reader = SqlClass.Reader(sql);
-
-            Color bodyFC = Color.FromArgb(245, 255, 255);
-            Color bodyBC = Color.FromArgb(98, 102, 244);
-            Color footerBC = Color.LightGray;
-            Color footerFC = Color.FromArgb(39, 39, 58);
-
-
             while (reader.Read())
             {
-                pnTable = new Panel
+                CTable cTable = new CTable
                 {
-                    Size = new Size(250, 150),
-                    Cursor = Cursors.Hand,
-                    Tag = reader["ID"].ToString()
+                    TableID = reader["ID"].ToString(),
+                    TableName = reader["TName"].ToString(),
+                    TableStatus = reader["TStatus"].ToString(),
+                    Customer = reader["TStatus"].ToString(),
+                    OrderDate = "Ngày: 0",
+                    Chair = "Ghế: " + reader["TChair"].ToString(),
+                    TableImage = Resources.coffee_table_32px
                 };
+                cTable._CClick += new EventHandler(addOrder);
 
-                body = new Panel
-                {
-                    BackColor = bodyBC,
-                    ForeColor = bodyFC,
-                    Font = new("Arial", 12, FontStyle.Bold),
-                    Dock = DockStyle.Fill,
-                };
-
-                header = new Panel
-                {
-                    Size = new Size(250, 30),
-                    BackColor = bodyBC,
-                    ForeColor = bodyFC,
-                    Font = new("Arial", 10, FontStyle.Bold),
-                    Dock = DockStyle.Top,
-                };
-
-                footer = new Panel
-                {
-                    Size = new Size(250, 30),
-                    BackColor = footerBC,
-                    ForeColor = footerFC,
-                    Font = new("Arial", 10, FontStyle.Bold),
-                    Dock = DockStyle.Bottom,
-                };
-
-                pic = new Panel
-                {
-                    Dock = DockStyle.Fill,
-                };
-                picT = new Panel
-                {
-                    Dock = DockStyle.Top,
-                    Height = 64,
-                };
-                picB = new Panel
-                {
-                    Dock = DockStyle.Bottom,
-                    Height = 26,
-                };
-                picL = new Panel
-                {
-                    Dock = DockStyle.Left,
-                    Width = 34,
-                };
-
-                Tname = new Label
-                {
-                    Padding = new Padding(10, 6, 0, 0),
-                    Text = reader["TName"].ToString(),
-                    Size = new Size(70, 30),
-                    TextAlign = ContentAlignment.MiddleLeft,
-                    Dock = DockStyle.None,
-                    Tag = reader["ID"].ToString()
-                };
-
-                Tstatus = new Label
-                {
-                    Padding = new Padding(0, 6, 10, 0),
-                    Text = reader["TStatus"].ToString(),
-                    Size = new Size(95, 30),
-                    TextAlign = ContentAlignment.MiddleRight,
-                    Dock = DockStyle.Right,
-                    RightToLeft = RightToLeft.Yes,
-                    Tag = reader["ID"].ToString(),
-                };
-
-                img = new CustomControl.CButton
-                {
-                    Dock = DockStyle.Fill,
-                    BackColor = bodyBC,
-                    Tag = reader["ID"].ToString(),
-                    Enabled = false,
-                };
-
-                Tcustomer = new Label
-                {
-                    Padding = new Padding(0, 40, 0, 0),
-                    Text = reader["TStatus"].ToString(),
-                    Size = new Size(185, 30),
-                    TextAlign = ContentAlignment.MiddleLeft,
-                    Dock = DockStyle.Right,
-                    Tag = reader["ID"].ToString()
-                };
-
-                TGetDate = new Label
-                {
-                    Padding = new Padding(10, 6, 0, 5),
-                    Text = "Ngày: 0",
-                    Size = new Size(180, 30),
-                    TextAlign = ContentAlignment.MiddleLeft,
-                    Dock = DockStyle.Left,
-                    Tag = reader["ID"].ToString(),
-                };
-
-                Tchair = new Label
-                {
-                    Padding = new Padding(0, 6, 10, 5),
-                    Text = "Ghế: " + reader["TChair"].ToString(),
-                    Size = new Size(70, 30),
-                    TextAlign = ContentAlignment.MiddleLeft,
-                    Dock = DockStyle.Right,
-                    Tag = reader["ID"].ToString(),
-                };
-                img.BackgroundImage = Resources.coffee_table_32px;
-
-                header.Controls.Add(Tname);
-                header.Controls.Add(Tstatus);
-                pnTable.Controls.Add(header);
-
-                pic.Controls.Add(picT);
-                pic.Controls.Add(picB);
-                pic.Controls.Add(picL);
-                pic.Controls.Add(img);
-                body.Controls.Add(pic);
-                body.Controls.Add(Tcustomer);
-                pnTable.Controls.Add(body);
-
-                footer.Controls.Add(TGetDate);
-                footer.Controls.Add(Tchair);
-                pnTable.Controls.Add(footer);
-
-                flpBookTable.Controls.Add(pnTable);
-                Tcustomer.Click += new EventHandler(addOrder);
-                Tname.Click += new EventHandler(addOrder);
-                TGetDate.Click += new EventHandler(addOrder);
-                Tstatus.Click += new EventHandler(addOrder);
-                Tchair.Click += new EventHandler(addOrder);
+                flpBookTable.Controls.Add(cTable);
             }
             reader.Close();
         }
         private void GetOrderedTable(string sql)
         {
             reader = SqlClass.Reader(sql);
-
-            Color bodyFC = Color.FromArgb(245, 255, 255);
-            Color bodyBC = Color.Gray;
-            Color footerBC = Color.LightGray;
-            Color footerFC = Color.FromArgb(39, 39, 58);
-
-
             while (reader.Read())
             {
-                pnTable = new Panel
-                {
-                    Size = new Size(250, 150),
-                    Cursor = Cursors.Hand,
-                    Tag = reader["OrderID"].ToString()
-                };
+                DateTime dtOrederDate = DateTime.ParseExact(reader["OTake"].ToString(), "dd/MM/yyyy HH:mm:ss", SharedClass.cultureVN);
+                string date = dtOrederDate.ToString("dd/MM/yyyy", SharedClass.cultureVN);
 
-                body = new Panel
+                CTable cTable = new CTable
                 {
-                    BackColor = bodyBC,
-                    ForeColor = bodyFC,
-                    Font = new("Arial", 12, FontStyle.Bold),
-                    Dock = DockStyle.Fill,
+                    TableID = reader["ID"].ToString(),
+                    TableName = reader["TName"].ToString(),
+                    TableStatus = reader["TStatus"].ToString(),
+                    Customer = reader["CustomerName"].ToString(),
+                    OrderDate = "Ngày: " + date,
+                    Chair = "Ghế: " + reader["TChair"].ToString(),
+                    TableImage = Resources.customer_32px
                 };
+                cTable._CClick += new EventHandler(editOrder);
 
-                header = new Panel
-                {
-                    Size = new Size(250, 30),
-                    BackColor = bodyBC,
-                    ForeColor = bodyFC,
-                    Font = new("Arial", 10, FontStyle.Bold),
-                    Dock = DockStyle.Top,
-                };
-
-                footer = new Panel
-                {
-                    Size = new Size(250, 30),
-                    BackColor = footerBC,
-                    ForeColor = footerFC,
-                    Font = new("Arial", 10, FontStyle.Bold),
-                    Dock = DockStyle.Bottom,
-                };
-
-                pic = new Panel
-                {
-                    Dock = DockStyle.Fill,
-                };
-                picT = new Panel
-                {
-                    Dock = DockStyle.Top,
-                    Height = 64,
-                };
-                picB = new Panel
-                {
-                    Dock = DockStyle.Bottom,
-                    Height = 26,
-                };
-                picL = new Panel
-                {
-                    Dock = DockStyle.Left,
-                    Width = 34,
-                };
-
-                Tname = new Label
-                {
-                    Padding = new Padding(10, 6, 0, 0),
-                    Text = reader["TName"].ToString(),
-                    Size = new Size(70, 30),
-                    TextAlign = ContentAlignment.MiddleLeft,
-                    Dock = DockStyle.None,
-                    Tag = reader["OrderID"].ToString()
-                };
-
-                Tstatus = new Label
-                {
-                    Padding = new Padding(0, 6, 10, 0),
-                    Text = reader["TStatus"].ToString(),
-                    Size = new Size(70, 30),
-                    TextAlign = ContentAlignment.MiddleRight,
-                    Dock = DockStyle.Right,
-                    RightToLeft = RightToLeft.Yes,
-                    Tag = reader["OrderID"].ToString(),
-                };
-
-                img = new CustomControl.CButton
-                {
-                    Dock = DockStyle.Fill,
-                    BackColor = bodyBC,
-                    Tag = reader["ID"].ToString(),
-                    Enabled = false,
-                };
-
-                Tcustomer = new Label
-                {
-                    Padding = new Padding(0, 40, 0, 0),
-                    Text = reader["CustomerName"].ToString(),
-                    Size = new Size(185, 30),
-                    TextAlign = ContentAlignment.MiddleLeft,
-                    Dock = DockStyle.Right,
-                    Tag = reader["OrderID"].ToString()
-                };
-
-                TGetDate = new Label
-                {
-                    Padding = new Padding(10, 6, 0, 5),
-                    Text = "Ngày: " + reader["OTake"].ToString(),
-                    Size = new Size(180, 30),
-                    TextAlign = ContentAlignment.MiddleLeft,
-                    Dock = DockStyle.Left,
-                    Tag = reader["OrderID"].ToString(),
-                };
-
-                Tchair = new Label
-                {
-                    Padding = new Padding(0, 6, 10, 5),
-                    Text = "Ghế: " + reader["TChair"].ToString(),
-                    Size = new Size(70, 30),
-                    TextAlign = ContentAlignment.MiddleLeft,
-                    Dock = DockStyle.Right,
-                    Tag = reader["OrderID"].ToString(),
-                };
-                img.BackgroundImage = Resources.customer_32px;
-
-                header.Controls.Add(Tname);
-                header.Controls.Add(Tstatus);
-                pnTable.Controls.Add(header);
-
-                pic.Controls.Add(picT);
-                pic.Controls.Add(picB);
-                pic.Controls.Add(picL);
-                pic.Controls.Add(img);
-                body.Controls.Add(pic);
-                body.Controls.Add(Tcustomer);
-                pnTable.Controls.Add(body);
-
-                footer.Controls.Add(TGetDate);
-                footer.Controls.Add(Tchair);
-                pnTable.Controls.Add(footer);
-
-                flpBookTable.Controls.Add(pnTable);
-                Tcustomer.Click += new EventHandler(editOrder);
-                Tname.Click += new EventHandler(editOrder);
-                TGetDate.Click += new EventHandler(editOrder);
-                Tstatus.Click += new EventHandler(editOrder);
-                Tchair.Click += new EventHandler(editOrder);
+                flpBookTable.Controls.Add(cTable);
             }
             reader.Close();
         }

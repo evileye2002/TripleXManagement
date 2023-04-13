@@ -189,7 +189,6 @@ namespace TripleXManagement.ChildForm.Bill
         private void print()
         {
             sizePrintPage();
-            //string path = @"E:\DAI_HOC\NAM_3\Ky 2\Thuc tap co so\TripleXManagement\Print\";
             string filName = path + BillID + ".pdf";
 
             /*if (Directory.Exists(path) && !File.Exists(filName))
