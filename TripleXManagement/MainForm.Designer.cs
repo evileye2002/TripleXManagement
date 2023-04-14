@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.pnMenu = new System.Windows.Forms.Panel();
             this.btnCustomer = new System.Windows.Forms.Button();
-            this.bntTable = new System.Windows.Forms.Button();
+            this.btnTable = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnAccount = new System.Windows.Forms.Button();
             this.btnStaff = new System.Windows.Forms.Button();
@@ -62,7 +62,7 @@
             // 
             this.pnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.pnMenu.Controls.Add(this.btnCustomer);
-            this.pnMenu.Controls.Add(this.bntTable);
+            this.pnMenu.Controls.Add(this.btnTable);
             this.pnMenu.Controls.Add(this.btnLogout);
             this.pnMenu.Controls.Add(this.btnAccount);
             this.pnMenu.Controls.Add(this.btnStaff);
@@ -97,27 +97,27 @@
             this.btnCustomer.UseVisualStyleBackColor = true;
             this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
             // 
-            // bntTable
+            // btnTable
             // 
-            this.bntTable.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bntTable.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bntTable.FlatAppearance.BorderSize = 0;
-            this.bntTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bntTable.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.bntTable.ForeColor = System.Drawing.SystemColors.Control;
-            this.bntTable.Image = global::TripleXManagement.Properties.Resources.coffee_table_32px;
-            this.bntTable.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bntTable.Location = new System.Drawing.Point(0, 246);
-            this.bntTable.Name = "bntTable";
-            this.bntTable.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.bntTable.Size = new System.Drawing.Size(205, 50);
-            this.bntTable.TabIndex = 6;
-            this.bntTable.Tag = "Bàn ăn";
-            this.bntTable.Text = "Bàn ăn";
-            this.bntTable.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bntTable.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.bntTable.UseVisualStyleBackColor = true;
-            this.bntTable.Click += new System.EventHandler(this.bntTable_Click);
+            this.btnTable.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTable.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTable.FlatAppearance.BorderSize = 0;
+            this.btnTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTable.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnTable.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnTable.Image = global::TripleXManagement.Properties.Resources.coffee_table_32px;
+            this.btnTable.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTable.Location = new System.Drawing.Point(0, 246);
+            this.btnTable.Name = "btnTable";
+            this.btnTable.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnTable.Size = new System.Drawing.Size(205, 50);
+            this.btnTable.TabIndex = 6;
+            this.btnTable.Tag = "Bàn ăn";
+            this.btnTable.Text = "Bàn ăn";
+            this.btnTable.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTable.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTable.UseVisualStyleBackColor = true;
+            this.btnTable.Click += new System.EventHandler(this.bntTable_Click);
             // 
             // btnLogout
             // 
@@ -408,7 +408,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TripleX Management";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             this.Resize += new System.EventHandler(this.MainForm_Resize);
             this.pnMenu.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -443,7 +442,7 @@
         private Label lbTitle;
         private Button btnCloseChildForm;
         private PictureBox pictureBox1;
-        private Button bntTable;
+        private Button btnTable;
         private Button btnCustomer;
     }
 }

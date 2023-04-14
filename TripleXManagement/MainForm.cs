@@ -157,6 +157,18 @@ namespace TripleXManagement
             {
                 activateForm.Close();
             }
+
+            if (btnSender == btnBill || btnSender == btnTable)
+            {
+                this.WindowState = FormWindowState.Maximized;
+                btnMaximize.Image = Properties.Resources.icons8_restore_down_261;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+                btnMaximize.Image = Properties.Resources.icons8_maximize_button_26__1_;
+            }
+
             ActivateButton(btnSender);
             activateForm = childForm;
             childForm.TopLevel = false;
@@ -172,7 +184,6 @@ namespace TripleXManagement
         private void btnBill_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Bill(), sender);
-            this.WindowState = FormWindowState.Maximized;
         }
 
         private void btnFoodDrink_Click(object sender, EventArgs e)
@@ -216,7 +227,6 @@ namespace TripleXManagement
         private void bntTable_Click(object sender, EventArgs e)
         {
             OpenChildForm(new TableManagement(), sender);
-            this.WindowState = FormWindowState.Maximized;
         }
 
         private void btnCustomer_Click(object sender, EventArgs e)
@@ -224,13 +234,6 @@ namespace TripleXManagement
             OpenChildForm(new CustomerManagement(), sender);
         }
 
-        private void MainForm_KeyDown(object sender, KeyEventArgs e)
-        {
-            if(e.KeyCode == Keys.Delete)
-            {
-                
-            }
-        }
         private void GetData()
         {
             u = LoginForm.u;
